@@ -1,0 +1,20 @@
+name: 'Issue Autolink'
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  issue-links:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: tkt-actions/add-issue-links@v1.8.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          branch-prefix: 'i' # Matches branch naming from issue-branch.yml
+          resolve: 'true' # Auto-closes linked issues when PR is merged
+        # This workflow automatically links PRs to issues based on branch names
+        # If branch starts with 'i{number}', it links to issue #{number}
+        # When PR is merged, linked issues are automatically closed

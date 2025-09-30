@@ -1,0 +1,291 @@
+{
+  "hero": {
+    "title": "Comprehensive Digital Services",
+    "description": "From concept to deployment, we provide end-to-end digital solutions that drive business growth and deliver exceptional user experiences.",
+    "subtitle": "Transforming ideas into powerful digital realities",
+    "services": [
+      {
+        "icon": "FaDesktop",
+        "title": "Web Development",
+        "description": "Lightning-fast websites and web applications that convert visitors into customers.",
+        "gradient": "from-blue-500 to-indigo-600",
+        "image": "https://placehold.co/600x400.webp"
+      },
+      {
+        "icon": "FaMobile",
+        "title": "Mobile Apps",
+        "description": "Native and cross-platform mobile experiences that users love.",
+        "gradient": "from-green-500 to-emerald-600",
+        "image": "https://placehold.co/600x400.webp"
+      },
+      {
+        "icon": "FaShoppingCart",
+        "title": "E-commerce",
+        "description": "Complete online stores that maximize sales and customer satisfaction.",
+        "gradient": "from-purple-500 to-pink-600",
+        "image": "https://placehold.co/600x400.webp"
+      },
+      {
+        "icon": "FaCloud",
+        "title": "Cloud Solutions",
+        "description": "Scalable cloud infrastructure and DevOps for modern businesses.",
+        "gradient": "from-orange-500 to-red-600",
+        "image": "https://placehold.co/600x400.webp"
+      }
+    ]
+  },
+  "detailedServices": [
+    {
+      "icon": "FaDesktop",
+      "title": "Web Development",
+      "description": "Full-stack web development services that create responsive, high-performance websites and web applications tailored to your business needs.",
+      "features": [
+        "Custom Web Applications",
+        "Responsive Design",
+        "SEO Optimization",
+        "Performance Optimization",
+        "Third-party Integrations",
+        "Content Management Systems",
+        "Progressive Web Apps",
+        "API Development"
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "AWS"
+      ],
+      "startingPrice": "$8,000",
+      "deliveryTime": "6-12 weeks",
+      "testimonial": {
+        "content": "Our website traffic increased by 300% within 3 months.",
+        "author": "Sarah Johnson, CEO at TechStart"
+      }
+    },
+    {
+      "icon": "FaMobile",
+      "title": "Mobile Apps",
+      "description": "Native and cross-platform mobile application development for iOS and Android that delivers exceptional user experiences.",
+      "features": [
+        "iOS & Android Development",
+        "Cross-platform Solutions",
+        "UI/UX Design",
+        "Push Notifications",
+        "Offline Functionality",
+        "App Store Optimization",
+        "Analytics Integration",
+        "Backend Integration"
+      ],
+      "technologies": [
+        "React Native",
+        "Flutter",
+        "Swift",
+        "Kotlin",
+        "Firebase",
+        "MongoDB"
+      ],
+      "startingPrice": "$12,000",
+      "deliveryTime": "8-16 weeks",
+      "testimonial": {
+        "content": "The app exceeded our expectations and user retention is at 85%.",
+        "author": "Michael Chen, Product Manager at InnovateNow"
+      }
+    },
+    {
+      "icon": "FaShoppingCart",
+      "title": "E-commerce",
+      "description": "Complete e-commerce solutions from custom online stores to marketplace integrations that drive sales and enhance customer experience.",
+      "features": [
+        "Custom Online Stores",
+        "Payment Gateway Integration",
+        "Inventory Management",
+        "Order Processing",
+        "Customer Analytics",
+        "Mobile Commerce",
+        "Multi-vendor Support",
+        "SEO & Marketing Tools"
+      ],
+      "technologies": [
+        "Shopify",
+        "WooCommerce",
+        "Magento",
+        "Stripe",
+        "PayPal",
+        "BigCommerce"
+      ],
+      "startingPrice": "$15,000",
+      "deliveryTime": "10-20 weeks",
+      "testimonial": {
+        "content": "Sales increased by 450% in the first quarter after launch.",
+        "author": "Emma Rodriguez, Founder of StyleHub"
+      }
+    },
+    {
+      "icon": "FaCloud",
+      "title": "Cloud Solutions",
+      "description": "Scalable cloud infrastructure, DevOps automation, and cloud migration services that optimize performance and reduce costs.",
+      "features": [
+        "Cloud Migration",
+        "Infrastructure as Code",
+        "Auto-scaling Solutions",
+        "CI/CD Pipelines",
+        "Monitoring & Logging",
+        "Security Compliance",
+        "Cost Optimization",
+        "Disaster Recovery"
+      ],
+      "technologies": [
+        "AWS",
+        "Google Cloud",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Jenkins"
+      ],
+      "startingPrice": "$10,000",
+      "deliveryTime": "6-14 weeks",
+      "testimonial": {
+        "content": "Our deployment time reduced from hours to minutes.",
+        "author": "David Kim, CTO at DataFlow"
+      }
+    },
+    {
+      "icon": "FaChartLine",
+      "title": "Digital Analytics",
+      "description": "Advanced analytics and business intelligence solutions that provide actionable insights for data-driven decision making.",
+      "features": [
+        "Custom Dashboards",
+        "Real-time Analytics",
+        "Data Visualization",
+        "Automated Reporting",
+        "KPI Tracking",
+        "User Behavior Analysis",
+        "A/B Testing",
+        "Performance Metrics"
+      ],
+      "technologies": [
+        "Google Analytics",
+        "Mixpanel",
+        "Tableau",
+        "Power BI",
+        "BigQuery",
+        "Python"
+      ],
+      "startingPrice": "$4,500",
+      "deliveryTime": "3-7 weeks",
+      "testimonial": {
+        "content": "Data-driven decisions increased our ROI by 180%.",
+        "author": "Lisa Wang, VP Marketing at GrowthCorp"
+      }
+    },
+    {
+      "icon": "FaShieldAlt",
+      "title": "Cybersecurity",
+      "description": "Comprehensive security audits, penetration testing, and security implementation to protect your digital assets.",
+      "features": [
+        "Security Audits",
+        "Penetration Testing",
+        "Vulnerability Assessment",
+        "SSL Implementation",
+        "Data Encryption",
+        "Compliance Support",
+        "Security Training",
+        "Incident Response"
+      ],
+      "technologies": [
+        "OWASP",
+        "Metasploit",
+        "Burp Suite",
+        "Nessus",
+        "Wireshark",
+        "Splunk"
+      ],
+      "startingPrice": "$2,500",
+      "deliveryTime": "2-4 weeks",
+      "testimonial": {
+        "content": "Zero security incidents since implementing their solutions.",
+        "author": "Robert Chen, CISO at SecureBank"
+      }
+    }
+  ],
+  "process": {
+    "title": "Our Process",
+    "description": "A proven methodology that ensures successful project delivery and exceeds client expectations.",
+    "steps": [
+      {
+        "step": "01",
+        "label": "Discovery & Strategy",
+        "description": "We analyze your business goals, target audience, and technical requirements to create a comprehensive project strategy."
+      },
+      {
+        "step": "02",
+        "label": "Design & Prototype",
+        "description": "Our design team creates stunning visuals and interactive prototypes that align with your brand and user expectations."
+      },
+      {
+        "step": "03",
+        "label": "Development & Testing",
+        "description": "We build your solution using modern technologies and conduct thorough testing to ensure quality and performance."
+      },
+      {
+        "step": "04",
+        "label": "Launch & Support",
+        "description": "We deploy your project and provide ongoing support, maintenance, and optimization for continued success."
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "description": "We combine technical expertise with business acumen to deliver solutions that drive real results.",
+    "items": [
+      {
+        "icon": "HiSparkles",
+        "title": "Cutting-Edge Technology",
+        "description": "We use the latest technologies and frameworks to build future-proof solutions."
+      },
+      {
+        "icon": "HiLightBulb",
+        "title": "Expert Team",
+        "description": "Our team consists of senior developers and designers with 10+ years of experience."
+      },
+      {
+        "icon": "HiTrendingUp",
+        "title": "Proven Results",
+        "description": "Over 500 successful projects with an average 250% increase in client ROI."
+      },
+      {
+        "icon": "HiShieldCheck",
+        "title": "Quality Assurance",
+        "description": "Rigorous testing and quality control ensure your project meets the highest standards."
+      }
+    ]
+  },
+  "stats": {
+    "title": "Service Excellence",
+    "description": "Trusted by businesses worldwide for outstanding digital solutions",
+    "items": [
+      {
+        "number": "500+",
+        "label": "Projects Completed",
+        "icon": "FaRocket"
+      },
+      {
+        "number": "98%",
+        "label": "Client Satisfaction",
+        "icon": "FaStar"
+      },
+      {
+        "number": "10+",
+        "label": "Years Experience",
+        "icon": "FaClock"
+      },
+      {
+        "number": "50+",
+        "label": "Team Members",
+        "icon": "FaUsers"
+      }
+    ]
+  }
+}

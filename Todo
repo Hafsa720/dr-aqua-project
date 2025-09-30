@@ -1,0 +1,14 @@
+first we have to absorb structure of full project and include all files access in .claude
+
+need to define primary and secondary color by obsorbing already structure of colors.css and globals.css and tailwindcss which is
+
+primary #082856
+secondary #FF8621
+
+i guess we have to generate 50 to 900 color plates for these with oklch
+
+then we have to create 6 pages by wireframe
+
+need to include for images by placeholder and dummy link + dymmy content of projects
+
+use framer motion for smooth animation

@@ -1,0 +1,277 @@
+{
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "Dr. Amira Khalil",
+      "role": "CEO",
+      "company": "MedConnect UAE",
+      "industry": "Healthcare",
+      "avatar": "/images/testimonials/amira-khalil.jpg",
+      "rating": 5,
+      "content": "RapidBizz transformed our patient management system completely. Their team understood our complex healthcare requirements and delivered a solution that improved our efficiency by 60%. The mobile app they built has received excellent feedback from both patients and staff. Ahmed and Sarah's leadership throughout the project was exceptional.",
+      "project": "Healthcare Management Platform",
+      "projectValue": "AED 85,000",
+      "completionDate": "2023-11-15",
+      "featured": true,
+      "metrics": {
+        "efficiency": "60% improvement",
+        "patientSatisfaction": "4.8/5 rating",
+        "timeReduction": "40% faster appointments"
+      },
+      "tags": ["Healthcare", "Mobile App", "Web Platform"],
+      "videoTestimonial": "/videos/testimonials/amira-khalil.mp4"
+    },
+    {
+      "id": "testimonial-2",
+      "name": "Marcus Thompson",
+      "role": "Founder & CTO",
+      "company": "FinFlow Solutions",
+      "industry": "FinTech",
+      "avatar": "/images/testimonials/marcus-thompson.jpg",
+      "rating": 5,
+      "content": "Working with RapidBizz was a game-changer for our fintech startup. They built our core banking API and mobile application with the highest security standards. The team's expertise in financial regulations and compliance was impressive. We've processed over $2M in transactions with zero security issues.",
+      "project": "FinTech Banking Platform",
+      "projectValue": "AED 120,000",
+      "completionDate": "2023-09-22",
+      "featured": true,
+      "metrics": {
+        "transactions": "$2M+ processed",
+        "security": "Zero breaches",
+        "userGrowth": "300% in 6 months"
+      },
+      "tags": ["FinTech", "API Development", "Mobile Banking"],
+      "linkedinProfile": "https://linkedin.com/in/marcus-thompson-fintech"
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Layla Al-Mansouri",
+      "role": "Marketing Director",
+      "company": "Dubai Fashion House",
+      "industry": "E-commerce",
+      "avatar": "/images/testimonials/layla-almansouri.jpg",
+      "rating": 5,
+      "content": "Our e-commerce platform built by RapidBizz exceeded all expectations. The beautiful design by Priya and robust backend by the development team resulted in a 250% increase in online sales. The SEO optimization and digital marketing support from David drove incredible results.",
+      "project": "Luxury E-commerce Platform",
+      "projectValue": "AED 95,000",
+      "completionDate": "2023-10-08",
+      "featured": true,
+      "metrics": {
+        "salesIncrease": "250% growth",
+        "conversionRate": "4.2% improvement",
+        "pageSpeed": "98% performance score"
+      },
+      "tags": ["E-commerce", "Fashion", "Digital Marketing"],
+      "websiteUrl": "https://dubaifashionhouse.com"
+    },
+    {
+      "id": "testimonial-4",
+      "name": "Roberto Silva",
+      "role": "Operations Manager",
+      "company": "EduTech Middle East",
+      "industry": "Education",
+      "avatar": "/images/testimonials/roberto-silva.jpg",
+      "rating": 5,
+      "content": "RapidBizz developed our learning management system that now serves over 10,000 students across the region. The platform's scalability and user-friendly design have been praised by educators and students alike. Their ongoing support and regular updates keep us ahead of the competition.",
+      "project": "Learning Management System",
+      "projectValue": "AED 75,000",
+      "completionDate": "2023-08-14",
+      "featured": false,
+      "metrics": {
+        "activeUsers": "10,000+ students",
+        "uptime": "99.9%",
+        "satisfaction": "4.7/5 rating"
+      },
+      "tags": ["EdTech", "Learning Platform", "Scalability"]
+    },
+    {
+      "id": "testimonial-5",
+      "name": "Fatima Al-Zahra",
+      "role": "CEO",
+      "company": "Smart Logistics UAE",
+      "industry": "Logistics",
+      "avatar": "/images/testimonials/fatima-alzahra.jpg",
+      "rating": 5,
+      "content": "The logistics management system developed by RapidBizz revolutionized our operations. Real-time tracking, automated scheduling, and comprehensive reporting features have improved our efficiency dramatically. The ROI was evident within the first month of deployment.",
+      "project": "Logistics Management Platform",
+      "projectValue": "AED 110,000",
+      "completionDate": "2023-12-03",
+      "featured": false,
+      "metrics": {
+        "efficiency": "45% improvement",
+        "costReduction": "30% savings",
+        "deliveryTime": "25% faster"
+      },
+      "tags": ["Logistics", "Real-time Tracking", "Enterprise"]
+    },
+    {
+      "id": "testimonial-6",
+      "name": "James Mitchell",
+      "role": "Founder",
+      "company": "PropTech Innovations",
+      "industry": "Real Estate",
+      "avatar": "/images/testimonials/james-mitchell.jpg",
+      "rating": 5,
+      "content": "RapidBizz built our property management platform from the ground up. Their understanding of the UAE real estate market and technical expertise resulted in a solution that's now used by over 50 real estate agencies. The mobile app has been particularly well-received.",
+      "project": "Property Management System",
+      "projectValue": "AED 130,000",
+      "completionDate": "2023-07-20",
+      "featured": false,
+      "metrics": {
+        "agencies": "50+ active users",
+        "properties": "5,000+ listings managed",
+        "revenue": "40% increase for clients"
+      },
+      "tags": ["PropTech", "Real Estate", "Mobile App"]
+    },
+    {
+      "id": "testimonial-7",
+      "name": "Nour Habib",
+      "role": "Digital Manager",
+      "company": "Gourmet Delights",
+      "industry": "Food & Beverage",
+      "avatar": "/images/testimonials/nour-habib.jpg",
+      "rating": 5,
+      "content": "Our restaurant chain needed a comprehensive ordering system with delivery integration. RapidBizz delivered beyond our expectations with a beautiful app and efficient backend. Order processing time reduced by 50%, and customer satisfaction scores improved significantly.",
+      "project": "Restaurant Ordering System",
+      "projectValue": "AED 65,000",
+      "completionDate": "2023-06-12",
+      "featured": false,
+      "metrics": {
+        "orderTime": "50% reduction",
+        "customerSatisfaction": "4.6/5 rating",
+        "revenue": "35% increase"
+      },
+      "tags": ["Food Tech", "Mobile Ordering", "Delivery Integration"]
+    },
+    {
+      "id": "testimonial-8",
+      "name": "Dr. Hassan Qureshi",
+      "role": "Medical Director",
+      "company": "Advanced Dental Clinic",
+      "industry": "Healthcare",
+      "avatar": "/images/testimonials/hassan-qureshi.jpg",
+      "rating": 5,
+      "content": "The dental practice management system created by RapidBizz streamlined our entire workflow. From appointment scheduling to patient records and billing, everything is now automated and efficient. Our staff productivity increased by 40%, and patient wait times decreased significantly.",
+      "project": "Dental Practice Management",
+      "projectValue": "AED 55,000",
+      "completionDate": "2023-05-28",
+      "featured": false,
+      "metrics": {
+        "productivity": "40% increase",
+        "waitTime": "60% reduction",
+        "accuracy": "99.2% billing accuracy"
+      },
+      "tags": ["Healthcare", "Practice Management", "Automation"]
+    },
+    {
+      "id": "testimonial-9",
+      "name": "Aisha Mahmoud",
+      "role": "Co-Founder",
+      "company": "Green Energy Solutions",
+      "industry": "Renewable Energy",
+      "avatar": "/images/testimonials/aisha-mahmoud.jpg",
+      "rating": 5,
+      "content": "RapidBizz developed our solar panel monitoring and management system. The IoT integration and real-time analytics dashboard help our clients monitor their energy production efficiently. The system has been instrumental in our 200% business growth this year.",
+      "project": "Solar Energy Management Platform",
+      "projectValue": "AED 90,000",
+      "completionDate": "2023-04-15",
+      "featured": false,
+      "metrics": {
+        "businessGrowth": "200% increase",
+        "energySavings": "25% optimization",
+        "clientRetention": "95% rate"
+      },
+      "tags": ["GreenTech", "IoT", "Analytics Dashboard"]
+    },
+    {
+      "id": "testimonial-10",
+      "name": "Omar Al-Rashid",
+      "role": "CEO",
+      "company": "Digital Marketing Pro",
+      "industry": "Marketing",
+      "avatar": "/images/testimonials/omar-alrashid.jpg",
+      "rating": 4,
+      "content": "The marketing automation platform built by RapidBizz transformed how we manage our clients' campaigns. The integration with multiple advertising platforms and comprehensive reporting features save us hours daily. Our team productivity has improved remarkably.",
+      "project": "Marketing Automation Platform",
+      "projectValue": "AED 80,000",
+      "completionDate": "2023-03-10",
+      "featured": false,
+      "metrics": {
+        "timeSaving": "60% reduction in manual work",
+        "campaignROI": "40% improvement",
+        "clientSatisfaction": "4.8/5 rating"
+      },
+      "tags": ["MarTech", "Automation", "Analytics"]
+    },
+    {
+      "id": "testimonial-11",
+      "name": "Sarah Wilson",
+      "role": "Head of Operations",
+      "company": "Fitness First UAE",
+      "industry": "Fitness",
+      "avatar": "/images/testimonials/sarah-wilson.jpg",
+      "rating": 5,
+      "content": "Our gym management system and member app developed by RapidBizz has revolutionized our member experience. Class bookings, personal training schedules, and payment processing are all seamlessly integrated. Member retention increased by 30% since the launch.",
+      "project": "Gym Management & Member App",
+      "projectValue": "AED 70,000",
+      "completionDate": "2023-02-25",
+      "featured": false,
+      "metrics": {
+        "memberRetention": "30% increase",
+        "bookings": "85% digital adoption",
+        "revenue": "22% growth"
+      },
+      "tags": ["Fitness Tech", "Mobile App", "Membership Management"]
+    },
+    {
+      "id": "testimonial-12",
+      "name": "Ahmed El-Sayed",
+      "role": "Founder",
+      "company": "Smart Home Technologies",
+      "industry": "IoT",
+      "avatar": "/images/testimonials/ahmed-elsayed.jpg",
+      "rating": 5,
+      "content": "RapidBizz created our IoT device management platform that connects and controls smart home devices. The scalable architecture handles thousands of concurrent connections, and the mobile app provides an intuitive user experience. Our customer base grew 5x in one year.",
+      "project": "IoT Smart Home Platform",
+      "projectValue": "AED 140,000",
+      "completionDate": "2023-01-18",
+      "featured": false,
+      "metrics": {
+        "customerGrowth": "500% increase",
+        "deviceConnections": "10,000+ concurrent",
+        "uptime": "99.95%"
+      },
+      "tags": ["IoT", "Smart Home", "Mobile App", "Scalability"]
+    }
+  ],
+  "reviewStats": {
+    "totalReviews": 12,
+    "averageRating": 4.92,
+    "fiveStarReviews": 11,
+    "fourStarReviews": 1,
+    "totalProjectValue": "AED 1,115,000",
+    "averageProjectValue": "AED 92,917",
+    "industries": [
+      "Healthcare",
+      "FinTech",
+      "E-commerce",
+      "Education",
+      "Logistics",
+      "Real Estate",
+      "Food & Beverage",
+      "Renewable Energy",
+      "Marketing",
+      "Fitness",
+      "IoT"
+    ],
+    "clientRetentionRate": "95%",
+    "referralRate": "85%",
+    "onTimeDelivery": "100%"
+  },
+  "featuredMetrics": {
+    "totalRevenue": "$5.2M+ generated for clients",
+    "averageROI": "240% return on investment",
+    "usersSatisfied": "50,000+ end users",
+    "systemsDeployed": "200+ applications"
+  }
+}

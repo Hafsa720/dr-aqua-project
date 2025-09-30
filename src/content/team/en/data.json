@@ -1,0 +1,305 @@
+{
+  "teamMembers": [
+    {
+      "id": "habib-ur-rehman",
+      "name": "Habib Ur Rehman",
+      "role": "CEO & Founder",
+      "department": "leadership",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Visionary leader and sales expert driving RapidBizz to new heights. Passionate about client relationships and business growth through innovative digital solutions.",
+      "expertise": [
+        "Strategic Leadership",
+        "Sales Management",
+        "Client Relations",
+        "Business Development"
+      ],
+      "experience": "3 years",
+      "projects": "50+",
+      "specialization": "Leadership & Sales",
+      "social": {
+        "linkedin": "https://linkedin.com/in/habiburrehman",
+        "github": "https://github.com/habiburrehman",
+        "upwork": "https://upwork.com/freelancers/habiburrehman",
+        "behance": "https://behance.net/habiburrehman",
+        "freelancer": "https://freelancer.com/u/habiburrehman"
+      },
+      "gradient": "from-blue-600 to-indigo-700",
+      "roleIcon": "FaBriefcase"
+    },
+    {
+      "id": "saif-ui-rehman",
+      "name": "Saif Ui Rehman",
+      "role": "Cyber Security Engineer",
+      "department": "security",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Cybersecurity specialist with extensive WordPress development and client management experience. Ensures robust security while delivering quality web solutions.",
+      "expertise": [
+        "Cyber Security",
+        "WordPress Development",
+        "Client Handling",
+        "Web Security"
+      ],
+      "experience": "1 year (Security) | 3 years (WordPress)",
+      "projects": "80+",
+      "specialization": "Security & WordPress",
+      "social": {
+        "linkedin": "https://linkedin.com/in/saifuirehman",
+        "github": "https://github.com/saifuirehman",
+        "upwork": "https://upwork.com/freelancers/saifuirehman",
+        "freelancer": "https://freelancer.com/u/saifuirehman",
+        "behance": "https://behance.net/saifuirehman"
+      },
+      "gradient": "from-red-500 to-rose-600",
+      "roleIcon": "FaShieldAlt"
+    },
+    {
+      "id": "hamid-mehmood",
+      "name": "Hamid Mehmood",
+      "role": "Software Engineer",
+      "department": "development",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Full-stack software engineer with expertise in AI integration and DevOps practices. Creates intelligent, scalable solutions that drive business innovation.",
+      "expertise": [
+        "Software Development",
+        "AI Integration",
+        "DevOps",
+        "Backend Systems"
+      ],
+      "experience": "3.5 years",
+      "projects": "120+",
+      "specialization": "AI & DevOps",
+      "social": {
+        "linkedin": "https://linkedin.com/in/hamidmehmood",
+        "github": "https://github.com/hamidmehmood",
+        "upwork": "https://upwork.com/freelancers/hamidmehmood",
+        "freelancer": "https://freelancer.com/u/hamidmehmood",
+        "behance": "https://behance.net/hamidmehmood"
+      },
+      "gradient": "from-green-500 to-emerald-600",
+      "roleIcon": "FaCode"
+    },
+    {
+      "id": "hafsa-rehman",
+      "name": "Hafsa Rehman",
+      "role": "Software Engineer",
+      "department": "development",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Dedicated software engineer with a passion for clean code and innovative solutions. Brings fresh perspectives and technical excellence to every project.",
+      "expertise": [
+        "Software Development",
+        "Frontend Development",
+        "Problem Solving",
+        "Code Quality"
+      ],
+      "experience": "1 year",
+      "projects": "30+",
+      "specialization": "Software Development",
+      "social": {
+        "linkedin": "https://linkedin.com/in/hafsarehman",
+        "github": "https://github.com/hafsarehman",
+        "upwork": "https://upwork.com/freelancers/hafsarehman",
+        "behance": "https://behance.net/hafsarehman",
+        "freelancer": "https://freelancer.com/u/hafsarehman"
+      },
+      "gradient": "from-purple-500 to-violet-600",
+      "roleIcon": "FaLaptopCode"
+    },
+    {
+      "id": "attiq-ur-rehman",
+      "name": "Attiq Ur Rehman",
+      "role": "UI/UX Designer",
+      "department": "design",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Creative UI/UX designer with WordPress expertise and design research passion. Crafts beautiful, user-centered experiences that blend aesthetics with functionality.",
+      "expertise": [
+        "UI/UX Design",
+        "WordPress",
+        "Design Research",
+        "User Experience"
+      ],
+      "experience": "3 years",
+      "projects": "90+",
+      "specialization": "Design & Research",
+      "social": {
+        "linkedin": "https://linkedin.com/in/attiqurrehman",
+        "behance": "https://behance.net/attiqurrehman",
+        "github": "https://github.com/attiqurrehman",
+        "freelancer": "https://freelancer.com/u/attiqurrehman",
+        "upwork": "https://upwork.com/freelancers/attiqurrehman"
+      },
+      "gradient": "from-orange-500 to-amber-600",
+      "roleIcon": "FaPaintBrush"
+    },
+    {
+      "id": "yahya",
+      "name": "Yahya",
+      "role": "Frontend Developer & Designer",
+      "department": "development",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Multi-talented frontend developer and designer with a keen eye for modern UI/UX. Combines technical skills with creative design thinking.",
+      "expertise": [
+        "Frontend Development",
+        "UI/UX Design",
+        "React",
+        "Design Systems"
+      ],
+      "experience": "1 year",
+      "projects": "25+",
+      "specialization": "Frontend & Design",
+      "social": {
+        "linkedin": "https://linkedin.com/in/yahya",
+        "github": "https://github.com/yahya",
+        "behance": "https://behance.net/yahya",
+        "upwork": "https://upwork.com/freelancers/yahya",
+        "freelancer": "https://freelancer.com/u/yahya"
+      },
+      "gradient": "from-cyan-500 to-teal-600",
+      "roleIcon": "HiCode"
+    },
+    {
+      "id": "mutti-ur-rehman",
+      "name": "Mutti Ur Rehman",
+      "role": "Frontend Intern",
+      "department": "development",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Enthusiastic frontend development intern with a passion for learning and creating modern web applications. Eager to contribute and grow.",
+      "expertise": [
+        "HTML/CSS",
+        "JavaScript",
+        "React Basics",
+        "Responsive Design"
+      ],
+      "experience": "Intern",
+      "projects": "10+",
+      "specialization": "Frontend Development",
+      "social": {
+        "linkedin": "https://linkedin.com/in/muttiurrehman",
+        "github": "https://github.com/muttiurrehman",
+        "behance": "https://behance.net/muttiurrehman",
+        "upwork": "https://upwork.com/freelancers/muttiurrehman",
+        "freelancer": "https://freelancer.com/u/muttiurrehman"
+      },
+      "gradient": "from-indigo-500 to-blue-600",
+      "roleIcon": "FaLaptopCode"
+    },
+    {
+      "id": "noor-ul-ain",
+      "name": "Noor Ul Ain",
+      "role": "Frontend Engineer Intern",
+      "department": "development",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Passionate frontend engineering intern focused on creating exceptional user interfaces. Combines creativity with technical skills to build engaging web experiences.",
+      "expertise": [
+        "Frontend Development",
+        "JavaScript",
+        "CSS",
+        "User Interface"
+      ],
+      "experience": "Intern",
+      "projects": "8+",
+      "specialization": "Frontend Engineering",
+      "social": {
+        "linkedin": "https://linkedin.com/in/noorulain",
+        "github": "https://github.com/noorulain",
+        "behance": "https://behance.net/noorulain",
+        "upwork": "https://upwork.com/freelancers/noorulain",
+        "freelancer": "https://freelancer.com/u/noorulain"
+      },
+      "gradient": "from-pink-500 to-rose-600",
+      "roleIcon": "FaLaptopCode"
+    },
+    {
+      "id": "ch-anfal",
+      "name": "Ch Anfal",
+      "role": "Design & Frontend Intern",
+      "department": "design",
+      "image": "https://placehold.co/500x500.webp",
+      "bio": "Creative design and frontend intern with a passion for user interfaces and modern web technologies. Combines design thinking with technical implementation skills.",
+      "expertise": ["HTML/CSS", "Figma", "JavaScript", "UI Design"],
+      "experience": "Intern",
+      "projects": "5+",
+      "specialization": "Design & Frontend",
+      "social": {
+        "linkedin": "https://linkedin.com/in/chanfal",
+        "github": "https://github.com/chanfal",
+        "behance": "https://behance.net/chanfal",
+        "upwork": "https://upwork.com/freelancers/chanfal",
+        "freelancer": "https://freelancer.com/u/chanfal"
+      },
+      "gradient": "from-teal-500 to-cyan-600",
+      "roleIcon": "FaPaintBrush"
+    }
+  ],
+  "teamStats": {
+    "totalMembers": 9,
+    "averageExperience": 2.1,
+    "totalProjectsCompleted": 433,
+    "certifications": 8,
+    "languages": 4,
+    "countries": 2
+  },
+  "testimonials": [
+    {
+      "content": "Working with the RapidBizz team has been transformational for our business. Their expertise and dedication are unmatched.",
+      "author": "Jennifer Martinez",
+      "role": "CEO, TechVision Corp",
+      "avatar": "https://placehold.co/100x100.webp"
+    },
+    {
+      "content": "The team's technical skills combined with their collaborative approach makes them the perfect development partner.",
+      "author": "Robert Chen",
+      "role": "CTO, InnovateLabs",
+      "avatar": "https://placehold.co/100x100.webp"
+    },
+    {
+      "content": "RapidBizz doesn't just deliver code - they deliver solutions that drive real business results and growth.",
+      "author": "Amanda Foster",
+      "role": "Founder, StartupX",
+      "avatar": "https://placehold.co/100x100.webp"
+    }
+  ],
+  "stats": [
+    {
+      "number": "50+",
+      "label": "Team Members",
+      "icon": "FaUsers"
+    },
+    {
+      "number": "500+",
+      "label": "Projects Delivered",
+      "icon": "HiCube"
+    },
+    {
+      "number": "98%",
+      "label": "Client Satisfaction",
+      "icon": "FaStar"
+    },
+    {
+      "number": "10+",
+      "label": "Years Experience",
+      "icon": "FaAward"
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Remote-First Culture",
+      "description": "Work from anywhere in the world with flexible hours and async collaboration.",
+      "icon": "HiGlobeAlt"
+    },
+    {
+      "title": "Learning & Development",
+      "description": "$3,000 annual learning budget for courses, conferences, and certifications.",
+      "icon": "FaLightbulb"
+    },
+    {
+      "title": "Health & Wellness",
+      "description": "Comprehensive healthcare, mental health support, and wellness programs.",
+      "icon": "HiHeart"
+    },
+    {
+      "title": "Cutting-Edge Tech",
+      "description": "Work with the latest technologies and tools in a modern tech stack.",
+      "icon": "HiCode"
+    }
+  ]
+}

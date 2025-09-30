@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "badge": "Award-Winning Digital Solutions",
+    "title": "Portfolio of Excellence",
+    "description": "Discover how we've transformed businesses across industries with cutting-edge technology, innovative design, and measurable results.",
+    "backgroundElements": {
+      "primary": {
+        "gradient": "from-blue-400/10 to-purple-400/10",
+        "animation": {
+          "scale": [1, 1.1, 1],
+          "rotate": [0, 5, 0],
+          "duration": 20
+        }
+      },
+      "secondary": {
+        "gradient": "from-green-400/10 to-blue-400/10",
+        "animation": {
+          "scale": [1.1, 1, 1.1],
+          "rotate": [5, 0, 5],
+          "duration": 25
+        }
+      }
+    }
+  },
+  "stats": {
+    "title": "Project Excellence",
+    "description": "Numbers that reflect our commitment to delivering exceptional results",
+    "items": [
+      {
+        "number": "50+",
+        "label": "Projects Delivered",
+        "icon": "HiCube"
+      },
+      {
+        "number": "95%",
+        "label": "Success Rate",
+        "icon": "HiTrendingUp"
+      },
+      {
+        "number": "4.9/5",
+        "label": "Client Rating",
+        "icon": "FaStar"
+      },
+      {
+        "number": "24/7",
+        "label": "Support",
+        "icon": "HiLightningBolt"
+      }
+    ]
+  },
+  "filter": {
+    "searchPlaceholder": "Search by project name, technology, or description...",
+    "categoryTitle": "Filter by Category",
+    "categories": [
+      "All",
+      "Healthcare",
+      "FinTech",
+      "E-commerce",
+      "EdTech",
+      "Enterprise"
+    ]
+  },
+  "projectsSection": {
+    "title": "Featured Projects",
+    "description": "Each project represents our commitment to excellence, innovation, and delivering measurable business impact."
+  },
+  "cta": {
+    "title": "Ready to Create Something Amazing?",
+    "description": "Let's discuss your project and create a solution that drives results and exceeds expectations.",
+    "primaryButton": "Start Your Project",
+    "primaryButtonHref": "/contact",
+    "secondaryButton": "View Services",
+    "secondaryButtonHref": "/services"
+  }
+}
