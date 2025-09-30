@@ -459,5 +459,3 @@ This Project works with any platform that supports Next.js:
 <div align="center">
   <p>Built with ❤️ for modern web development</p>
 </div>
-#   D r . a q u a - p r o j e c t  
- 
