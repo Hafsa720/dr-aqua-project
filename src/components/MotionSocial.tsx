@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 
-import { getMotionConfig,useReducedMotion } from '@/lib/hooks/useReducedMotion';
+import {
+  getMotionConfig,
+  useReducedMotion,
+} from '@/lib/hooks/useReducedMotion';
 
 interface PropsSocial {
   title: React.ReactNode;
@@ -50,7 +53,7 @@ const MotionSocial: FC<PropsSocial> = ({
       whileHover: 'visible',
       initial: 'hidden',
     },
-    prefersReducedMotion
+    prefersReducedMotion,
   );
 
   const underlineMotionProps = getMotionConfig(
@@ -70,7 +73,7 @@ const MotionSocial: FC<PropsSocial> = ({
         mass: 3,
       },
     },
-    prefersReducedMotion
+    prefersReducedMotion,
   );
 
   return (

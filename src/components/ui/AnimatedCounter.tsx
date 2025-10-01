@@ -3,7 +3,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { motion } from '@/components/MotionWrapper';
-import { getMotionConfig,useReducedMotion } from '@/lib/hooks/useReducedMotion';
+import {
+  getMotionConfig,
+  useReducedMotion,
+} from '@/lib/hooks/useReducedMotion';
 
 interface AnimatedCounterProps {
   value: string;
@@ -93,15 +96,11 @@ export default function AnimatedCounter({
         duration: 0.6,
       },
     },
-    prefersReducedMotion
+    prefersReducedMotion,
   );
 
   return (
-    <motion.span
-      ref={ref}
-      className={className}
-      {...motionProps}
-    >
+    <motion.span ref={ref} className={className} {...motionProps}>
       {displayValue}
     </motion.span>
   );

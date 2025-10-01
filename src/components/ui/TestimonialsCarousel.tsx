@@ -158,7 +158,6 @@ export default function TestimonialsCarousel({
           className='text-center relative min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex flex-col justify-center'
         >
           <div className='bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-200 dark:border-slate-700 relative overflow-hidden flex-1 flex flex-col justify-center'>
-
             {/* Stars - simplified */}
             <div className='flex justify-center mb-8'>
               {[1, 2, 3, 4, 5].map((star) => (

@@ -102,7 +102,6 @@ const TeamPage = () => {
     <div className='relative overflow-hidden bg-white dark:bg-slate-900'>
       {/* Hero Section - Modern Team Introduction */}
       <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 overflow-hidden'>
-
         <div className='layout relative z-10 page-header-spacing'>
           <div className='text-center mb-20'>
             <motion.div

@@ -25,15 +25,52 @@ export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export interface GridItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  col?: 'auto' | 'span-1' | 'span-2' | 'span-3' | 'span-4' | 'span-5' | 'span-6' | 'span-7' | 'span-8' | 'span-9' | 'span-10' | 'span-11' | 'span-12' | 'span-full';
+  col?:
+    | 'auto'
+    | 'span-1'
+    | 'span-2'
+    | 'span-3'
+    | 'span-4'
+    | 'span-5'
+    | 'span-6'
+    | 'span-7'
+    | 'span-8'
+    | 'span-9'
+    | 'span-10'
+    | 'span-11'
+    | 'span-12'
+    | 'span-full';
   colStart?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 'auto';
   colEnd?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 'auto';
-  row?: 'auto' | 'span-1' | 'span-2' | 'span-3' | 'span-4' | 'span-5' | 'span-6' | 'span-full';
+  row?:
+    | 'auto'
+    | 'span-1'
+    | 'span-2'
+    | 'span-3'
+    | 'span-4'
+    | 'span-5'
+    | 'span-6'
+    | 'span-full';
   rowStart?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 'auto';
   rowEnd?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 'auto';
   justifySelf?: 'auto' | 'start' | 'end' | 'center' | 'stretch';
   alignSelf?: 'auto' | 'start' | 'end' | 'center' | 'stretch';
-  order?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'first' | 'last' | 'none';
+  order?:
+    | 1
+    | 2
+    | 3
+    | 4
+    | 5
+    | 6
+    | 7
+    | 8
+    | 9
+    | 10
+    | 11
+    | 12
+    | 'first'
+    | 'last'
+    | 'none';
 }
 
 /**
@@ -70,7 +107,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const getColsClass = (cols: GridProps['cols'], prefix = '') => {
       if (!cols) return '';
@@ -105,7 +142,10 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
       return flowMap[flow];
     };
 
-    const getPlaceClass = (place: string | undefined, type: 'items' | 'content') => {
+    const getPlaceClass = (
+      place: string | undefined,
+      type: 'items' | 'content',
+    ) => {
       if (!place) return '';
       const prefix = type === 'items' ? 'place-items' : 'place-content';
       return `${prefix}-${place}`;
@@ -132,14 +172,14 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(
           getFlowClass(flow || autoFlow),
           getPlaceClass(placeItems, 'items'),
           getPlaceClass(placeContent, 'content'),
-          className
+          className,
         )}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
 /**
@@ -167,7 +207,7 @@ const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const getColClass = () => {
       if (col === 'auto') return 'col-auto';
@@ -189,12 +229,21 @@ const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
       return '';
     };
 
-    const getStartEndClass = (value: number | 'auto' | undefined, type: 'col' | 'row', position: 'start' | 'end') => {
+    const getStartEndClass = (
+      value: number | 'auto' | undefined,
+      type: 'col' | 'row',
+      position: 'start' | 'end',
+    ) => {
       if (!value) return '';
-      return value === 'auto' ? `${type}-${position}-auto` : `${type}-${position}-${value}`;
+      return value === 'auto'
+        ? `${type}-${position}-auto`
+        : `${type}-${position}-${value}`;
     };
 
-    const getSelfClass = (value: string | undefined, type: 'justify' | 'align') => {
+    const getSelfClass = (
+      value: string | undefined,
+      type: 'justify' | 'align',
+    ) => {
       if (!value) return '';
       return `${type}-self-${value}`;
     };
@@ -220,14 +269,14 @@ const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
           getSelfClass(justifySelf, 'justify'),
           getSelfClass(alignSelf, 'align'),
           getOrderClass(),
-          className
+          className,
         )}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
 Grid.displayName = 'Grid';

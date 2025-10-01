@@ -53,7 +53,10 @@
   "resources": [
     { "name": "Documentation", "href": "#documentation" },
     { "name": "Component Library", "href": "/components-demo" },
-    { "name": "GitHub Repository", "href": "https://github.com/your-username/starter-template" },
+    {
+      "name": "GitHub Repository",
+      "href": "https://github.com/your-username/starter-template"
+    },
     { "name": "Release Notes", "href": "/changelog" }
   ],
   "legal": [

@@ -54,7 +54,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const getDirectionClass = (dir: StackProps['direction'], prefix = '') => {
       if (!dir) return '';
@@ -115,7 +115,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
             getAlignClass(styles.align, breakpoint),
             getJustifyClass(styles.justify, breakpoint),
             getGapClass(styles.gap, breakpoint),
-          ].filter(Boolean)
+          ].filter(Boolean),
         )
       : [];
 
@@ -126,9 +126,9 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
           acc.push(child);
           if (index < childrenArray.length - 1) {
             acc.push(
-              <div key={`divider-${index}`} className="flex-shrink-0">
+              <div key={`divider-${index}`} className='flex-shrink-0'>
                 {divider}
-              </div>
+              </div>,
             );
           }
           return acc;
@@ -146,14 +146,14 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
           getWrapClass(),
           getGapClass(gap),
           ...responsiveClasses,
-          className
+          className,
         )}
         {...props}
       >
         {childrenWithDividers}
       </Component>
     );
-  }
+  },
 );
 
 /**
@@ -162,8 +162,8 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
  */
 const HStack = forwardRef<HTMLDivElement, HStackProps>(
   ({ spacing = 4, ...props }, ref) => (
-    <Stack ref={ref} direction="row" gap={spacing} {...props} />
-  )
+    <Stack ref={ref} direction='row' gap={spacing} {...props} />
+  ),
 );
 
 /**
@@ -172,8 +172,8 @@ const HStack = forwardRef<HTMLDivElement, HStackProps>(
  */
 const VStack = forwardRef<HTMLDivElement, VStackProps>(
   ({ spacing = 4, ...props }, ref) => (
-    <Stack ref={ref} direction="col" gap={spacing} {...props} />
-  )
+    <Stack ref={ref} direction='col' gap={spacing} {...props} />
+  ),
 );
 
 Stack.displayName = 'Stack';

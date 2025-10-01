@@ -6,8 +6,24 @@ import { cn } from '@/lib/utils';
 
 export interface LoadingProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'spinner' | 'dots' | 'pulse' | 'bars' | 'ring' | 'ripple' | 'square' | 'wave';
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info' | 'gray' | 'white';
+  variant?:
+    | 'spinner'
+    | 'dots'
+    | 'pulse'
+    | 'bars'
+    | 'ring'
+    | 'ripple'
+    | 'square'
+    | 'wave';
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'error'
+    | 'info'
+    | 'gray'
+    | 'white';
   speed?: 'slow' | 'normal' | 'fast';
   text?: string;
   overlay?: boolean;
@@ -43,30 +59,35 @@ const speedClasses = {
 };
 
 // Individual loading variants
-const SpinnerLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => (
-  <svg
-    className={cn(size, color, speed)}
-    fill="none"
-    viewBox="0 0 24 24"
-  >
+const SpinnerLoader: React.FC<{
+  size: string;
+  color: string;
+  speed: string;
+}> = ({ size, color, speed }) => (
+  <svg className={cn(size, color, speed)} fill='none' viewBox='0 0 24 24'>
     <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
+      className='opacity-25'
+      cx='12'
+      cy='12'
+      r='10'
+      stroke='currentColor'
+      strokeWidth='4'
     ></circle>
     <path
-      className="opacity-75"
-      fill="currentColor"
-      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      className='opacity-75'
+      fill='currentColor'
+      d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
     ></path>
   </svg>
 );
 
-const DotsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => {
-  const animationDelay = speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.3s' : '0.2s';
+const DotsLoader: React.FC<{ size: string; color: string; speed: string }> = ({
+  size,
+  color,
+  speed,
+}) => {
+  const animationDelay =
+    speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.3s' : '0.2s';
 
   return (
     <div className={cn('flex space-x-1', color)}>
@@ -74,12 +95,18 @@ const DotsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ 
         <div
           key={i}
           className={cn(
-            size.replace('w-', 'w-').replace('h-', 'h-').replace(/\d+/, (match) => String(Math.max(1, parseInt(match) / 2))),
-            'bg-current rounded-full animate-pulse'
+            size
+              .replace('w-', 'w-')
+              .replace('h-', 'h-')
+              .replace(/\d+/, (match) =>
+                String(Math.max(1, parseInt(match) / 2)),
+              ),
+            'bg-current rounded-full animate-pulse',
           )}
           style={{
             animationDelay: `${i * parseFloat(animationDelay)}`,
-            animationDuration: speed === 'fast' ? '0.6s' : speed === 'slow' ? '1.4s' : '1s',
+            animationDuration:
+              speed === 'fast' ? '0.6s' : speed === 'slow' ? '1.4s' : '1s',
           }}
         />
       ))}
@@ -87,20 +114,32 @@ const DotsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ 
   );
 };
 
-const PulseLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => (
+const PulseLoader: React.FC<{ size: string; color: string; speed: string }> = ({
+  size,
+  color,
+  speed,
+}) => (
   <div
     className={cn(
       size,
       color,
       'bg-current rounded-full',
-      speed === 'fast' ? 'animate-pulse [animation-duration:0.5s]' :
-      speed === 'slow' ? 'animate-pulse [animation-duration:2s]' : 'animate-pulse'
+      speed === 'fast'
+        ? 'animate-pulse [animation-duration:0.5s]'
+        : speed === 'slow'
+          ? 'animate-pulse [animation-duration:2s]'
+          : 'animate-pulse',
     )}
   />
 );
 
-const BarsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => {
-  const animationDelay = speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.3s' : '0.2s';
+const BarsLoader: React.FC<{ size: string; color: string; speed: string }> = ({
+  size,
+  color,
+  speed,
+}) => {
+  const animationDelay =
+    speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.3s' : '0.2s';
 
   return (
     <div className={cn('flex items-end space-x-1', color)}>
@@ -109,8 +148,13 @@ const BarsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ 
           key={i}
           className={cn(
             'bg-current',
-            size.replace('w-', 'w-').replace('h-', 'h-').replace(/\d+/, (match) => String(Math.max(1, parseInt(match) / 4))),
-            size.replace('w-', 'h-')
+            size
+              .replace('w-', 'w-')
+              .replace('h-', 'h-')
+              .replace(/\d+/, (match) =>
+                String(Math.max(1, parseInt(match) / 4)),
+              ),
+            size.replace('w-', 'h-'),
           )}
           style={{
             animationDelay: `${i * parseFloat(animationDelay)}`,
@@ -122,42 +166,54 @@ const BarsLoader: React.FC<{ size: string; color: string; speed: string }> = ({ 
   );
 };
 
-const RingLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => (
+const RingLoader: React.FC<{ size: string; color: string; speed: string }> = ({
+  size,
+  color,
+  speed,
+}) => (
   <svg
-    className={cn(size, color, speedClasses[speed as keyof typeof speedClasses])}
-    fill="none"
-    viewBox="0 0 24 24"
+    className={cn(
+      size,
+      color,
+      speedClasses[speed as keyof typeof speedClasses],
+    )}
+    fill='none'
+    viewBox='0 0 24 24'
   >
     <circle
-      className="opacity-25"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
+      className='opacity-25'
+      cx='12'
+      cy='12'
+      r='10'
+      stroke='currentColor'
+      strokeWidth='4'
     ></circle>
     <circle
-      className="opacity-75"
-      cx="12"
-      cy="12"
-      r="10"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeDasharray="32"
-      strokeDashoffset="32"
-      strokeLinecap="round"
+      className='opacity-75'
+      cx='12'
+      cy='12'
+      r='10'
+      stroke='currentColor'
+      strokeWidth='4'
+      strokeDasharray='32'
+      strokeDashoffset='32'
+      strokeLinecap='round'
     ></circle>
   </svg>
 );
 
-const RippleLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => (
+const RippleLoader: React.FC<{
+  size: string;
+  color: string;
+  speed: string;
+}> = ({ size, color, speed }) => (
   <div className={cn('relative', size)}>
     {[0, 1].map((i) => (
       <div
         key={i}
         className={cn(
           'absolute inset-0 border border-current rounded-full',
-          color
+          color,
         )}
         style={{
           animation: `loading-ripple ${speed === 'fast' ? '0.8s' : speed === 'slow' ? '2s' : '1.2s'} infinite`,
@@ -168,20 +224,32 @@ const RippleLoader: React.FC<{ size: string; color: string; speed: string }> = (
   </div>
 );
 
-const SquareLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => (
+const SquareLoader: React.FC<{
+  size: string;
+  color: string;
+  speed: string;
+}> = ({ size, color, speed }) => (
   <div
     className={cn(
       size,
       color,
       'bg-current',
-      speed === 'fast' ? 'animate-spin [animation-duration:0.6s]' :
-      speed === 'slow' ? 'animate-spin [animation-duration:1.8s]' : 'animate-spin [animation-duration:1.2s]'
+      speed === 'fast'
+        ? 'animate-spin [animation-duration:0.6s]'
+        : speed === 'slow'
+          ? 'animate-spin [animation-duration:1.8s]'
+          : 'animate-spin [animation-duration:1.2s]',
     )}
   />
 );
 
-const WaveLoader: React.FC<{ size: string; color: string; speed: string }> = ({ size, color, speed }) => {
-  const animationDelay = speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.2s' : '0.15s';
+const WaveLoader: React.FC<{ size: string; color: string; speed: string }> = ({
+  size,
+  color,
+  speed,
+}) => {
+  const animationDelay =
+    speed === 'fast' ? '0.1s' : speed === 'slow' ? '0.2s' : '0.15s';
 
   return (
     <div className={cn('flex items-center space-x-1', color)}>
@@ -190,8 +258,13 @@ const WaveLoader: React.FC<{ size: string; color: string; speed: string }> = ({ 
           key={i}
           className={cn(
             'bg-current rounded-full',
-            size.replace('w-', 'w-').replace('h-', 'h-').replace(/\d+/, (match) => String(Math.max(1, parseInt(match) / 4))),
-            size.replace('w-', 'h-')
+            size
+              .replace('w-', 'w-')
+              .replace('h-', 'h-')
+              .replace(/\d+/, (match) =>
+                String(Math.max(1, parseInt(match) / 4)),
+              ),
+            size.replace('w-', 'h-'),
           )}
           style={{
             animationDelay: `${i * parseFloat(animationDelay)}`,
@@ -224,7 +297,9 @@ const Loading: React.FC<LoadingProps> = ({
     const loaderProps = {
       size: sizeClasses.size,
       color: colorClass,
-      speed: speedClasses[speed].includes('[animation-duration') ? speed : 'normal',
+      speed: speedClasses[speed].includes('[animation-duration')
+        ? speed
+        : 'normal',
     };
 
     switch (variant) {
@@ -255,7 +330,7 @@ const Loading: React.FC<LoadingProps> = ({
         sizeClasses.gap,
         text ? 'flex-row' : 'justify-center',
         center && 'justify-center',
-        className
+        className,
       )}
       {...props}
     >
@@ -275,7 +350,7 @@ const Loading: React.FC<LoadingProps> = ({
           'flex items-center justify-center',
           fullscreen ? 'fixed inset-0' : 'absolute inset-0',
           backdrop && 'bg-white/80 backdrop-blur-sm',
-          'z-50'
+          'z-50',
         )}
         style={{ zIndex }}
       >
@@ -288,7 +363,8 @@ const Loading: React.FC<LoadingProps> = ({
 };
 
 // Button with loading state
-export interface LoadingButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface LoadingButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   loadingText?: string;
   loadingVariant?: LoadingProps['variant'];
@@ -311,24 +387,22 @@ export const LoadingButton: React.FC<LoadingButtonProps> = ({
       className={cn(
         'relative inline-flex items-center justify-center',
         loading && 'cursor-not-allowed',
-        className
+        className,
       )}
       disabled={disabled || loading}
       {...props}
     >
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className='absolute inset-0 flex items-center justify-center'>
           <Loading
             variant={loadingVariant}
             size={loadingSize}
-            color="white"
+            color='white'
             text={loadingText}
           />
         </div>
       )}
-      <span className={cn(loading && 'opacity-0')}>
-        {children}
-      </span>
+      <span className={cn(loading && 'opacity-0')}>{children}</span>
     </button>
   );
 };
@@ -352,12 +426,17 @@ export const PageLoading: React.FC<PageLoadingProps> = ({
   className,
 }) => {
   return (
-    <div className={cn('flex flex-col items-center justify-center min-h-[400px] p-8', className)}>
+    <div
+      className={cn(
+        'flex flex-col items-center justify-center min-h-[400px] p-8',
+        className,
+      )}
+    >
       <Loading variant={variant} size={size} color={color} />
-      <div className="mt-4 text-center">
-        <h3 className="text-lg font-medium text-gray-900">{title}</h3>
+      <div className='mt-4 text-center'>
+        <h3 className='text-lg font-medium text-gray-900'>{title}</h3>
         {description && (
-          <p className="mt-1 text-sm text-gray-500">{description}</p>
+          <p className='mt-1 text-sm text-gray-500'>{description}</p>
         )}
       </div>
     </div>
@@ -436,7 +515,10 @@ export const useLoading = (initialState = false) => {
 
   const startLoading = React.useCallback(() => setLoading(true), []);
   const stopLoading = React.useCallback(() => setLoading(false), []);
-  const toggleLoading = React.useCallback(() => setLoading(prev => !prev), []);
+  const toggleLoading = React.useCallback(
+    () => setLoading((prev) => !prev),
+    [],
+  );
 
   return {
     loading,
@@ -450,17 +532,19 @@ export const useLoading = (initialState = false) => {
 // Higher-order component for loading states
 export const withLoading = <P extends object>(
   Component: React.ComponentType<P>,
-  LoadingComponent: React.ComponentType = SuspenseLoading
+  LoadingComponent: React.ComponentType = SuspenseLoading,
 ) => {
-  const WrappedComponent = React.forwardRef<any, P & { loading?: boolean }>((props, ref) => {
-    const { loading, ...rest } = props;
+  const WrappedComponent = React.forwardRef<any, P & { loading?: boolean }>(
+    (props, ref) => {
+      const { loading, ...rest } = props;
 
-    if (loading) {
-      return <LoadingComponent />;
-    }
+      if (loading) {
+        return <LoadingComponent />;
+      }
 
-    return <Component ref={ref} {...(rest as P)} />;
-  });
+      return <Component ref={ref} {...(rest as P)} />;
+    },
+  );
 
   WrappedComponent.displayName = `withLoading(${Component.displayName || Component.name || 'Component'})`;
 

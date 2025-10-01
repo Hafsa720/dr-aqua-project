@@ -20,11 +20,18 @@ export function useReducedMotion(): boolean {
 
 export function getMotionConfig(
   config: Record<string, any>,
-  reducedMotion: boolean
+  reducedMotion: boolean,
 ) {
   if (reducedMotion) {
     // Disable animations by removing animation-related properties
-    const { variants: _variants, transition: _transition, whileHover: _whileHover, whileTap: _whileTap, animate: _animate, ...rest } = config;
+    const {
+      variants: _variants,
+      transition: _transition,
+      whileHover: _whileHover,
+      whileTap: _whileTap,
+      animate: _animate,
+      ...rest
+    } = config;
     return {
       ...rest,
       transition: { duration: 0 },

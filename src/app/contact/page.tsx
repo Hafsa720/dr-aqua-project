@@ -136,7 +136,7 @@ const ContactPage = () => {
   return (
     <div>
       {/* Page Hero */}
-      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900/20 overflow-hidden'>
+      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-primary-100/30 to-primary-200/50 overflow-hidden'>
         {/* Background Pattern */}
         <div className='absolute inset-0'>
           <motion.div
@@ -149,7 +149,7 @@ const ContactPage = () => {
               repeat: Infinity,
               ease: 'linear',
             }}
-            className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl'
+            className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-400/10 to-secondary-400/10 rounded-full blur-3xl'
           />
         </div>
 
@@ -157,7 +157,7 @@ const ContactPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full text-sm font-medium text-blue-700 dark:text-blue-300 mb-8'
+            className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full text-sm font-medium text-primary-700 mb-8'
           >
             <FaEnvelope className='w-4 h-4' />
             <span>{contactContent.hero.subtitle}</span>
@@ -169,9 +169,9 @@ const ContactPage = () => {
             transition={{ delay: 0.1 }}
             className='text-5xl md:text-7xl font-bold leading-tight mb-8'
           >
-            <span className='text-slate-900 dark:text-white'>Get In</span>
+            <span className='text-primary-900'>Get In</span>
             <br />
-            <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-700 bg-clip-text text-transparent'>
               Touch
             </span>
           </motion.h1>
@@ -179,7 +179,7 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed'
+            className='text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed'
           >
             {contactContent.hero.description}
           </motion.p>

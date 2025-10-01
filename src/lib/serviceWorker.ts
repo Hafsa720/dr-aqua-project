@@ -2,9 +2,11 @@
 
 const isLocalhost = Boolean(
   typeof window !== 'undefined' &&
-  (window.location.hostname === 'localhost' ||
-   window.location.hostname === '[::1]' ||
-   window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/))
+    (window.location.hostname === 'localhost' ||
+      window.location.hostname === '[::1]' ||
+      window.location.hostname.match(
+        /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
+      )),
 );
 
 type Config = {
@@ -42,7 +44,7 @@ export function register(config?: Config) {
       checkValidServiceWorker(swUrl, config);
       navigator.serviceWorker.ready.then(() => {
         console.log(
-          'This web app is being served cache-first by a service worker.'
+          'This web app is being served cache-first by a service worker.',
         );
       });
     } else {
@@ -75,7 +77,7 @@ function registerValidSW(swUrl: string, config?: Config) {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
               console.log(
-                'New content is available and will be used when all tabs for this page are closed.'
+                'New content is available and will be used when all tabs for this page are closed.',
               );
               config?.onUpdate?.(registration);
             } else {
@@ -111,7 +113,9 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
       }
     })
     .catch(() => {
-      console.log('No internet connection found. App is running in offline mode.');
+      console.log(
+        'No internet connection found. App is running in offline mode.',
+      );
     });
 }
 
@@ -165,9 +169,7 @@ export async function clearCache(): Promise<boolean> {
 
   try {
     const cacheNames = await caches.keys();
-    await Promise.all(
-      cacheNames.map(name => caches.delete(name))
-    );
+    await Promise.all(cacheNames.map((name) => caches.delete(name)));
     return true;
   } catch (error) {
     console.error('Error clearing cache:', error);

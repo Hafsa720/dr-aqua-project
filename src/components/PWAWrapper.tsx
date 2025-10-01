@@ -54,7 +54,7 @@ const PWAWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <>
       {children}
-      <InstallPrompt variant="banner" position="bottom" />
+      <InstallPrompt variant='banner' position='bottom' />
     </>
   );
 };

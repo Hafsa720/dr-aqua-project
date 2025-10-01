@@ -4,12 +4,7 @@ const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
 // Assets to cache immediately
-const STATIC_ASSETS = [
-  '/',
-  '/favicon.ico',
-  '/logo.svg',
-  '/manifest.json',
-];
+const STATIC_ASSETS = ['/', '/favicon.ico', '/logo.svg', '/manifest.json'];
 
 // Routes to cache with network-first strategy
 const DYNAMIC_ROUTES = [
@@ -22,10 +17,11 @@ const DYNAMIC_ROUTES = [
 ];
 
 // Install event - cache static assets
-self.addEventListener('install', event => {
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
-      .then(cache => {
+    caches
+      .open(STATIC_CACHE)
+      .then((cache) => {
         console.log('Service Worker: Caching static assets');
         return cache.addAll(STATIC_ASSETS);
       })
@@ -33,37 +29,38 @@ self.addEventListener('install', event => {
         console.log('Service Worker: Installed and static assets cached');
         return self.skipWaiting();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('Service Worker: Error caching static assets', err);
-      })
+      }),
   );
 });
 
 // Activate event - clean up old caches
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys()
-      .then(cacheNames => {
+    caches
+      .keys()
+      .then((cacheNames) => {
         return Promise.all(
           cacheNames
-            .filter(cacheName => {
+            .filter((cacheName) => {
               return cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE;
             })
-            .map(cacheName => {
+            .map((cacheName) => {
               console.log('Service Worker: Deleting old cache', cacheName);
               return caches.delete(cacheName);
-            })
+            }),
         );
       })
       .then(() => {
         console.log('Service Worker: Activated and old caches cleaned');
         return self.clients.claim();
-      })
+      }),
   );
 });
 
 // Fetch event - implement caching strategies
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
@@ -78,17 +75,21 @@ self.addEventListener('fetch', event => {
   }
 
   // Strategy for static assets (images, fonts, etc.)
-  if (request.destination === 'image' ||
-      request.destination === 'font' ||
-      request.destination === 'style' ||
-      request.destination === 'script') {
+  if (
+    request.destination === 'image' ||
+    request.destination === 'font' ||
+    request.destination === 'style' ||
+    request.destination === 'script'
+  ) {
     event.respondWith(cacheFirst(request));
     return;
   }
 
   // Strategy for HTML pages
-  if (request.destination === 'document' ||
-      DYNAMIC_ROUTES.some(route => url.pathname.startsWith(route))) {
+  if (
+    request.destination === 'document' ||
+    DYNAMIC_ROUTES.some((route) => url.pathname.startsWith(route))
+  ) {
     event.respondWith(networkFirst(request));
     return;
   }
@@ -160,7 +161,7 @@ async function networkFirst(request) {
 }
 
 // Background sync for offline actions
-self.addEventListener('sync', event => {
+self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
   }
@@ -173,7 +174,7 @@ async function doBackgroundSync() {
 }
 
 // Push notifications
-self.addEventListener('push', event => {
+self.addEventListener('push', (event) => {
   if (!event.data) {
     return;
   }
@@ -185,16 +186,14 @@ self.addEventListener('push', event => {
     badge: '/favicon/android-chrome-192x192.png',
     vibrate: [100, 50, 100],
     data: data.data || {},
-    actions: data.actions || []
+    actions: data.actions || [],
   };
 
-  event.waitUntil(
-    self.registration.showNotification(data.title, options)
-  );
+  event.waitUntil(self.registration.showNotification(data.title, options));
 });
 
 // Notification click handler
-self.addEventListener('notificationclick', event => {
+self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   if (event.action) {
@@ -202,14 +201,12 @@ self.addEventListener('notificationclick', event => {
     console.log('Service Worker: Notification action clicked', event.action);
   } else {
     // Handle notification click
-    event.waitUntil(
-      clients.openWindow('/')
-    );
+    event.waitUntil(clients.openWindow('/'));
   }
 });
 
 // Message handler for communication with main thread
-self.addEventListener('message', event => {
+self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }

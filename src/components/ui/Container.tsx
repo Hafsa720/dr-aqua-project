@@ -5,7 +5,19 @@ import React, { forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full';
+  size?:
+    | 'xs'
+    | 'sm'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | '6xl'
+    | '7xl'
+    | 'full';
   fluid?: boolean;
   centerContent?: boolean;
   paddingX?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -45,17 +57,17 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
     const getSizeClass = () => {
       if (fluid) return 'w-full';
 
       const sizeMap = {
-        xs: 'max-w-xs',    // 320px
-        sm: 'max-w-sm',    // 384px
-        md: 'max-w-md',    // 448px
-        lg: 'max-w-4xl',   // 896px
-        xl: 'max-w-5xl',   // 1024px
+        xs: 'max-w-xs', // 320px
+        sm: 'max-w-sm', // 384px
+        md: 'max-w-md', // 448px
+        lg: 'max-w-4xl', // 896px
+        xl: 'max-w-5xl', // 1024px
         '2xl': 'max-w-6xl', // 1152px
         '3xl': 'max-w-7xl', // 1280px
         '4xl': 'max-w-[1440px]',
@@ -68,7 +80,10 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
       return sizeMap[size];
     };
 
-    const getSpacingClass = (value: number | 'auto' | undefined, type: 'p' | 'px' | 'py' | 'm' | 'mx' | 'my') => {
+    const getSpacingClass = (
+      value: number | 'auto' | undefined,
+      type: 'p' | 'px' | 'py' | 'm' | 'mx' | 'my',
+    ) => {
       if (value === undefined) return '';
       if (value === 'auto') return `${type}-auto`;
       return `${type}-${value}`;
@@ -98,14 +113,14 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
             'flex flex-col items-center justify-center': centerContent,
           },
           ...spacingClasses,
-          className
+          className,
         )}
         {...props}
       >
         {children}
       </Component>
     );
-  }
+  },
 );
 
 Container.displayName = 'Container';

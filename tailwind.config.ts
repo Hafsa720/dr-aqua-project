@@ -23,32 +23,40 @@ const config: Config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+          // 4 colors before #452E72
+          50: '#F5F3FA', // Very light purple
+          100: '#E8E1F3', // Light purple
+          200: '#D4C5E8', // Lighter purple
+          300: '#B8A1D8', // Light-medium purple
+          400: '#9679C5', // Medium-light purple
+          // Base color #452E72
+          500: '#452E72', // Base primary color
+          // 6 colors after #452E72
+          600: '#3D2865', // Darker purple
+          700: '#352258', // Darker purple
+          800: '#2D1C4B', // Much darker purple
+          900: '#25163E', // Very dark purple
+          950: '#1D1031', // Extremely dark purple
+          1000: '#150A24', // Almost black purple
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
-          950: '#431407',
+          // 4 colors before #DE261E
+          50: '#FEF2F2', // Very light red
+          100: '#FEE2E2', // Light red
+          200: '#FECACA', // Lighter red
+          300: '#FCA5A5', // Light-medium red
+          400: '#F87171', // Medium-light red
+          // Base color #DE261E
+          500: '#DE261E', // Base secondary color
+          // 6 colors after #DE261E
+          600: '#C8211B', // Darker red
+          700: '#B21D18', // Darker red
+          800: '#9C1815', // Much darker red
+          900: '#861312', // Very dark red
+          950: '#700F0F', // Extremely dark red
+          1000: '#5A0C0C', // Almost black red
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',

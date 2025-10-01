@@ -44,7 +44,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
       decorative = true,
       ...props
     },
-    ref
+    ref,
   ) => {
     const isHorizontal = orientation === 'horizontal';
 
@@ -105,10 +105,14 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
 
       const gradientColors = {
         gray: 'from-transparent via-gray-300 to-transparent dark:via-gray-700',
-        primary: 'from-transparent via-primary-300 to-transparent dark:via-primary-700',
-        secondary: 'from-transparent via-secondary-300 to-transparent dark:via-secondary-700',
-        success: 'from-transparent via-green-300 to-transparent dark:via-green-700',
-        warning: 'from-transparent via-yellow-300 to-transparent dark:via-yellow-700',
+        primary:
+          'from-transparent via-primary-300 to-transparent dark:via-primary-700',
+        secondary:
+          'from-transparent via-secondary-300 to-transparent dark:via-secondary-700',
+        success:
+          'from-transparent via-green-300 to-transparent dark:via-green-700',
+        warning:
+          'from-transparent via-yellow-300 to-transparent dark:via-yellow-700',
         error: 'from-transparent via-red-300 to-transparent dark:via-red-700',
       };
 
@@ -123,7 +127,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
           'bg-gradient-to-r',
           gradientColors[color],
           thicknessHeight[thickness],
-          isHorizontal ? 'w-full' : 'h-full'
+          isHorizontal ? 'w-full' : 'h-full',
         ),
       };
     };
@@ -140,7 +144,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
               isHorizontal ? 'items-center' : 'justify-center flex-col',
               getLengthClass(),
               getSpacingClass(),
-              className
+              className,
             )}
             role={decorative ? 'presentation' : 'separator'}
             aria-orientation={orientation}
@@ -161,7 +165,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
             getThicknessClass(),
             getColorClass(),
             isHorizontal ? 'border-t' : 'border-l h-full',
-            className
+            className,
           )}
           role={decorative ? 'presentation' : 'separator'}
           aria-orientation={orientation}
@@ -195,7 +199,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
             getVariantClass(),
             getThicknessClass(),
             getColorClass(),
-            className
+            className,
           )}
         />
       );
@@ -209,26 +213,24 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
           getLengthClass(),
           getSpacingClass(),
           getLabelPositionClass(),
-          className
+          className,
         )}
         role={decorative ? 'presentation' : 'separator'}
         aria-orientation={orientation}
         {...props}
       >
-        {(labelPosition === 'center' || labelPosition === 'right') && (
-          renderDividerLine('mr-3')
-        )}
+        {(labelPosition === 'center' || labelPosition === 'right') &&
+          renderDividerLine('mr-3')}
 
-        <span className="flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 px-2">
+        <span className='flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 px-2'>
           {label}
         </span>
 
-        {(labelPosition === 'center' || labelPosition === 'left') && (
-          renderDividerLine('ml-3')
-        )}
+        {(labelPosition === 'center' || labelPosition === 'left') &&
+          renderDividerLine('ml-3')}
       </div>
     );
-  }
+  },
 );
 
 Divider.displayName = 'Divider';

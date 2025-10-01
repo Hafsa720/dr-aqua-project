@@ -2,6 +2,7 @@
 
 import { Monitor, Moon, Sun } from 'lucide-react';
 
+import { useThemeContext } from '@/components/layout/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -11,8 +12,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import type { Theme } from '@/lib/hooks/useTheme';
 import { cn } from '@/lib/utils';
-
-import { useThemeContext } from './ThemeProvider';
 
 const themeOptions: Array<{
   value: Theme;

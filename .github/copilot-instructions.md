@@ -55,22 +55,26 @@ src/
 ### Custom Components (12)
 
 **Layout Components**:
+
 - `Container.tsx` - Content container with size presets (sm, md, lg, xl, 2xl)
 - `Grid.tsx` - Responsive CSS Grid wrapper
 - `Stack.tsx` - Vertical/horizontal flex stack (HStack, VStack)
 - `Divider.tsx` - Visual separator with label support
 
 **Display Components**:
+
 - `AnimatedCounter.tsx` - Animated number counter with IntersectionObserver
 - `GradientBadge.tsx` - Badge with gradient background
 - `EmptyState.tsx` - Empty state display with action buttons
 
 **Feedback Components**:
+
 - `Loading.tsx` - 8 variants (spinner, dots, pulse, bars, ring, ripple, square, wave)
   - Includes: LoadingButton, PageLoading, SuspenseLoading, LoadingOverlay
   - Hook: `useLoading()` for state management
 
 **Utility Components**:
+
 - `MarkdownRenderer.tsx` - Markdown to React component
 - `ProjectPageClient.tsx` - Client-side project page wrapper
 - `SectionGradient.tsx` - Section background gradients
@@ -79,6 +83,7 @@ src/
 ### Shadcn Components (9)
 
 Essential form and UI components from shadcn/ui:
+
 - `button.tsx` - Button with variants
 - `checkbox.tsx` - Checkbox with label
 - `dropdown-menu.tsx` - Dropdown menu system
@@ -96,6 +101,7 @@ Essential form and UI components from shadcn/ui:
 Located in `src/lib/hooks/`:
 
 **State Management**:
+
 ```typescript
 // Persistent localStorage with SSR safety
 const [value, setValue, remove] = useLocalStorage('key', initialValue);
@@ -111,6 +117,7 @@ const { copy, copied, error } = useClipboard();
 ```
 
 **UI Hooks**:
+
 ```typescript
 // Intersection observer for scroll animations
 const isVisible = useIntersectionObserver(ref, { threshold: 0.1 });
@@ -126,6 +133,7 @@ const prefersReducedMotion = useReducedMotion();
 ```
 
 **PWA Hooks**:
+
 ```typescript
 // PWA install and offline detection
 const {
@@ -135,11 +143,12 @@ const {
   isSupported,
   install,
   promptInstall,
-  canInstall
+  canInstall,
 } = usePWA();
 ```
 
 **Theme Hook**:
+
 ```typescript
 // Theme management
 const { theme, setTheme } = useTheme(); // 'light' | 'dark' | 'system'
@@ -236,8 +245,8 @@ const Component = () => {
 
 ```css
 :root {
-  --color-primary: oklch(0.3 0.15 250);    /* Deep Blue #082856 */
-  --color-secondary: oklch(0.65 0.15 45);  /* Orange #FF8621 */
+  --color-primary: oklch(0.3 0.15 250); /* Deep Blue #082856 */
+  --color-secondary: oklch(0.65 0.15 45); /* Orange #FF8621 */
 }
 
 .dark {
@@ -249,6 +258,7 @@ const Component = () => {
 ### Responsive Breakpoints
 
 Mobile-first approach:
+
 - Base: 320px+
 - `sm`: 640px
 - `md`: 768px
@@ -258,21 +268,33 @@ Mobile-first approach:
 
 ```typescript
 // Example usage
-className="text-sm md:text-base lg:text-lg"
-className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+className = 'text-sm md:text-base lg:text-lg';
+className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
 ```
 
 ### Component Variants
 
 ```typescript
 // Button variants
-variant: 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive'
+variant: 'default' |
+  'primary' |
+  'secondary' |
+  'outline' |
+  'ghost' |
+  'destructive';
 
 // Loading variants
-variant: 'spinner' | 'dots' | 'pulse' | 'bars' | 'ring' | 'ripple' | 'square' | 'wave'
+variant: 'spinner' |
+  'dots' |
+  'pulse' |
+  'bars' |
+  'ring' |
+  'ripple' |
+  'square' |
+  'wave';
 
 // Size variants (common)
-size: 'sm' | 'md' | 'lg' | 'xl'
+size: 'sm' | 'md' | 'lg' | 'xl';
 ```
 
 ## Dark Mode
@@ -309,11 +331,13 @@ npm run format:check     # Check formatting compliance
 ### Pre-Commit Validation (REQUIRED)
 
 **Always run before committing**:
+
 ```bash
 npm run typecheck && npm run lint && npm run format:check
 ```
 
 Fix issues:
+
 ```bash
 npm run lint:fix && npm run format
 ```
@@ -369,6 +393,7 @@ import type { User } from '@/types';
 ### Service Worker
 
 Located at `public/sw.js`:
+
 - Precache assets
 - Runtime caching
 - Offline support
@@ -377,6 +402,7 @@ Located at `public/sw.js`:
 ### Web Manifest
 
 Located at `public/manifest.json`:
+
 - App name and icons
 - Display mode: standalone
 - Theme colors
@@ -572,11 +598,13 @@ import DebugPanel from '@/components/DebugPanel';
 ### Component Strategy
 
 **Shadcn Components**:
+
 - Keep minimal (currently 9 components)
 - Only add when explicitly needed
 - Reference https://ui.shadcn.com/docs/components for more
 
 **Custom Components**:
+
 - Focus on unique functionality
 - Support dark mode by default
 - Include TypeScript interfaces
@@ -626,6 +654,7 @@ type: brief description
 ## Component Showcase
 
 Visit `/components-demo` page to see all 21 components with:
+
 - Live interactive examples
 - Component variants
 - Props documentation

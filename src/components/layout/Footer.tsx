@@ -246,7 +246,8 @@ const Footer = () => {
         >
           <div className='flex items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              © {new Date().getFullYear()} Starter Template. All rights reserved.
+              © {new Date().getFullYear()} Starter Template. All rights
+              reserved.
             </p>
             <div className='hidden md:flex items-center gap-1 text-xs text-gray-500'>
               <span>Built with</span>

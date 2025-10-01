@@ -43,6 +43,7 @@ This file configures Claude Code with project-specific information for RapidBizz
 ### Architecture
 
 **App Router Structure**:
+
 ```
 src/app/
 ├── components-demo/       # Component showcase
@@ -53,6 +54,7 @@ src/app/
 ```
 
 **Component Structure**:
+
 ```
 src/components/
 ├── layout/                # Navigation, Footer, ThemeProvider
@@ -74,6 +76,7 @@ src/components/
 ```
 
 **Custom Hooks** (`src/lib/hooks/`):
+
 - `useClipboard.ts` - Clipboard operations
 - `useDebounce.ts` - Debounced values/callbacks
 - `useIntersectionObserver.ts` - Visibility detection
@@ -94,18 +97,21 @@ src/components/
 ### Styling System
 
 **OKLCH Color System**:
+
 ```css
 :root {
-  --color-primary: oklch(0.3 0.15 250);    /* Deep Blue #082856 */
-  --color-secondary: oklch(0.65 0.15 45);  /* Orange #FF8621 */
+  --color-primary: oklch(0.3 0.15 250); /* Deep Blue #082856 */
+  --color-secondary: oklch(0.65 0.15 45); /* Orange #FF8621 */
 }
 ```
 
 **Responsive Breakpoints**:
+
 - Mobile-first approach (320px+ base)
 - `sm`: 640px, `md`: 768px, `lg`: 1024px, `xl`: 1280px, `2xl`: 1536px
 
 **Component Variants**:
+
 - Buttons: primary, secondary, outline, ghost, destructive
 - Loading: 8 variants (spinner, dots, pulse, bars, ring, ripple, square, wave)
 - Spacing: 4px base unit with exponential scale
@@ -113,6 +119,7 @@ src/components/
 ### Animations
 
 **Framer Motion Config**:
+
 ```typescript
 export const motionConfig = {
   staggerChildren: 0.1,
@@ -146,23 +153,29 @@ npm run typecheck && npm run lint:strict && npm run format:check
 ## Page Architecture
 
 ### Home Page (`/`)
+
 Landing page with hero, features, and call-to-action sections.
 
 ### Components Demo (`/components-demo`)
+
 **Primary showcase for custom components**:
+
 - Displays all 21 custom UI components with live examples
 - Minimal shadcn presence (9 installed, links to 15+ more available)
 - Interactive component tester (dev only)
 - Organized by category: Layout, Display, Feedback, Forms, etc.
 
 ### Team Page (`/team`)
+
 Streamlined team member cards with:
+
 - Circular profile images (80x80px)
 - Essential info (name, role, experience)
 - Social media integration
 - Responsive 2-4 column grid
 
 ### Changelog Page (`/changelog`)
+
 Version history with release notes and feature updates.
 
 ## Component Guidelines
@@ -233,9 +246,11 @@ export default ComponentName;
 ### Component Library (21 Components)
 
 **Custom Components (12)**:
+
 - AnimatedCounter, Container, Divider, EmptyState, GradientBadge, Grid, Loading (8 variants), MarkdownRenderer, ProjectPageClient, SectionGradient, Stack, TestimonialsCarousel
 
 **Shadcn Components (9)**:
+
 - button, checkbox, dropdown-menu, input, label, select, skeleton, switch, textarea
 
 **View all components**: Visit `/components-demo` page for live examples and interactive testing.
@@ -243,6 +258,7 @@ export default ComponentName;
 ### PWA Support
 
 **Features**:
+
 - Service worker with offline caching
 - Install prompt with native UI
 - Offline detection
@@ -250,6 +266,7 @@ export default ComponentName;
 - Background sync ready
 
 **Files**:
+
 - `public/sw.js` - Service worker
 - `public/manifest.json` - Web app manifest
 - `src/components/InstallPrompt.tsx` - Install UI
@@ -274,18 +291,21 @@ export default ComponentName;
 ### Development Tools (Dev Only)
 
 **ComponentTester**:
+
 - Interactive prop testing
 - Variant preview
 - Code generation
 - Export configurations
 
 **DebugPanel**:
+
 - State inspection
 - Performance monitoring
 - Window size display
 - Responsive breakpoint indicator
 
 **ErrorBoundary**:
+
 - Enhanced error handling
 - Custom fallback UI
 - Error logging
@@ -296,6 +316,7 @@ export default ComponentName;
 ### ESLint Configuration
 
 **Strict Rules**:
+
 - No unused vars (must prefix with `_` if intentional)
 - Explicit function return types (warn)
 - Import sorting (simple-import-sort)
@@ -305,6 +326,7 @@ export default ComponentName;
 ### TypeScript Configuration
 
 **Strict Mode Enabled**:
+
 - `noImplicitAny`: true
 - `strictNullChecks`: true
 - `strictFunctionTypes`: true
@@ -314,12 +336,14 @@ export default ComponentName;
 ### Git Workflow
 
 **Before Committing**:
+
 1. Run validation: `npm run typecheck && npm run lint && npm run format:check`
 2. Fix any errors
 3. Test build: `npm run build`
 4. Commit with descriptive message
 
 **Commit Message Format**:
+
 ```
 type: brief description
 
@@ -346,6 +370,7 @@ DATABASE_URL=connection_string
 ### Deployment
 
 **Hosting**: Vercel with automatic deployments
+
 - CDN: Global edge network
 - SSL/TLS: Automatic with custom domain
 - Analytics: Performance and usage monitoring
@@ -381,12 +406,14 @@ DATABASE_URL=connection_string
 ### Component Strategy
 
 **Shadcn Components**:
+
 - Keep minimal (currently 9 components)
 - Only add when explicitly needed
 - Reference shadcn docs for additional components
 - Don't duplicate functionality with custom components
 
 **Custom Components**:
+
 - Focus on unique functionality
 - Document via components-demo page
 - Include TypeScript interfaces
@@ -396,6 +423,7 @@ DATABASE_URL=connection_string
 ### Dark Mode Implementation
 
 **Theme System**:
+
 - System/light/dark mode support
 - LocalStorage persistence
 - SSR-safe hydration
@@ -403,6 +431,7 @@ DATABASE_URL=connection_string
 - CSS variables with OKLCH colors
 
 **Theme Toggle**:
+
 ```typescript
 // Integrated in Navigation component
 <ThemeToggle /> // Uses dropdown-menu and switch from shadcn
@@ -411,6 +440,7 @@ DATABASE_URL=connection_string
 ## Project Status
 
 **Current State**:
+
 - ✅ 21 UI components (12 custom + 9 shadcn)
 - ✅ 10 custom hooks for common patterns
 - ✅ PWA support with service worker
@@ -420,6 +450,7 @@ DATABASE_URL=connection_string
 - ✅ Production-ready starter template
 
 **Key Files**:
+
 - `CLAUDE.md` - This configuration file (under 800 lines ✅)
 - `README.md` - Project overview and setup
 - `CHANGELOG.md` - Version history
@@ -428,6 +459,7 @@ DATABASE_URL=connection_string
 - `docs/` - Additional documentation (SEO guides)
 
 **Recent Changes**:
+
 - Removed 12 unused shadcn components (table, tabs, alert, badge, etc.)
 - Consolidated component library to essentials
 - Created components-demo page showcasing unique components

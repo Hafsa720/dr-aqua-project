@@ -1,6 +1,6 @@
 'use client';
 
-import { Download, Monitor, Smartphone, Wifi, WifiOff,X } from 'lucide-react';
+import { Download, Monitor, Smartphone, Wifi, WifiOff, X } from 'lucide-react';
 import React, { useEffect } from 'react';
 
 import { usePWA } from '@/lib/hooks/usePWA';
@@ -37,7 +37,8 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
   customDescription,
   className,
 }) => {
-  const { isInstallable, isInstalled, isOffline, install, isSupported } = usePWA();
+  const { isInstallable, isInstalled, isOffline, install, isSupported } =
+    usePWA();
   const [isDismissed, { setTrue: dismiss }] = useToggle(false);
   const [isInstalling, { toggle: toggleInstalling }] = useToggle(false);
 
@@ -58,47 +59,54 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
   };
 
   // Don't render if not supported, not installable, dismissed, or already installed
-  if (!isSupported || !isInstallable || isDismissed || (isInstalled && hideAfterInstall)) {
+  if (
+    !isSupported ||
+    !isInstallable ||
+    isDismissed ||
+    (isInstalled && hideAfterInstall)
+  ) {
     return null;
   }
 
   const title = customTitle || 'Install App';
-  const description = customDescription || 'Get the full experience with our progressive web app. Works offline and loads faster!';
+  const description =
+    customDescription ||
+    'Get the full experience with our progressive web app. Works offline and loads faster!';
 
   const renderContent = () => (
     <>
-      <div className="flex items-start gap-3">
-        <div className="flex-shrink-0">
-          <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-            <Download className="w-5 h-5 text-white" />
+      <div className='flex items-start gap-3'>
+        <div className='flex-shrink-0'>
+          <div className='w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center'>
+            <Download className='w-5 h-5 text-white' />
           </div>
         </div>
-        <div className="flex-1 min-w-0">
-          <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+        <div className='flex-1 min-w-0'>
+          <h3 className='text-sm font-semibold text-gray-900 dark:text-gray-100'>
             {title}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+          <p className='text-sm text-gray-600 dark:text-gray-400 mt-1'>
             {description}
           </p>
-          <div className="flex items-center gap-4 mt-3">
-            <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-              <Smartphone className="w-3 h-3" />
+          <div className='flex items-center gap-4 mt-3'>
+            <div className='flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400'>
+              <Smartphone className='w-3 h-3' />
               <span>Mobile</span>
             </div>
-            <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-              <Monitor className="w-3 h-3" />
+            <div className='flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400'>
+              <Monitor className='w-3 h-3' />
               <span>Desktop</span>
             </div>
             {showOfflineIndicator && (
-              <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+              <div className='flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400'>
                 {isOffline ? (
                   <>
-                    <WifiOff className="w-3 h-3 text-red-500" />
+                    <WifiOff className='w-3 h-3 text-red-500' />
                     <span>Offline</span>
                   </>
                 ) : (
                   <>
-                    <Wifi className="w-3 h-3 text-green-500" />
+                    <Wifi className='w-3 h-3 text-green-500' />
                     <span>Online</span>
                   </>
                 )}
@@ -107,31 +115,31 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 mt-4">
+      <div className='flex items-center gap-2 mt-4'>
         <button
           onClick={handleInstall}
           disabled={isInstalling}
           className={cn(
             'px-4 py-2 bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400',
             'text-white text-sm font-medium rounded-md transition-colors',
-            'disabled:cursor-not-allowed flex items-center gap-2'
+            'disabled:cursor-not-allowed flex items-center gap-2',
           )}
         >
           {isInstalling ? (
             <>
-              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
               Installing...
             </>
           ) : (
             <>
-              <Download className="w-4 h-4" />
+              <Download className='w-4 h-4' />
               Install
             </>
           )}
         </button>
         <button
           onClick={dismiss}
-          className="px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm font-medium transition-colors"
+          className='px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm font-medium transition-colors'
         >
           Not now
         </button>
@@ -149,17 +157,17 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
           'bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400',
           'text-white text-sm font-medium rounded-md transition-colors',
           'disabled:cursor-not-allowed',
-          className
+          className,
         )}
       >
         {isInstalling ? (
           <>
-            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <div className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin' />
             Installing...
           </>
         ) : (
           <>
-            <Download className="w-4 h-4" />
+            <Download className='w-4 h-4' />
             Install App
           </>
         )}
@@ -169,10 +177,12 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
 
   if (variant === 'inline') {
     return (
-      <div className={cn(
-        'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4',
-        className
-      )}>
+      <div
+        className={cn(
+          'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4',
+          className,
+        )}
+      >
         {renderContent()}
       </div>
     );
@@ -180,16 +190,18 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
 
   if (variant === 'modal') {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-        <div className={cn(
-          'bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6 relative',
-          className
-        )}>
+      <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50'>
+        <div
+          className={cn(
+            'bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6 relative',
+            className,
+          )}
+        >
           <button
             onClick={dismiss}
-            className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+            className='absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors'
           >
-            <X className="w-5 h-5" />
+            <X className='w-5 h-5' />
           </button>
           {renderContent()}
         </div>
@@ -205,17 +217,19 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
   };
 
   return (
-    <div className={cn(
-      'fixed left-0 right-0 z-40 mx-4 sm:mx-6 lg:mx-8',
-      positionClasses[position],
-      className
-    )}>
-      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 relative">
+    <div
+      className={cn(
+        'fixed left-0 right-0 z-40 mx-4 sm:mx-6 lg:mx-8',
+        positionClasses[position],
+        className,
+      )}
+    >
+      <div className='bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 relative'>
         <button
           onClick={dismiss}
-          className="absolute top-3 right-3 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+          className='absolute top-3 right-3 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors'
         >
-          <X className="w-4 h-4" />
+          <X className='w-4 h-4' />
         </button>
         {renderContent()}
       </div>

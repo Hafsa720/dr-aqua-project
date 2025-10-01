@@ -3,11 +3,12 @@
 <div align="center">
   <p>⚡ Production-ready Next.js starter with 80+ components, complete design system, and modern dev tools</p>
 
-  ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
-  ![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
-  ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
-  ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
 </div>
 
 ## ✨ What's Inside
@@ -88,6 +89,7 @@ cp .env.example .env.local
 ```
 
 Edit `.env.local`:
+
 ```env
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
@@ -112,11 +114,9 @@ export default function MyPage() {
   const { success } = useToast();
 
   return (
-    <div className="p-8">
-      <Input label="Email" type="email" />
-      <Button onClick={() => success('Hello!')}>
-        Click Me
-      </Button>
+    <div className='p-8'>
+      <Input label='Email' type='email' />
+      <Button onClick={() => success('Hello!')}>Click Me</Button>
     </div>
   );
 }
@@ -129,11 +129,13 @@ export default function MyPage() {
 Complete guides to help you build faster:
 
 ### 🎯 Getting Started
+
 - 📦 [Installation Guide](./docs/getting-started/installation.md) - Setup and configuration
 - 📁 [Project Structure](./docs/getting-started/project-structure.md) - Understanding the codebase
 - ⚡ [Quick Start](./docs/guides/quick-start.md) - Build your first page in minutes
 
 ### 🧩 Components
+
 - 🎨 [Components Overview](./docs/components/overview.md) - All 80+ components explained
 - 📝 Form Components - Input, Select, Checkbox, Radio, Textarea
 - 📐 Layout Components - Grid, Container, Stack, Divider
@@ -144,6 +146,7 @@ Complete guides to help you build faster:
 - ⚡ Performance - OptimizedImage, LazyLoad, CodeSplitting
 
 ### 🎨 Design System
+
 - 🌈 [Design System Overview](./docs/design-system/overview.md) - Colors, typography, spacing
 - 🎨 OKLCH Color System - Perceptually uniform colors
 - ✍️ Typography Scale - Font sizes and line heights
@@ -152,6 +155,7 @@ Complete guides to help you build faster:
 - ♿ Accessibility - WCAG 2.1 AA compliance
 
 ### 🪝 Custom Hooks
+
 - useLocalStorage - Persistent state
 - useDebounce - Debounce values
 - useIntersectionObserver - Visibility detection
@@ -161,12 +165,14 @@ Complete guides to help you build faster:
 - And 10+ more!
 
 ### 📱 PWA & SEO
+
 - 🔌 PWA Setup - Offline support and installation
 - 🔍 SEO Tools - Meta tags and structured data
 - 🖼️ OG Images - Social media cards
 - 🗺️ Sitemap - Auto-generated sitemaps
 
 ### 💡 Examples & Patterns
+
 - 📝 Form handling with validation
 - 📊 Data tables with sorting
 - 🎨 Custom layouts
@@ -194,15 +200,11 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <Input label="Name" required />
-      <Input label="Email" type="email" required />
-      <Select
-        label="Country"
-        options={countries}
-        searchable
-      />
-      <Button type="submit" variant="primary">
+    <form onSubmit={handleSubmit} className='space-y-4'>
+      <Input label='Name' required />
+      <Input label='Email' type='email' required />
+      <Select label='Country' options={countries} searchable />
+      <Button type='submit' variant='primary'>
         Submit
       </Button>
     </form>
@@ -226,18 +228,13 @@ export default function UsersTable() {
         <Badge variant={status === 'active' ? 'success' : 'error'}>
           {status}
         </Badge>
-      )
-    }
+      ),
+    },
   ];
 
   return (
     <>
-      <Table
-        columns={columns}
-        data={users}
-        sortable
-        pagination
-      />
+      <Table columns={columns} data={users} sortable pagination />
     </>
   );
 }
@@ -250,12 +247,7 @@ import { designTokens, cn } from '@/lib/design-system';
 
 export default function MyComponent() {
   return (
-    <div className={cn(
-      'bg-primary-600',
-      'text-white',
-      'p-4',
-      'rounded-lg'
-    )}>
+    <div className={cn('bg-primary-600', 'text-white', 'p-4', 'rounded-lg')}>
       Styled with design system!
     </div>
   );
@@ -316,10 +308,10 @@ src/
 export const designTokens = {
   colors: {
     primary: {
-      500: 'oklch(0.5 0.25 270)',  // Your brand color
+      500: 'oklch(0.5 0.25 270)', // Your brand color
       // ... other shades
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -338,11 +330,15 @@ export interface MyComponentProps {
 const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
   ({ variant = 'default', children, ...props }, ref) => {
     return (
-      <div ref={ref} className={cn('base-classes', variantClasses[variant])} {...props}>
+      <div
+        ref={ref}
+        className={cn('base-classes', variantClasses[variant])}
+        {...props}
+      >
         {children}
       </div>
     );
-  }
+  },
 );
 
 MyComponent.displayName = 'MyComponent';
@@ -387,6 +383,7 @@ MIT © [Your Name]
 ## 🙏 Acknowledgments
 
 Built with:
+
 - [Next.js](https://nextjs.org/) - React framework
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Framer Motion](https://www.framer.com/motion/) - Animations

@@ -1,23 +1,25 @@
-import '@/styles/globals.css';
+import './globals.css';
 
 import { Metadata } from 'next';
 import * as React from 'react';
 
 import Footer from '@/components/layout/Footer';
 import Navigation from '@/components/layout/Navigation';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { CartProvider } from '@/components/cart-provider';
 import { siteConfig } from '@/constant/config';
 
 // Site metadata configured in @/constant/config
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
+    default: 'Dr. Aqua - Pure Water Solutions',
+    template: `%s | Dr. Aqua`,
   },
-  description: siteConfig.description,
+  description:
+    'Premium water filter plants and professional installation services. Your trusted partner for clean, pure water solutions.',
   robots: { index: true, follow: true },
-  // Favicon configuration - generate your own from https://realfavicongenerator.net/
+  // Favicon configuration
   icons: {
     icon: '/favicon/favicon.ico',
     shortcut: '/favicon/favicon-16x16.png',
@@ -26,26 +28,21 @@ export const metadata: Metadata = {
   manifest: `/manifest.json`,
   openGraph: {
     url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
+    title: 'Dr. Aqua - Pure Water Solutions',
+    description:
+      'Premium water filter plants and professional installation services.',
+    siteName: 'Dr. Aqua',
     images: [`${siteConfig.url}/images/og.jpg`],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: 'Dr. Aqua - Pure Water Solutions',
+    description:
+      'Premium water filter plants and professional installation services.',
     images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@rapidbizz',
   },
-  // authors: [
-  //   {
-  //     name: 'RapidBizz Team',
-  //     url: 'https://rapidbizz.com',
-  //   },
-  // ],
 };
 
 export default function RootLayout({
@@ -54,36 +51,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className='font-inter' suppressHydrationWarning>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const stored = localStorage.getItem('theme-preference');
-                  const theme = stored && ['light', 'dark', 'system'].includes(stored) ? stored : 'system';
-                  
-                  let resolved;
-                  if (theme === 'system') {
-                    resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  } else {
-                    resolved = theme;
-                  }
-                  
-                  if (resolved === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  }
-                  document.documentElement.setAttribute('data-theme', resolved);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
+    <html lang='en'>
+      <body className='font-inter'>
         <ThemeProvider>
-          <Navigation />
-          <main className='min-h-main'>{children}</main>
-          <Footer />
+          <CartProvider>
+            <Navigation />
+            <main className='min-h-main'>{children}</main>
+            <Footer />
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>
