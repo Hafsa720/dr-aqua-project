@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon/favicon-16x16.png',
     apple: '/favicon/apple-touch-icon.png',
   },
-  manifest: `/favicon/site.webmanifest`,
+  manifest: `/manifest.json`,
   openGraph: {
     url: siteConfig.url,
     title: siteConfig.title,
@@ -61,7 +61,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  const stored = localStorage.getItem('rapidbizz-theme');
+                  const stored = localStorage.getItem('theme-preference');
                   const theme = stored && ['light', 'dark', 'system'].includes(stored) ? stored : 'system';
                   
                   let resolved;

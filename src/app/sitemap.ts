@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-site.com';
   const currentDate = new Date();
 
   // Static pages with their priorities and update frequencies
@@ -13,15 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/components-demo`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
@@ -29,12 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/careers`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
@@ -69,18 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // TODO: Add dynamic project pages when projects data is available
-  // You can fetch project slugs here and add them to the sitemap
-  // const projects = await getProjects(); // Replace with your data fetching
-  // const projectPages = projects.map(project => ({
-  //   url: `${baseUrl}/projects/${project.slug}`,
-  //   lastModified: project.updatedAt || currentDate,
-  //   changeFrequency: 'monthly' as const,
-  //   priority: 0.7,
-  // }));
-
-  return [
-    ...staticPages,
-    // ...projectPages, // Uncomment when project data is available
-  ];
+  return [...staticPages];
 }

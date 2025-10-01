@@ -1,7 +1,7 @@
 export const siteConfig = {
-  title: 'RapidBizz - Professional Web Development',
+  title: 'Modern Next.js Starter Template',
   description:
-    'Professional web development services with modern technology stack. We build scalable, high-performance web applications using Next.js, React, and TypeScript.',
-  /** Without additional '/' on the end, e.g. https://rapidbizz.com */
-  url: 'https://rapidbizz.com',
+    'A comprehensive Next.js starter template with beautiful components, dark mode, TypeScript, and everything you need to build modern web applications.',
+  /** Without additional '/' on the end, e.g. https://your-site.com */
+  url: 'https://your-site.com',
 };

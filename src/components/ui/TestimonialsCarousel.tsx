@@ -157,71 +157,16 @@ export default function TestimonialsCarousel({
           }}
           className='text-center relative min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex flex-col justify-center'
         >
-          {/* Background Glow Effect */}
-          <motion.div
-            className={`absolute inset-0 bg-gradient-to-r ${colors.glow} rounded-3xl blur-2xl`}
-            animate={{
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
+          <div className='bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-200 dark:border-slate-700 relative overflow-hidden flex-1 flex flex-col justify-center'>
 
-          <div className='bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-white/20 dark:border-slate-700/50 relative overflow-hidden flex-1 flex flex-col justify-center'>
-            {/* Decorative Elements */}
-            <div
-              className={`absolute top-0 left-0 w-32 h-32 bg-gradient-to-br ${colors.decorative1} rounded-full blur-2xl -translate-x-8 -translate-y-8`}
-            ></div>
-            <div
-              className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br ${colors.decorative2} rounded-full blur-2xl translate-x-8 translate-y-8`}
-            ></div>
-
-            {/* Stars with stagger animation */}
-            <motion.div
-              className='flex justify-center mb-8'
-              initial='hidden'
-              animate='visible'
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.2,
-                  },
-                },
-              }}
-            >
+            {/* Stars - simplified */}
+            <div className='flex justify-center mb-8'>
               {[1, 2, 3, 4, 5].map((star) => (
-                <motion.div
-                  key={star}
-                  variants={{
-                    hidden: { opacity: 0, scale: 0, rotate: -180 },
-                    visible: {
-                      opacity: 1,
-                      scale: 1,
-                      rotate: 0,
-                      transition: {
-                        type: 'spring',
-                        stiffness: 500,
-                        damping: 15,
-                      },
-                    },
-                  }}
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 5,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  <FaStar className='w-7 h-7 text-yellow-400 mx-1 drop-shadow-lg' />
-                </motion.div>
+                <div key={star}>
+                  <FaStar className='w-7 h-7 text-yellow-400 mx-1' />
+                </div>
               ))}
-            </motion.div>
+            </div>
 
             <motion.blockquote
               className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-slate-700 dark:text-slate-200 mb-8 sm:mb-10 leading-relaxed relative z-10 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] flex items-center justify-center'

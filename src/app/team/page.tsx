@@ -101,12 +101,7 @@ const TeamPage = () => {
   return (
     <div className='relative overflow-hidden bg-white dark:bg-slate-900'>
       {/* Hero Section - Modern Team Introduction */}
-      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900/20 overflow-hidden'>
-        {/* Static Background Elements */}
-        <div className='absolute inset-0'>
-          <div className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/5 to-purple-400/5 rounded-full blur-3xl' />
-          <div className='absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-green-400/5 to-blue-400/5 rounded-full blur-3xl' />
-        </div>
+      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 overflow-hidden'>
 
         <div className='layout relative z-10 page-header-spacing'>
           <div className='text-center mb-20'>
@@ -213,7 +208,7 @@ const TeamPage = () => {
                 className='group'
               >
                 <div
-                  className={`${value.bg} backdrop-blur-sm p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all duration-500 h-full`}
+                  className={`${value.bg} p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-lg transition-shadow duration-200 h-full`}
                 >
                   <div
                     className={`w-16 h-16 ${value.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-200 dark:border-slate-600`}
@@ -316,12 +311,12 @@ const TeamPage = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <ArrowLink
-                  href='/careers'
+                  href='/contact'
                   as={ButtonLink}
                   size='lg'
-                  className='bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-2xl'
+                  className='bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-lg'
                 >
-                  View Open Positions
+                  Get In Touch
                 </ArrowLink>
               </motion.div>
               <motion.div

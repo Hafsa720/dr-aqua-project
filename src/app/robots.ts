@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-site.com';
 
   return {
     rules: [
@@ -9,10 +9,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
           '/api/og/*', // Allow OG image generation
@@ -31,10 +29,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'GPTBot',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
         ],
@@ -44,10 +40,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'ChatGPT-User',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
         ],
@@ -57,10 +51,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Google-Extended',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
         ],
@@ -70,10 +62,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'PerplexityBot',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
         ],
@@ -83,10 +73,8 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'Claude-Web',
         allow: [
           '/',
-          '/services/',
-          '/projects/',
+          '/components-demo/',
           '/team/',
-          '/careers/',
           '/contact/',
           '/changelog/',
         ],

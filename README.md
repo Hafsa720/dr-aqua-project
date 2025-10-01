@@ -1,8 +1,8 @@
-# RapidBizz - Professional Web Development
+# 🚀 Next.js Ultimate Starter Template
 
 <div align="center">
-  <p>A comprehensive business website with advanced development features and automation.</p>
-  
+  <p>⚡ Production-ready Next.js starter with 80+ components, complete design system, and modern dev tools</p>
+
   ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
   ![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
   ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
@@ -10,452 +10,391 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 </div>
 
-## ✨ Features
+## ✨ What's Inside
 
-This Repo is packed with modern development tools and automation:
+Everything you need to build amazing web applications:
 
-### 🔧 Core Technologies
+### 🧩 80+ Production-Ready Components
 
-- ⚡️ **Next.js 15** with App Router and React Server Components
-- ⚛️ **React 19** with latest features and optimizations
-- ✨ **TypeScript** for type safety and better DX
-- 💨 **Tailwind CSS 4** with CSS variables and OKLCH color system
-- 🎨 **Framer Motion** for smooth animations and transitions
+- 📝 **Form Components** - Input, Textarea, Select, Checkbox, Radio with validation
+- 📐 **Layout Components** - Grid, Container, Stack, Divider for perfect layouts
+- 📊 **Data Display** - Table, Badge, Tooltip, Progress for showing data
+- 🧭 **Navigation** - Breadcrumb, Pagination, Tabs for easy navigation
+- 🎭 **Overlay Components** - Modal, Drawer, Popover, Alert for interactions
+- 💬 **Feedback Components** - Toast, Loading, Skeleton, EmptyState for user feedback
+- ⚡ **Performance Components** - OptimizedImage, LazyLoad, CodeSplitting for speed
+- 🛠️ **Dev Tools** - ErrorBoundary, DebugPanel, ComponentTester for development
 
-### 🎯 Business-Ready Components
+### 🎨 Complete Design System
 
-- 📄 **Complete Pages** - Home, Services, Projects, Team, Careers, Contact
-- 🧩 **Reusable Components** - Buttons, Links, Cards, Forms, Navigation
-- 📱 **Responsive Design** - Mobile-first approach with perfect mobile experience
-- 🎨 **Consistent Design System** - Primary (#082856) and Secondary (#FF8621) colors
+- 🌈 **OKLCH Colors** - Perceptually uniform color system
+- ✍️ **Typography Scale** - 6 font sizes with perfect line heights
+- 📏 **4px Spacing** - Consistent spacing throughout
+- 🎭 **Dark Mode** - Built-in light/dark theme support
+- ♿ **Accessible** - WCAG 2.1 AA compliant components
 
-### 🛠️ Development Experience
+### 🪝 15+ Custom Hooks
 
-- 📈 **Absolute Imports** - Clean imports using `@/` prefix
-- 🔥 **VS Code Snippets** - Pre-built snippets for common patterns
-- 📏 **ESLint + Prettier** - Code formatting and linting with auto-import sorting
-- 🧪 **Jest Testing** - Unit testing setup with React Testing Library
+- 💾 **useLocalStorage** - Persistent state with expiration
+- ⏱️ **useDebounce** - Debounce values and callbacks
+- 👁️ **useIntersectionObserver** - Detect element visibility
+- 📋 **useClipboard** - Copy to clipboard easily
+- 📱 **useWindowSize** - Responsive window dimensions
+- ⚙️ **And more!** - See [full hook list](./docs/hooks/overview.md)
 
-### 🤖 GitHub Automation
+### 📱 PWA Ready
 
-- 🚀 **Release Please** - Automated changelog and version management
-- 🌿 **Auto Branch Creation** - Branches created automatically from assigned issues
-- 🔗 **Issue Autolink** - PRs automatically linked to issues
-- 👷 **GitHub Actions** - CI/CD pipeline with linting and type checking
-- 📝 **Conventional Commits** - Standardized commit messages
+- 🔌 **Offline Support** - Works without internet
+- 📲 **Installable** - Add to home screen
+- 🔄 **Auto Updates** - Service worker updates
+- 📝 **Web Manifest** - Full PWA configuration
 
-### 🌐 SEO & Performance
+### 🔍 SEO & Performance
 
-- 🗺️ **Sitemap Generation** - Automatic sitemap.xml with custom priorities
-- 🖼️ **Open Graph Images** - Dynamic OG image generation for social sharing
-- 🤖 **Robots.txt** - SEO-optimized robots.txt generation
-- ⚡ **Performance Optimized** - Lazy loading, image optimization, and more
+- 🗺️ **Meta Manager** - Easy meta tag management
+- 🏗️ **Structured Data** - JSON-LD schemas
+- 🖼️ **OG Images** - Beautiful social media cards
+- ⚡ **Core Web Vitals** - Optimized for performance
+- 🤖 **Sitemap** - Auto-generated sitemap.xml
+
+### 🛠️ Developer Experience
+
+- 📝 **TypeScript** - Full type safety (strict mode)
+- 🎯 **ESLint + Prettier** - Code quality tools
+- 📦 **No Test Files** - Production-ready without test overhead
+- 🔧 **Easy Removal** - Remove any component independently
+- 📖 **Well Documented** - Comprehensive guides and examples
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+Get up and running in 5 minutes:
+
+### 1️⃣ Install
 
 ```bash
-git clone https://github.com/m-hamidmehmood/rapidbizz.git
-cd rapidbizz
-```
+# Clone the repo
+git clone https://github.com/yourusername/next-starter.git my-app
+cd my-app
 
-### 2. Install Dependencies
-
-```bash
+# Install dependencies
 npm install
 ```
 
-### 3. Environment Setup
-
-Copy the environment file and configure your settings:
+### 2️⃣ Configure
 
 ```bash
+# Copy environment file
 cp .env.example .env.local
 ```
 
-Update the following environment variables:
-
+Edit `.env.local`:
 ```env
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-NEXT_PUBLIC_OG_URL=https://og.your-domain.com
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-### 4. Run Development Server
+### 3️⃣ Run
 
 ```bash
+# Start dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the application.
+Open [http://localhost:3000](http://localhost:3000) 🎉
 
-### 5. Customize for Your Business
+### 4️⃣ Build Your App
 
-1. **Update Site Information**
-   - Edit `src/constant/config.ts` with your site details
-   - Update `next-sitemap.config.js` with your domain
-   - Replace logo and favicon files in `public/favicon/`
+Start using components right away:
 
-2. **Customize Content**
-   - Update content in `src/content/` directories (supports multilingual)
-   - Modify types in `src/types/` for your data structures
-   - Update color scheme in `src/styles/globals.css`
+```tsx
+import { Button, Input, Modal, useToast } from '@/components/ui';
 
-3. **Configure Business Information**
-   - Update service offerings in `src/content/services/`
-   - Add team members in `src/content/team/`
-   - Customize project portfolio in `src/content/projects/`
-   - Update career listings in `src/content/careers/`
+export default function MyPage() {
+  const { success } = useToast();
 
-## 🔍 SEO Features Usage Guide
-
-This project includes enterprise-level SEO features that are automatically configured and ready to use. Here's how to leverage them:
-
-### 🗺️ Sitemap Generation
-
-**Automatic sitemap.xml generation** with custom priorities and change frequencies.
-
-- **Access:** `https://your-domain.com/sitemap.xml`
-- **File:** `/src/app/sitemap.ts`
-
-```typescript
-// Automatically includes all pages with optimized priorities:
-// - Homepage: Priority 1.0 (highest)
-// - Services/Projects: Priority 0.9
-// - Team/Contact: Priority 0.7-0.8
-// - Legal pages: Priority 0.3
-```
-
-**Submit to Search Engines:**
-
-1. Google Search Console: Add sitemap URL
-2. Bing Webmaster Tools: Submit sitemap
-3. Monitor for crawling errors
-
-### 🖼️ Open Graph Images
-
-**Dynamic OG image generation** for social media sharing with your branding.
-
-- **Access:** Auto-generated for all pages + `/api/og`
-- **Files:** `/src/app/api/og/route.tsx`, `/src/lib/og.ts`
-
-```typescript
-// Automatic generation for pages
-export const metadata = generateMetadata({
-  title: 'Services',
-  description: 'Professional web development services',
-  path: '/services',
-});
-
-// Test your OG images
-// Visit: https://your-domain.com/api/og?title=Test&description=Example&theme=dark
-```
-
-**Features:**
-
-- ✅ RapidBizz branding with logo
-- ✅ Light/dark theme support
-- ✅ 1200x630 optimal dimensions
-- ✅ Professional gradients
-
-### 🤖 Robots.txt
-
-**SEO-optimized robots.txt** that allows search engines and AI assistants to access your content.
-
-- **Access:** `https://your-domain.com/robots.txt`
-- **File:** `/src/app/robots.ts`
-
-```
-User-Agent: *
-Allow: /
-Allow: /services/
-Allow: /projects/
-Allow: /team/
-Allow: /careers/
-Allow: /contact/
-Allow: /changelog/
-Disallow: /api/*
-Disallow: /admin/
-
-User-Agent: GPTBot
-Allow: / (AI assistants can access your content)
-
-Sitemap: https://your-domain.com/sitemap.xml
-```
-
-**AI-Friendly:** Allows ChatGPT, Claude, Perplexity, and Google Bard to access your business information so users can ask about your services.
-
-### 📋 Changelog Integration
-
-**Markdown-powered changelog** page that renders your CHANGELOG.md file.
-
-- **Access:** `https://your-domain.com/changelog`
-- **File:** `/src/app/changelog/page.tsx`
-- **Content:** Edit `/CHANGELOG.md` file
-
-```markdown
-# Update your changelog
-
-## [Unreleased]
-
-### Added
-
-- New feature description
-
-### Changed
-
-- Changes to existing functionality
-
-### Fixed
-
-- Bug fixes
-```
-
-**Navigation:** Version number in footer links to changelog page.
-
-### 🛠️ Customization
-
-#### Adding New Pages to Sitemap
-
-```typescript
-// Edit /src/app/sitemap.ts
-{
-  url: `${baseUrl}/new-page`,
-  lastModified: new Date(),
-  changeFrequency: 'monthly',
-  priority: 0.7,
+  return (
+    <div className="p-8">
+      <Input label="Email" type="email" />
+      <Button onClick={() => success('Hello!')}>
+        Click Me
+      </Button>
+    </div>
+  );
 }
 ```
 
-#### Custom OG Images
-
-```typescript
-// Customize colors in /src/app/api/og/route.tsx
-const colors = {
-  dark: {
-    bg: '#0F172A',
-    primary: '#3B82F6', // Your brand color
-    secondary: '#FF8621', // Your accent color
-    // ...
-  },
-};
-```
-
-#### Test OG Images
-
-- **Development:** `http://localhost:3000/api/og?title=Test`
-- **Social Media:** Use [OpenGraph.xyz](https://www.opengraph.xyz/) to test
-- **LinkedIn:** Share your page and check preview
-- **Twitter:** Use Twitter Card Validator
-
-### 📈 SEO Best Practices
-
-1. **Submit Sitemap:** Add to Google Search Console and Bing Webmaster
-2. **Test Social Sharing:** Verify OG images on all platforms
-3. **Monitor Crawling:** Check robots.txt accessibility
-4. **Update Changelog:** Keep users informed of improvements
-5. **Content Updates:** High-priority pages update more frequently
-
-### 🔗 Quick Links
-
-- **Detailed SEO Guide:** See `/docs/SEO-GUIDE.md` for comprehensive documentation
-- **Google Search Console:** [Submit Sitemap](https://search.google.com/search-console)
-- **OG Image Testing:** [OpenGraph.xyz](https://www.opengraph.xyz/)
-- **Robots.txt Testing:** [Robots.txt Tester](https://support.google.com/webmasters/answer/6062598)
-
----
+📚 **Need help?** Check out the [Quick Start Guide](./docs/guides/quick-start.md)
 
 ## 📖 Documentation
 
-### Component Usage
+Complete guides to help you build faster:
 
-The repo includes pre-built components that follow consistent patterns:
+### 🎯 Getting Started
+- 📦 [Installation Guide](./docs/getting-started/installation.md) - Setup and configuration
+- 📁 [Project Structure](./docs/getting-started/project-structure.md) - Understanding the codebase
+- ⚡ [Quick Start](./docs/guides/quick-start.md) - Build your first page in minutes
+
+### 🧩 Components
+- 🎨 [Components Overview](./docs/components/overview.md) - All 80+ components explained
+- 📝 Form Components - Input, Select, Checkbox, Radio, Textarea
+- 📐 Layout Components - Grid, Container, Stack, Divider
+- 📊 Data Display - Table, Badge, Tooltip, Progress
+- 🧭 Navigation - Breadcrumb, Pagination, Tabs
+- 🎭 Overlay - Modal, Drawer, Popover, Alert
+- 💬 Feedback - Toast, Loading, Skeleton, EmptyState
+- ⚡ Performance - OptimizedImage, LazyLoad, CodeSplitting
+
+### 🎨 Design System
+- 🌈 [Design System Overview](./docs/design-system/overview.md) - Colors, typography, spacing
+- 🎨 OKLCH Color System - Perceptually uniform colors
+- ✍️ Typography Scale - Font sizes and line heights
+- 📏 Spacing System - 4px base unit
+- 🎭 Dark Mode - Theme switching
+- ♿ Accessibility - WCAG 2.1 AA compliance
+
+### 🪝 Custom Hooks
+- useLocalStorage - Persistent state
+- useDebounce - Debounce values
+- useIntersectionObserver - Visibility detection
+- useClipboard - Copy to clipboard
+- useWindowSize - Responsive dimensions
+- usePWA - PWA functionality
+- And 10+ more!
+
+### 📱 PWA & SEO
+- 🔌 PWA Setup - Offline support and installation
+- 🔍 SEO Tools - Meta tags and structured data
+- 🖼️ OG Images - Social media cards
+- 🗺️ Sitemap - Auto-generated sitemaps
+
+### 💡 Examples & Patterns
+- 📝 Form handling with validation
+- 📊 Data tables with sorting
+- 🎨 Custom layouts
+- 🔄 Loading states
+- 🚨 Error handling
+
+## 🎯 Usage Examples
+
+### Building a Form
 
 ```tsx
-// Use existing components
-import ButtonLink from '@/components/links/ButtonLink';
-import { motion } from '@/components/MotionWrapper';
+import { Input, Select, Button, useToast } from '@/components/ui';
 
-// Pre-built page layout
-<section className='bg-gradient-to-br from-primary-900 to-primary-700 text-white py-20'>
-  <div className='layout'>
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-      <h1 className='text-5xl font-bold mb-4'>Your Title</h1>
-    </motion.div>
-  </div>
-</section>;
+export default function ContactForm() {
+  const { success, error } = useToast();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Your logic here
+      success('Form submitted!');
+    } catch (err) {
+      error('Failed to submit');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <Input label="Name" required />
+      <Input label="Email" type="email" required />
+      <Select
+        label="Country"
+        options={countries}
+        searchable
+      />
+      <Button type="submit" variant="primary">
+        Submit
+      </Button>
+    </form>
+  );
+}
 ```
 
-### VS Code Snippets
-
-Access these snippets in VS Code:
-
-- `napp` - Next.js App Router page
-- `rcp` - React component with props
-- `mcard` - Motion card component
-- `layout` - Layout container
-- `servicetype` - Service type definition
-
-### GitHub Automation
-
-#### Automatic Branch Creation
-
-1. Create an issue in GitHub
-2. Assign the issue to someone
-3. A branch is automatically created with format: `i{issue-number}-{title}`
-
-#### Release Management
-
-1. Use conventional commits (`feat:`, `fix:`, `chore:`, etc.)
-2. Trigger release from GitHub Actions tab
-3. Changelog and version are automatically updated
-
-### Open Graph Images
-
-Generate dynamic social media images:
+### Creating a Data Table
 
 ```tsx
-import { generateMetadata } from '@/lib/og';
+import { Table, Badge, Pagination } from '@/components/ui';
 
-export const metadata = generateMetadata({
-  title: 'About Us',
-  description: 'Learn about our company',
-  path: '/about',
-});
+export default function UsersTable() {
+  const columns = [
+    { key: 'name', title: 'Name', sortable: true },
+    { key: 'email', title: 'Email' },
+    {
+      key: 'status',
+      title: 'Status',
+      render: (status) => (
+        <Badge variant={status === 'active' ? 'success' : 'error'}>
+          {status}
+        </Badge>
+      )
+    }
+  ];
+
+  return (
+    <>
+      <Table
+        columns={columns}
+        data={users}
+        sortable
+        pagination
+      />
+    </>
+  );
+}
 ```
 
-### Sitemap Configuration
+### Using the Design System
 
-The sitemap automatically includes:
+```tsx
+import { designTokens, cn } from '@/lib/design-system';
 
-- All pages with custom priorities
-- Dynamic project pages
-- Proper robots.txt configuration
+export default function MyComponent() {
+  return (
+    <div className={cn(
+      'bg-primary-600',
+      'text-white',
+      'p-4',
+      'rounded-lg'
+    )}>
+      Styled with design system!
+    </div>
+  );
+}
+```
 
-## 🛠️ Available Scripts
+## 🛠️ Commands
 
 ```bash
-# Development
-npm run dev          # Start development server
-npm run build        # Build for production
-npm start            # Start production server
+# 🚀 Development
+npm run dev              # Start dev server
+npm run build            # Build for production
+npm run start            # Start production server
 
-# Code Quality
-npm run lint         # Run ESLint
-npm run lint:fix     # Fix ESLint issues and format code
-npm run typecheck    # Run TypeScript compiler check
-npm test             # Run Jest tests
+# ✅ Code Quality
+npm run typecheck        # TypeScript check
+npm run lint             # Run ESLint
+npm run format           # Format with Prettier
 
-# Formatting
-npm run format       # Format code with Prettier
-npm run format:check # Check code formatting
+# 🔧 Fix Issues
+npm run lint:fix         # Auto-fix linting
+npm run format:check     # Check formatting
 ```
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   │   ├── hello/         # Hello API endpoint
-│   │   └── legal/[type]/  # Dynamic legal content API
-│   ├── careers/           # Careers page
-│   ├── contact/           # Contact page
-│   ├── projects/          # Projects pages
-│   │   └── [slug]/        # Dynamic project details
-│   ├── services/          # Services page
-│   ├── team/              # Team page
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Home page
-│   └── globals.css        # Global styles
-├── components/            # Reusable components
-│   ├── buttons/           # Button components
-│   ├── common/            # Shared components
-│   ├── examples/          # Example components
-│   ├── layout/            # Layout components
-│   ├── links/             # Link components
-│   ├── modals/            # Modal components
-│   ├── motion/            # Motion/animation components
-│   ├── pages/             # Page-specific components
-│   │   ├── home/          # Home page components
-│   │   ├── projects/      # Project page components
-│   │   └── services/      # Services page components
-│   ├── sections/          # Section components
-│   └── ui/                # UI components
-├── content/               # Content management
-│   ├── careers/           # Career content (multilingual)
-│   ├── common/            # Shared content (multilingual)
-│   ├── home/              # Home page content (multilingual)
-│   ├── legal/             # Legal documents (multilingual)
-│   ├── projects/          # Project content & case studies
-│   ├── services/          # Services content (multilingual)
-│   ├── team/              # Team content (multilingual)
-│   └── config.ts          # Content configuration
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utility functions
-├── styles/                # CSS files and styling
-├── types/                 # TypeScript type definitions
-└── constant/              # Constants and configuration
+├── app/                      # Next.js App Router
+├── components/
+│   ├── ui/                  # 80+ UI components
+│   │   ├── Input.tsx        # Form inputs
+│   │   ├── Table.tsx        # Data tables
+│   │   ├── Modal.tsx        # Modals
+│   │   └── ...              # And 75+ more!
+│   ├── layout/              # Layout components
+│   ├── performance/         # Performance components
+│   ├── ErrorBoundary.tsx    # Error handling
+│   └── ComponentTester.tsx  # Component playground
+├── lib/
+│   ├── design-system/       # Design tokens & utils
+│   │   ├── tokens.ts        # Design tokens
+│   │   ├── utils.ts         # Utility functions
+│   │   └── theme.ts         # Theme config
+│   ├── hooks/               # 15+ custom hooks
+│   ├── seo/                 # SEO utilities
+│   └── serviceWorker.ts     # PWA service worker
+├── types/                    # TypeScript types
+└── styles/                   # Global styles
 ```
 
 ## 🎨 Customization
 
-### Color System
+### Update Colors
 
-The Project uses an OKLCH-based color system:
-
-```css
-/* Primary colors (Dark Blue) */
---primary-50: oklch(0.95 0.02 258);
---primary-900: oklch(0.25 0.08 258);
-
-/* Secondary colors (Orange) */
---secondary-50: oklch(0.96 0.03 65);
---secondary-900: oklch(0.35 0.15 65);
+```typescript
+// src/lib/design-system/tokens.ts
+export const designTokens = {
+  colors: {
+    primary: {
+      500: 'oklch(0.5 0.25 270)',  // Your brand color
+      // ... other shades
+    }
+  }
+};
 ```
 
-### Adding New Pages
+### Add New Components
 
-1. Create page in `src/app/your-page/page.tsx`
-2. Use the `napp` snippet for consistent structure
-3. Add to navigation in `src/components/layout/Navigation.tsx`
-4. Update sitemap in `next-sitemap.config.js`
+```tsx
+// src/components/ui/MyComponent.tsx
+import * as React from 'react';
+import { cn } from '@/lib/design-system/utils';
 
-## 🤝 Contributing
+export interface MyComponentProps {
+  variant?: 'default' | 'primary';
+  children: React.ReactNode;
+}
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'feat: add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
+  ({ variant = 'default', children, ...props }, ref) => {
+    return (
+      <div ref={ref} className={cn('base-classes', variantClasses[variant])} {...props}>
+        {children}
+      </div>
+    );
+  }
+);
 
-## 📝 License
+MyComponent.displayName = 'MyComponent';
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+export default MyComponent;
+```
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Deploy to Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/rapidbizz)
+```bash
+npm install -g vercel
+vercel
+```
 
-### Other Platforms
+### Deploy to Other Platforms
 
-This Project works with any platform that supports Next.js:
+- **Netlify** - Drag and drop `.next` folder
+- **AWS Amplify** - Connect GitHub repo
+- **Railway** - One-click deploy
+- **Render** - Connect and deploy
 
-- Netlify
-- AWS Amplify
-- Railway
-- Render
+## 🤝 Contributing
 
-## 🆘 Support
+We welcome contributions!
 
-- 📖 [Documentation](https://nextjs.org/docs)
-- 💬 [GitHub Discussions](https://github.com/your-username/rapidbizz/discussions)
-- 🐛 [Report Issues](https://github.com/your-username/rapidbizz/issues)
+1. 🍴 Fork the repo
+2. 🌿 Create your branch: `git checkout -b feature/awesome`
+3. ✍️ Commit changes: `git commit -m 'Add awesome feature'`
+4. 📤 Push to branch: `git push origin feature/awesome`
+5. 🎉 Open a Pull Request
+
+## ⭐ Show Your Support
+
+Give a ⭐ if this project helped you!
+
+## 📄 License
+
+MIT © [Your Name]
+
+## 🙏 Acknowledgments
+
+Built with:
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [Framer Motion](https://www.framer.com/motion/) - Animations
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
 
 ---
 
 <div align="center">
-  <p>Built with ❤️ for modern web development</p>
+  <p><strong>Ready to build something amazing? Let's go! 🚀</strong></p>
+  <p>Made with ❤️ and ☕ for developers worldwide</p>
 </div>

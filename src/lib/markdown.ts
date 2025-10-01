@@ -231,24 +231,16 @@ export function getLegalDocuments(
  */
 export async function loadContentBySlug(
   slug: string,
-  contentType: 'blog' | 'docs' | 'case-studies' = 'blog',
+  contentType: 'blog' | 'docs' = 'blog',
   language: SupportedLanguage = contentConfig.defaultLanguage,
 ): Promise<MarkdownContent> {
-  const filePath = contentType === 'case-studies'
-    ? path.join(
-        process.cwd(),
-        'src/content/projects',
-        language,
-        'case-studies',
-        `${slug}.md`,
-      )
-    : path.join(
-        process.cwd(),
-        'src/content',
-        contentType,
-        language,
-        `${slug}.md`,
-      );
+  const filePath = path.join(
+    process.cwd(),
+    'src/content',
+    contentType,
+    language,
+    `${slug}.md`,
+  );
 
   try {
     return await loadMarkdownFile(filePath, {
@@ -276,22 +268,15 @@ export async function loadContentBySlug(
  * @returns List of content files
  */
 export function getContentList(
-  contentType: 'blog' | 'docs' | 'case-studies' = 'blog',
+  contentType: 'blog' | 'docs' = 'blog',
   language: SupportedLanguage = contentConfig.defaultLanguage,
 ): MarkdownFile[] {
-  const contentDir = contentType === 'case-studies'
-    ? path.join(
-        process.cwd(),
-        'src/content/projects',
-        language,
-        'case-studies',
-      )
-    : path.join(
-        process.cwd(),
-        'src/content',
-        contentType,
-        language,
-      );
+  const contentDir = path.join(
+    process.cwd(),
+    'src/content',
+    contentType,
+    language,
+  );
 
   try {
     const files = fs
@@ -343,7 +328,7 @@ export function getContentList(
  */
 export function searchContent(
   query: string,
-  contentType: 'blog' | 'docs' | 'case-studies' | 'legal' = 'blog',
+  contentType: 'blog' | 'docs' | 'legal' = 'blog',
   language: SupportedLanguage = contentConfig.defaultLanguage,
 ): MarkdownFile[] {
   const contentList =

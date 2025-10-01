@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { motion } from '@/components/MotionWrapper';
+import { getMotionConfig,useReducedMotion } from '@/lib/hooks/useReducedMotion';
 
 interface AnimatedCounterProps {
   value: string;
@@ -28,6 +29,7 @@ export default function AnimatedCounter({
   const ref = useRef<HTMLSpanElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [displayValue, setDisplayValue] = useState('0');
+  const prefersReducedMotion = useReducedMotion();
 
   // Extract numeric part and suffix from the value
   const numericMatch = value?.match(/^(\d+(?:\.\d+)?)/);
@@ -52,9 +54,15 @@ export default function AnimatedCounter({
     return () => observer.disconnect();
   }, [isInView]);
 
-  // Animate the counter when in view
+  // Animate the counter when in view (or show immediately if reduced motion)
   useEffect(() => {
     if (isInView) {
+      if (prefersReducedMotion) {
+        // Show final value immediately if user prefers reduced motion
+        setDisplayValue(`${targetNumber}${suffix}`);
+        return;
+      }
+
       let startValue = 0;
       const increment = targetNumber / (duration * 60); // 60 FPS
 
@@ -75,18 +83,24 @@ export default function AnimatedCounter({
       return () => clearTimeout(timeout);
     }
     return undefined;
-  }, [isInView, targetNumber, suffix, duration]);
+  }, [isInView, targetNumber, suffix, duration, prefersReducedMotion]);
+
+  const motionProps = getMotionConfig(
+    {
+      initial: { opacity: 0, scale: 0.8 },
+      animate: isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 },
+      transition: {
+        duration: 0.6,
+      },
+    },
+    prefersReducedMotion
+  );
 
   return (
     <motion.span
       ref={ref}
       className={className}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-      transition={{
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for smooth entry
-      }}
+      {...motionProps}
     >
       {displayValue}
     </motion.span>

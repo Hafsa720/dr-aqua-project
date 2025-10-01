@@ -60,7 +60,7 @@ const Footer = () => {
             <div className='flex justify-start mb-6'>
               <NextImage
                 src='/logo.svg'
-                alt='RapidBizz Logo'
+                alt='Starter Template Logo'
                 width={120}
                 height={48}
                 className='object-contain'
@@ -108,21 +108,21 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Services */}
+          {/* Resources */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className='font-semibold mb-6 text-white'>Services</h3>
+            <h3 className='font-semibold mb-6 text-white'>Resources</h3>
             <ul className='space-y-3'>
-              {footerContent.services.map((service) => (
-                <li key={service.name}>
+              {footerContent.resources.map((resource) => (
+                <li key={resource.name}>
                   <ArrowLink
-                    href={service.href}
+                    href={resource.href}
                     className='text-gray-300 hover:text-white transition-colors text-sm'
                   >
-                    {service.name}
+                    {resource.name}
                   </ArrowLink>
                 </li>
               ))}
@@ -246,18 +246,12 @@ const Footer = () => {
         >
           <div className='flex items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              © {new Date().getFullYear()} RapidBizz. All rights reserved.
+              © {new Date().getFullYear()} Starter Template. All rights reserved.
             </p>
             <div className='hidden md:flex items-center gap-1 text-xs text-gray-500'>
-              <span>Made with</span>
+              <span>Built with</span>
               <FaHeart className='text-red-400 text-xs animate-pulse' />
-              <span>by the</span>
-              <UnstyledLink
-                href='/team'
-                className='text-gray-500 hover:text-white transition-colors underline-offset-2 hover:underline'
-              >
-                RapidBizz team
-              </UnstyledLink>
+              <span>and modern technologies</span>
               <span className='text-gray-600'>•</span>
               <UnstyledLink
                 href='/changelog'

@@ -47,7 +47,12 @@
       "Bash(timeout 5s npm run dev)",
       "Bash(timeout 10s npm run dev)",
       "Bash(timeout 30s npm run build)",
-      "Bash(timeout 20s npm run build)"
+      "Bash(timeout 20s npm run build)",
+      "Bash(timeout 120 npm run build)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Bash(git checkout:*)",
+      "Bash(timeout 300 npm run build)"
     ],
     "defaultMode": "acceptEdits"
   }
