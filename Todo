@@ -1,14 +1,79 @@
-first we have to absorb structure of full project and include all files access in .claude
+Issues
 
-need to define primary and secondary color by obsorbing already structure of colors.css and globals.css and tailwindcss which is
+1. Footer Links - Missing Visible Hover Underline
 
-primary #082856
-secondary #FF8621
+- Problem: Footer ArrowLinks don't show clear underline animation on hover
+- Root Cause: Custom className in ArrowLink overrides UnderlineLink's animated-underline effect
+- Location: src/components/layout/Footer.tsx lines 100-106, 121-127, 142-148
 
-i guess we have to generate 50 to 900 color plates for these with oklch
+2. Hover Color Contrast Issues
 
-then we have to create 6 pages by wireframe
+- Problem: Some links/buttons have poor visibility on hover (text-white on light backgrounds)
+- Locations:
+  - Footer changelog version link (line 258, 268) - text-gray-500 hover:text-white may conflict with certain themes
+  - Navigation items need better contrast feedback
+  - Button hover states on gradient backgrounds
 
-need to include for images by placeholder and dummy link + dymmy content of projects
+3. Max Width Consistency
 
-use framer motion for smooth animation
+- Problem: .layout class provides max-w-7xl but:
+  - Not all pages use it consistently
+  - Some sections stretch full-width when they shouldn't
+  - Container component exists but isn't used optimally
+- Current: .layout = max-w-7xl mx-auto w-11/12
+- Issue: Some pages need narrower content width (e.g., legal pages, blog posts)
+
+4. Additional UX Improvements
+
+- Footer link hover animation visibility
+- Consistent spacing patterns across pages
+- Better visual feedback for interactive elements
+- Mobile hover states (touch feedback)
+- Focus states for keyboard navigation
+
+Implementation Plan
+
+Phase 1: Footer Enhancement
+
+1. Add visible underline effect to footer links on hover
+2. Improve hover states with better color transitions
+3. Add smooth transform animations (translateX/Y)
+4. Fix changelog version link hover contrast
+
+Phase 2: Max Width & Layout System
+
+1. Audit all page layouts for proper max-width usage
+2. Create layout variants (narrow, default, wide, full)
+3. Update pages to use Container component consistently
+4. Add page-specific max-width constraints
+
+Phase 3: Hover States & Interactive Feedback
+
+1. Standardize button hover states across all variants
+2. Improve link hover visibility (color + underline)
+3. Add subtle scale/shadow effects for cards
+4. Enhance focus states for accessibility
+
+Phase 4: Responsive & Polish
+
+1. Mobile touch feedback improvements
+2. Consistent spacing system (use Tailwind spacing scale)
+3. Animation performance optimization
+4. Dark mode hover state refinement
+
+Files to Modify
+
+1. src/components/layout/Footer.tsx - Footer link hover states
+2. src/styles/globals.css - Layout utilities and hover animations
+3. src/components/links/ArrowLink.tsx - Better hover integration
+4. src/components/links/UnderlineLink.tsx - Enhanced underline effect
+5. src/components/ui/Container.tsx - Add layout variants
+6. Page files - Consistent Container/layout usage
+
+Expected Outcomes
+
+✅ Clear visual feedback on all interactive elements
+✅ Consistent max-width across all page types
+✅ Better accessibility (keyboard navigation, focus states)
+✅ Improved mobile experience
+✅ Polished, professional UI feel
