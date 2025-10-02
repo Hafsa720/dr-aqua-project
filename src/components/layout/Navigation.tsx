@@ -24,12 +24,12 @@ export default function Navigation() {
   const cartItemCount = getTotalItems();
 
   return (
-    <nav className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
+    <nav className='sticky top-0 z-50 w-full border-b border-primary-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
       <div className='container mx-auto px-4'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
           <Link href='/' className='flex items-center space-x-2'>
-            <span className='text-xl font-bold text-primary'>Dr. Aqua</span>
+            <span className='text-xl font-bold text-primary-900'>Dr. Aqua</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,8 +39,10 @@ export default function Navigation() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
-                  pathname === item.href ? 'text-primary' : 'text-gray-700',
+                  'text-sm font-medium transition-colors hover:text-primary-600',
+                  pathname === item.href
+                    ? 'text-primary-700'
+                    : 'text-primary-900',
                 )}
               >
                 {item.name}
@@ -49,7 +51,11 @@ export default function Navigation() {
 
             {/* Cart Button */}
             <Link href='/cart'>
-              <Button variant='outline' size='sm' className='relative'>
+              <Button
+                variant='outline'
+                size='sm'
+                className='relative border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
+              >
                 <ShoppingCart className='h-4 w-4' />
                 <span className='ml-2'>Cart</span>
                 {cartItemCount > 0 && (
@@ -64,7 +70,11 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <div className='flex items-center gap-2 md:hidden'>
             <Link href='/cart'>
-              <Button variant='outline' size='sm' className='relative'>
+              <Button
+                variant='outline'
+                size='sm'
+                className='relative border-primary-300 text-primary-700 hover:bg-primary-50'
+              >
                 <ShoppingCart className='h-4 w-4' />
                 {cartItemCount > 0 && (
                   <span className='absolute -top-2 -right-2 bg-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
@@ -90,7 +100,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className='border-t py-4 md:hidden'>
+          <div className='border-t border-primary-200 py-4 md:hidden'>
             <div className='flex flex-col space-y-3'>
               {navigation.map((item) => (
                 <Link
@@ -99,8 +109,8 @@ export default function Navigation() {
                   className={cn(
                     'rounded-md px-3 py-2 text-base font-medium transition-colors',
                     pathname === item.href
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-gray-700 hover:bg-gray-100',
+                      ? 'bg-primary-100 text-primary-700'
+                      : 'text-primary-900 hover:bg-primary-50',
                   )}
                   onClick={() => setIsOpen(false)}
                 >

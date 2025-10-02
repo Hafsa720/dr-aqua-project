@@ -69,7 +69,7 @@ const Footer = () => {
                   <Link
                     key={social.name}
                     href={social.href}
-                    className='text-gray-300 p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-smooth focus-ring touch-feedback'
+                    className='text-primary-300 p-3 bg-primary-800/50 hover:bg-primary-800 hover:text-secondary-400 rounded-xl transition-all duration-200 focus-ring touch-feedback'
                     aria-label={`Follow us on ${social.name}`}
                     target='_blank'
                     rel='noopener noreferrer'
@@ -89,7 +89,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <ArrowLink
                     href={link.href}
-                    className='text-gray-300 hover:text-white transition-smooth text-sm focus-ring'
+                    className='text-primary-200 hover:text-secondary-400 transition-all duration-200 text-sm focus-ring'
                   >
                     {link.name}
                   </ArrowLink>

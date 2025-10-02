@@ -355,7 +355,7 @@ export default function ProductDetailPage() {
                 <Button
                   onClick={handleAddToCart}
                   size='lg'
-                  className='flex-1 bg-primary-600 hover:bg-primary-700'
+                  className='flex-1 bg-secondary-600 hover:bg-secondary-700 text-white'
                   disabled={!product.inStock}
                 >
                   <ShoppingCart className='h-5 w-5 mr-2' />
@@ -455,7 +455,7 @@ export default function ProductDetailPage() {
                 <div className='pt-4'>
                   <Button
                     asChild
-                    className='bg-primary-600 hover:bg-primary-700'
+                    className='bg-secondary-600 hover:bg-secondary-700 text-white'
                   >
                     <Link href='/services'>Book Installation Service</Link>
                   </Button>

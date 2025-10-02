@@ -139,7 +139,7 @@ export function ProductCard({
                 <Button
                   onClick={handleAddToCart}
                   size='sm'
-                  className='flex-1 bg-primary-600 hover:bg-primary-700 shadow-sm'
+                  className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white'
                   disabled={isAdding}
                 >
                   <ShoppingCart className='h-4 w-4 mr-1.5' />
@@ -237,7 +237,7 @@ export function ProductCard({
             {showAddToCart && (
               <Button
                 onClick={handleAddToCart}
-                className='flex-1 bg-primary-600 hover:bg-primary-700 shadow-sm'
+                className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white'
                 disabled={isAdding}
               >
                 <ShoppingCart className='h-4 w-4 mr-2' />

@@ -110,7 +110,7 @@ export default function HomePage() {
                 <Button
                   asChild
                   size='lg'
-                  className='text-lg px-8 bg-primary-500 hover:bg-primary-600 text-white'
+                  className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
                 >
                   <Link href='/shop'>
                     Shop Now <ArrowRight className='ml-2 h-5 w-5' />
@@ -120,7 +120,7 @@ export default function HomePage() {
                   asChild
                   variant='outline'
                   size='lg'
-                  className='text-lg px-8 border-primary-500 text-primary-500 hover:bg-primary-50'
+                  className='text-lg px-8 border-primary-600 text-primary-600 hover:bg-primary-50'
                 >
                   <Link href='/services'>Book Service</Link>
                 </Button>
@@ -200,7 +200,7 @@ export default function HomePage() {
               asChild
               variant='outline'
               size='lg'
-              className='border-primary-500 text-primary-500 hover:bg-primary-50'
+              className='border-primary-600 text-primary-600 hover:bg-primary-50'
             >
               <Link href='/shop'>
                 View All Products <ArrowRight className='ml-2 h-4 w-4' />
@@ -267,7 +267,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className='py-20 bg-primary-500 text-white'>
+      <section className='py-20 bg-primary-900 text-white'>
         <Container layout='narrow' className='text-center'>
           <div className='space-y-6'>
             <h2 className='text-3xl lg:text-4xl font-bold text-balance'>
@@ -282,7 +282,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size='lg'
-                className='text-lg px-8 bg-secondary-500 hover:bg-secondary-600 text-white'
+                className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
               >
                 <Link href='/contact'>Get Free Quote</Link>
               </Button>
