@@ -18,6 +18,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     | '6xl'
     | '7xl'
     | 'full';
+  layout?: 'narrow' | 'default' | 'wide' | 'full';
   fluid?: boolean;
   centerContent?: boolean;
   paddingX?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -34,6 +35,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
  *
  * Features:
  * - Multiple size presets
+ * - Layout variants (narrow, default, wide, full)
  * - Fluid width option
  * - Flexible spacing controls
  * - Center content alignment
@@ -45,6 +47,7 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
     {
       className,
       size = 'lg',
+      layout,
       fluid = false,
       centerContent = false,
       paddingX,
@@ -59,7 +62,23 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
     },
     ref,
   ) => {
+    const getLayoutClass = () => {
+      if (layout) {
+        const layoutMap = {
+          narrow: 'layout-narrow', // max-w-4xl
+          default: 'layout', // max-w-7xl
+          wide: 'layout-wide', // max-w-[1600px]
+          full: 'layout-full', // w-full
+        };
+        return layoutMap[layout];
+      }
+      return null;
+    };
+
     const getSizeClass = () => {
+      // If layout is specified, it takes precedence
+      if (layout) return null;
+
       if (fluid) return 'w-full';
 
       const sizeMap = {
@@ -98,16 +117,19 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
       getSpacingClass(marginY, 'my'),
     ].filter(Boolean);
 
-    // Default padding if none specified
-    if (!padding && !paddingX && !paddingY) {
+    // Default padding if none specified and not using layout classes
+    if (!padding && !paddingX && !paddingY && !layout) {
       spacingClasses.push('px-4 sm:px-6 lg:px-8');
     }
+
+    const layoutClass = getLayoutClass();
 
     return (
       <Component
         ref={ref}
         className={cn(
           'relative',
+          layoutClass,
           getSizeClass(),
           {
             'flex flex-col items-center justify-center': centerContent,

@@ -17,6 +17,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Container } from '@/components/ui/Container';
 
 const featuredProducts = [
   {
@@ -82,7 +83,7 @@ export default function HomePage() {
     <div className='flex flex-col'>
       {/* Hero Section */}
       <section className='relative bg-gradient-to-br from-primary-50 via-primary-100 to-secondary-50 py-20 lg:py-32'>
-        <div className='container mx-auto px-4'>
+        <Container layout='default'>
           <div className='grid lg:grid-cols-2 gap-12 items-center'>
             <div className='space-y-8'>
               <div className='space-y-4'>
@@ -165,12 +166,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Featured Products */}
       <section className='py-20 bg-primary-50'>
-        <div className='container mx-auto px-4'>
+        <Container layout='default'>
           <div className='text-center space-y-4 mb-12'>
             <Badge
               variant='outline'
@@ -190,7 +191,8 @@ export default function HomePage() {
             {featuredProducts.map((product) => (
               <Card
                 key={product.id}
-                className='group hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300'
+                interactive
+                className='group border-primary-200 hover:border-primary-300'
               >
                 <CardHeader className='p-0'>
                   <div className='relative overflow-hidden rounded-t-lg'>
@@ -274,12 +276,12 @@ export default function HomePage() {
               </Link>
             </Button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Services Section */}
       <section className='py-20'>
-        <div className='container mx-auto px-4'>
+        <Container layout='default'>
           <div className='text-center space-y-4 mb-12'>
             <Badge
               variant='outline'
@@ -299,7 +301,8 @@ export default function HomePage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className='text-center hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300'
+                interactive
+                className='text-center border-primary-200 hover:border-primary-300'
               >
                 <CardHeader>
                   <div className='mx-auto w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4'>
@@ -329,13 +332,13 @@ export default function HomePage() {
               </Card>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA Section */}
       <section className='py-20 bg-primary-500 text-white'>
-        <div className='container mx-auto px-4 text-center'>
-          <div className='max-w-3xl mx-auto space-y-6'>
+        <Container layout='narrow' className='text-center'>
+          <div className='space-y-6'>
             <h2 className='text-3xl lg:text-4xl font-bold text-balance'>
               Ready for Pure, Clean Water?
             </h2>
@@ -362,7 +365,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

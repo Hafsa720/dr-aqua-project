@@ -99,7 +99,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <ArrowLink
                     href={link.href}
-                    className='text-gray-300 hover:text-white transition-colors text-sm'
+                    className='text-gray-300 hover:text-white dark:hover:text-white transition-smooth text-sm focus-ring'
                   >
                     {link.name}
                   </ArrowLink>
@@ -120,7 +120,7 @@ const Footer = () => {
                 <li key={resource.name}>
                   <ArrowLink
                     href={resource.href}
-                    className='text-gray-300 hover:text-white transition-colors text-sm'
+                    className='text-gray-300 hover:text-white dark:hover:text-white transition-smooth text-sm focus-ring'
                   >
                     {resource.name}
                   </ArrowLink>
@@ -141,7 +141,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <ArrowLink
                     href={item.href}
-                    className='text-gray-300 hover:text-white transition-colors text-sm'
+                    className='text-gray-300 hover:text-white dark:hover:text-white transition-smooth text-sm focus-ring'
                   >
                     {item.name}
                   </ArrowLink>
@@ -175,7 +175,7 @@ const Footer = () => {
                   </p>
                   <UnstyledLink
                     href={footerContent.contact.email.href}
-                    className='text-white dark:text-gray-100 font-medium break-all hover:text-secondary-300 transition-colors'
+                    className='text-white dark:text-gray-100 font-medium break-all hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
                   >
                     {footerContent.contact.email.label}
                   </UnstyledLink>
@@ -198,7 +198,7 @@ const Footer = () => {
                   </p>
                   <UnstyledLink
                     href={footerContent.contact.phone.href}
-                    className='text-white dark:text-gray-100 font-medium hover:text-secondary-300 transition-colors'
+                    className='text-white dark:text-gray-100 font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
                   >
                     {footerContent.contact.phone.label}
                   </UnstyledLink>
@@ -225,7 +225,7 @@ const Footer = () => {
                   </p>
                   <UnstyledLink
                     href={footerContent.contact.location.href}
-                    className='text-white dark:text-gray-100 font-medium hover:text-secondary-300 transition-colors'
+                    className='text-white dark:text-gray-100 font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
                     target='_blank'
                     rel='noopener noreferrer'
                   >
@@ -256,7 +256,7 @@ const Footer = () => {
               <span className='text-gray-600'>•</span>
               <UnstyledLink
                 href='/changelog'
-                className='text-gray-500 hover:text-white transition-colors underline-offset-2 hover:underline font-medium'
+                className='text-gray-500 hover:text-white transition-smooth underline-offset-2 hover:underline font-medium focus-ring touch-feedback'
                 title='View changelog and version history'
               >
                 v1.0.0
@@ -266,7 +266,7 @@ const Footer = () => {
             <div className='md:hidden'>
               <UnstyledLink
                 href='/changelog'
-                className='text-gray-500 hover:text-white transition-colors underline-offset-2 hover:underline font-medium text-xs'
+                className='text-gray-500 hover:text-white transition-smooth underline-offset-2 hover:underline font-medium text-xs focus-ring touch-feedback'
                 title='View changelog and version history'
               >
                 v1.0.0
@@ -277,7 +277,7 @@ const Footer = () => {
           <div className='flex items-center gap-6'>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className='text-gray-400 hover:text-white transition-colors text-sm cursor-pointer'
+              className='text-gray-400 hover:text-white transition-smooth text-sm cursor-pointer focus-ring touch-feedback'
             >
               Back to Top ↑
             </button>

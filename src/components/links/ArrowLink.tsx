@@ -23,7 +23,7 @@ export default function ArrowLink<C extends React.ElementType>({
     <Component
       {...rest}
       className={cn(
-        'group gap-[0.25em]',
+        'group gap-[0.25em] transition-smooth focus-ring touch-feedback',
         direction === 'left' && 'flex-row-reverse',
         className,
       )}
@@ -36,8 +36,8 @@ export default function ArrowLink<C extends React.ElementType>({
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
         className={cn(
-          'relative',
-          'transition-transform duration-200',
+          'relative will-change-transform',
+          'transition-transform duration-300 ease-out',
           direction === 'right' ? 'motion-safe:-translate-x-1' : 'rotate-180',
           'group-hover:translate-x-0',
         )}
@@ -52,7 +52,7 @@ export default function ArrowLink<C extends React.ElementType>({
           strokeWidth='1.5'
           strokeLinecap='round'
           className={cn(
-            'origin-left transition-all duration-200',
+            'origin-left transition-all duration-300 ease-out',
             'opacity-0 motion-safe:-translate-x-1',
             'group-hover:translate-x-0 group-hover:opacity-100',
           )}

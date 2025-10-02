@@ -98,3 +98,142 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Layout System */
+.layout {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-narrow {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-wide {
+  @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.layout-full {
+  @apply w-full px-4 sm:px-6 lg:px-8;
+}
+
+/* Enhanced Link Animations */
+.animated-underline {
+  @apply relative;
+}
+
+.animated-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-[2px] bg-current;
+  @apply transition-all duration-300 ease-out;
+}
+
+.animated-underline:hover::after {
+  @apply w-full;
+}
+
+.custom-link {
+  @apply transition-colors duration-200;
+}
+
+/* Hover States */
+.hover-lift {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-scale:hover {
+  @apply scale-105;
+}
+
+/* Card Hover Effects */
+.card-interactive {
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-xl hover:-translate-y-1;
+}
+
+.dark .card-interactive {
+  @apply hover:shadow-2xl hover:shadow-primary-500/10;
+}
+
+/* Button Enhancements */
+.btn-hover-effect {
+  @apply transition-all duration-200 ease-out;
+  @apply hover:shadow-md active:scale-95;
+}
+
+.dark .btn-hover-effect {
+  @apply hover:shadow-primary-500/20;
+}
+
+/* Focus States for Accessibility */
+.focus-ring {
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+}
+
+.dark .focus-ring {
+  @apply focus-visible:ring-offset-gray-900;
+}
+
+/* Mobile Touch Feedback */
+@media (hover: none) and (pointer: coarse) {
+  .touch-feedback {
+    @apply active:scale-95 active:opacity-80;
+    @apply transition-all duration-150;
+  }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Dark Mode Specific Hovers */
+.dark .hover-bg-subtle:hover {
+  @apply bg-white/5;
+}
+
+.dark .hover-text-bright:hover {
+  @apply text-white;
+}
+
+/* Link Hover Improvements */
+.link-primary {
+  @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300;
+  @apply transition-colors duration-200;
+}
+
+.link-secondary {
+  @apply text-secondary-600 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-300;
+  @apply transition-colors duration-200;
+}
+
+/* Underline Effect Enhancement */
+.underline-effect {
+  @apply relative;
+}
+
+.underline-effect::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-current;
+  @apply transition-all duration-300;
+}
+
+.underline-effect:hover::after {
+  @apply w-full;
+}
