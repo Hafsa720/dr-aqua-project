@@ -73,12 +73,12 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
       if (variant === 'gradient') return '';
 
       const colorMap = {
-        gray: `border-gray-300/${opacity} dark:border-gray-700/${opacity}`,
-        primary: `border-primary-300/${opacity} dark:border-primary-700/${opacity}`,
-        secondary: `border-secondary-300/${opacity} dark:border-secondary-700/${opacity}`,
-        success: `border-green-300/${opacity} dark:border-green-700/${opacity}`,
-        warning: `border-yellow-300/${opacity} dark:border-yellow-700/${opacity}`,
-        error: `border-red-300/${opacity} dark:border-red-700/${opacity}`,
+        gray: `border-gray-300/${opacity}${opacity}`,
+        primary: `border-primary-300/${opacity}${opacity}`,
+        secondary: `border-secondary-300/${opacity}${opacity}`,
+        success: `border-green-300/${opacity}${opacity}`,
+        warning: `border-yellow-300/${opacity}${opacity}`,
+        error: `border-red-300/${opacity}${opacity}`,
       };
       return colorMap[color];
     };
@@ -104,16 +104,16 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
       if (variant !== 'gradient') return {};
 
       const gradientColors = {
-        gray: 'from-transparent via-gray-300 to-transparent dark:via-gray-700',
+        gray: 'from-transparent via-gray-300 to-transparent',
         primary:
-          'from-transparent via-primary-300 to-transparent dark:via-primary-700',
+          'from-transparent via-primary-300 to-transparent',
         secondary:
-          'from-transparent via-secondary-300 to-transparent dark:via-secondary-700',
+          'from-transparent via-secondary-300 to-transparent',
         success:
-          'from-transparent via-green-300 to-transparent dark:via-green-700',
+          'from-transparent via-green-300 to-transparent',
         warning:
-          'from-transparent via-yellow-300 to-transparent dark:via-yellow-700',
-        error: 'from-transparent via-red-300 to-transparent dark:via-red-700',
+          'from-transparent via-yellow-300 to-transparent',
+        error: 'from-transparent via-red-300 to-transparent',
       };
 
       const thicknessHeight = {
@@ -222,7 +222,7 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
         {(labelPosition === 'center' || labelPosition === 'right') &&
           renderDividerLine('mr-3')}
 
-        <span className='flex-shrink-0 text-sm font-medium text-gray-500 dark:text-gray-400 px-2'>
+        <span className='flex-shrink-0 text-sm font-medium text-gray-500 px-2'>
           {label}
         </span>
 

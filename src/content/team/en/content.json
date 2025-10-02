@@ -38,42 +38,42 @@
         "description": "We embrace cutting-edge technologies and creative solutions to solve complex problems and push boundaries.",
         "icon": "HiLightningBolt",
         "color": "text-yellow-500",
-        "bg": "bg-yellow-50 dark:bg-yellow-900/20"
+        "bg": "bg-yellow-50"
       },
       {
         "title": "Client Success",
         "description": "Your success is our success. We go above and beyond to exceed expectations and deliver exceptional value.",
         "icon": "FaRocket",
         "color": "text-blue-500",
-        "bg": "bg-blue-50 dark:bg-blue-900/20"
+        "bg": "bg-blue-50"
       },
       {
         "title": "Continuous Learning",
         "description": "We invest in our team's growth and stay ahead of industry trends through constant learning and development.",
         "icon": "FaLightbulb",
         "color": "text-purple-500",
-        "bg": "bg-purple-50 dark:bg-purple-900/20"
+        "bg": "bg-purple-50"
       },
       {
         "title": "Quality Excellence",
         "description": "We write clean, maintainable code and create products that stand the test of time and scale.",
         "icon": "HiShieldCheck",
         "color": "text-green-500",
-        "bg": "bg-green-50 dark:bg-green-900/20"
+        "bg": "bg-green-50"
       },
       {
         "title": "Agile Mindset",
         "description": "We adapt quickly to changes, embrace flexibility, and deliver value iteratively with rapid feedback loops.",
         "icon": "HiTrendingUp",
         "color": "text-orange-500",
-        "bg": "bg-orange-50 dark:bg-orange-900/20"
+        "bg": "bg-orange-50"
       },
       {
         "title": "Open Communication",
         "description": "Transparency and honest communication are at the core of our relationships with clients and team members.",
         "icon": "HiHeart",
         "color": "text-red-500",
-        "bg": "bg-red-50 dark:bg-red-900/20"
+        "bg": "bg-red-50"
       }
     ]
   },

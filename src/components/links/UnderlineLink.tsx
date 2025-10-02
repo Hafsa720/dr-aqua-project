@@ -15,7 +15,7 @@ const UnderlineLink = React.forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
           'animated-underline custom-link inline-flex items-center font-medium',
           'focus-ring touch-feedback',
           'border-dark border-b border-dotted hover:border-black/0',
-          'text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300',
+          'text-primary-600 hover:text-primary-700',
           className,
         )}
       >

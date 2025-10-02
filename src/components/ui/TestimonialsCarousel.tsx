@@ -40,34 +40,34 @@ export default function TestimonialsCarousel({
       glow: 'from-primary-500/20 via-secondary-500/10 to-primary-500/20',
       decorative1: 'from-primary-500/10 to-secondary-500/10',
       decorative2: 'from-secondary-500/10 to-primary-500/10',
-      quotes: 'text-primary-300 dark:text-primary-600',
+      quotes: 'text-primary-300',
       underline: 'from-primary-500 to-secondary-500',
       activeDot: 'from-primary-500 to-secondary-500',
       dotAnimation: 'from-primary-400 to-secondary-400',
       inactiveDot:
-        'bg-primary-300/60 dark:bg-primary-700/60 group-hover:bg-primary-400/80 dark:group-hover:bg-primary-600/80',
+        'bg-primary-300/60 group-hover:bg-primary-400/80',
     },
     blue: {
       glow: 'from-blue-500/20 via-purple-500/10 to-blue-500/20',
       decorative1: 'from-blue-500/10 to-purple-500/10',
       decorative2: 'from-purple-500/10 to-blue-500/10',
-      quotes: 'text-blue-300 dark:text-blue-600',
+      quotes: 'text-blue-300',
       underline: 'from-blue-500 to-purple-500',
       activeDot: 'from-blue-500 to-purple-500',
       dotAnimation: 'from-blue-400 to-purple-400',
       inactiveDot:
-        'bg-blue-300/60 dark:bg-blue-700/60 group-hover:bg-blue-400/80 dark:group-hover:bg-blue-600/80',
+        'bg-blue-300/60 group-hover:bg-blue-400/80',
     },
     custom: {
       glow: 'from-slate-500/20 via-gray-500/10 to-slate-500/20',
       decorative1: 'from-slate-500/10 to-gray-500/10',
       decorative2: 'from-gray-500/10 to-slate-500/10',
-      quotes: 'text-slate-300 dark:text-slate-600',
+      quotes: 'text-slate-300',
       underline: 'from-slate-500 to-gray-500',
       activeDot: 'from-slate-500 to-gray-500',
       dotAnimation: 'from-slate-400 to-gray-400',
       inactiveDot:
-        'bg-slate-300/60 dark:bg-slate-700/60 group-hover:bg-slate-400/80 dark:group-hover:bg-slate-600/80',
+        'bg-slate-300/60 group-hover:bg-slate-400/80',
     },
   };
 
@@ -157,7 +157,7 @@ export default function TestimonialsCarousel({
           }}
           className='text-center relative min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex flex-col justify-center'
         >
-          <div className='bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-200 dark:border-slate-700 relative overflow-hidden flex-1 flex flex-col justify-center'>
+          <div className='bg-white rounded-2xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-200 relative overflow-hidden flex-1 flex flex-col justify-center'>
             {/* Stars - simplified */}
             <div className='flex justify-center mb-8'>
               {[1, 2, 3, 4, 5].map((star) => (
@@ -168,7 +168,7 @@ export default function TestimonialsCarousel({
             </div>
 
             <motion.blockquote
-              className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-slate-700 dark:text-slate-200 mb-8 sm:mb-10 leading-relaxed relative z-10 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] flex items-center justify-center'
+              className='text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-slate-700 mb-8 sm:mb-10 leading-relaxed relative z-10 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] flex items-center justify-center'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -201,7 +201,7 @@ export default function TestimonialsCarousel({
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
               >
-                <div className='w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden ring-4 ring-white/50 dark:ring-slate-600/50 shadow-xl'>
+                <div className='w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full overflow-hidden ring-4 ring-white/50 shadow-xl'>
                   <NextImage
                     src={testimonials[currentTestimonial]?.avatar || ''}
                     alt={displayName || ''}
@@ -210,17 +210,17 @@ export default function TestimonialsCarousel({
                     className='w-full h-full object-cover'
                   />
                 </div>
-                <div className='absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white dark:border-slate-800'></div>
+                <div className='absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white'></div>
               </motion.div>
               <div className='text-left'>
                 <motion.div
-                  className='font-bold text-slate-900 dark:text-white text-lg sm:text-xl mb-1'
+                  className='font-bold text-slate-900 text-lg sm:text-xl mb-1'
                   whileHover={{ color: '#3b82f6' }}
                   transition={{ duration: 0.2 }}
                 >
                   {displayName}
                 </motion.div>
-                <div className='text-slate-600 dark:text-slate-400 text-sm sm:text-base font-medium'>
+                <div className='text-slate-600 text-sm sm:text-base font-medium'>
                   {testimonials[currentTestimonial]?.role}
                 </div>
                 <motion.div

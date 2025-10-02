@@ -87,7 +87,7 @@ export default function StatsSection({
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-                className='text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight'
+                className='text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight'
               >
                 {title}
               </motion.h2>
@@ -98,7 +98,7 @@ export default function StatsSection({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed'
+                className='text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed'
               >
                 {subtitle}
               </motion.p>
@@ -188,7 +188,7 @@ export default function StatsSection({
                 className='group cursor-pointer'
               >
                 {/* Compact Card Design */}
-                <div className='relative p-6 bg-gradient-to-br from-slate-200/60 via-white/80 to-slate-100/60 dark:from-white/8 dark:via-white/12 dark:to-white/8 backdrop-blur-lg rounded-2xl border border-slate-300/30 dark:border-white/15 shadow-lg hover:shadow-[0_10px_30px_rgba(59,130,246,0.12)] transition-all duration-400 overflow-hidden'>
+                <div className='relative p-6 bg-gradient-to-br from-slate-200/60 via-white/80 to-slate-100/60 backdrop-blur-lg rounded-2xl border border-slate-300/30 shadow-lg hover:shadow-[0_10px_30px_rgba(59,130,246,0.12)] transition-all duration-400 overflow-hidden'>
                   {/* Subtle background pattern */}
                   <div className='absolute inset-0 opacity-5'>
                     <svg width='100%' height='100%' viewBox='0 0 40 40'>
@@ -232,7 +232,7 @@ export default function StatsSection({
                   {/* Counter */}
                   <div className='text-center'>
                     <motion.div
-                      className='text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-primary-500 dark:group-hover:text-primary-300 transition-colors duration-300'
+                      className='text-3xl md:text-4xl font-bold text-slate-900 mb-1 group-hover:text-primary-500 transition-colors duration-300'
                       whileHover={{
                         scale: 1.02,
                         textShadow: '0 0 15px rgba(59, 130, 246, 0.4)',
@@ -242,7 +242,7 @@ export default function StatsSection({
                     </motion.div>
 
                     {/* Label */}
-                    <div className='text-slate-600 dark:text-slate-400 font-medium text-sm group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors duration-300'>
+                    <div className='text-slate-600 font-medium text-sm group-hover:text-slate-800 transition-colors duration-300'>
                       {stat.label}
                     </div>
                   </div>

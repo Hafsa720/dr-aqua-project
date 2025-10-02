@@ -158,27 +158,15 @@
   @apply hover:shadow-xl hover:-translate-y-1;
 }
 
-.dark .card-interactive {
-  @apply hover:shadow-2xl hover:shadow-primary-500/10;
-}
-
 /* Button Enhancements */
 .btn-hover-effect {
   @apply transition-all duration-200 ease-out;
   @apply hover:shadow-md active:scale-95;
 }
 
-.dark .btn-hover-effect {
-  @apply hover:shadow-primary-500/20;
-}
-
 /* Focus States for Accessibility */
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
-}
-
-.dark .focus-ring {
-  @apply focus-visible:ring-offset-gray-900;
 }
 
 /* Mobile Touch Feedback */
@@ -203,24 +191,13 @@
   @apply transition-all duration-300 ease-out;
 }
 
-/* Dark Mode Specific Hovers */
-.dark .hover-bg-subtle:hover {
-  @apply bg-white/5;
-}
-
-.dark .hover-text-bright:hover {
-  @apply text-white;
-}
-
 /* Link Hover Improvements */
 .link-primary {
-  @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300;
-  @apply transition-colors duration-200;
+  @apply text-primary-600 hover:text-primary-700 transition-colors duration-200;
 }
 
 .link-secondary {
-  @apply text-secondary-600 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-300;
-  @apply transition-colors duration-200;
+  @apply text-secondary-600 hover:text-secondary-700 transition-colors duration-200;
 }
 
 /* Underline Effect Enhancement */

@@ -136,7 +136,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
             type='text'
             value={value || ''}
             onChange={(e) => updateProp(key, e.target.value)}
-            className='w-full px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+            className='w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white'
           />
         );
 
@@ -149,7 +149,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
             max={control.max}
             step={control.step}
             onChange={(e) => updateProp(key, Number(e.target.value))}
-            className='w-full px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+            className='w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white'
           />
         );
 
@@ -176,7 +176,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
               );
               updateProp(key, option?.value);
             }}
-            className='w-full px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+            className='w-full px-2 py-1 text-xs border border-gray-300 rounded bg-white'
           >
             {control.options?.map((option) => (
               <option key={String(option.value)} value={String(option.value)}>
@@ -193,13 +193,13 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
               type='color'
               value={value || '#000000'}
               onChange={(e) => updateProp(key, e.target.value)}
-              className='w-8 h-6 border border-gray-300 dark:border-gray-600 rounded'
+              className='w-8 h-6 border border-gray-300 rounded'
             />
             <input
               type='text'
               value={value || ''}
               onChange={(e) => updateProp(key, e.target.value)}
-              className='flex-1 px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700'
+              className='flex-1 px-2 py-1 text-xs border border-gray-300 rounded bg-white'
             />
           </div>
         );
@@ -233,19 +233,19 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
   return (
     <div
       className={cn(
-        'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden',
+        'bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden',
         className,
       )}
     >
       {/* Header */}
-      <div className='px-4 py-3 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600'>
+      <div className='px-4 py-3 bg-gray-50 border-b border-gray-200'>
         <div className='flex items-center justify-between'>
           <div>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100'>
+            <h3 className='text-lg font-semibold text-gray-900'>
               {componentName}
             </h3>
             {description && (
-              <p className='text-sm text-gray-600 dark:text-gray-400 mt-1'>
+              <p className='text-sm text-gray-600 mt-1'>
                 {description}
               </p>
             )}
@@ -253,7 +253,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
           <div className='flex items-center gap-2'>
             <button
               onClick={toggleControls}
-              className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors'
+              className='p-2 hover:bg-gray-200 rounded transition-colors'
               title='Toggle Controls'
             >
               <Settings className='w-4 h-4' />
@@ -262,7 +262,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
               onClick={() =>
                 setViewMode(viewMode === 'preview' ? 'code' : 'preview')
               }
-              className='p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors'
+              className='p-2 hover:bg-gray-200 rounded transition-colors'
               title='Toggle View Mode'
             >
               {viewMode === 'preview' ? (
@@ -278,12 +278,12 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
       <div className='flex'>
         {/* Controls Panel */}
         {showControls && (
-          <div className='w-80 border-r border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700'>
+          <div className='w-80 border-r border-gray-200 bg-gray-50'>
             <div className='p-4 space-y-4 max-h-96 overflow-y-auto'>
               {/* Variants */}
               {variants.length > 0 && (
                 <div>
-                  <h4 className='text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2'>
+                  <h4 className='text-sm font-semibold text-gray-700 mb-2'>
                     Variants
                   </h4>
                   <div className='space-y-1'>
@@ -291,11 +291,11 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
                       <button
                         key={index}
                         onClick={() => loadVariant(variant.props)}
-                        className='w-full text-left px-3 py-2 text-xs bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500 rounded hover:bg-gray-100 dark:hover:bg-gray-500 transition-colors'
+                        className='w-full text-left px-3 py-2 text-xs bg-white border border-gray-200 rounded hover:bg-gray-100 transition-colors'
                       >
                         <div className='font-medium'>{variant.name}</div>
                         {variant.description && (
-                          <div className='text-gray-500 dark:text-gray-400 mt-1'>
+                          <div className='text-gray-500 mt-1'>
                             {variant.description}
                           </div>
                         )}
@@ -308,13 +308,13 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
               {/* Prop Controls */}
               {Object.keys(propControls).length > 0 && (
                 <div>
-                  <h4 className='text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2'>
+                  <h4 className='text-sm font-semibold text-gray-700 mb-2'>
                     Props
                   </h4>
                   <div className='space-y-3'>
                     {Object.entries(propControls).map(([key, control]) => (
                       <div key={key}>
-                        <label className='block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1'>
+                        <label className='block text-xs font-medium text-gray-700 mb-1'>
                           {control.label}
                         </label>
                         {renderPropControl(key, control)}
@@ -325,10 +325,10 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
               )}
 
               {/* Actions */}
-              <div className='flex gap-2 pt-2 border-t border-gray-200 dark:border-gray-600'>
+              <div className='flex gap-2 pt-2 border-t border-gray-200'>
                 <button
                   onClick={resetProps}
-                  className='flex items-center gap-1 px-2 py-1 text-xs bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded transition-colors'
+                  className='flex items-center gap-1 px-2 py-1 text-xs bg-gray-200 hover:bg-gray-300 rounded transition-colors'
                 >
                   <RotateCcw className='w-3 h-3' />
                   Reset
@@ -356,7 +356,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
         <div className='flex-1'>
           {viewMode === 'preview' && (
             <div className='p-6'>
-              <div className='border border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 min-h-32 flex items-center justify-center'>
+              <div className='border border-dashed border-gray-300 rounded-lg p-4 min-h-32 flex items-center justify-center'>
                 <Component {...currentProps} />
               </div>
             </div>
@@ -364,7 +364,7 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
 
           {viewMode === 'code' && (
             <div className='p-4'>
-              <pre className='bg-gray-100 dark:bg-gray-900 p-4 rounded text-sm overflow-x-auto'>
+              <pre className='bg-gray-100 p-4 rounded text-sm overflow-x-auto'>
                 <code>{generateCode()}</code>
               </pre>
             </div>

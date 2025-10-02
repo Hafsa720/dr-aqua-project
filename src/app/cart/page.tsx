@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import {
   ArrowRight,
   MessageCircle,
@@ -9,10 +8,11 @@ import {
   ShoppingBag,
   Trash2,
 } from 'lucide-react';
+import Link from 'next/link';
 
+import { type CartItem,useCart } from '@/components/cart-provider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useCart, type CartItem } from '@/components/cart-provider';
 
 export default function CartPage() {
   const { items, getTotalPrice, updateQuantity, removeItem, clearCart } =

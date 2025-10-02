@@ -48,7 +48,7 @@ export default function ProcessSection({
           className='text-center mb-20'
         >
           <motion.h2
-            className='text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tight'
+            className='text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight'
             variants={MOTION_VARIANTS.fadeInScale}
           >
             {title.includes(' ') ? (
@@ -78,7 +78,7 @@ export default function ProcessSection({
             )}
           </motion.h2>
           <motion.p
-            className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed'
+            className='text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed'
             variants={MOTION_VARIANTS.fadeInUp}
           >
             {subtitle}
@@ -224,7 +224,7 @@ export default function ProcessSection({
                 whileTap={isMobile ? 'tap' : undefined}
               >
                 {/* Modern Card Container */}
-                <div className='relative p-6 bg-gradient-to-br from-slate-200/60 via-white/80 to-slate-100/60 dark:from-white/5 dark:via-white/8 dark:to-white/5 backdrop-blur-lg rounded-2xl border border-slate-300/30 dark:border-white/10 shadow-lg hover:shadow-[0_20px_40px_rgba(59,130,246,0.1)] transition-all duration-500 overflow-hidden h-full'>
+                <div className='relative p-6 bg-gradient-to-br from-slate-200/60 via-white/80 to-slate-100/60 backdrop-blur-lg rounded-2xl border border-slate-300/30 shadow-lg hover:shadow-[0_20px_40px_rgba(59,130,246,0.1)] transition-all duration-500 overflow-hidden h-full'>
                   {/* Subtle pattern overlay */}
                   <div className='absolute inset-0 opacity-5'>
                     <svg width='100%' height='100%' viewBox='0 0 60 60'>
@@ -284,11 +284,11 @@ export default function ProcessSection({
 
                   {/* Step Content */}
                   <div className='relative'>
-                    <h3 className='text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-primary-500 dark:group-hover:text-primary-300 transition-colors duration-300'>
+                    <h3 className='text-xl font-bold text-slate-900 mb-4 group-hover:text-primary-500 transition-colors duration-300'>
                       {step.label}
                     </h3>
 
-                    <p className='text-slate-600 dark:text-slate-300 leading-relaxed text-sm group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors duration-300'>
+                    <p className='text-slate-600 leading-relaxed text-sm group-hover:text-slate-800 transition-colors duration-300'>
                       {step.description}
                     </p>
                   </div>

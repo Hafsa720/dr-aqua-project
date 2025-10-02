@@ -3,10 +3,9 @@ import './globals.css';
 import { Metadata } from 'next';
 import * as React from 'react';
 
+import { CartProvider } from '@/components/cart-provider';
 import Footer from '@/components/layout/Footer';
 import Navigation from '@/components/layout/Navigation';
-import { ThemeProvider } from '@/components/layout/ThemeProvider';
-import { CartProvider } from '@/components/cart-provider';
 import { siteConfig } from '@/constant/config';
 
 // Site metadata configured in @/constant/config
@@ -53,13 +52,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className='font-inter'>
-        <ThemeProvider>
-          <CartProvider>
-            <Navigation />
-            <main className='min-h-main'>{children}</main>
-            <Footer />
-          </CartProvider>
-        </ThemeProvider>
+        <CartProvider>
+          <Navigation />
+          <main className='min-h-main'>{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

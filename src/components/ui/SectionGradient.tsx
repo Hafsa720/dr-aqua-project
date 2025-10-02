@@ -14,7 +14,7 @@ const gradientVariants = {
   secondary:
     'bg-gradient-to-br from-slate-50 via-purple-50/60 to-purple-100/40',
   accent: 'bg-gradient-to-br from-blue-50/60 to-indigo-100/60',
-  cta: 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-700 dark:via-purple-700 dark:to-indigo-700',
+  cta: 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600',
   neutral: 'bg-white',
 };
 
@@ -36,16 +36,16 @@ export default function SectionGradient({
     <section className={`relative overflow-hidden ${className}`}>
       {/* Light mode gradient background - completely hidden in dark mode */}
       <div
-        className={`absolute inset-0 ${gradientVariants[variant]} dark:opacity-0`}
+        className={`absolute inset-0 ${gradientVariants[variant]}`}
       />
 
       {/* Dark mode - CTA variant only gets background */}
       {variant === 'cta' && (
-        <div className='absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 opacity-0 dark:opacity-100' />
+        <div className='absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 opacity-0' />
       )}
       {/* Animated Background Elements for Hero variant - light mode only */}
       {variant === 'hero' && (
-        <div className='absolute inset-0 overflow-hidden opacity-100 dark:opacity-0'>
+        <div className='absolute inset-0 overflow-hidden opacity-100'>
           <div className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/15 rounded-full blur-3xl animate-pulse' />
           <div
             className='absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-green-400/15 to-blue-400/20 rounded-full blur-3xl animate-pulse'
@@ -56,7 +56,7 @@ export default function SectionGradient({
 
       {/* Subtle texture overlay for better depth - light mode only */}
       {variant !== 'neutral' && variant !== 'cta' && (
-        <div className='absolute inset-0 opacity-[0.08] dark:opacity-0'>
+        <div className='absolute inset-0 opacity-[0.08]'>
           <div
             className='absolute inset-0'
             style={{

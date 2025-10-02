@@ -1,3 +1,16 @@
+import {
+  CheckCircle,
+  Clock,
+  Droplets,
+  MapPin,
+  Phone,
+  Shield,
+  Star,
+  Wrench,
+} from 'lucide-react';
+import Link from 'next/link';
+
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -6,18 +19,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
-import {
-  Wrench,
-  Shield,
-  CheckCircle,
-  Droplets,
-  Clock,
-  Phone,
-  MapPin,
-  Star,
-} from 'lucide-react';
 
 const services = [
   {

@@ -1,7 +1,6 @@
 'use client';
 
 import { ExternalLink, Github, Heart, Plus, Shield, Star } from 'lucide-react';
-import { useTheme } from 'next-themes';
 import React from 'react';
 
 import Button from '@/components/buttons/Button';
@@ -15,7 +14,6 @@ import PrimaryLink from '@/components/links/PrimaryLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Container } from '@/components/ui/Container';
@@ -29,10 +27,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { HStack, VStack } from '@/components/ui/Stack';
 
 export default function ComponentPage() {
-  const { theme } = useTheme();
   const [checked, setChecked] = React.useState(false);
-
-  const isDark = theme === 'dark';
 
   const shadcnComponents = [
     {
@@ -158,9 +153,8 @@ export default function ComponentPage() {
 
           <div className='mt-8 flex items-center gap-4'>
             <p className='text-sm text-muted-foreground'>
-              Use the theme toggle in the navigation to switch dark mode
+              Components are displayed in light mode only
             </p>
-            <ThemeToggle />
           </div>
 
           {/* Shadcn Components Reference */}
@@ -341,10 +335,10 @@ export default function ComponentPage() {
                 <ButtonLink variant='primary' href='#'>
                   Primary Variant
                 </ButtonLink>
-                <ButtonLink variant='outline' isDarkBg={isDark} href='#'>
+                <ButtonLink variant='outline' href='#'>
                   Outline Variant
                 </ButtonLink>
-                <ButtonLink variant='ghost' isDarkBg={isDark} href='#'>
+                <ButtonLink variant='ghost' href='#'>
                   Ghost Variant
                 </ButtonLink>
                 <ButtonLink variant='light' href='#'>
@@ -363,18 +357,8 @@ export default function ComponentPage() {
               </p>
               <div className='flex flex-wrap gap-2'>
                 <IconLink icon={Github} variant='primary' href='#' />
-                <IconLink
-                  icon={Heart}
-                  variant='outline'
-                  href='#'
-                  isDarkBg={isDark}
-                />
-                <IconLink
-                  icon={Star}
-                  variant='ghost'
-                  href='#'
-                  isDarkBg={isDark}
-                />
+                <IconLink icon={Heart} variant='outline' href='#' />
+                <IconLink icon={Star} variant='ghost' href='#' />
                 <IconLink icon={Plus} variant='dark' href='#' />
                 <IconLink icon={Shield} variant='light' href='#' />
               </div>
@@ -397,12 +381,8 @@ export default function ComponentPage() {
               </p>
               <div className='flex flex-wrap gap-2'>
                 <Button variant='primary'>Primary</Button>
-                <Button variant='outline' isDarkBg={isDark}>
-                  Outline
-                </Button>
-                <Button variant='ghost' isDarkBg={isDark}>
-                  Ghost
-                </Button>
+                <Button variant='outline'>Outline</Button>
+                <Button variant='ghost'>Ghost</Button>
                 <Button variant='light'>Light</Button>
                 <Button variant='dark'>Dark</Button>
                 <Button disabled>Disabled</Button>
@@ -417,8 +397,8 @@ export default function ComponentPage() {
               </p>
               <div className='flex flex-wrap gap-2'>
                 <IconButton icon={Github} variant='primary' />
-                <IconButton icon={Heart} variant='outline' isDarkBg={isDark} />
-                <IconButton icon={Star} variant='ghost' isDarkBg={isDark} />
+                <IconButton icon={Heart} variant='outline' />
+                <IconButton icon={Star} variant='ghost' />
                 <IconButton icon={Shield} variant='light' />
                 <IconButton icon={Plus} variant='dark' />
               </div>

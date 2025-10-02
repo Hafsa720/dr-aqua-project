@@ -1,16 +1,14 @@
-import { motion } from 'framer-motion';
+'use client';
+
 import React, { FC } from 'react';
 
-import {
-  getMotionConfig,
-  useReducedMotion,
-} from '@/lib/hooks/useReducedMotion';
+import { cn } from '@/lib/utils';
 
 interface PropsSocial {
   title: React.ReactNode;
   href: string;
-  classes: string;
-  background: string;
+  classes?: string;
+  background?: string;
   iconSize?: number;
   hoverColor?: string;
   ariaLabel?: string;
@@ -19,79 +17,79 @@ interface PropsSocial {
 const MotionSocial: FC<PropsSocial> = ({
   title,
   href,
-  classes,
-  background,
+  classes = '',
+  background = 'bg-primary-500',
   iconSize = 20,
   hoverColor,
   ariaLabel,
 }: PropsSocial) => {
-  const prefersReducedMotion = useReducedMotion();
-
-  // Define hover colors directly to ensure Tailwind includes them
+  // Define hover colors with Tailwind classes
   const getHoverColor = () => {
     if (hoverColor?.includes('green'))
-      return 'hover:text-green-500 dark:hover:text-green-400';
+      return 'hover:text-green-500';
     if (hoverColor?.includes('blue-8'))
-      return 'hover:text-blue-800 dark:hover:text-blue-700';
+      return 'hover:text-blue-800';
     if (hoverColor?.includes('blue-6'))
-      return 'hover:text-blue-600 dark:hover:text-blue-500';
+      return 'hover:text-blue-600';
     if (hoverColor?.includes('blue-5'))
-      return 'hover:text-blue-500 dark:hover:text-blue-400';
+      return 'hover:text-blue-500';
     if (hoverColor?.includes('pink'))
-      return 'hover:text-pink-500 dark:hover:text-pink-400';
+      return 'hover:text-pink-500';
     if (hoverColor?.includes('sky'))
-      return 'hover:text-sky-400 dark:hover:text-sky-300';
+      return 'hover:text-sky-400';
     if (hoverColor?.includes('red'))
-      return 'hover:text-red-600 dark:hover:text-red-500';
+      return 'hover:text-red-600';
     if (hoverColor?.includes('gray'))
-      return 'hover:text-gray-800 dark:hover:text-gray-600';
-    return hoverColor || '';
+      return 'hover:text-gray-800';
+    return hoverColor || 'hover:text-primary-400';
   };
 
-  const linkMotionProps = getMotionConfig(
-    {
-      whileHover: 'visible',
-      initial: 'hidden',
-    },
-    prefersReducedMotion,
-  );
-
-  const underlineMotionProps = getMotionConfig(
-    {
-      variants: {
-        hidden: {
-          opacity: 0,
-          y: 2,
-        },
-        visible: {
-          opacity: 1,
-          y: 0,
-        },
-      },
-      transition: {
-        damping: 2,
-        mass: 3,
-      },
-    },
-    prefersReducedMotion,
-  );
-
   return (
-    <motion.a
+    <a
       href={href}
       target='_blank'
       rel='noopener noreferrer'
-      className={`relative inline-flex items-center justify-center ${classes} ${getHoverColor()}`}
-      {...linkMotionProps}
+      className={cn(
+        'group relative inline-flex items-center justify-center',
+        'transition-all duration-300 ease-out',
+        'hover:scale-110 hover:-translate-y-0.5',
+        'active:scale-95',
+        'focus-ring touch-feedback',
+        classes,
+        getHoverColor(),
+      )}
       aria-label={ariaLabel}
     >
-      <span className='relative z-10'>{title}</span>
-      <motion.span
-        className={`absolute bottom-1 left-1/2 transform -translate-x-1/2 ${background} h-0.5 rounded`}
+      <span className='relative z-10 transition-transform duration-300 group-hover:scale-105'>
+        {title}
+      </span>
+
+      {/* Animated underline */}
+      <span
+        className={cn(
+          'absolute bottom-1 left-1/2 -translate-x-1/2',
+          background,
+          'h-0.5 rounded-full',
+          'transition-all duration-300 ease-out',
+          'opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100',
+          'origin-center',
+        )}
         style={{ width: `${iconSize}px` }}
-        {...underlineMotionProps}
+        aria-hidden='true'
       />
-    </motion.a>
+
+      {/* Glow effect on hover */}
+      <span
+        className={cn(
+          'absolute inset-0 rounded-xl blur-sm',
+          background,
+          'opacity-0 group-hover:opacity-20',
+          'transition-opacity duration-300',
+          'pointer-events-none',
+        )}
+        aria-hidden='true'
+      />
+    </a>
   );
 };
 

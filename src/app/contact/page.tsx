@@ -18,8 +18,6 @@ import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 
 import Button from '@/components/buttons/Button';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import MotionSocial from '@/components/MotionSocial';
-import { motion } from '@/components/MotionWrapper';
 import contactContent from '@/content/common/en/contact.json';
 import contactData from '@/content/common/en/data.json';
 import footerContent from '@/content/common/en/footer.json';
@@ -139,177 +137,121 @@ const ContactPage = () => {
       <section className='relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-primary-100/30 to-primary-200/50 overflow-hidden'>
         {/* Background Pattern */}
         <div className='absolute inset-0'>
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-400/10 to-secondary-400/10 rounded-full blur-3xl'
-          />
+          <div className='absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-400/10 to-secondary-400/10 rounded-full blur-3xl animate-pulse' />
         </div>
 
         <div className='layout text-center relative z-10 page-header-spacing'>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full text-sm font-medium text-primary-700 mb-8'
-          >
+          <div className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full text-sm font-medium text-primary-700 mb-8'>
             <FaEnvelope className='w-4 h-4' />
             <span>{contactContent.hero.subtitle}</span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className='text-5xl md:text-7xl font-bold leading-tight mb-8'
-          >
+          <h1 className='text-5xl md:text-7xl font-bold leading-tight mb-8'>
             <span className='text-primary-900'>Get In</span>
             <br />
             <span className='bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-700 bg-clip-text text-transparent'>
               Touch
             </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className='text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed'
-          >
+          </h1>
+          <p className='text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed'>
             {contactContent.hero.description}
-          </motion.p>
+          </p>
         </div>
       </section>
 
       {/* Contact Options */}
-      <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-800 dark:to-slate-900'>
+      <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30'>
         <div className='layout'>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className='text-center mb-20'
-          >
-            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+          <div className='text-center mb-20'>
+            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Contact
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
                 Options
               </span>
             </h2>
-            <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+            <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
               Choose the best way to reach us. We're here to help and respond
               quickly to all inquiries with personalized solutions.
             </p>
-          </motion.div>
-
+          </div>{' '}
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {contactOptions.map((option, index) => (
-              <motion.div
+              <div
                 key={option.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className='hover:-translate-y-1 transition-all duration-300'
               >
                 <UnstyledLink
                   href={option.link}
                   openNewTab={option.link.startsWith('http')}
-                  className='bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 text-center border border-slate-200 dark:border-slate-700 block group'
+                  className='bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 text-center border border-slate-200 block group'
                 >
                   <div className='w-16 h-16 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-6 shadow-lg'>
                     <option.icon className='text-white text-2xl' />
                   </div>
-                  <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                  <h3 className='text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors'>
                     {option.title}
                   </h3>
-                  <p className='text-slate-600 dark:text-slate-300 mb-4 leading-relaxed'>
+                  <p className='text-slate-600 mb-4 leading-relaxed'>
                     {option.description}
                   </p>
-                  <p className='text-blue-600 dark:text-blue-400 font-semibold text-lg'>
+                  <p className='text-blue-600 font-semibold text-lg'>
                     {option.contact}
                   </p>
                 </UnstyledLink>
-              </motion.div>
+              </div>
             ))}
           </div>
-
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className='text-center mt-20'
-          >
-            <h3 className='text-3xl font-bold text-slate-900 dark:text-white mb-8'>
+          <div className='text-center mt-20'>
+            <h3 className='text-3xl font-bold text-slate-900 mb-8'>
               Connect With Us
             </h3>
             <div className='flex justify-center flex-wrap gap-3'>
               {socialLinks.map((social, index) => (
-                <motion.div
+                <a
                   key={social.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
+                  href={social.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='bg-white text-slate-600 p-4 rounded-2xl hover:bg-slate-100 transition-all duration-300 border border-slate-200 shadow-lg hover:shadow-xl hover:scale-110'
+                  aria-label={social.name}
                 >
-                  <MotionSocial
-                    href={social.href}
-                    title={<social.icon size={20} />}
-                    classes='bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 p-4 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300 border border-slate-200 dark:border-slate-600 shadow-lg hover:shadow-xl'
-                    background={social.bgColor}
-                    iconSize={20}
-                    hoverColor={social.hoverColor}
-                  />
-                </motion.div>
+                  <social.icon size={20} />
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className='py-32 bg-white dark:bg-slate-900'>
+      <section className='py-32 bg-white'>
         <div className='layout'>
           <div className='max-w-4xl mx-auto'>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className='text-center mb-20'
-            >
-              <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+            <div className='text-center mb-20'>
+              <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
                 Send Us a
                 <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                   {' '}
                   Message
                 </span>
               </h2>
-              <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+              <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
                 Fill out the form below and we'll get back to you within 24
                 hours with a personalized response to your inquiry.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.form
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+            <form
               onSubmit={(e) => e.preventDefault()}
-              className='bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-800 dark:to-slate-700 p-12 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-600'
+              className='bg-gradient-to-br from-slate-50 to-blue-50/30 p-12 rounded-3xl shadow-2xl border border-slate-200'
             >
               <div className='grid md:grid-cols-2 gap-8 mb-8'>
                 <div>
                   <label
                     htmlFor='name'
-                    className='block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3'
+                    className='block text-sm font-semibold text-slate-700 mb-3'
                   >
                     Name *
                   </label>
@@ -320,23 +262,19 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-6 py-4 border-2 ${showErrors && errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500'} dark:bg-slate-800 dark:text-white rounded-2xl focus:ring-2 transition-all duration-300 text-lg`}
+                    className={`w-full px-6 py-4 border-2 ${showErrors && errors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 focus:border-blue-500 focus:ring-blue-500'} rounded-2xl focus:ring-2 transition-all duration-300 text-lg`}
                     placeholder='Your full name'
                   />
                   {showErrors && errors.name && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className='mt-2 text-red-500 text-sm font-medium'
-                    >
+                    <p className='mt-2 text-red-500 text-sm font-medium animate-fade-in'>
                       {errors.name}
-                    </motion.p>
+                    </p>
                   )}
                 </div>
                 <div>
                   <label
                     htmlFor='email'
-                    className='block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3'
+                    className='block text-sm font-semibold text-slate-700 mb-3'
                   >
                     Email *
                   </label>
@@ -347,17 +285,13 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-6 py-4 border-2 ${showErrors && errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500'} dark:bg-slate-800 dark:text-white rounded-2xl focus:ring-2 transition-all duration-300 text-lg`}
+                    className={`w-full px-6 py-4 border-2 ${showErrors && errors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 focus:border-blue-500 focus:ring-blue-500'} rounded-2xl focus:ring-2 transition-all duration-300 text-lg`}
                     placeholder='your@email.com'
                   />
                   {showErrors && errors.email && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className='mt-2 text-red-500 text-sm font-medium'
-                    >
+                    <p className='mt-2 text-red-500 text-sm font-medium animate-fade-in'>
                       {errors.email}
-                    </motion.p>
+                    </p>
                   )}
                 </div>
               </div>
@@ -365,7 +299,7 @@ const ContactPage = () => {
               <div className='mb-8'>
                 <label
                   htmlFor='company'
-                  className='block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3'
+                  className='block text-sm font-semibold text-slate-700 mb-3'
                 >
                   Company (Optional)
                 </label>
@@ -375,7 +309,7 @@ const ContactPage = () => {
                   name='company'
                   value={formData.company}
                   onChange={handleInputChange}
-                  className='w-full px-6 py-4 border-2 border-slate-200 dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-lg'
+                  className='w-full px-6 py-4 border-2 border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-lg'
                   placeholder='Your company name'
                 />
               </div>
@@ -383,7 +317,7 @@ const ContactPage = () => {
               <div className='mb-8'>
                 <label
                   htmlFor='message'
-                  className='block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3'
+                  className='block text-sm font-semibold text-slate-700 mb-3'
                 >
                   Message *
                 </label>
@@ -394,17 +328,13 @@ const ContactPage = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className={`w-full px-6 py-4 border-2 ${showErrors && errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500'} dark:bg-slate-800 dark:text-white rounded-2xl focus:ring-2 transition-all duration-300 text-lg resize-none`}
+                  className={`w-full px-6 py-4 border-2 ${showErrors && errors.message ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-slate-200 focus:border-blue-500 focus:ring-blue-500'} rounded-2xl focus:ring-2 transition-all duration-300 text-lg resize-none`}
                   placeholder='Tell us about your project, goals, timeline, and any specific requirements...'
                 />
                 {showErrors && errors.message && (
-                  <motion.p
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className='mt-2 text-red-500 text-sm font-medium'
-                  >
+                  <p className='mt-2 text-red-500 text-sm font-medium animate-fade-in'>
                     {errors.message}
-                  </motion.p>
+                  </p>
                 )}
               </div>
 
@@ -418,25 +348,21 @@ const ContactPage = () => {
                     required
                     className={`mt-1 w-5 h-5 rounded border-2 ${showErrors && errors.consent ? 'border-red-500 text-red-600 focus:ring-red-500' : 'border-slate-300 text-blue-600 focus:ring-blue-500'} focus:ring-2`}
                   />
-                  <span className='text-slate-700 dark:text-slate-300 leading-relaxed'>
+                  <span className='text-slate-700 leading-relaxed'>
                     I agree to receive communications from RapidBizz and
                     understand that I can unsubscribe at any time. *
                   </span>
                 </label>
                 {showErrors && errors.consent && (
-                  <motion.p
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className='mt-2 text-red-500 text-sm font-medium'
-                  >
+                  <p className='mt-2 text-red-500 text-sm font-medium animate-fade-in'>
                     {errors.consent}
-                  </motion.p>
+                  </p>
                 )}
               </div>
 
               {/* Contact Method Selection */}
               <div className='mb-8'>
-                <h3 className='text-lg font-semibold text-slate-900 dark:text-white mb-4 text-center'>
+                <h3 className='text-lg font-semibold text-slate-900 mb-4 text-center'>
                   Send us your message instantly:
                 </h3>
 
@@ -550,7 +476,7 @@ ${formData.name}`;
                       type='button'
                       variant='outline'
                       size='sm'
-                      className='w-full border border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900 font-medium py-2 px-4 rounded-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 min-h-[36px]'
+                      className='w-full border border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white font-medium py-2 px-4 rounded-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 min-h-[36px]'
                     >
                       <FaEnvelope className='text-sm opacity-70' />
                       <span className='text-sm'>Default Email App</span>
@@ -558,7 +484,7 @@ ${formData.name}`;
                   </div>
                 </div>
 
-                <div className='text-center text-sm text-slate-600 dark:text-slate-400 mt-6 space-y-2'>
+                <div className='text-center text-sm text-slate-600 mt-6 space-y-2'>
                   <p>
                     💬 <strong>WhatsApp:</strong> Instant messaging with quick
                     replies
@@ -573,110 +499,65 @@ ${formData.name}`;
                   </p>
                 </div>
               </div>
-            </motion.form>
+            </form>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-800 dark:to-slate-900'>
+      <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30'>
         <div className='layout'>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className='text-center mb-20'
-          >
-            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+          <div className='text-center mb-20'>
+            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Frequently Asked
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
                 Questions
               </span>
             </h2>
-            <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+            <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
               Find answers to common questions about our services, process, and
               how we can help your business grow.
             </p>
-          </motion.div>
+          </div>
 
           <div className='max-w-4xl mx-auto space-y-6'>
             {faqs.map((faq, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  type: 'spring',
-                  stiffness: 100,
-                  damping: 15,
-                }}
-                whileHover={{
-                  y: -2,
-                  transition: { duration: 0.2 },
-                }}
-                className='bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300'
+                className='bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300'
               >
-                <motion.div
-                  whileHover={{ backgroundColor: 'rgba(248, 250, 252, 0.5)' }}
-                  whileTap={{ scale: 0.995 }}
-                >
+                <div className='hover:bg-slate-50/50 transition-colors duration-200'>
                   <Button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     variant='ghost'
-                    className='w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300 group'
+                    className='w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-50 transition-all duration-300 group'
                   >
-                    <motion.span
-                      className='text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors pr-4'
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.2 }}
-                    >
+                    <span className='text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors pr-4'>
                       {faq.question}
-                    </motion.span>
-                    <motion.div
-                      animate={{ rotate: openFaq === index ? 180 : 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                    </span>
+                    <div
+                      className='transform transition-transform duration-300 ease-in-out'
+                      style={{ rotate: openFaq === index ? '180deg' : '0deg' }}
                     >
-                      <FaChevronDown className='text-blue-600 dark:text-blue-400 flex-shrink-0' />
-                    </motion.div>
+                      <FaChevronDown className='text-blue-600 flex-shrink-0 hover:scale-110 active:scale-90 transition-transform' />
+                    </div>
                   </Button>
-                </motion.div>
-                <motion.div
-                  initial={false}
-                  animate={{
+                </div>
+                <div
+                  className='overflow-hidden transition-all duration-400 ease-in-out'
+                  style={{
                     height: openFaq === index ? 'auto' : 0,
                     opacity: openFaq === index ? 1 : 0,
                   }}
-                  transition={{
-                    duration: 0.4,
-                    ease: [0.25, 0.1, 0.25, 1],
-                    opacity: {
-                      duration: 0.2,
-                      delay: openFaq === index ? 0.1 : 0,
-                    },
-                  }}
-                  className='overflow-hidden'
                 >
-                  <div className='px-8 pb-6 border-t border-slate-200 dark:border-slate-600'>
-                    <motion.p
-                      className='text-slate-600 dark:text-slate-300 leading-relaxed text-lg pt-4'
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{
-                        y: openFaq === index ? 0 : -10,
-                        opacity: openFaq === index ? 1 : 0,
-                      }}
-                      transition={{ delay: 0.15, duration: 0.3 }}
-                    >
+                  <div className='px-8 pb-6 border-t border-slate-200'>
+                    <p className='text-slate-600 leading-relaxed text-lg pt-4'>
                       {faq.answer}
-                    </motion.p>
+                    </p>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

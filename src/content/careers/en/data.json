@@ -576,56 +576,56 @@
       "label": "Remote-First Culture",
       "description": "Work from anywhere with flexible hours and async collaboration tools.",
       "color": "text-blue-500",
-      "bg": "bg-blue-50 dark:bg-blue-900/20"
+      "bg": "bg-blue-50"
     },
     {
       "icon": "FaGraduationCap",
       "label": "Learning Course Reimbursement",
       "description": "Annual budget for courses, conferences, certifications, and books.",
       "color": "text-purple-500",
-      "bg": "bg-purple-50 dark:bg-purple-900/20"
+      "bg": "bg-purple-50"
     },
     {
       "icon": "FaDumbbell",
       "label": "Gym/Wellness Reimbursement",
       "description": "Full gym membership and wellness programs reimbursement.",
       "color": "text-orange-500",
-      "bg": "bg-orange-50 dark:bg-orange-900/20"
+      "bg": "bg-orange-50"
     },
     {
       "icon": "FaRocket",
       "label": "Equity Sharing Overall",
       "description": "Share in overall company success with equity options and profit sharing.",
       "color": "text-green-500",
-      "bg": "bg-green-50 dark:bg-green-900/20"
+      "bg": "bg-green-50"
     },
     {
       "icon": "FaShieldAlt",
       "label": "Equity Sharing by Project",
       "description": "Project-wise equity sharing based on individual contributions.",
       "color": "text-teal-500",
-      "bg": "bg-teal-50 dark:bg-teal-900/20"
+      "bg": "bg-teal-50"
     },
     {
       "icon": "FaPlane",
       "label": "Passport & Visa Support",
       "description": "Passport and visa assistance for exposure to big clients (e.g., Dubai Expo) inshALLAH.",
       "color": "text-yellow-500",
-      "bg": "bg-yellow-50 dark:bg-yellow-900/20"
+      "bg": "bg-yellow-50"
     },
     {
       "icon": "FaUsers",
       "label": "Learning from Seniors",
       "description": "Direct mentorship and learning opportunities from senior professionals.",
       "color": "text-indigo-500",
-      "bg": "bg-indigo-50 dark:bg-indigo-900/20"
+      "bg": "bg-indigo-50"
     },
     {
       "icon": "FaHeart",
       "label": "Recreational Activities",
       "description": "Regular recreational activities, team trips, and company outings.",
       "color": "text-red-500",
-      "bg": "bg-red-50 dark:bg-red-900/20"
+      "bg": "bg-red-50"
     }
   ],
   "testimonials": [

@@ -90,21 +90,21 @@ export default function QuoteModal({
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className='bg-white dark:bg-slate-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto modal-scrollbar'
+            className='bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto modal-scrollbar'
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className='p-6 border-b border-slate-200 dark:border-slate-700'>
+            <div className='p-6 border-b border-slate-200'>
               <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-4'>
                   <div className='w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center'>
                     <service.icon className='w-6 h-6 text-white' />
                   </div>
                   <div>
-                    <h2 className='text-2xl font-bold text-slate-900 dark:text-white'>
+                    <h2 className='text-2xl font-bold text-slate-900'>
                       Get Quote for {service.title}
                     </h2>
-                    <p className='text-slate-600 dark:text-slate-300'>
+                    <p className='text-slate-600'>
                       Starting from {service.startingPrice} •{' '}
                       {service.deliveryTime}
                     </p>
@@ -112,9 +112,9 @@ export default function QuoteModal({
                 </div>
                 <button
                   onClick={onClose}
-                  className='w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 flex items-center justify-center transition-colors'
+                  className='w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors'
                 >
-                  <FaTimes className='w-4 h-4 text-slate-600 dark:text-slate-400' />
+                  <FaTimes className='w-4 h-4 text-slate-600' />
                 </button>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function QuoteModal({
               {/* Contact Info */}
               <div className='grid md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                  <label className='block text-sm font-medium text-slate-900 mb-2'>
                     Full Name *
                   </label>
                   <input
@@ -132,12 +132,12 @@ export default function QuoteModal({
                     required
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+                    className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
                     placeholder='John Doe'
                   />
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                  <label className='block text-sm font-medium text-slate-900 mb-2'>
                     Email Address *
                   </label>
                   <input
@@ -145,21 +145,21 @@ export default function QuoteModal({
                     required
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+                    className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
                     placeholder='john@company.com'
                   />
                 </div>
               </div>
 
               <div>
-                <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                <label className='block text-sm font-medium text-slate-900 mb-2'>
                   Company (Optional)
                 </label>
                 <input
                   type='text'
                   value={formData.company}
                   onChange={(e) => handleInputChange('company', e.target.value)}
-                  className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+                  className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
                   placeholder='Your Company Name'
                 />
               </div>
@@ -167,7 +167,7 @@ export default function QuoteModal({
               {/* Budget & Timeline */}
               <div className='grid md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                  <label className='block text-sm font-medium text-slate-900 mb-2'>
                     Budget Range
                   </label>
                   <select
@@ -175,7 +175,7 @@ export default function QuoteModal({
                     onChange={(e) =>
                       handleInputChange('budget', e.target.value)
                     }
-                    className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+                    className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
                   >
                     <option value=''>Select budget range</option>
                     {budgetRanges.map((range) => (
@@ -186,7 +186,7 @@ export default function QuoteModal({
                   </select>
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                  <label className='block text-sm font-medium text-slate-900 mb-2'>
                     Timeline
                   </label>
                   <select
@@ -194,7 +194,7 @@ export default function QuoteModal({
                     onChange={(e) =>
                       handleInputChange('timeline', e.target.value)
                     }
-                    className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
+                    className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors'
                   >
                     <option value=''>Select timeline</option>
                     {timeframes.map((time) => (
@@ -208,7 +208,7 @@ export default function QuoteModal({
 
               {/* Priority */}
               <div>
-                <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                <label className='block text-sm font-medium text-slate-900 mb-2'>
                   Project Priority
                 </label>
                 <div className='grid grid-cols-2 gap-3'>
@@ -224,8 +224,8 @@ export default function QuoteModal({
                       key={priority.value}
                       className={`p-4 rounded-xl border-2 cursor-pointer transition-all ${
                         formData.priority === priority.value
-                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
-                          : 'border-slate-200 dark:border-slate-600 hover:border-blue-300'
+                          ? 'border-blue-500 bg-blue-50'
+                          : 'border-slate-200 hover:border-blue-300'
                       }`}
                     >
                       <input
@@ -240,10 +240,10 @@ export default function QuoteModal({
                       />
                       <div className='flex items-center justify-between'>
                         <div>
-                          <div className='font-medium text-slate-900 dark:text-white'>
+                          <div className='font-medium text-slate-900'>
                             {priority.label}
                           </div>
-                          <div className='text-sm text-slate-600 dark:text-slate-400'>
+                          <div className='text-sm text-slate-600'>
                             {priority.desc}
                           </div>
                         </div>
@@ -258,7 +258,7 @@ export default function QuoteModal({
 
               {/* Requirements */}
               <div>
-                <label className='block text-sm font-medium text-slate-900 dark:text-white mb-2'>
+                <label className='block text-sm font-medium text-slate-900 mb-2'>
                   Project Requirements
                 </label>
                 <textarea
@@ -267,7 +267,7 @@ export default function QuoteModal({
                     handleInputChange('requirements', e.target.value)
                   }
                   rows={4}
-                  className='w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none'
+                  className='w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none'
                   placeholder='Describe your project requirements, features needed, target audience, etc...'
                 />
               </div>
@@ -282,7 +282,7 @@ export default function QuoteModal({
                 <div className='w-2 h-2 bg-green-400 rounded-full animate-pulse' />
               </button>
 
-              <p className='text-center text-sm text-slate-600 dark:text-slate-400'>
+              <p className='text-center text-sm text-slate-600'>
                 We'll send your quote request directly to WhatsApp for quick
                 response
               </p>

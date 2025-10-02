@@ -24,16 +24,9 @@ export async function GET(request: NextRequest) {
         text: '#111827',
         accent: '#64748B',
       },
-      dark: {
-        bg: '#0F172A',
-        primary: '#3B82F6',
-        secondary: '#FF8621',
-        text: '#F8FAFC',
-        accent: '#64748B',
-      },
     };
 
-    const currentTheme = colors[theme as keyof typeof colors] || colors.dark;
+    const currentTheme = colors[theme as keyof typeof colors] || colors.light;
 
     return new ImageResponse(
       (

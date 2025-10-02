@@ -99,9 +99,9 @@ const TeamPage = () => {
   }));
 
   return (
-    <div className='relative overflow-hidden bg-white dark:bg-slate-900'>
+    <div className='relative overflow-hidden bg-white'>
       {/* Hero Section - Modern Team Introduction */}
-      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 overflow-hidden'>
+      <section className='relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden'>
         <div className='layout relative z-10 page-header-spacing'>
           <div className='text-center mb-20'>
             <motion.div
@@ -109,20 +109,20 @@ const TeamPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-full text-sm font-medium text-blue-700 dark:text-blue-300 mb-8'>
+              <div className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-medium text-blue-700 mb-8'>
                 <HiSparkles className='w-4 h-4' />
                 <span>{teamContent.hero.subtitle}</span>
               </div>
 
               <h1 className='text-5xl md:text-7xl font-bold leading-tight mb-8'>
-                <span className='text-slate-900 dark:text-white'>Meet the</span>
+                <span className='text-slate-900'>Meet the</span>
                 <br />
                 <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent'>
                   Innovators
                 </span>
               </h1>
 
-              <p className='text-xl text-slate-600 dark:text-slate-300 mb-12 leading-relaxed max-w-3xl mx-auto'>
+              <p className='text-xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto'>
                 {teamContent.hero.description}
               </p>
             </motion.div>
@@ -144,7 +144,7 @@ const TeamPage = () => {
       </section>
 
       {/* Team Members Section - Modern Card Design */}
-      <section className='py-32 bg-white dark:bg-slate-900'>
+      <section className='py-32 bg-white'>
         <div className='layout'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -152,14 +152,14 @@ const TeamPage = () => {
             viewport={{ once: true }}
             className='text-center mb-20'
           >
-            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Our
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
                 Experts
               </span>
             </h2>
-            <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+            <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
               Each team member brings unique expertise and passion for creating
               exceptional digital experiences.
             </p>
@@ -174,7 +174,7 @@ const TeamPage = () => {
       </section>
 
       {/* Company Values Section - Modern Icon Grid */}
-      <section className='py-32 bg-white dark:bg-slate-900'>
+      <section className='py-32 bg-white'>
         <div className='layout'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -182,14 +182,14 @@ const TeamPage = () => {
             viewport={{ once: true }}
             className='text-center mb-20'
           >
-            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Our
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
                 Values
               </span>
             </h2>
-            <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+            <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
               The core principles that guide our work, shape our culture, and
               define how we build lasting relationships.
             </p>
@@ -207,21 +207,21 @@ const TeamPage = () => {
                 className='group'
               >
                 <div
-                  className={`${value.bg} p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-lg transition-shadow duration-200 h-full`}
+                  className={`${value.bg} p-8 rounded-2xl border border-slate-200 shadow-md hover:shadow-lg transition-shadow duration-200 h-full`}
                 >
                   <div
-                    className={`w-16 h-16 ${value.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-200 dark:border-slate-600`}
+                    className={`w-16 h-16 ${value.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-slate-200`}
                   >
                     {value.icon && (
                       <value.icon className={`w-8 h-8 ${value.color}`} />
                     )}
                   </div>
 
-                  <h3 className='text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                  <h3 className='text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
                     {value.title}
                   </h3>
 
-                  <p className='text-slate-600 dark:text-slate-300 leading-relaxed'>
+                  <p className='text-slate-600 leading-relaxed'>
                     {value.description}
                   </p>
                 </div>
@@ -232,7 +232,7 @@ const TeamPage = () => {
       </section>
 
       {/* Benefits & Perks Section */}
-      <section className='py-32 bg-gradient-to-br from-slate-50 to-purple-50/30 dark:from-slate-800 dark:to-slate-900'>
+      <section className='py-32 bg-gradient-to-br from-slate-50 to-purple-50/30'>
         <div className='layout'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -240,14 +240,14 @@ const TeamPage = () => {
             viewport={{ once: true }}
             className='text-center mb-20'
           >
-            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6'>
+            <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Why Join
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
                 RapidBizz
               </span>
             </h2>
-            <p className='text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto'>
+            <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
               We offer more than just a job - we provide a platform for growth,
               innovation, and making a real impact.
             </p>
@@ -267,10 +267,10 @@ const TeamPage = () => {
                 <div className='w-20 h-20 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-6 shadow-lg'>
                   <benefit.icon className='w-8 h-8 text-white' />
                 </div>
-                <h3 className='text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                <h3 className='text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors'>
                   {benefit.title}
                 </h3>
-                <p className='text-slate-600 dark:text-slate-400 leading-relaxed'>
+                <p className='text-slate-600 leading-relaxed'>
                   {benefit.description}
                 </p>
               </motion.div>

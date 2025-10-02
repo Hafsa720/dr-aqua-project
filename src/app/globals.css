@@ -1,9 +1,6 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
 @plugin '@tailwindcss/forms';
-
-@variant dark (.dark &);
 
 /* Custom utility classes for enhanced UX */
 .perspective-1000 {
@@ -66,7 +63,7 @@
 }
 
 .legal-document .prose h1 {
-  @apply border-b border-gray-200 dark:border-gray-700 pb-4;
+  @apply border-b border-gray-200 pb-4;
 }
 
 .legal-document .prose h2 {
@@ -116,7 +113,7 @@
 }
 
 .toc-sidebar .toc {
-  @apply sticky top-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm;
+  @apply sticky top-8 bg-white border border-gray-200 rounded-lg p-4 shadow-sm;
   max-height: calc(100vh - 6rem);
   overflow-y: auto;
   scrollbar-width: thin;
@@ -150,7 +147,7 @@
 }
 
 .toc-sidebar .toc h3 {
-  @apply text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wide mb-3 flex items-center gap-2;
+  @apply text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 flex items-center gap-2;
 }
 
 .toc-sidebar .toc h3::before {
@@ -159,19 +156,19 @@
 }
 
 .toc-sidebar .toc ul {
-  @apply space-y-1 border-l-2 border-primary-200 dark:border-primary-700 pl-4;
+  @apply space-y-1 border-l-2 border-primary-200 pl-4;
 }
 
 .toc-sidebar .toc a {
-  @apply block py-1.5 px-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 rounded-md hover:bg-primary-50 dark:hover:bg-primary-900/20;
+  @apply block py-1.5 px-2 text-sm text-gray-600 hover:text-primary-600 transition-all duration-200 rounded-md hover:bg-primary-50;
 }
 
 .toc-sidebar .toc a:hover {
-  @apply text-primary-600 dark:text-primary-400 transform translate-x-1;
+  @apply text-primary-600 transform translate-x-1;
 }
 
 .toc-sidebar .toc a[aria-current='true'] {
-  @apply text-primary-700 dark:text-primary-300 font-medium bg-primary-50 dark:bg-primary-900/30;
+  @apply text-primary-700 font-medium bg-primary-50;
 }
 
 @theme {
@@ -207,22 +204,12 @@
   --color-secondary-900: oklch(0.32 0.13 68.3);
   --color-secondary-950: oklch(0.21 0.09 68.3);
 
-  /* Dark color */
-  --color-dark: #222222;
-
   /* Light theme colors */
   --color-background: #ffffff;
   --color-surface: #f8fafc;
   --color-border: var(--color-primary-200);
   --color-text: #1a1a1a;
   --color-text-secondary: #666666;
-
-  /* Dark theme colors */
-  --color-background-dark: #0f172a;
-  --color-surface-dark: #1e293b;
-  --color-border-dark: #334155;
-  --color-text-dark: #f1f5f9;
-  --color-text-secondary-dark: #94a3b8;
 
   /* Animation configuration */
   --animate-flicker: flicker 3s linear infinite;
@@ -313,23 +300,51 @@
   }
 }
 
-@layer base {
-  /* Apply dark mode styles when dark class is present */
-  .dark {
-    --color-background: var(--color-background-dark);
-    --color-surface: var(--color-surface-dark);
-    --color-border: var(--color-border-dark);
-    --color-text: var(--color-text-dark);
-    --color-text-secondary: var(--color-text-secondary-dark);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+@layer base {
   /* Apply dynamic background colors */
   html {
-    @apply bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100;
+    @apply bg-white text-gray-900;
   }
 
   body {
-    @apply bg-white dark:bg-slate-900;
+    @apply bg-white;
   }
 
   /* inter var - latin */
@@ -425,19 +440,6 @@
 
   .modal-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(51, 65, 85, 0.5);
-  }
-
-  .dark .modal-scrollbar {
-    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
-  }
-
-  .dark .modal-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.3);
-    border: 1px solid rgba(148, 163, 184, 0.1);
-  }
-
-  .dark .modal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(148, 163, 184, 0.5);
   }
 }
 
@@ -548,40 +550,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {

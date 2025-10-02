@@ -80,7 +80,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
       transition={{ duration: 0.3 }}
       className={`toc ${className}`}
     >
-      <h3 className='text-lg font-semibold mb-4 text-gray-900 dark:text-white'>
+      <h3 className='text-lg font-semibold mb-4 text-gray-900'>
         Table of Contents
       </h3>
       <ul className='space-y-2'>
@@ -97,8 +97,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
               href={`#${item.id}`}
               className={`block py-1 px-2 rounded text-sm transition-colors duration-200 ${
                 activeHeading === item.id
-                  ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300'
-                  : 'text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400'
+                  ? 'bg-primary-100 text-primary-700'
+                  : 'text-gray-600 hover:text-primary-600'
               }`}
               onClick={(e) => {
                 e.preventDefault();
@@ -138,12 +138,12 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className='content-metadata mb-8 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700'
+      className='content-metadata mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200'
     >
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600 dark:text-gray-300'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600'>
         {metadata.author && (
           <div>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Author:
             </span>{' '}
             {metadata.author}
@@ -152,7 +152,7 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
 
         {metadata.date && (
           <div>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Published:
             </span>{' '}
             {new Date(metadata.date).toLocaleDateString()}
@@ -161,7 +161,7 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
 
         {metadata.lastUpdated && (
           <div>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Last Updated:
             </span>{' '}
             {new Date(metadata.lastUpdated).toLocaleDateString()}
@@ -170,7 +170,7 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
 
         {readingTime && (
           <div>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Reading Time:
             </span>{' '}
             {readingTime} min{readingTime !== 1 ? 's' : ''}
@@ -179,7 +179,7 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
 
         {wordCount && (
           <div>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Word Count:
             </span>{' '}
             {wordCount.toLocaleString()}
@@ -188,14 +188,14 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
 
         {metadata.tags && metadata.tags.length > 0 && (
           <div className='md:col-span-2'>
-            <span className='font-medium text-gray-900 dark:text-white'>
+            <span className='font-medium text-gray-900'>
               Tags:
             </span>
             <div className='flex flex-wrap gap-2 mt-1'>
               {metadata.tags.map((tag: string, index: number) => (
                 <span
                   key={index}
-                  className='px-2 py-1 bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300 rounded-full text-xs'
+                  className='px-2 py-1 bg-primary-100 text-primary-700 rounded-full text-xs'
                 >
                   {tag}
                 </span>
@@ -248,11 +248,11 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
           transition={{ duration: 0.3 }}
           className='mb-8'
         >
-          <h1 className='text-4xl font-bold text-gray-900 dark:text-white mb-4'>
+          <h1 className='text-4xl font-bold text-gray-900 mb-4'>
             {content.metadata.title}
           </h1>
           {content.metadata.description && (
-            <p className='text-xl text-gray-600 dark:text-gray-300'>
+            <p className='text-xl text-gray-600'>
               {content.metadata.description}
             </p>
           )}
@@ -278,7 +278,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
-          className='markdown-content prose prose-lg max-w-none dark:prose-invert prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-strong:text-gray-900 dark:prose-strong:text-white prose-a:text-primary-600 dark:prose-a:text-primary-400 hover:prose-a:text-primary-700 dark:hover:prose-a:text-primary-300'
+          className='markdown-content prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-a:text-primary-600 hover:prose-a:text-primary-700'
         >
           <div
             dangerouslySetInnerHTML={{ __html: processedHtml }}
@@ -289,7 +289,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
       {/* Mobile TOC */}
       {showTableOfContents && (
-        <div className='lg:hidden mt-8 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg'>
+        <div className='lg:hidden mt-8 p-4 bg-gray-50 rounded-lg'>
           <TableOfContents content={processedHtml} />
         </div>
       )}

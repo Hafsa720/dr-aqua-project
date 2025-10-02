@@ -52,35 +52,35 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
     const configs = {
       linkedin: {
         icon: FaLinkedin,
-        color: 'text-blue-600 dark:text-blue-400',
-        bg: 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 border-blue-200 dark:border-blue-800',
+        color: 'text-blue-600',
+        bg: 'bg-blue-50 hover:bg-blue-100/40 border-blue-200',
       },
       github: {
         icon: FaGithub,
-        color: 'text-slate-700 dark:text-slate-300',
-        bg: 'bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 border-slate-200 dark:border-slate-600',
+        color: 'text-slate-700',
+        bg: 'bg-slate-50 hover:bg-slate-100 border-slate-200',
       },
       behance: {
         icon: SiBehance,
-        color: 'text-indigo-600 dark:text-indigo-400',
-        bg: 'bg-indigo-50 dark:bg-indigo-900/20 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 border-indigo-200 dark:border-indigo-800',
+        color: 'text-indigo-600',
+        bg: 'bg-indigo-50 hover:bg-indigo-100/40 border-indigo-200',
       },
       upwork: {
         icon: SiUpwork,
-        color: 'text-green-600 dark:text-green-400',
-        bg: 'bg-green-50 dark:bg-green-900/20 hover:bg-green-100 dark:hover:bg-green-900/40 border-green-200 dark:border-green-800',
+        color: 'text-green-600',
+        bg: 'bg-green-50 hover:bg-green-100/40 border-green-200',
       },
       freelancer: {
         icon: SiFreelancer,
-        color: 'text-orange-600 dark:text-orange-400',
-        bg: 'bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/40 border-orange-200 dark:border-orange-800',
+        color: 'text-orange-600',
+        bg: 'bg-orange-50 hover:bg-orange-100/40 border-orange-200',
       },
     };
     return (
       configs[platform as keyof typeof configs] || {
         icon: HiGlobeAlt,
-        color: 'text-slate-600 dark:text-slate-400',
-        bg: 'bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 border-slate-200 dark:border-slate-600',
+        color: 'text-slate-600',
+        bg: 'bg-slate-50 hover:bg-slate-100 border-slate-200',
       }
     );
   };
@@ -112,20 +112,20 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -10 }}
             transition={{ duration: 0.2 }}
-            className='absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-slate-900 dark:bg-slate-800 text-white text-xs rounded-lg shadow-xl border border-slate-700 dark:border-slate-600 whitespace-nowrap'
+            className='absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-slate-900 text-white text-xs rounded-lg shadow-xl border border-slate-700 whitespace-nowrap'
             style={{ zIndex: 45 }}
           >
             <span className='flex items-center gap-1.5'>
               <FaExternalLinkAlt className='w-3 h-3' />
               Click to view portfolio
             </span>
-            <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900 dark:border-t-slate-800'></div>
+            <div className='absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900'></div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div
-        className='bg-white dark:bg-slate-800 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 dark:border-slate-700 text-center relative overflow-hidden h-[480px] flex flex-col'
+        className='bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 text-center relative overflow-hidden h-[480px] flex flex-col'
         onClick={hasPortfolio ? handleCardClick : undefined}
       >
         {/* Background Gradient Overlay */}
@@ -154,7 +154,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
             }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
-            <div className='w-full h-full rounded-full overflow-hidden ring-3 ring-white dark:ring-slate-600 shadow-lg group-hover:ring-4 group-hover:ring-opacity-50 transition-all duration-300'>
+            <div className='w-full h-full rounded-full overflow-hidden ring-3 ring-white shadow-lg group-hover:ring-4 group-hover:ring-opacity-50 transition-all duration-300'>
               <NextImage
                 src={member.image}
                 alt={member.name}
@@ -195,7 +195,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
             transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
           >
             <motion.h3
-              className='font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'
+              className='font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors'
               animate={{
                 fontSize: isExpanded ? '16px' : '18px',
                 lineHeight: isExpanded ? '20px' : '24px',
@@ -208,7 +208,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
             </motion.h3>
 
             <motion.p
-              className='text-blue-600 dark:text-blue-400 font-medium'
+              className='text-blue-600 font-medium'
               animate={{
                 fontSize: isExpanded ? '11px' : '14px',
                 marginBottom: isExpanded ? '4px' : '8px',
@@ -247,7 +247,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
               transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
             >
               <motion.div
-                className='inline-flex items-center gap-2 bg-gradient-to-r from-slate-100 to-slate-50 dark:from-slate-700 dark:to-slate-600 rounded-full font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600'
+                className='inline-flex items-center gap-2 bg-gradient-to-r from-slate-100 to-slate-50 rounded-full font-medium text-slate-700 border border-slate-200'
                 animate={{
                   paddingLeft: isExpanded ? '10px' : '12px',
                   paddingRight: isExpanded ? '10px' : '12px',
@@ -297,7 +297,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
                     duration: 0.4,
                     ease: [0.4, 0.0, 0.2, 1],
                   }}
-                  className='bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg font-medium border border-blue-100 dark:border-blue-800 whitespace-nowrap'
+                  className='bg-blue-50 text-blue-700 rounded-lg font-medium border border-blue-100 whitespace-nowrap'
                 >
                   {skill}
                 </motion.span>
@@ -323,7 +323,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
               >
                 <motion.div className='flex items-center gap-1'>
                   <motion.span
-                    className='text-slate-500 dark:text-slate-400 font-medium'
+                    className='text-slate-500 font-medium'
                     animate={{
                       fontSize: isExpanded ? '9px' : '12px',
                     }}
@@ -332,7 +332,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
                     Projects:
                   </motion.span>
                   <motion.span
-                    className='font-bold text-slate-900 dark:text-white'
+                    className='font-bold text-slate-900'
                     animate={{
                       fontSize: isExpanded ? '11px' : '14px',
                     }}
@@ -351,7 +351,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
               >
                 <motion.div className='flex items-center gap-1'>
                   <motion.span
-                    className='text-slate-500 dark:text-slate-400 font-medium'
+                    className='text-slate-500 font-medium'
                     animate={{
                       fontSize: isExpanded ? '9px' : '12px',
                     }}
@@ -360,7 +360,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
                     Skills:
                   </motion.span>
                   <motion.span
-                    className='font-bold text-slate-900 dark:text-white'
+                    className='font-bold text-slate-900'
                     animate={{
                       fontSize: isExpanded ? '11px' : '14px',
                     }}
@@ -384,7 +384,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
             className='flex flex-col'
           >
             <motion.h4
-              className='font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-center'
+              className='font-semibold text-slate-500 uppercase tracking-wider text-center'
               animate={{
                 fontSize: isExpanded ? '9px' : '12px',
                 marginBottom: isExpanded ? '0px' : '6px',
@@ -469,7 +469,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ member, index }) => {
                     borderColor: isExpanded ? '#3b82f6' : undefined,
                   }}
                   transition={{ duration: 0.4, ease: [0.4, 0.0, 0.2, 1] }}
-                  className={`rounded-xl ${isExpanded ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-600'} border flex items-center justify-center shadow-sm hover:shadow-md cursor-pointer group/more relative overflow-hidden`}
+                  className={`rounded-xl ${isExpanded ? 'bg-blue-500 text-white border-blue-500' : 'bg-slate-100 hover:bg-slate-200 text-slate-600 border-slate-200'} border flex items-center justify-center shadow-sm hover:shadow-md cursor-pointer group/more relative overflow-hidden`}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleSocialExpansion();

@@ -125,18 +125,18 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
           )}
         >
           <div className='max-w-lg w-full'>
-            <div className='bg-white dark:bg-gray-800 rounded-lg border border-red-200 dark:border-red-800 shadow-lg overflow-hidden'>
+            <div className='bg-white rounded-lg border border-red-200 shadow-lg overflow-hidden'>
               {/* Error Header */}
-              <div className='bg-red-50 dark:bg-red-900/20 px-6 py-4 border-b border-red-200 dark:border-red-800'>
+              <div className='bg-red-50 px-6 py-4 border-b border-red-200'>
                 <div className='flex items-center gap-3'>
                   <div className='flex-shrink-0'>
-                    <AlertTriangle className='w-6 h-6 text-red-600 dark:text-red-400' />
+                    <AlertTriangle className='w-6 h-6 text-red-600' />
                   </div>
                   <div className='flex-1 min-w-0'>
-                    <h3 className='text-lg font-semibold text-red-900 dark:text-red-100'>
+                    <h3 className='text-lg font-semibold text-red-900'>
                       Something went wrong
                     </h3>
-                    <p className='text-sm text-red-700 dark:text-red-300 mt-1'>
+                    <p className='text-sm text-red-700 mt-1'>
                       An unexpected error occurred while rendering this
                       component.
                     </p>
@@ -148,10 +148,10 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
               <div className='px-6 py-4'>
                 {error && (
                   <div className='mb-4'>
-                    <p className='text-sm font-medium text-gray-900 dark:text-gray-100 mb-2'>
+                    <p className='text-sm font-medium text-gray-900 mb-2'>
                       Error Message:
                     </p>
-                    <code className='block p-3 bg-gray-100 dark:bg-gray-700 rounded text-sm text-red-600 dark:text-red-400 break-all'>
+                    <code className='block p-3 bg-gray-100 rounded text-sm text-red-600 break-all'>
                       {error.message}
                     </code>
                   </div>
@@ -183,7 +183,7 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
                     process.env.NODE_ENV === 'development' && (
                       <button
                         onClick={this.handleToggleDetails}
-                        className='inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-md transition-colors'
+                        className='inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium rounded-md transition-colors'
                       >
                         <ChevronDown
                           className={cn(
@@ -201,10 +201,10 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
                   <div className='space-y-4'>
                     {error?.stack && (
                       <div>
-                        <p className='text-sm font-medium text-gray-900 dark:text-gray-100 mb-2'>
+                        <p className='text-sm font-medium text-gray-900 mb-2'>
                           Stack Trace:
                         </p>
-                        <pre className='p-3 bg-gray-100 dark:bg-gray-700 rounded text-xs overflow-auto max-h-40 text-gray-700 dark:text-gray-300'>
+                        <pre className='p-3 bg-gray-100 rounded text-xs overflow-auto max-h-40 text-gray-700'>
                           {error.stack}
                         </pre>
                       </div>
@@ -212,10 +212,10 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
 
                     {errorInfo?.componentStack && (
                       <div>
-                        <p className='text-sm font-medium text-gray-900 dark:text-gray-100 mb-2'>
+                        <p className='text-sm font-medium text-gray-900 mb-2'>
                           Component Stack:
                         </p>
-                        <pre className='p-3 bg-gray-100 dark:bg-gray-700 rounded text-xs overflow-auto max-h-40 text-gray-700 dark:text-gray-300'>
+                        <pre className='p-3 bg-gray-100 rounded text-xs overflow-auto max-h-40 text-gray-700'>
                           {errorInfo.componentStack}
                         </pre>
                       </div>
@@ -225,8 +225,8 @@ Component Stack: ${errorInfo?.componentStack || 'Not available'}
 
                 {/* Production Message */}
                 {process.env.NODE_ENV === 'production' && (
-                  <div className='mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded'>
-                    <p className='text-sm text-yellow-800 dark:text-yellow-200'>
+                  <div className='mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded'>
+                    <p className='text-sm text-yellow-800'>
                       <strong>Note:</strong> If this error persists, please
                       contact support with the error message above.
                     </p>
