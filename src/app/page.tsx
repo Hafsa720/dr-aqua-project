@@ -28,7 +28,6 @@ const featuredProducts = [
     image:
       'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop',
     rating: 4.8,
-    reviews: 124,
     category: 'Residential',
     features: ['5-Stage Filtration', 'UV Sterilization', 'Smart Monitoring'],
   },
@@ -40,7 +39,6 @@ const featuredProducts = [
     image:
       'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop',
     rating: 4.9,
-    reviews: 87,
     category: 'Commercial',
     features: ['High Capacity', 'Auto-Cleaning', 'Remote Control'],
   },
@@ -52,7 +50,6 @@ const featuredProducts = [
     image:
       'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop',
     rating: 4.7,
-    reviews: 203,
     category: 'Residential',
     features: ['Space Saving', 'Easy Install', 'Long Lasting'],
   },

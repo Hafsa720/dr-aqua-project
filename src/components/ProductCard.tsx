@@ -18,7 +18,6 @@ export interface Product {
   originalPrice?: number;
   image: string;
   rating: number;
-  reviews?: number;
   category: string;
   description?: string;
   features?: string[];
@@ -107,11 +106,6 @@ export function ProductCard({
                   {product.rating}
                 </span>
               </div>
-              {product.reviews !== undefined && (
-                <span className='text-xs text-primary-600'>
-                  ({product.reviews} reviews)
-                </span>
-              )}
             </div>
 
             <div className='flex items-baseline gap-2 pt-1'>
@@ -189,17 +183,12 @@ export function ProductCard({
               </CardTitle>
             </Link>
             <div className='flex items-center gap-2 mb-3'>
-              <div className='flex items-center'>
-                <Star className='h-4 w-4 fill-secondary-400 text-secondary-400' />
-                <span className='ml-1 text-sm font-medium text-primary-700'>
+              <div className='flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-md'>
+                <Star className='h-4 w-4 fill-yellow-400 text-yellow-400' />
+                <span className='ml-1 text-sm font-semibold text-yellow-900'>
                   {product.rating}
                 </span>
               </div>
-              {product.reviews !== undefined && (
-                <span className='text-sm text-primary-600'>
-                  ({product.reviews} reviews)
-                </span>
-              )}
             </div>
             <div className='flex items-center gap-2'>
               <span className='text-2xl font-bold text-primary-600'>

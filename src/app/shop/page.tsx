@@ -1,7 +1,7 @@
 'use client';
 
-import { Filter, Search, X } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { ChevronLeft, ChevronRight, Filter, Search, X } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
@@ -26,7 +26,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
     rating: 4.8,
-    reviews: 124,
     category: 'Residential',
     brand: 'AquaPure',
     description:
@@ -46,7 +45,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
-    reviews: 87,
     category: 'Commercial',
     brand: 'CrystalFlow',
     description:
@@ -66,7 +64,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
     rating: 4.7,
-    reviews: 203,
     category: 'Residential',
     brand: 'EcoFilter',
     description:
@@ -86,7 +83,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
-    reviews: 45,
     category: 'Industrial',
     brand: 'PureTech',
     description:
@@ -106,7 +102,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
     rating: 4.5,
-    reviews: 312,
     category: 'Residential',
     brand: 'AquaHome',
     description:
@@ -126,7 +121,6 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
     rating: 4.6,
-    reviews: 156,
     category: 'Commercial',
     brand: 'FlowMax',
     description:
@@ -155,8 +149,9 @@ const sortOptions = [
   { value: 'price-low', label: 'Price: Low to High' },
   { value: 'price-high', label: 'Price: High to Low' },
   { value: 'rating', label: 'Highest Rated' },
-  { value: 'reviews', label: 'Most Reviews' },
 ];
+
+const ITEMS_PER_PAGE = 6;
 
 export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -164,6 +159,7 @@ export default function ShopPage() {
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [sortBy, setSortBy] = useState('featured');
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
@@ -191,15 +187,23 @@ export default function ShopPage() {
       case 'rating':
         filtered.sort((a, b) => b.rating - a.rating);
         break;
-      case 'reviews':
-        filtered.sort((a, b) => b.reviews - a.reviews);
-        break;
       default:
         // Keep original order for featured
         break;
     }
 
     return filtered;
+  }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  useEffect(() => {
+    setCurrentPage(1);
   }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy]);
 
   return (
@@ -383,15 +387,63 @@ export default function ShopPage() {
 
         {/* Results Count */}
         <div className='text-center text-primary-600'>
-          Showing {filteredProducts.length} of {products.length} products
+          Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)}{' '}
+          of {filteredProducts.length} products
         </div>
 
         {/* Product Grid */}
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {filteredProducts.map((product) => (
+          {paginatedProducts.map((product) => (
             <ProductCard key={product.id} product={product} variant='compact' />
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className='flex justify-center items-center gap-2 mt-8'>
+            <Button
+              variant='outline'
+              size='sm'
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className='border-primary-300 text-primary-700 hover:bg-primary-50 disabled:opacity-50'
+            >
+              <ChevronLeft className='h-4 w-4 mr-1' />
+              Previous
+            </Button>
+
+            <div className='flex items-center gap-1'>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? 'default' : 'outline'}
+                    size='sm'
+                    onClick={() => setCurrentPage(page)}
+                    className={
+                      currentPage === page
+                        ? 'bg-primary-600 hover:bg-primary-700 text-white'
+                        : 'border-primary-300 text-primary-700 hover:bg-primary-50'
+                    }
+                  >
+                    {page}
+                  </Button>
+                ),
+              )}
+            </div>
+
+            <Button
+              variant='outline'
+              size='sm'
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className='border-primary-300 text-primary-700 hover:bg-primary-50 disabled:opacity-50'
+            >
+              Next
+              <ChevronRight className='h-4 w-4 ml-1' />
+            </Button>
+          </div>
+        )}
 
         {filteredProducts.length === 0 && (
           <div className='text-center py-12'>

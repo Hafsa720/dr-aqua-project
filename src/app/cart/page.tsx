@@ -2,6 +2,7 @@
 
 import {
   ArrowRight,
+  Mail,
   MessageCircle,
   Minus,
   Plus,
@@ -21,7 +22,7 @@ export default function CartPage() {
 
   const generateWhatsAppMessage = () => {
     const companyName = 'Dr. Aqua';
-    const companyPhone = '+923497415390'; // Your WhatsApp business number
+    const companyPhone = '+923497415390';
 
     let message = `السلام علیکم! 🌊\n\n`;
     message += `I hope you're doing well. I'm interested in purchasing water filtration systems from *${companyName}* and would like to place an order.\n\n`;
@@ -53,6 +54,40 @@ export default function CartPage() {
     window.open(whatsappUrl, '_blank');
   };
 
+  const generateEmailMessage = () => {
+    const companyEmail = 'info@draqua.com';
+    const subject = encodeURIComponent('Water Filter Order Inquiry');
+
+    let body = `Hello Dr. Aqua Team,\n\n`;
+    body += `I hope this email finds you well. I'm interested in purchasing water filtration systems and would like to place an order.\n\n`;
+    body += `MY SELECTED ITEMS:\n`;
+    body += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+    items.forEach((item: CartItem, index: number) => {
+      const quantity = item.quantity || 1;
+      body += `${index + 1}. ${item.name}\n`;
+      body += `   Price: $${item.price}\n`;
+      body += `   Quantity: ${quantity}\n`;
+      body += `   Subtotal: $${(item.price * quantity).toFixed(2)}\n\n`;
+    });
+
+    body += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+    body += `TOTAL AMOUNT: $${total.toFixed(2)}\n\n`;
+    body += `Could you please provide me with:\n`;
+    body += `• Payment options available\n`;
+    body += `• Delivery timeframe\n`;
+    body += `• Installation services (if available)\n`;
+    body += `• Any current promotions or discounts\n\n`;
+    body += `I'm ready to proceed with this order. Please let me know the next steps.\n\n`;
+    body += `Thank you for your time!\n`;
+    body += `Looking forward to your response.`;
+
+    const encodedBody = encodeURIComponent(body);
+    const mailtoUrl = `mailto:${companyEmail}?subject=${subject}&body=${encodedBody}`;
+
+    window.location.href = mailtoUrl;
+  };
+
   if (items.length === 0) {
     return (
       <div className='container mx-auto px-4 py-16'>
@@ -69,7 +104,7 @@ export default function CartPage() {
             <Button
               asChild
               size='lg'
-              className='bg-primary-500 hover:bg-primary-600'
+              className='bg-secondary-600 hover:bg-secondary-700 text-white'
             >
               <Link href='/shop'>
                 Start Shopping <ArrowRight className='ml-2 h-4 w-4' />
@@ -204,13 +239,7 @@ export default function CartPage() {
                   </div>
                   <div className='flex justify-between text-sm'>
                     <span className='text-primary-600'>Shipping</span>
-                    <span className='font-medium text-secondary-500'>Free</span>
-                  </div>
-                  <div className='flex justify-between text-sm'>
-                    <span className='text-primary-600'>Tax (estimated)</span>
-                    <span className='font-medium text-primary-800'>
-                      ${(total * 0.08).toFixed(2)}
-                    </span>
+                    <span className='font-medium text-secondary-600'>Free</span>
                   </div>
                 </div>
 
@@ -218,34 +247,34 @@ export default function CartPage() {
 
                 <div className='flex justify-between text-lg font-bold'>
                   <span className='text-primary-900'>Total</span>
-                  <span className='text-primary-600'>
-                    ${(total * 1.08).toFixed(2)}
-                  </span>
+                  <span className='text-primary-600'>${total.toFixed(2)}</span>
                 </div>
 
-                <div className='space-y-2 pt-2'>
-                  <Button
-                    asChild
-                    className='w-full bg-primary-500 hover:bg-primary-600'
-                    size='lg'
-                  >
-                    <Link href='/checkout'>
-                      Proceed to Checkout{' '}
-                      <ArrowRight className='ml-2 h-4 w-4' />
-                    </Link>
-                  </Button>
+                <div className='space-y-3 pt-4'>
+                  <p className='text-sm text-primary-600 text-center'>
+                    Contact us to complete your order
+                  </p>
                   <Button
                     onClick={generateWhatsAppMessage}
-                    className='w-full bg-green-600 hover:bg-green-700'
+                    className='w-full bg-green-600 hover:bg-green-700 text-white'
                     size='lg'
                   >
-                    <MessageCircle className='mr-2 h-4 w-4' />
+                    <MessageCircle className='mr-2 h-5 w-5' />
                     Order via WhatsApp
+                  </Button>
+                  <Button
+                    onClick={generateEmailMessage}
+                    variant='outline'
+                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
+                    size='lg'
+                  >
+                    <Mail className='mr-2 h-5 w-5' />
+                    Order via Email
                   </Button>
                   <Button
                     asChild
                     variant='outline'
-                    className='w-full bg-transparent border-primary-300 text-primary-700 hover:bg-primary-50'
+                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
                   >
                     <Link href='/shop'>Continue Shopping</Link>
                   </Button>

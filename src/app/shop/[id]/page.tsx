@@ -37,7 +37,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
     rating: 4.8,
-    reviews: 124,
+    _reviews: 124,
     category: 'Residential',
     brand: 'AquaPure',
     description:
@@ -66,7 +66,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
-    reviews: 87,
+    _reviews: 87,
     category: 'Commercial',
     brand: 'CrystalFlow',
     description:
@@ -95,7 +95,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
     rating: 4.7,
-    reviews: 203,
+    _reviews: 203,
     category: 'Residential',
     brand: 'EcoFilter',
     description:
@@ -124,7 +124,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
-    reviews: 45,
+    _reviews: 45,
     category: 'Industrial',
     brand: 'PureTech',
     description:
@@ -153,7 +153,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
     rating: 4.5,
-    reviews: 312,
+    _reviews: 312,
     category: 'Residential',
     brand: 'AquaHome',
     description:
@@ -182,7 +182,7 @@ const products = [
     image:
       'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
     rating: 4.6,
-    reviews: 156,
+    _reviews: 156,
     category: 'Commercial',
     brand: 'FlowMax',
     description:
