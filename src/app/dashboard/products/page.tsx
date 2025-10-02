@@ -1,6 +1,6 @@
 'use client';
 
-import { Edit, Plus, Search,Trash2 } from 'lucide-react';
+import { Edit, Plus, Search, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
