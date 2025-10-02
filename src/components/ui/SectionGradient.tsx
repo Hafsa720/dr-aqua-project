@@ -35,9 +35,7 @@ export default function SectionGradient({
   return (
     <section className={`relative overflow-hidden ${className}`}>
       {/* Light mode gradient background - completely hidden in dark mode */}
-      <div
-        className={`absolute inset-0 ${gradientVariants[variant]}`}
-      />
+      <div className={`absolute inset-0 ${gradientVariants[variant]}`} />
 
       {/* Dark mode - CTA variant only gets background */}
       {variant === 'cta' && (

@@ -44,8 +44,7 @@ export default function TestimonialsCarousel({
       underline: 'from-primary-500 to-secondary-500',
       activeDot: 'from-primary-500 to-secondary-500',
       dotAnimation: 'from-primary-400 to-secondary-400',
-      inactiveDot:
-        'bg-primary-300/60 group-hover:bg-primary-400/80',
+      inactiveDot: 'bg-primary-300/60 group-hover:bg-primary-400/80',
     },
     blue: {
       glow: 'from-blue-500/20 via-purple-500/10 to-blue-500/20',
@@ -55,8 +54,7 @@ export default function TestimonialsCarousel({
       underline: 'from-blue-500 to-purple-500',
       activeDot: 'from-blue-500 to-purple-500',
       dotAnimation: 'from-blue-400 to-purple-400',
-      inactiveDot:
-        'bg-blue-300/60 group-hover:bg-blue-400/80',
+      inactiveDot: 'bg-blue-300/60 group-hover:bg-blue-400/80',
     },
     custom: {
       glow: 'from-slate-500/20 via-gray-500/10 to-slate-500/20',
@@ -66,8 +64,7 @@ export default function TestimonialsCarousel({
       underline: 'from-slate-500 to-gray-500',
       activeDot: 'from-slate-500 to-gray-500',
       dotAnimation: 'from-slate-400 to-gray-400',
-      inactiveDot:
-        'bg-slate-300/60 group-hover:bg-slate-400/80',
+      inactiveDot: 'bg-slate-300/60 group-hover:bg-slate-400/80',
     },
   };
 

@@ -25,22 +25,14 @@ const MotionSocial: FC<PropsSocial> = ({
 }: PropsSocial) => {
   // Define hover colors with Tailwind classes
   const getHoverColor = () => {
-    if (hoverColor?.includes('green'))
-      return 'hover:text-green-500';
-    if (hoverColor?.includes('blue-8'))
-      return 'hover:text-blue-800';
-    if (hoverColor?.includes('blue-6'))
-      return 'hover:text-blue-600';
-    if (hoverColor?.includes('blue-5'))
-      return 'hover:text-blue-500';
-    if (hoverColor?.includes('pink'))
-      return 'hover:text-pink-500';
-    if (hoverColor?.includes('sky'))
-      return 'hover:text-sky-400';
-    if (hoverColor?.includes('red'))
-      return 'hover:text-red-600';
-    if (hoverColor?.includes('gray'))
-      return 'hover:text-gray-800';
+    if (hoverColor?.includes('green')) return 'hover:text-green-500';
+    if (hoverColor?.includes('blue-8')) return 'hover:text-blue-800';
+    if (hoverColor?.includes('blue-6')) return 'hover:text-blue-600';
+    if (hoverColor?.includes('blue-5')) return 'hover:text-blue-500';
+    if (hoverColor?.includes('pink')) return 'hover:text-pink-500';
+    if (hoverColor?.includes('sky')) return 'hover:text-sky-400';
+    if (hoverColor?.includes('red')) return 'hover:text-red-600';
+    if (hoverColor?.includes('gray')) return 'hover:text-gray-800';
     return hoverColor || 'hover:text-primary-400';
   };
 

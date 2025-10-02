@@ -47,17 +47,17 @@ const team = [
   {
     name: 'John Anderson',
     role: 'Founder & CEO',
-    image: '/professional-man-suit.png',
+    image: 'https://i.pravatar.cc/300?img=60',
   },
   {
     name: 'Sarah Mitchell',
     role: 'Head of Operations',
-    image: '/professional-businesswoman.png',
+    image: 'https://i.pravatar.cc/300?img=48',
   },
   {
     name: 'David Chen',
     role: 'Chief Technical Officer',
-    image: '/professional-asian-man-in-casual-business.jpg',
+    image: 'https://i.pravatar.cc/300?img=52',
   },
 ];
 
@@ -171,7 +171,7 @@ export default function AboutPage() {
           </div>
           <div className='relative'>
             <img
-              src='/modern-water-filtration-facility.jpg'
+              src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop'
               alt='Dr. Aqua facility'
               className='rounded-2xl shadow-xl'
             />

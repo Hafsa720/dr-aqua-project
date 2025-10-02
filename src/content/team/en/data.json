@@ -5,7 +5,7 @@
       "name": "Habib Ur Rehman",
       "role": "CEO & Founder",
       "department": "leadership",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=12",
       "bio": "Visionary leader and sales expert driving RapidBizz to new heights. Passionate about client relationships and business growth through innovative digital solutions.",
       "expertise": [
         "Strategic Leadership",
@@ -31,7 +31,7 @@
       "name": "Saif Ui Rehman",
       "role": "Cyber Security Engineer",
       "department": "security",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=33",
       "bio": "Cybersecurity specialist with extensive WordPress development and client management experience. Ensures robust security while delivering quality web solutions.",
       "expertise": [
         "Cyber Security",
@@ -57,7 +57,7 @@
       "name": "Hamid Mehmood",
       "role": "Software Engineer",
       "department": "development",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=13",
       "bio": "Full-stack software engineer with expertise in AI integration and DevOps practices. Creates intelligent, scalable solutions that drive business innovation.",
       "expertise": [
         "Software Development",
@@ -83,7 +83,7 @@
       "name": "Hafsa Rehman",
       "role": "Software Engineer",
       "department": "development",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=44",
       "bio": "Dedicated software engineer with a passion for clean code and innovative solutions. Brings fresh perspectives and technical excellence to every project.",
       "expertise": [
         "Software Development",
@@ -109,7 +109,7 @@
       "name": "Attiq Ur Rehman",
       "role": "UI/UX Designer",
       "department": "design",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=14",
       "bio": "Creative UI/UX designer with WordPress expertise and design research passion. Crafts beautiful, user-centered experiences that blend aesthetics with functionality.",
       "expertise": [
         "UI/UX Design",
@@ -135,7 +135,7 @@
       "name": "Yahya",
       "role": "Frontend Developer & Designer",
       "department": "development",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=51",
       "bio": "Multi-talented frontend developer and designer with a keen eye for modern UI/UX. Combines technical skills with creative design thinking.",
       "expertise": [
         "Frontend Development",
@@ -161,7 +161,7 @@
       "name": "Mutti Ur Rehman",
       "role": "Frontend Intern",
       "department": "development",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=15",
       "bio": "Enthusiastic frontend development intern with a passion for learning and creating modern web applications. Eager to contribute and grow.",
       "expertise": [
         "HTML/CSS",
@@ -187,7 +187,7 @@
       "name": "Noor Ul Ain",
       "role": "Frontend Engineer Intern",
       "department": "development",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=47",
       "bio": "Passionate frontend engineering intern focused on creating exceptional user interfaces. Combines creativity with technical skills to build engaging web experiences.",
       "expertise": [
         "Frontend Development",
@@ -213,7 +213,7 @@
       "name": "Ch Anfal",
       "role": "Design & Frontend Intern",
       "department": "design",
-      "image": "https://placehold.co/500x500.webp",
+      "image": "https://i.pravatar.cc/500?img=32",
       "bio": "Creative design and frontend intern with a passion for user interfaces and modern web technologies. Combines design thinking with technical implementation skills.",
       "expertise": ["HTML/CSS", "Figma", "JavaScript", "UI Design"],
       "experience": "Intern",
@@ -243,19 +243,19 @@
       "content": "Working with the RapidBizz team has been transformational for our business. Their expertise and dedication are unmatched.",
       "author": "Jennifer Martinez",
       "role": "CEO, TechVision Corp",
-      "avatar": "https://placehold.co/100x100.webp"
+      "avatar": "https://i.pravatar.cc/100?img=45"
     },
     {
       "content": "The team's technical skills combined with their collaborative approach makes them the perfect development partner.",
       "author": "Robert Chen",
       "role": "CTO, InnovateLabs",
-      "avatar": "https://placehold.co/100x100.webp"
+      "avatar": "https://i.pravatar.cc/100?img=68"
     },
     {
       "content": "RapidBizz doesn't just deliver code - they deliver solutions that drive real business results and growth.",
       "author": "Amanda Foster",
       "role": "Founder, StartupX",
-      "avatar": "https://placehold.co/100x100.webp"
+      "avatar": "https://i.pravatar.cc/100?img=49"
     }
   ],
   "stats": [

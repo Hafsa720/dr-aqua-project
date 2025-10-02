@@ -3,11 +3,11 @@ import {
   CheckCircle,
   Droplets,
   Shield,
-  Star,
   Wrench,
 } from 'lucide-react';
 import Link from 'next/link';
 
+import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -25,7 +25,8 @@ const featuredProducts = [
     name: 'AquaPure Pro 5-Stage Filter',
     price: 299,
     originalPrice: 399,
-    image: '/modern-water-filter.png',
+    image:
+      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop',
     rating: 4.8,
     reviews: 124,
     category: 'Residential',
@@ -36,7 +37,8 @@ const featuredProducts = [
     name: 'CrystalFlow Commercial Unit',
     price: 899,
     originalPrice: 1199,
-    image: '/commercial-water-filtration-unit.jpg',
+    image:
+      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop',
     rating: 4.9,
     reviews: 87,
     category: 'Commercial',
@@ -47,7 +49,8 @@ const featuredProducts = [
     name: 'EcoFilter Compact Home',
     price: 149,
     originalPrice: 199,
-    image: '/compact-home-water-filter.jpg',
+    image:
+      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop',
     rating: 4.7,
     reviews: 203,
     category: 'Residential',
@@ -147,7 +150,7 @@ export default function HomePage() {
             </div>
             <div className='relative'>
               <img
-                src='/modern-water-filtration-system-in-clean-kitchen.jpg'
+                src='https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop'
                 alt='Premium water filtration system'
                 className='rounded-2xl shadow-2xl'
               />
@@ -189,79 +192,7 @@ export default function HomePage() {
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {featuredProducts.map((product) => (
-              <Card
-                key={product.id}
-                interactive
-                className='group border-primary-200 hover:border-primary-300'
-              >
-                <CardHeader className='p-0'>
-                  <div className='relative overflow-hidden rounded-t-lg'>
-                    <img
-                      src={product.image || '/placeholder.svg'}
-                      alt={product.name}
-                      className='w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300'
-                    />
-                    <Badge
-                      className='absolute top-4 left-4 bg-primary-500 text-white hover:bg-primary-600'
-                      variant='secondary'
-                    >
-                      {product.category}
-                    </Badge>
-                    {product.originalPrice > product.price && (
-                      <Badge className='absolute top-4 right-4 bg-secondary-500 text-white'>
-                        Save ${product.originalPrice - product.price}
-                      </Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent className='p-6'>
-                  <div className='space-y-4'>
-                    <div>
-                      <CardTitle className='text-xl mb-2 text-primary-900'>
-                        {product.name}
-                      </CardTitle>
-                      <div className='flex items-center gap-2 mb-3'>
-                        <div className='flex items-center'>
-                          <Star className='h-4 w-4 fill-secondary-400 text-secondary-400' />
-                          <span className='ml-1 text-sm font-medium text-primary-700'>
-                            {product.rating}
-                          </span>
-                        </div>
-                        <span className='text-sm text-primary-600'>
-                          ({product.reviews} reviews)
-                        </span>
-                      </div>
-                      <div className='flex items-center gap-2'>
-                        <span className='text-2xl font-bold text-primary-600'>
-                          ${product.price}
-                        </span>
-                        {product.originalPrice > product.price && (
-                          <span className='text-lg text-primary-400 line-through'>
-                            ${product.originalPrice}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className='space-y-2'>
-                      {product.features.map((feature, index) => (
-                        <div
-                          key={index}
-                          className='flex items-center gap-2 text-sm text-primary-700'
-                        >
-                          <CheckCircle className='h-4 w-4 text-secondary-500' />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <Button
-                      asChild
-                      className='w-full bg-primary-500 hover:bg-primary-600 text-white'
-                    >
-                      <Link href={`/shop/${product.id}`}>View Details</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
           <div className='text-center mt-12'>

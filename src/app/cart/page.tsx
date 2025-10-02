@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-import { type CartItem,useCart } from '@/components/cart-provider';
+import { type CartItem, useCart } from '@/components/cart-provider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 

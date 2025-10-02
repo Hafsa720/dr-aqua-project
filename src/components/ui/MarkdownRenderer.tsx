@@ -143,54 +143,42 @@ const ContentMetadata: React.FC<{ content: MarkdownContent }> = ({
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600'>
         {metadata.author && (
           <div>
-            <span className='font-medium text-gray-900'>
-              Author:
-            </span>{' '}
+            <span className='font-medium text-gray-900'>Author:</span>{' '}
             {metadata.author}
           </div>
         )}
 
         {metadata.date && (
           <div>
-            <span className='font-medium text-gray-900'>
-              Published:
-            </span>{' '}
+            <span className='font-medium text-gray-900'>Published:</span>{' '}
             {new Date(metadata.date).toLocaleDateString()}
           </div>
         )}
 
         {metadata.lastUpdated && (
           <div>
-            <span className='font-medium text-gray-900'>
-              Last Updated:
-            </span>{' '}
+            <span className='font-medium text-gray-900'>Last Updated:</span>{' '}
             {new Date(metadata.lastUpdated).toLocaleDateString()}
           </div>
         )}
 
         {readingTime && (
           <div>
-            <span className='font-medium text-gray-900'>
-              Reading Time:
-            </span>{' '}
+            <span className='font-medium text-gray-900'>Reading Time:</span>{' '}
             {readingTime} min{readingTime !== 1 ? 's' : ''}
           </div>
         )}
 
         {wordCount && (
           <div>
-            <span className='font-medium text-gray-900'>
-              Word Count:
-            </span>{' '}
+            <span className='font-medium text-gray-900'>Word Count:</span>{' '}
             {wordCount.toLocaleString()}
           </div>
         )}
 
         {metadata.tags && metadata.tags.length > 0 && (
           <div className='md:col-span-2'>
-            <span className='font-medium text-gray-900'>
-              Tags:
-            </span>
+            <span className='font-medium text-gray-900'>Tags:</span>
             <div className='flex flex-wrap gap-2 mt-1'>
               {metadata.tags.map((tag: string, index: number) => (
                 <span

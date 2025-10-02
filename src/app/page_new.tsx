@@ -24,7 +24,8 @@ const featuredProducts = [
     name: 'AquaPure Pro 5-Stage Filter',
     price: 299,
     originalPrice: 399,
-    image: '/modern-water-filter.png',
+    image:
+      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop',
     rating: 4.8,
     reviews: 124,
     category: 'Residential',
@@ -35,7 +36,8 @@ const featuredProducts = [
     name: 'CrystalFlow Commercial Unit',
     price: 899,
     originalPrice: 1199,
-    image: '/commercial-water-filtration-unit.jpg',
+    image:
+      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop',
     rating: 4.9,
     reviews: 87,
     category: 'Commercial',
@@ -46,7 +48,8 @@ const featuredProducts = [
     name: 'EcoFilter Compact Home',
     price: 149,
     originalPrice: 199,
-    image: '/compact-home-water-filter.jpg',
+    image:
+      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop',
     rating: 4.7,
     reviews: 203,
     category: 'Residential',
@@ -134,7 +137,7 @@ export default function HomePage() {
             </div>
             <div className='relative'>
               <img
-                src='/modern-water-filtration-system-in-clean-kitchen.jpg'
+                src='https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop'
                 alt='Premium water filtration system'
                 className='rounded-2xl shadow-2xl'
               />

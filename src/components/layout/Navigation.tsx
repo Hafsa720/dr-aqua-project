@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
+import { useCart } from '@/components/cart-provider';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -19,6 +20,8 @@ const navigation = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
+  const { getTotalItems } = useCart();
+  const cartItemCount = getTotalItems();
 
   return (
     <nav className='sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
@@ -49,6 +52,11 @@ export default function Navigation() {
               <Button variant='outline' size='sm' className='relative'>
                 <ShoppingCart className='h-4 w-4' />
                 <span className='ml-2'>Cart</span>
+                {cartItemCount > 0 && (
+                  <span className='absolute -top-2 -right-2 bg-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
+                    {cartItemCount}
+                  </span>
+                )}
               </Button>
             </Link>
           </div>
@@ -56,8 +64,13 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <div className='flex items-center gap-2 md:hidden'>
             <Link href='/cart'>
-              <Button variant='outline' size='sm'>
+              <Button variant='outline' size='sm' className='relative'>
                 <ShoppingCart className='h-4 w-4' />
+                {cartItemCount > 0 && (
+                  <span className='absolute -top-2 -right-2 bg-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
+                    {cartItemCount}
+                  </span>
+                )}
               </Button>
             </Link>
             <Button

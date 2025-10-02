@@ -105,14 +105,10 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>(
 
       const gradientColors = {
         gray: 'from-transparent via-gray-300 to-transparent',
-        primary:
-          'from-transparent via-primary-300 to-transparent',
-        secondary:
-          'from-transparent via-secondary-300 to-transparent',
-        success:
-          'from-transparent via-green-300 to-transparent',
-        warning:
-          'from-transparent via-yellow-300 to-transparent',
+        primary: 'from-transparent via-primary-300 to-transparent',
+        secondary: 'from-transparent via-secondary-300 to-transparent',
+        success: 'from-transparent via-green-300 to-transparent',
+        warning: 'from-transparent via-yellow-300 to-transparent',
         error: 'from-transparent via-red-300 to-transparent',
       };
 

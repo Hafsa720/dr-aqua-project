@@ -2,6 +2,7 @@ import './globals.css';
 
 import { Metadata } from 'next';
 import * as React from 'react';
+import { Toaster } from 'sonner';
 
 import { CartProvider } from '@/components/cart-provider';
 import Footer from '@/components/layout/Footer';
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Navigation />
           <main className='min-h-main'>{children}</main>
           <Footer />
+          <Toaster position='bottom-right' richColors />
         </CartProvider>
       </body>
     </html>

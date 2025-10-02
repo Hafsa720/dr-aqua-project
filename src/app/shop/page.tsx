@@ -1,13 +1,12 @@
 'use client';
 
-import { Filter, Search, ShoppingCart, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Filter, Search, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
-import { useCart } from '@/components/cart-provider';
+import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -24,7 +23,8 @@ const products = [
     name: 'AquaPure Pro 5-Stage Filter',
     price: 299,
     originalPrice: 399,
-    image: '/modern-water-filter.png',
+    image:
+      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
     rating: 4.8,
     reviews: 124,
     category: 'Residential',
@@ -43,7 +43,8 @@ const products = [
     name: 'CrystalFlow Commercial Unit',
     price: 899,
     originalPrice: 1199,
-    image: '/commercial-water-filtration-unit.jpg',
+    image:
+      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
     reviews: 87,
     category: 'Commercial',
@@ -62,7 +63,8 @@ const products = [
     name: 'EcoFilter Compact Home',
     price: 149,
     originalPrice: 199,
-    image: '/compact-home-water-filter.jpg',
+    image:
+      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
     rating: 4.7,
     reviews: 203,
     category: 'Residential',
@@ -81,7 +83,8 @@ const products = [
     name: 'PureTech Industrial System',
     price: 1599,
     originalPrice: 1999,
-    image: '/industrial-water-treatment-system.jpg',
+    image:
+      'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
     rating: 4.9,
     reviews: 45,
     category: 'Industrial',
@@ -100,7 +103,8 @@ const products = [
     name: 'AquaHome Basic Filter',
     price: 89,
     originalPrice: 119,
-    image: '/basic-home-water-filter.jpg',
+    image:
+      'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
     rating: 4.5,
     reviews: 312,
     category: 'Residential',
@@ -119,7 +123,8 @@ const products = [
     name: 'FlowMax Office System',
     price: 449,
     originalPrice: 599,
-    image: '/office-water-filtration-system.jpg',
+    image:
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
     rating: 4.6,
     reviews: 156,
     category: 'Commercial',
@@ -159,7 +164,6 @@ export default function ShopPage() {
   const [selectedBrand, setSelectedBrand] = useState('All');
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [sortBy, setSortBy] = useState('featured');
-  const { addItem } = useCart();
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
@@ -198,16 +202,6 @@ export default function ShopPage() {
     return filtered;
   }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy]);
 
-  const handleAddToCart = (product: (typeof products)[0]) => {
-    addItem({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      category: product.category,
-    });
-  };
-
   return (
     <div className='container mx-auto px-4 py-8'>
       <div className='space-y-8'>
@@ -223,85 +217,169 @@ export default function ShopPage() {
         </div>
 
         {/* Search and Filters */}
-        <div className='space-y-6'>
-          {/* Search Bar */}
-          <div className='relative max-w-md mx-auto'>
-            <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-500 h-4 w-4' />
-            <Input
-              placeholder='Search products...'
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className='pl-10 border-primary-300 focus:border-primary-500'
-            />
-          </div>
-
-          {/* Filters */}
-          <div className='flex flex-wrap gap-4 items-center justify-center'>
-            <Select
-              value={selectedCategory}
-              onValueChange={setSelectedCategory}
-            >
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Category' />
-              </SelectTrigger>
-              <SelectContent>
-                {categories.map((category) => (
-                  <SelectItem key={category} value={category}>
-                    {category}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={selectedBrand} onValueChange={setSelectedBrand}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Brand' />
-              </SelectTrigger>
-              <SelectContent>
-                {brands.map((brand) => (
-                  <SelectItem key={brand} value={brand}>
-                    {brand}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <div className='flex items-center gap-4 min-w-[200px]'>
-              <span className='text-sm font-medium text-primary-800'>
-                Price:
-              </span>
-              <div className='flex-1'>
-                <Slider
-                  value={priceRange}
-                  onValueChange={(value: number[]) =>
-                    setPriceRange(value as [number, number])
-                  }
-                  max={2000}
-                  min={0}
-                  step={50}
-                  className='w-full'
+        <Card className='border-primary-200 shadow-sm'>
+          <CardContent className='p-6'>
+            <div className='space-y-6'>
+              {/* Search Bar */}
+              <div className='relative'>
+                <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-500 h-5 w-5' />
+                <Input
+                  placeholder='Search products...'
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className='pl-11 h-12 border-primary-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 text-base'
                 />
-                <div className='flex justify-between text-xs text-primary-600 mt-1'>
-                  <span>${priceRange[0]}</span>
-                  <span>${priceRange[1]}</span>
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className='absolute right-3 top-1/2 transform -translate-y-1/2 text-primary-400 hover:text-primary-600'
+                  >
+                    <X className='h-4 w-4' />
+                  </button>
+                )}
+              </div>
+
+              {/* Filters */}
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+                <div className='space-y-2'>
+                  <label className='text-sm font-medium text-primary-900'>
+                    Category
+                  </label>
+                  <Select
+                    value={selectedCategory}
+                    onValueChange={setSelectedCategory}
+                  >
+                    <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
+                      <SelectValue placeholder='Category' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {categories.map((category) => (
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className='space-y-2'>
+                  <label className='text-sm font-medium text-primary-900'>
+                    Brand
+                  </label>
+                  <Select
+                    value={selectedBrand}
+                    onValueChange={setSelectedBrand}
+                  >
+                    <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
+                      <SelectValue placeholder='Brand' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {brands.map((brand) => (
+                        <SelectItem key={brand} value={brand}>
+                          {brand}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className='space-y-2'>
+                  <label className='text-sm font-medium text-primary-900'>
+                    Price Range
+                  </label>
+                  <div className='pt-2'>
+                    <Slider
+                      value={priceRange}
+                      onValueChange={(value: number[]) =>
+                        setPriceRange(value as [number, number])
+                      }
+                      max={2000}
+                      min={0}
+                      step={50}
+                      className='w-full'
+                    />
+                    <div className='flex justify-between text-sm text-primary-700 font-medium mt-2'>
+                      <span>${priceRange[0]}</span>
+                      <span>${priceRange[1]}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='space-y-2'>
+                  <label className='text-sm font-medium text-primary-900'>
+                    Sort By
+                  </label>
+                  <Select value={sortBy} onValueChange={setSortBy}>
+                    <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
+                      <SelectValue placeholder='Sort by' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {sortOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
-            </div>
 
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className='w-[180px]'>
-                <SelectValue placeholder='Sort by' />
-              </SelectTrigger>
-              <SelectContent>
-                {sortOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value}>
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
+              {/* Active Filters Summary */}
+              {(selectedCategory !== 'All' ||
+                selectedBrand !== 'All' ||
+                searchQuery ||
+                priceRange[0] !== 0 ||
+                priceRange[1] !== 2000) && (
+                <div className='flex flex-wrap items-center gap-2 pt-2 border-t border-primary-200'>
+                  <span className='text-sm font-medium text-primary-700'>
+                    Active Filters:
+                  </span>
+                  {selectedCategory !== 'All' && (
+                    <Badge
+                      variant='secondary'
+                      className='bg-primary-100 text-primary-800 hover:bg-primary-200'
+                    >
+                      {selectedCategory}
+                      <button
+                        onClick={() => setSelectedCategory('All')}
+                        className='ml-1 hover:text-primary-900'
+                      >
+                        <X className='h-3 w-3' />
+                      </button>
+                    </Badge>
+                  )}
+                  {selectedBrand !== 'All' && (
+                    <Badge
+                      variant='secondary'
+                      className='bg-primary-100 text-primary-800 hover:bg-primary-200'
+                    >
+                      {selectedBrand}
+                      <button
+                        onClick={() => setSelectedBrand('All')}
+                        className='ml-1 hover:text-primary-900'
+                      >
+                        <X className='h-3 w-3' />
+                      </button>
+                    </Badge>
+                  )}
+                  <Button
+                    variant='ghost'
+                    size='sm'
+                    onClick={() => {
+                      setSelectedCategory('All');
+                      setSelectedBrand('All');
+                      setSearchQuery('');
+                      setPriceRange([0, 2000]);
+                    }}
+                    className='text-primary-600 hover:text-primary-800 h-7'
+                  >
+                    Clear All
+                  </Button>
+                </div>
+              )}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Results Count */}
         <div className='text-center text-primary-600'>
@@ -309,82 +387,9 @@ export default function ShopPage() {
         </div>
 
         {/* Product Grid */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {filteredProducts.map((product) => (
-            <Card
-              key={product.id}
-              className='group hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300'
-            >
-              <CardHeader className='p-0'>
-                <div className='relative overflow-hidden rounded-t-lg'>
-                  <img
-                    src={product.image || '/placeholder.svg'}
-                    alt={product.name}
-                    className='w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300'
-                  />
-                  <Badge
-                    className='absolute top-4 left-4 bg-primary-500 hover:bg-primary-600'
-                    variant='secondary'
-                  >
-                    {product.category}
-                  </Badge>
-                  {product.originalPrice > product.price && (
-                    <Badge className='absolute top-4 right-4 bg-secondary-500 text-white'>
-                      Save ${product.originalPrice - product.price}
-                    </Badge>
-                  )}
-                </div>
-              </CardHeader>
-              <CardContent className='p-6'>
-                <div className='space-y-4'>
-                  <div>
-                    <CardTitle className='text-xl mb-2 text-primary-900'>
-                      {product.name}
-                    </CardTitle>
-                    <p className='text-sm text-primary-700 mb-3'>
-                      {product.description}
-                    </p>
-                    <div className='flex items-center gap-2 mb-3'>
-                      <div className='flex items-center'>
-                        <Star className='h-4 w-4 fill-yellow-400 text-yellow-400' />
-                        <span className='ml-1 text-sm font-medium text-primary-800'>
-                          {product.rating}
-                        </span>
-                      </div>
-                      <span className='text-sm text-primary-600'>
-                        ({product.reviews} reviews)
-                      </span>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                      <span className='text-2xl font-bold text-primary-600'>
-                        ${product.price}
-                      </span>
-                      {product.originalPrice > product.price && (
-                        <span className='text-lg text-primary-500 line-through'>
-                          ${product.originalPrice}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <div className='flex gap-2'>
-                    <Button
-                      asChild
-                      variant='outline'
-                      className='flex-1 bg-transparent border-primary-300 text-primary-700 hover:bg-primary-50'
-                    >
-                      <Link href={`/shop/${product.id}`}>View Details</Link>
-                    </Button>
-                    <Button
-                      onClick={() => handleAddToCart(product)}
-                      className='flex-1 bg-primary-500 hover:bg-primary-600'
-                    >
-                      <ShoppingCart className='h-4 w-4 mr-2' />
-                      Add to Cart
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <ProductCard key={product.id} product={product} variant='compact' />
           ))}
         </div>
 

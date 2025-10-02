@@ -117,10 +117,8 @@ const DebugPanel: React.FC<DebugPanelProps> = ({
               type === 'function' && 'text-purple-600',
               typeof value === 'string' && 'text-green-600',
               typeof value === 'number' && 'text-blue-600',
-              typeof value === 'boolean' &&
-                'text-orange-600',
-              (value === null || value === undefined) &&
-                'text-gray-500',
+              typeof value === 'boolean' && 'text-orange-600',
+              (value === null || value === undefined) && 'text-gray-500',
             )}
           >
             {formatValue(value)}
@@ -148,9 +146,7 @@ const DebugPanel: React.FC<DebugPanelProps> = ({
               ) : (
                 <ChevronRight className='w-3 h-3' />
               )}
-              <span className='text-gray-600'>
-                {formatValue(value)}
-              </span>
+              <span className='text-gray-600'>{formatValue(value)}</span>
             </button>
           )}
           <button
@@ -230,9 +226,7 @@ const DebugPanel: React.FC<DebugPanelProps> = ({
                 <breakpointInfo.icon
                   className={cn('w-3 h-3', breakpointInfo.color)}
                 />
-                <span className='text-gray-700'>
-                  {breakpointInfo.name}
-                </span>
+                <span className='text-gray-700'>{breakpointInfo.name}</span>
               </div>
             )}
           </div>
@@ -260,15 +254,11 @@ const DebugPanel: React.FC<DebugPanelProps> = ({
                   </h4>
                   <div className='space-y-1 text-xs'>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600'>
-                        Width:
-                      </span>
+                      <span className='text-gray-600'>Width:</span>
                       <span className='font-mono'>{windowSize.width}px</span>
                     </div>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600'>
-                        Height:
-                      </span>
+                      <span className='text-gray-600'>Height:</span>
                       <span className='font-mono'>{windowSize.height}px</span>
                     </div>
                   </div>

@@ -82,12 +82,8 @@ const InstallPrompt: React.FC<InstallPromptProps> = ({
           </div>
         </div>
         <div className='flex-1 min-w-0'>
-          <h3 className='text-sm font-semibold text-gray-900'>
-            {title}
-          </h3>
-          <p className='text-sm text-gray-600 mt-1'>
-            {description}
-          </p>
+          <h3 className='text-sm font-semibold text-gray-900'>{title}</h3>
+          <p className='text-sm text-gray-600 mt-1'>{description}</p>
           <div className='flex items-center gap-4 mt-3'>
             <div className='flex items-center gap-1 text-xs text-gray-500'>
               <Smartphone className='w-3 h-3' />
