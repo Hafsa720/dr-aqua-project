@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "badge": "Trusted by 10,000+ Families",
+    "title": "Pure Water,",
+    "titleHighlight": "Pure Life",
+    "description": "Transform your water quality with our premium filtration systems and professional services. Clean, safe, and refreshing water for your home and business.",
+    "primaryButton": "Shop Now",
+    "secondaryButton": "Book Service",
+    "stats": [
+      {
+        "value": "10K+",
+        "label": "Happy Customers"
+      },
+      {
+        "value": "99.9%",
+        "label": "Purity Rate"
+      },
+      {
+        "value": "24/7",
+        "label": "Support"
+      }
+    ],
+    "floatingCard": {
+      "title": "Crystal Clear",
+      "subtitle": "99.9% Pure Water"
+    }
+  },
+  "featuredProducts": {
+    "badge": "Best Sellers",
+    "title": "Featured Water Filter Systems",
+    "description": "Discover our most popular water filtration solutions, trusted by thousands of customers worldwide.",
+    "viewAllButton": "View All Products"
+  },
+  "services": {
+    "badge": "Professional Services",
+    "title": "Complete Water Solutions",
+    "description": "From installation to maintenance, our certified experts ensure your water filtration system performs at its best.",
+    "items": [
+      {
+        "title": "Professional Installation",
+        "description": "Expert installation by certified technicians with 2-year warranty",
+        "price": "Starting at $99"
+      },
+      {
+        "title": "Maintenance & Repair",
+        "description": "Regular maintenance and quick repairs to keep your system running",
+        "price": "Starting at $49"
+      },
+      {
+        "title": "Water Quality Testing",
+        "description": "Comprehensive water analysis and quality testing services",
+        "price": "Starting at $29"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready for Pure, Clean Water?",
+    "description": "Join thousands of satisfied customers who trust Dr. Aqua for their water filtration needs. Get started today with a free consultation.",
+    "primaryButton": "Get Free Quote",
+    "secondaryButton": "Browse Products"
+  }
+}

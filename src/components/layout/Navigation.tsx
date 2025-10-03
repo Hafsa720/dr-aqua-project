@@ -1,12 +1,13 @@
 'use client';
 
-import { Menu, ShoppingCart, X } from 'lucide-react';
+import { Menu, ShoppingCart, X, Languages } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
 import { useCart } from '@/components/cart-provider';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
 const navigation = [
@@ -21,7 +22,12 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
   const { getTotalItems } = useCart();
+  const { language, setLanguage } = useLanguage();
   const cartItemCount = getTotalItems();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ur' : 'en');
+  };
 
   return (
     <nav className='sticky top-0 z-50 w-full border-b border-primary-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60'>
@@ -49,6 +55,20 @@ export default function Navigation() {
               </Link>
             ))}
 
+            {/* Language Toggle */}
+            <Button
+              variant='ghost'
+              size='sm'
+              onClick={toggleLanguage}
+              className='gap-1 text-primary-700 hover:text-primary-900 hover:bg-primary-50'
+              aria-label='Toggle language'
+            >
+              <Languages className='h-4 w-4' />
+              <span className='text-sm font-medium'>
+                {language === 'en' ? 'اردو' : 'EN'}
+              </span>
+            </Button>
+
             {/* Cart Button */}
             <Link href='/cart'>
               <Button
@@ -69,6 +89,18 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <div className='flex items-center gap-2 md:hidden'>
+            <Button
+              variant='ghost'
+              size='sm'
+              onClick={toggleLanguage}
+              className='gap-1 text-primary-700'
+              aria-label='Toggle language'
+            >
+              <Languages className='h-4 w-4' />
+              <span className='text-xs font-medium'>
+                {language === 'en' ? 'اردو' : 'EN'}
+              </span>
+            </Button>
             <Link href='/cart'>
               <Button
                 variant='outline'

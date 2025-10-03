@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import {
   FaFacebook,
   FaGithub,
@@ -16,7 +17,10 @@ import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
-import footerContent from '@/content/common/en/footer.json';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+import footerContentEn from '@/content/common/en/footer.json';
+import footerContentUr from '@/content/common/ur/footer.json';
 
 const iconMap = {
   FaFacebook,
@@ -32,6 +36,18 @@ const iconMap = {
 };
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const [footerContent, setFooterContent] = useState(footerContentEn);
+
+  // Update content when language changes
+  useEffect(() => {
+    if (language === 'ur') {
+      setFooterContent(footerContentUr);
+    } else {
+      setFooterContent(footerContentEn);
+    }
+  }, [language]);
+
   // Convert social links with string icons to React component icons
   const socialLinksWithIcons = footerContent.socialLinks.map((social) => ({
     ...social,
@@ -151,7 +167,7 @@ const Footer = () => {
                   <p className='text-gray-300 text-sm'>Email</p>
                   <UnstyledLink
                     href={footerContent.contact.email.href}
-                    className='text-white font-medium break-all hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
+                    className='text-white font-medium break-words hover:text-secondary-300 transition-smooth focus-ring touch-feedback text-sm'
                   >
                     {footerContent.contact.email.label}
                   </UnstyledLink>
@@ -172,7 +188,7 @@ const Footer = () => {
                   <p className='text-gray-300 text-sm'>Phone</p>
                   <UnstyledLink
                     href={footerContent.contact.phone.href}
-                    className='text-white font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
+                    className='text-white font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback text-sm whitespace-nowrap'
                   >
                     {footerContent.contact.phone.label}
                   </UnstyledLink>
@@ -197,7 +213,7 @@ const Footer = () => {
                   <p className='text-gray-300 text-sm'>Location</p>
                   <UnstyledLink
                     href={footerContent.contact.location.href}
-                    className='text-white font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback'
+                    className='text-white font-medium hover:text-secondary-300 transition-smooth focus-ring touch-feedback text-sm break-words'
                     target='_blank'
                     rel='noopener noreferrer'
                   >

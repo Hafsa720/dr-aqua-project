@@ -1,3 +1,5 @@
+'use client';
+
 import {
   ArrowRight,
   CheckCircle,
@@ -6,6 +8,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
@@ -18,6 +21,10 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Container } from '@/components/ui/Container';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+import homeContentEn from '@/content/home/en/content.json';
+import homeContentUr from '@/content/home/ur/content.json';
 
 const featuredProducts = [
   {
@@ -79,6 +86,17 @@ const services = [
 ];
 
 export default function HomePage() {
+  const { language } = useLanguage();
+  const [content, setContent] = useState(homeContentEn);
+
+  useEffect(() => {
+    if (language === 'ur') {
+      setContent(homeContentUr);
+    } else {
+      setContent(homeContentEn);
+    }
+  }, [language]);
+
   return (
     <div className='flex flex-col'>
       {/* Hero Section */}
@@ -91,16 +109,14 @@ export default function HomePage() {
                   variant='secondary'
                   className='w-fit bg-secondary-500 text-white hover:bg-secondary-600'
                 >
-                  Trusted by 10,000+ Families
+                  {content.hero.badge}
                 </Badge>
                 <h1 className='text-4xl lg:text-6xl font-bold text-balance leading-tight text-primary-900'>
-                  Pure Water,{' '}
-                  <span className='text-primary-500'>Pure Life</span>
+                  {content.hero.title}{' '}
+                  <span className='text-primary-500'>{content.hero.titleHighlight}</span>
                 </h1>
                 <p className='text-xl text-primary-700 text-pretty max-w-lg'>
-                  Transform your water quality with our premium filtration
-                  systems and professional services. Clean, safe, and refreshing
-                  water for your home and business.
+                  {content.hero.description}
                 </p>
               </div>
               <div className='flex flex-col sm:flex-row gap-4'>
@@ -110,7 +126,7 @@ export default function HomePage() {
                   className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
                 >
                   <Link href='/shop'>
-                    Shop Now <ArrowRight className='ml-2 h-5 w-5' />
+                    {content.hero.primaryButton} <ArrowRight className='ml-2 h-5 w-5' />
                   </Link>
                 </Button>
                 <Button
@@ -119,30 +135,20 @@ export default function HomePage() {
                   size='lg'
                   className='text-lg px-8 border-primary-600 text-primary-600 hover:bg-primary-50'
                 >
-                  <Link href='/services'>Book Service</Link>
+                  <Link href='/services'>{content.hero.secondaryButton}</Link>
                 </Button>
               </div>
               <div className='flex items-center gap-8 pt-4'>
-                <div className='text-center'>
-                  <div className='text-2xl font-bold text-primary-600'>
-                    10K+
+                {content.hero.stats.map((stat, index) => (
+                  <div key={index} className='text-center'>
+                    <div className='text-2xl font-bold text-primary-600'>
+                      {stat.value}
+                    </div>
+                    <div className='text-sm text-primary-600'>
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className='text-sm text-primary-600'>
-                    Happy Customers
-                  </div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-2xl font-bold text-primary-600'>
-                    99.9%
-                  </div>
-                  <div className='text-sm text-primary-600'>Purity Rate</div>
-                </div>
-                <div className='text-center'>
-                  <div className='text-2xl font-bold text-primary-600'>
-                    24/7
-                  </div>
-                  <div className='text-sm text-primary-600'>Support</div>
-                </div>
+                ))}
               </div>
             </div>
             <div className='relative'>
@@ -156,10 +162,10 @@ export default function HomePage() {
                   <Droplets className='h-8 w-8 text-primary-500' />
                   <div>
                     <div className='font-semibold text-primary-900'>
-                      Crystal Clear
+                      {content.hero.floatingCard.title}
                     </div>
                     <div className='text-sm text-primary-600'>
-                      99.9% Pure Water
+                      {content.hero.floatingCard.subtitle}
                     </div>
                   </div>
                 </div>
@@ -177,14 +183,13 @@ export default function HomePage() {
               variant='outline'
               className='w-fit mx-auto border-primary-500 text-primary-500'
             >
-              Best Sellers
+              {content.featuredProducts.badge}
             </Badge>
             <h2 className='text-3xl lg:text-4xl font-bold text-balance text-primary-900'>
-              Featured Water Filter Systems
+              {content.featuredProducts.title}
             </h2>
             <p className='text-lg text-primary-700 text-pretty max-w-2xl mx-auto'>
-              Discover our most popular water filtration solutions, trusted by
-              thousands of customers worldwide.
+              {content.featuredProducts.description}
             </p>
           </div>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -200,7 +205,7 @@ export default function HomePage() {
               className='border-primary-600 text-primary-600 hover:bg-primary-50'
             >
               <Link href='/shop'>
-                View All Products <ArrowRight className='ml-2 h-4 w-4' />
+                {content.featuredProducts.viewAllButton} <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>
           </div>
@@ -215,50 +220,53 @@ export default function HomePage() {
               variant='outline'
               className='w-fit mx-auto border-primary-500 text-primary-500'
             >
-              Professional Services
+              {content.services.badge}
             </Badge>
             <h2 className='text-3xl lg:text-4xl font-bold text-balance text-primary-900'>
-              Complete Water Solutions
+              {content.services.title}
             </h2>
             <p className='text-lg text-primary-700 text-pretty max-w-2xl mx-auto'>
-              From installation to maintenance, our certified experts ensure
-              your water filtration system performs at its best.
+              {content.services.description}
             </p>
           </div>
           <div className='grid md:grid-cols-3 gap-8'>
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                interactive
-                className='text-center border-primary-200 hover:border-primary-300'
-              >
-                <CardHeader>
-                  <div className='mx-auto w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4'>
-                    <service.icon className='h-8 w-8 text-primary-500' />
-                  </div>
-                  <CardTitle className='text-xl text-primary-900'>
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className='text-base text-primary-700'>
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className='space-y-4'>
-                    <div className='text-lg font-semibold text-primary-600'>
-                      {service.price}
+            {content.services.items.map((service, index) => {
+              const icons = [Wrench, Shield, CheckCircle];
+              const ServiceIcon = icons[index];
+              return (
+                <Card
+                  key={index}
+                  interactive
+                  className='text-center border-primary-200 hover:border-primary-300'
+                >
+                  <CardHeader>
+                    <div className='mx-auto w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4'>
+                      <ServiceIcon className='h-8 w-8 text-primary-500' />
                     </div>
-                    <Button
-                      asChild
-                      variant='outline'
-                      className='w-full border-primary-500 text-primary-500 hover:bg-primary-50'
-                    >
-                      <Link href='/services'>Learn More</Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardTitle className='text-xl text-primary-900'>
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className='text-base text-primary-700'>
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className='space-y-4'>
+                      <div className='text-lg font-semibold text-primary-600'>
+                        {service.price}
+                      </div>
+                      <Button
+                        asChild
+                        variant='outline'
+                        className='w-full border-primary-500 text-primary-500 hover:bg-primary-50'
+                      >
+                        <Link href='/services'>Learn More</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </Container>
       </section>
@@ -268,12 +276,10 @@ export default function HomePage() {
         <Container layout='narrow' className='text-center'>
           <div className='space-y-6'>
             <h2 className='text-3xl lg:text-4xl font-bold text-balance'>
-              Ready for Pure, Clean Water?
+              {content.cta.title}
             </h2>
             <p className='text-xl text-primary-100 text-pretty'>
-              Join thousands of satisfied customers who trust Dr. Aqua for their
-              water filtration needs. Get started today with a free
-              consultation.
+              {content.cta.description}
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center pt-4'>
               <Button
@@ -281,7 +287,7 @@ export default function HomePage() {
                 size='lg'
                 className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
               >
-                <Link href='/contact'>Get Free Quote</Link>
+                <Link href='/contact'>{content.cta.primaryButton}</Link>
               </Button>
               <Button
                 asChild
@@ -289,7 +295,7 @@ export default function HomePage() {
                 variant='outline'
                 className='text-lg px-8 border-white text-white hover:bg-white hover:text-primary-500'
               >
-                <Link href='/shop'>Browse Products</Link>
+                <Link href='/shop'>{content.cta.secondaryButton}</Link>
               </Button>
             </div>
           </div>

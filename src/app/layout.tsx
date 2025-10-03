@@ -8,6 +8,7 @@ import { CartProvider } from '@/components/cart-provider';
 import Footer from '@/components/layout/Footer';
 import Navigation from '@/components/layout/Navigation';
 import { siteConfig } from '@/constant/config';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 // Site metadata configured in @/constant/config
 export const metadata: Metadata = {
@@ -53,12 +54,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className='font-inter'>
-        <CartProvider>
-          <Navigation />
-          <main className='min-h-main'>{children}</main>
-          <Footer />
-          <Toaster position='bottom-right' richColors />
-        </CartProvider>
+        <LanguageProvider>
+          <CartProvider>
+            <Navigation />
+            <main className='min-h-main'>{children}</main>
+            <Footer />
+            <Toaster position='bottom-right' richColors />
+          </CartProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

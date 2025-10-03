@@ -1,0 +1,130 @@
+{
+  "contactOptions": [
+    {
+      "icon": "FaEnvelope",
+      "title": "ای میل کریں",
+      "description": "عمومی استفسارات کے لیے ہمیں ای میل بھیجیں",
+      "contact": "info@rapidbizz.com",
+      "link": "mailto:info@rapidbizz.com"
+    },
+    {
+      "icon": "FaPhone",
+      "title": "ہمیں کال کریں",
+      "description": "ہماری ٹیم سے براہ راست بات کریں",
+      "contact": "+971 50 123 4567",
+      "link": "tel:+971501234567"
+    },
+    {
+      "icon": "FaWhatsapp",
+      "title": "واٹس ایپ",
+      "description": "واٹس ایپ پر فوری چیٹ",
+      "contact": "+971 50 123 4567",
+      "link": "https://wa.me/971501234567"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "ہمارے پاس آئیں",
+      "description": "دبئی میں ہمارا دفتر",
+      "contact": "بزنس بے، دبئی، متحدہ عرب امارات",
+      "link": "https://maps.google.com"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Upwork",
+      "href": "#",
+      "icon": "SiUpwork",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "Freelancer",
+      "href": "#",
+      "icon": "SiFreelancer",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "#",
+      "icon": "FaLinkedin",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "Facebook",
+      "href": "#",
+      "icon": "FaFacebook",
+      "hoverColor": "hover:text-blue-800",
+      "bgColor": "bg-blue-800"
+    },
+    {
+      "name": "Instagram",
+      "href": "#",
+      "icon": "FaInstagram",
+      "hoverColor": "hover:text-pink-500",
+      "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "Twitter",
+      "href": "#",
+      "icon": "FaTwitter",
+      "hoverColor": "hover:text-sky-400",
+      "bgColor": "bg-sky-400"
+    },
+    {
+      "name": "YouTube",
+      "href": "#",
+      "icon": "FaYoutube",
+      "hoverColor": "hover:text-red-600",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "Behance",
+      "href": "#",
+      "icon": "SiBehance",
+      "hoverColor": "hover:text-blue-500",
+      "bgColor": "bg-blue-500"
+    },
+    {
+      "name": "GitHub",
+      "href": "#",
+      "icon": "FaGithub",
+      "hoverColor": "hover:text-gray-800",
+      "bgColor": "bg-gray-800"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/971501234567",
+      "icon": "FaWhatsapp",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "آپ کس قسم کے پروجیکٹس پر کام کرتے ہیں؟",
+      "answer": "ہم ویب ایپلیکیشنز، موبائل ایپس، ای کامرس پلیٹ فارمز، انٹرپرائز سافٹ ویئر، اور کسٹم انٹیگریشنز سمیت ڈیجیٹل پروجیکٹس کی وسیع رینج پر کام کرتے ہیں۔ ہماری مہارت صحت کی دیکھ بھال، مالیات، خوردہ فروخت اور تعلیم سمیت مختلف صنعتوں میں پھیلی ہوئی ہے۔"
+    },
+    {
+      "question": "ایک عام پروجیکٹ میں کتنا وقت لگتا ہے؟",
+      "answer": "پروجیکٹ کی مدت پیچیدگی اور دائرہ کار پر منحصر ہوتی ہے۔ سادہ ویب سائٹس عام طور پر 2-4 ہفتے لیتی ہیں، جبکہ پیچیدہ ویب ایپلیکیشنز 3-6 ماہ لے سکتی ہیں۔ ہم آپ کی مخصوص ضروریات کی بنیاد پر ابتدائی مشاورت کے دوران تفصیلی پروجیکٹ ٹائم لائنز فراہم کرتے ہیں۔"
+    },
+    {
+      "question": "کیا آپ جاری سپورٹ اور دیکھ بھال فراہم کرتے ہیں؟",
+      "answer": "جی ہاں، ہم جامع سپورٹ اور دیکھ بھال کے پیکجز پیش کرتے ہیں۔ اس میں سیکیورٹی اپ ڈیٹس، بگ فکسز، کارکردگی کی اصلاح، اور فیچر میں اضافہ شامل ہے۔ ہم اپنے کلائنٹس کے ساتھ طویل مدتی شراکت داری میں یقین رکھتے ہیں۔"
+    },
+    {
+      "question": "آپ کا ڈیولپمنٹ کا عمل کیا ہے؟",
+      "answer": "ہم باقاعدہ کلائنٹ کمیونیکیشن کے ساتھ ایجائل ڈیولپمنٹ طریقہ کار پر عمل کرتے ہیں۔ ہمارے عمل میں دریافت، منصوبہ بندی، ڈیزائن، ڈیولپمنٹ، ٹیسٹنگ، تعیناتی، اور جاری سپورٹ شامل ہے۔ ہم پورے پروجیکٹ میں باقاعدہ اپ ڈیٹس اور ڈیموز فراہم کرتے ہیں۔"
+    },
+    {
+      "question": "کیا آپ بین الاقوامی کلائنٹس کے ساتھ کام کرتے ہیں؟",
+      "answer": "بالکل! ہم دنیا بھر کے کلائنٹس کے ساتھ کام کرتے ہیں۔ ہماری ٹیم مختلف ٹائم زونز میں کام کرنے میں تجربہ کار ہے اور ہم جگہ سے قطع نظر ہموار مواصلات کو یقینی بنانے کے لیے جدید تعاون کے ٹولز استعمال کرتے ہیں۔"
+    },
+    {
+      "question": "آپ کن ٹیکنالوجیز میں مہارت رکھتے ہیں؟",
+      "answer": "ہم React، Next.js، Node.js، Python، اور مختلف ڈیٹا بیسز سمیت جدید ویب ٹیکنالوجیز میں مہارت رکھتے ہیں۔ موبائل ڈیولپمنٹ کے لیے، ہم React Native اور Flutter استعمال کرتے ہیں۔ ہمیں AWS، Azure، اور Google Cloud جیسے کلاؤڈ پلیٹ فارمز میں بھی مہارت حاصل ہے۔"
+    }
+  ]
+}
