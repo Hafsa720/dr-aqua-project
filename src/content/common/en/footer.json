@@ -1,32 +1,39 @@
 {
   "socialLinks": [
     {
-      "name": "GitHub",
-      "href": "https://github.com/your-username/starter-template",
-      "icon": "FaGithub",
-      "hoverColor": "gray",
-      "bgColor": "bg-gray-600"
-    },
-    {
-      "name": "LinkedIn",
-      "href": "https://www.linkedin.com/in/your-profile",
-      "icon": "FaLinkedin",
-      "hoverColor": "blue-6",
+      "name": "Facebook",
+      "href": "https://facebook.com/draquashop",
+      "icon": "FaFacebook",
+      "hoverColor": "blue",
       "bgColor": "bg-blue-600"
     },
     {
-      "name": "Twitter",
-      "href": "https://twitter.com/your-handle",
-      "icon": "FaTwitter",
-      "hoverColor": "sky",
-      "bgColor": "bg-sky-400"
-    },
-    {
       "name": "Instagram",
-      "href": "https://www.instagram.com/your-handle",
+      "href": "https://instagram.com/draquashop",
       "icon": "FaInstagram",
       "hoverColor": "pink",
       "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "YouTube",
+      "href": "https://youtube.com/@draquashop",
+      "icon": "FaYoutube",
+      "hoverColor": "red",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/1234567890",
+      "icon": "FaWhatsapp",
+      "hoverColor": "green",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "TikTok",
+      "href": "https://tiktok.com/@draquashop",
+      "icon": "FaTiktok",
+      "hoverColor": "black",
+      "bgColor": "bg-black"
     }
   ],
   "contact": {
@@ -45,19 +52,16 @@
   },
   "quickLinks": [
     { "name": "Home", "href": "/" },
-    { "name": "Components", "href": "/components-demo" },
-    { "name": "Team", "href": "/team" },
-    { "name": "Contact", "href": "/contact" },
-    { "name": "Changelog", "href": "/changelog" }
+    { "name": "Shop", "href": "/shop" },
+    { "name": "Products", "href": "/products" },
+    { "name": "About", "href": "/about" },
+    { "name": "Contact", "href": "/contact" }
   ],
   "resources": [
-    { "name": "Documentation", "href": "#documentation" },
-    { "name": "Component Library", "href": "/components-demo" },
-    {
-      "name": "GitHub Repository",
-      "href": "https://github.com/your-username/starter-template"
-    },
-    { "name": "Release Notes", "href": "/changelog" }
+    { "name": "FAQs", "href": "/faqs" },
+    { "name": "Shipping Info", "href": "/shipping" },
+    { "name": "Returns & Refunds", "href": "/returns" },
+    { "name": "Product Guides", "href": "/guides" }
   ],
   "legal": [
     { "name": "Privacy Policy", "href": "/privacy" },

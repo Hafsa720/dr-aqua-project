@@ -1,32 +1,39 @@
 {
   "socialLinks": [
     {
-      "name": "GitHub",
-      "href": "https://github.com/your-username/starter-template",
-      "icon": "FaGithub",
-      "hoverColor": "gray",
-      "bgColor": "bg-gray-600"
-    },
-    {
-      "name": "LinkedIn",
-      "href": "https://www.linkedin.com/in/your-profile",
-      "icon": "FaLinkedin",
-      "hoverColor": "blue-6",
+      "name": "Facebook",
+      "href": "https://facebook.com/draquashop",
+      "icon": "FaFacebook",
+      "hoverColor": "blue",
       "bgColor": "bg-blue-600"
     },
     {
-      "name": "Twitter",
-      "href": "https://twitter.com/your-handle",
-      "icon": "FaTwitter",
-      "hoverColor": "sky",
-      "bgColor": "bg-sky-400"
-    },
-    {
       "name": "Instagram",
-      "href": "https://www.instagram.com/your-handle",
+      "href": "https://instagram.com/draquashop",
       "icon": "FaInstagram",
       "hoverColor": "pink",
       "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "YouTube",
+      "href": "https://youtube.com/@draquashop",
+      "icon": "FaYoutube",
+      "hoverColor": "red",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/1234567890",
+      "icon": "FaWhatsapp",
+      "hoverColor": "green",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "TikTok",
+      "href": "https://tiktok.com/@draquashop",
+      "icon": "FaTiktok",
+      "hoverColor": "black",
+      "bgColor": "bg-black"
     }
   ],
   "contact": {
@@ -45,19 +52,16 @@
   },
   "quickLinks": [
     { "name": "ہوم", "href": "/" },
-    { "name": "اجزاء", "href": "/components-demo" },
-    { "name": "ٹیم", "href": "/team" },
-    { "name": "رابطہ", "href": "/contact" },
-    { "name": "تبدیلیاں", "href": "/changelog" }
+    { "name": "دکان", "href": "/shop" },
+    { "name": "مصنوعات", "href": "/products" },
+    { "name": "ہمارے بارے میں", "href": "/about" },
+    { "name": "رابطہ", "href": "/contact" }
   ],
   "resources": [
-    { "name": "دستاویزات", "href": "#documentation" },
-    { "name": "اجزاء کی لائبریری", "href": "/components-demo" },
-    {
-      "name": "گٹ ہب ریپوزٹری",
-      "href": "https://github.com/your-username/starter-template"
-    },
-    { "name": "ریلیز نوٹس", "href": "/changelog" }
+    { "name": "عمومی سوالات", "href": "/faqs" },
+    { "name": "شپنگ کی معلومات", "href": "/shipping" },
+    { "name": "واپسی اور رقم کی واپسی", "href": "/returns" },
+    { "name": "پروڈکٹ گائیڈز", "href": "/guides" }
   ],
   "legal": [
     { "name": "رازداری کی پالیسی", "href": "/privacy" },

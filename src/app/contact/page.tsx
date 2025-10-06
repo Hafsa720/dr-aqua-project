@@ -1,31 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   FaChevronDown,
   FaEnvelope,
   FaFacebook,
-  FaGithub,
   FaInstagram,
-  FaLinkedin,
   FaMapMarkerAlt,
   FaPhone,
-  FaTwitter,
+  FaTiktok,
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa';
-import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 
 import Button from '@/components/buttons/Button';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import contactContent from '@/content/common/en/contact.json';
+import { useLanguage } from '@/contexts/LanguageContext';
+import contactContentEn from '@/content/common/en/contact.json';
+import contactContentUr from '@/content/common/ur/contact.json';
 import contactData from '@/content/common/en/data.json';
-import footerContent from '@/content/common/en/footer.json';
+import footerContentEn from '@/content/common/en/footer.json';
+import footerContentUr from '@/content/common/ur/footer.json';
 import { WhatsAppService } from '@/lib/whatsapp';
 import type { ContactFormData, ContactOption, FAQ } from '@/types';
 import { CompanyInfo } from '@/types/constants';
 
 const ContactPage = () => {
+  const { language } = useLanguage();
+  const [contactContent, setContactContent] = useState(contactContentEn);
+  const [footerContent, setFooterContent] = useState(footerContentEn);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -36,6 +39,16 @@ const ContactPage = () => {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showErrors, setShowErrors] = useState(false);
+
+  useEffect(() => {
+    if (language === 'ur') {
+      setContactContent(contactContentUr);
+      setFooterContent(footerContentUr);
+    } else {
+      setContactContent(contactContentEn);
+      setFooterContent(footerContentEn);
+    }
+  }, [language]);
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -79,22 +92,17 @@ const ContactPage = () => {
 
   // Icon mapping for social links
   const socialIconMap = {
-    SiUpwork,
-    SiFreelancer,
-    FaLinkedin,
     FaFacebook,
     FaInstagram,
-    FaTwitter,
     FaYoutube,
-    SiBehance,
-    FaGithub,
     FaWhatsapp,
+    FaTiktok,
   };
 
   // Convert social links with icon mapping (using footer content)
   const socialLinks = footerContent.socialLinks.map((link: any) => ({
     ...link,
-    icon: socialIconMap[link.icon as keyof typeof socialIconMap] || FaLinkedin,
+    icon: socialIconMap[link.icon as keyof typeof socialIconMap] || FaFacebook,
   }));
 
   // Use FAQs from centralized content

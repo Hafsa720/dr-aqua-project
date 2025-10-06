@@ -10,13 +10,22 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Shop', href: '/shop' },
-  { name: 'Contact', href: '/contact' },
-];
+const navigationConfig = {
+  en: [
+    { name: 'Home', href: '/' },
+    { name: 'Shop', href: '/shop' },
+    { name: 'Products', href: '/products' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ],
+  ur: [
+    { name: 'ہوم', href: '/' },
+    { name: 'دکان', href: '/shop' },
+    { name: 'مصنوعات', href: '/products' },
+    { name: 'ہمارے بارے میں', href: '/about' },
+    { name: 'رابطہ', href: '/contact' },
+  ],
+};
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -24,6 +33,9 @@ export default function Navigation() {
   const { getTotalItems } = useCart();
   const { language, setLanguage } = useLanguage();
   const cartItemCount = getTotalItems();
+
+  const navigation = navigationConfig[language as keyof typeof navigationConfig];
+  const cartText = language === 'en' ? 'Cart' : 'کارٹ';
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'ur' : 'en');
@@ -77,7 +89,7 @@ export default function Navigation() {
                 className='relative border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
               >
                 <ShoppingCart className='h-4 w-4' />
-                <span className='ml-2'>Cart</span>
+                <span className='ml-2'>{cartText}</span>
                 {cartItemCount > 0 && (
                   <span className='absolute -top-2 -right-2 bg-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
                     {cartItemCount}

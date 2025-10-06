@@ -4,15 +4,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import {
   FaFacebook,
-  FaGithub,
   FaHeart,
   FaInstagram,
-  FaLinkedin,
-  FaTwitter,
+  FaTiktok,
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa';
-import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 
 import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -24,15 +21,10 @@ import footerContentUr from '@/content/common/ur/footer.json';
 
 const iconMap = {
   FaFacebook,
-  FaGithub,
   FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaWhatsapp,
   FaYoutube,
-  SiBehance,
-  SiFreelancer,
-  SiUpwork,
+  FaWhatsapp,
+  FaTiktok,
 };
 
 const Footer = () => {

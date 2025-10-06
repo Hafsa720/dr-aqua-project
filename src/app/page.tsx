@@ -232,7 +232,7 @@ export default function HomePage() {
           <div className='grid md:grid-cols-3 gap-8'>
             {content.services.items.map((service, index) => {
               const icons = [Wrench, Shield, CheckCircle];
-              const ServiceIcon = icons[index];
+              const ServiceIcon = icons[index] || Wrench;
               return (
                 <Card
                   key={index}
