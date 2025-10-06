@@ -12,7 +12,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useCart } from '@/components/cart-provider';
 import { Badge } from '@/components/ui/badge';
@@ -27,8 +27,11 @@ import {
 } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getProductById } from '@/data/products';
+import { getProductDetailLabels } from '@/data/products/labels';
 
-const products = [
+const OLD_HARDCODED_products = [
   {
     id: '1',
     name: 'AquaPure Pro 5-Stage Filter',
@@ -208,17 +211,24 @@ const products = [
 export default function ProductDetailPage() {
   const params = useParams();
   const productId = params.id as string;
-  const product = products.find((p) => p.id === productId);
+  const { language } = useLanguage();
+  const [labels, setLabels] = useState(getProductDetailLabels('en'));
+  const [product, setProduct] = useState(getProductById(productId, 'en'));
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
+
+  useEffect(() => {
+    setLabels(getProductDetailLabels(language));
+    setProduct(getProductById(productId, language));
+  }, [language, productId]);
 
   if (!product) {
     return (
       <div className='container mx-auto px-4 py-8'>
         <div className='text-center'>
-          <h1 className='text-2xl font-bold mb-4'>Product Not Found</h1>
+          <h1 className='text-2xl font-bold mb-4'>{labels.productNotFound}</h1>
           <Button asChild>
-            <Link href='/shop'>Back to Shop</Link>
+            <Link href='/shop'>{labels.backToShop}</Link>
           </Button>
         </div>
       </div>
@@ -247,7 +257,7 @@ export default function ProductDetailPage() {
             className='hover:text-primary flex items-center gap-1'
           >
             <ArrowLeft className='h-4 w-4' />
-            Back to Shop
+            {labels.backToShop}
           </Link>
         </div>
 
@@ -266,7 +276,7 @@ export default function ProductDetailPage() {
               />
               {product.originalPrice > product.price && (
                 <Badge className='absolute top-4 right-4 bg-secondary-600 hover:bg-secondary-700 text-white shadow-lg'>
-                  Save ${product.originalPrice - product.price}
+                  {labels.save} ${product.originalPrice - product.price}
                 </Badge>
               )}
             </div>
@@ -307,14 +317,14 @@ export default function ProductDetailPage() {
               <div className='flex items-center gap-2'>
                 <CheckCircle className='h-5 w-5 text-secondary' />
                 <span className='text-sm font-medium'>
-                  {product.inStock ? 'In Stock' : 'Out of Stock'}
+                  {product.inStock ? labels.inStock : labels.outOfStock}
                 </span>
               </div>
             </div>
 
             {/* Features */}
             <div className='space-y-3'>
-              <h3 className='font-semibold'>Key Features:</h3>
+              <h3 className='font-semibold'>{labels.keyFeatures}</h3>
               <div className='grid grid-cols-2 gap-2'>
                 {product.features.map((feature, index) => (
                   <div key={index} className='flex items-center gap-2 text-sm'>
@@ -332,7 +342,7 @@ export default function ProductDetailPage() {
                   htmlFor='quantity'
                   className='font-medium text-primary-900'
                 >
-                  Quantity:
+                  {labels.quantity}
                 </label>
                 <Select
                   value={quantity.toString()}
@@ -359,7 +369,7 @@ export default function ProductDetailPage() {
                   disabled={!product.inStock}
                 >
                   <ShoppingCart className='h-5 w-5 mr-2' />
-                  Add to Cart
+                  {labels.addToCart}
                 </Button>
                 <Button
                   asChild
@@ -367,7 +377,7 @@ export default function ProductDetailPage() {
                   size='lg'
                   className='border-primary-300 text-primary-700 hover:bg-primary-50'
                 >
-                  <Link href='/contact'>Get Quote</Link>
+                  <Link href='/contact'>{labels.getQuote}</Link>
                 </Button>
               </div>
             </div>
@@ -376,15 +386,15 @@ export default function ProductDetailPage() {
             <div className='flex items-center gap-6 pt-4 border-t'>
               <div className='flex items-center gap-2 text-sm'>
                 <Shield className='h-4 w-4 text-secondary' />
-                <span>2-Year Warranty</span>
+                <span>{labels.warranty}</span>
               </div>
               <div className='flex items-center gap-2 text-sm'>
                 <Truck className='h-4 w-4 text-secondary' />
-                <span>Free Shipping</span>
+                <span>{labels.freeShipping}</span>
               </div>
               <div className='flex items-center gap-2 text-sm'>
                 <Phone className='h-4 w-4 text-secondary' />
-                <span>24/7 Support</span>
+                <span>{labels.support247}</span>
               </div>
             </div>
           </div>
@@ -393,15 +403,15 @@ export default function ProductDetailPage() {
         {/* Product Details Tabs */}
         <Tabs defaultValue='specifications' className='w-full'>
           <TabsList className='grid w-full grid-cols-2'>
-            <TabsTrigger value='specifications'>Specifications</TabsTrigger>
-            <TabsTrigger value='installation'>Installation</TabsTrigger>
+            <TabsTrigger value='specifications'>{labels.specifications}</TabsTrigger>
+            <TabsTrigger value='installation'>{labels.installation}</TabsTrigger>
           </TabsList>
 
           <TabsContent value='specifications' className='space-y-4'>
             <Card className='border-primary-200'>
               <CardHeader>
                 <CardTitle className='text-primary-900'>
-                  Technical Specifications
+                  {labels.technicalSpecs}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -428,28 +438,25 @@ export default function ProductDetailPage() {
             <Card className='border-primary-200'>
               <CardHeader>
                 <CardTitle className='text-primary-900'>
-                  Installation Information
+                  {labels.installationInfo}
                 </CardTitle>
               </CardHeader>
               <CardContent className='space-y-4'>
                 <div>
                   <h4 className='font-semibold mb-2 text-primary-900'>
-                    Professional Installation Available
+                    {labels.professionalInstallation}
                   </h4>
                   <p className='text-primary-700'>
-                    Our certified technicians can install your water filtration
-                    system with a 2-year warranty on installation work.
+                    {labels.professionalInstallationDesc}
                   </p>
                 </div>
                 <Separator className='bg-primary-200' />
                 <div>
                   <h4 className='font-semibold mb-2 text-primary-900'>
-                    DIY Installation
+                    {labels.diyInstallation}
                   </h4>
                   <p className='text-primary-700'>
-                    Complete installation kit included with detailed
-                    instructions. Most installations can be completed in 2-3
-                    hours.
+                    {labels.diyInstallationDesc}
                   </p>
                 </div>
                 <div className='pt-4'>
@@ -457,7 +464,7 @@ export default function ProductDetailPage() {
                     asChild
                     className='bg-secondary-600 hover:bg-secondary-700 text-white'
                   >
-                    <Link href='/services'>Book Installation Service</Link>
+                    <Link href='/services'>{labels.bookInstallation}</Link>
                   </Button>
                 </div>
               </CardContent>

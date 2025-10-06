@@ -16,8 +16,16 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  getProducts,
+  getCategories,
+  getBrands,
+  getSortOptions,
+  getShopLabels,
+} from '@/data/products';
 
-const products = [
+const OLD_HARDCODED_products = [
   {
     id: '1',
     name: 'AquaPure Pro 5-Stage Filter',
@@ -134,32 +142,38 @@ const products = [
   },
 ];
 
-const categories = ['All', 'Residential', 'Commercial', 'Industrial'];
-const brands = [
-  'All',
-  'AquaPure',
-  'CrystalFlow',
-  'EcoFilter',
-  'PureTech',
-  'AquaHome',
-  'FlowMax',
-];
-const sortOptions = [
-  { value: 'featured', label: 'Featured' },
-  { value: 'price-low', label: 'Price: Low to High' },
-  { value: 'price-high', label: 'Price: High to Low' },
-  { value: 'rating', label: 'Highest Rated' },
-];
-
 const ITEMS_PER_PAGE = 6;
 
 export default function ShopPage() {
+  const { language } = useLanguage();
+  const [products, setProducts] = useState(getProducts('en'));
+  const [categories, setCategories] = useState(getCategories('en'));
+  const [brands, setBrands] = useState(getBrands('en'));
+  const [sortOptions, setSortOptions] = useState(getSortOptions('en'));
+  const [labels, setLabels] = useState(getShopLabels('en'));
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedBrand, setSelectedBrand] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [selectedBrand, setSelectedBrand] = useState(brands[0]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [sortBy, setSortBy] = useState('featured');
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const newProducts = getProducts(language);
+    const newCategories = getCategories(language);
+    const newBrands = getBrands(language);
+    const newSortOptions = getSortOptions(language);
+    const newLabels = getShopLabels(language);
+
+    setProducts(newProducts);
+    setCategories(newCategories);
+    setBrands(newBrands);
+    setSortOptions(newSortOptions);
+    setLabels(newLabels);
+    setSelectedCategory(newCategories[0]);
+    setSelectedBrand(newBrands[0]);
+  }, [language]);
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
@@ -167,9 +181,9 @@ export default function ShopPage() {
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory =
-        selectedCategory === 'All' || product.category === selectedCategory;
+        selectedCategory === categories[0] || product.category === selectedCategory;
       const matchesBrand =
-        selectedBrand === 'All' || product.brand === selectedBrand;
+        selectedBrand === brands[0] || product.brand === selectedBrand;
       const matchesPrice =
         product.price >= priceRange[0] && product.price <= priceRange[1];
 
@@ -193,7 +207,7 @@ export default function ShopPage() {
     }
 
     return filtered;
-  }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy]);
+  }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy, products, categories, brands]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -212,11 +226,10 @@ export default function ShopPage() {
         {/* Header */}
         <div className='text-center space-y-4'>
           <h1 className='text-3xl lg:text-4xl font-bold text-primary-900'>
-            Water Filter Shop
+            {labels.pageTitle}
           </h1>
           <p className='text-lg text-primary-700 max-w-2xl mx-auto'>
-            Discover our complete range of water filtration systems for home,
-            office, and industrial use.
+            {labels.pageDescription}
           </p>
         </div>
 
@@ -228,7 +241,7 @@ export default function ShopPage() {
               <div className='relative'>
                 <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-500 h-5 w-5' />
                 <Input
-                  placeholder='Search products...'
+                  placeholder={labels.searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className='pl-11 h-12 border-primary-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 text-base'
@@ -247,14 +260,14 @@ export default function ShopPage() {
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
-                    Category
+                    {labels.categoryLabel}
                   </label>
                   <Select
                     value={selectedCategory}
                     onValueChange={setSelectedCategory}
                   >
                     <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
-                      <SelectValue placeholder='Category' />
+                      <SelectValue placeholder={labels.categoryLabel} />
                     </SelectTrigger>
                     <SelectContent>
                       {categories.map((category) => (
@@ -268,14 +281,14 @@ export default function ShopPage() {
 
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
-                    Brand
+                    {labels.brandLabel}
                   </label>
                   <Select
                     value={selectedBrand}
                     onValueChange={setSelectedBrand}
                   >
                     <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
-                      <SelectValue placeholder='Brand' />
+                      <SelectValue placeholder={labels.brandLabel} />
                     </SelectTrigger>
                     <SelectContent>
                       {brands.map((brand) => (
@@ -289,7 +302,7 @@ export default function ShopPage() {
 
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
-                    Price Range
+                    {labels.priceRangeLabel}
                   </label>
                   <div className='pt-2'>
                     <Slider
@@ -311,11 +324,11 @@ export default function ShopPage() {
 
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
-                    Sort By
+                    {labels.sortByLabel}
                   </label>
                   <Select value={sortBy} onValueChange={setSortBy}>
                     <SelectTrigger className='w-full border-primary-300 hover:border-primary-400'>
-                      <SelectValue placeholder='Sort by' />
+                      <SelectValue placeholder={labels.sortByLabel} />
                     </SelectTrigger>
                     <SelectContent>
                       {sortOptions.map((option) => (
@@ -329,37 +342,37 @@ export default function ShopPage() {
               </div>
 
               {/* Active Filters Summary */}
-              {(selectedCategory !== 'All' ||
-                selectedBrand !== 'All' ||
+              {(selectedCategory !== categories[0] ||
+                selectedBrand !== brands[0] ||
                 searchQuery ||
                 priceRange[0] !== 0 ||
                 priceRange[1] !== 2000) && (
                 <div className='flex flex-wrap items-center gap-2 pt-2 border-t border-primary-200'>
                   <span className='text-sm font-medium text-primary-700'>
-                    Active Filters:
+                    {labels.activeFilters}
                   </span>
-                  {selectedCategory !== 'All' && (
+                  {selectedCategory !== categories[0] && (
                     <Badge
                       variant='secondary'
                       className='bg-primary-100 text-primary-800 hover:bg-primary-200'
                     >
                       {selectedCategory}
                       <button
-                        onClick={() => setSelectedCategory('All')}
+                        onClick={() => setSelectedCategory(categories[0])}
                         className='ml-1 hover:text-primary-900'
                       >
                         <X className='h-3 w-3' />
                       </button>
                     </Badge>
                   )}
-                  {selectedBrand !== 'All' && (
+                  {selectedBrand !== brands[0] && (
                     <Badge
                       variant='secondary'
                       className='bg-primary-100 text-primary-800 hover:bg-primary-200'
                     >
                       {selectedBrand}
                       <button
-                        onClick={() => setSelectedBrand('All')}
+                        onClick={() => setSelectedBrand(brands[0])}
                         className='ml-1 hover:text-primary-900'
                       >
                         <X className='h-3 w-3' />
@@ -370,14 +383,14 @@ export default function ShopPage() {
                     variant='ghost'
                     size='sm'
                     onClick={() => {
-                      setSelectedCategory('All');
-                      setSelectedBrand('All');
+                      setSelectedCategory(categories[0]);
+                      setSelectedBrand(brands[0]);
                       setSearchQuery('');
                       setPriceRange([0, 2000]);
                     }}
                     className='text-primary-600 hover:text-primary-800 h-7'
                   >
-                    Clear All
+                    {labels.clearAll}
                   </Button>
                 </div>
               )}
@@ -387,8 +400,8 @@ export default function ShopPage() {
 
         {/* Results Count */}
         <div className='text-center text-primary-600'>
-          Showing {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)}{' '}
-          of {filteredProducts.length} products
+          {labels.showingResults} {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)}{' '}
+          {labels.of} {filteredProducts.length} {labels.products}
         </div>
 
         {/* Product Grid */}
@@ -409,7 +422,7 @@ export default function ShopPage() {
               className='border-primary-300 text-primary-700 hover:bg-primary-50 disabled:opacity-50'
             >
               <ChevronLeft className='h-4 w-4 mr-1' />
-              Previous
+              {labels.previous}
             </Button>
 
             <div className='flex items-center gap-1'>
@@ -439,7 +452,7 @@ export default function ShopPage() {
               disabled={currentPage === totalPages}
               className='border-primary-300 text-primary-700 hover:bg-primary-50 disabled:opacity-50'
             >
-              Next
+              {labels.next}
               <ChevronRight className='h-4 w-4 ml-1' />
             </Button>
           </div>
@@ -449,10 +462,10 @@ export default function ShopPage() {
           <div className='text-center py-12'>
             <Filter className='h-12 w-12 text-primary-400 mx-auto mb-4' />
             <h3 className='text-lg font-semibold mb-2 text-primary-900'>
-              No products found
+              {labels.noProductsFound}
             </h3>
             <p className='text-primary-700'>
-              Try adjusting your search or filter criteria.
+              {labels.tryAdjusting}
             </p>
           </div>
         )}
