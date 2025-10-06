@@ -1,34 +1,31 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   FaChevronDown,
   FaEnvelope,
   FaFacebook,
+  FaGithub,
   FaInstagram,
+  FaLinkedin,
   FaMapMarkerAlt,
   FaPhone,
-  FaTiktok,
+  FaTwitter,
   FaWhatsapp,
   FaYoutube,
 } from 'react-icons/fa';
+import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 
 import Button from '@/components/buttons/Button';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import { useLanguage } from '@/contexts/LanguageContext';
-import contactContentEn from '@/content/common/en/contact.json';
-import contactContentUr from '@/content/common/ur/contact.json';
+import contactContent from '@/content/common/en/contact.json';
 import contactData from '@/content/common/en/data.json';
-import footerContentEn from '@/content/common/en/footer.json';
-import footerContentUr from '@/content/common/ur/footer.json';
+import footerContent from '@/content/common/en/footer.json';
 import { WhatsAppService } from '@/lib/whatsapp';
 import type { ContactFormData, ContactOption, FAQ } from '@/types';
 import { CompanyInfo } from '@/types/constants';
 
 const ContactPage = () => {
-  const { language } = useLanguage();
-  const [contactContent, setContactContent] = useState(contactContentEn);
-  const [footerContent, setFooterContent] = useState(footerContentEn);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -39,16 +36,6 @@ const ContactPage = () => {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showErrors, setShowErrors] = useState(false);
-
-  useEffect(() => {
-    if (language === 'ur') {
-      setContactContent(contactContentUr);
-      setFooterContent(footerContentUr);
-    } else {
-      setContactContent(contactContentEn);
-      setFooterContent(footerContentEn);
-    }
-  }, [language]);
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -92,17 +79,22 @@ const ContactPage = () => {
 
   // Icon mapping for social links
   const socialIconMap = {
+    SiUpwork,
+    SiFreelancer,
+    FaLinkedin,
     FaFacebook,
     FaInstagram,
+    FaTwitter,
     FaYoutube,
+    SiBehance,
+    FaGithub,
     FaWhatsapp,
-    FaTiktok,
   };
 
   // Convert social links with icon mapping (using footer content)
   const socialLinks = footerContent.socialLinks.map((link: any) => ({
     ...link,
-    icon: socialIconMap[link.icon as keyof typeof socialIconMap] || FaFacebook,
+    icon: socialIconMap[link.icon as keyof typeof socialIconMap] || FaLinkedin,
   }));
 
   // Use FAQs from centralized content
@@ -149,19 +141,19 @@ const ContactPage = () => {
         </div>
 
         <div className='layout text-center relative z-10 page-header-spacing'>
-          <div className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full text-sm font-medium text-primary-700 mb-8'>
+          <div className='inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-primary-200 rounded-full text-sm font-medium text-primary-700 mb-8 animate-fade-in'>
             <FaEnvelope className='w-4 h-4' />
             <span>{contactContent.hero.subtitle}</span>
           </div>
 
-          <h1 className='text-5xl md:text-7xl font-bold leading-tight mb-8'>
+          <h1 className='text-5xl md:text-7xl font-bold leading-tight mb-8 animate-fade-in-up'>
             <span className='text-primary-900'>Get In</span>
             <br />
             <span className='bg-gradient-to-r from-primary-600 via-secondary-600 to-primary-700 bg-clip-text text-transparent'>
               Touch
             </span>
           </h1>
-          <p className='text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed'>
+          <p className='text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animation-delay-200'>
             {contactContent.hero.description}
           </p>
         </div>
@@ -170,7 +162,7 @@ const ContactPage = () => {
       {/* Contact Options */}
       <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30'>
         <div className='layout'>
-          <div className='text-center mb-20'>
+          <div className='text-center mb-20 animate-fade-in-up'>
             <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Contact
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
@@ -187,7 +179,8 @@ const ContactPage = () => {
             {contactOptions.map((option, index) => (
               <div
                 key={option.title}
-                className='hover:-translate-y-1 transition-all duration-300'
+                className='opacity-0 animate-fade-in-up hover:-translate-y-1 transition-all duration-300'
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <UnstyledLink
                   href={option.link}
@@ -211,7 +204,7 @@ const ContactPage = () => {
             ))}
           </div>
           {/* Social Links */}
-          <div className='text-center mt-20'>
+          <div className='text-center mt-20 opacity-0 animate-fade-in-up animation-delay-400'>
             <h3 className='text-3xl font-bold text-slate-900 mb-8'>
               Connect With Us
             </h3>
@@ -222,7 +215,8 @@ const ContactPage = () => {
                   href={social.href}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='bg-white text-slate-600 p-4 rounded-2xl hover:bg-slate-100 transition-all duration-300 border border-slate-200 shadow-lg hover:shadow-xl hover:scale-110'
+                  className='bg-white text-slate-600 p-4 rounded-2xl hover:bg-slate-100 transition-all duration-300 border border-slate-200 shadow-lg hover:shadow-xl hover:scale-110 opacity-0 animate-fade-in'
+                  style={{ animationDelay: `${index * 50}ms` }}
                   aria-label={social.name}
                 >
                   <social.icon size={20} />
@@ -237,7 +231,7 @@ const ContactPage = () => {
       <section className='py-32 bg-white'>
         <div className='layout'>
           <div className='max-w-4xl mx-auto'>
-            <div className='text-center mb-20'>
+            <div className='text-center mb-20 opacity-0 animate-fade-in-up'>
               <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
                 Send Us a
                 <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
@@ -253,7 +247,7 @@ const ContactPage = () => {
 
             <form
               onSubmit={(e) => e.preventDefault()}
-              className='bg-gradient-to-br from-slate-50 to-blue-50/30 p-12 rounded-3xl shadow-2xl border border-slate-200'
+              className='bg-gradient-to-br from-slate-50 to-blue-50/30 p-12 rounded-3xl shadow-2xl border border-slate-200 opacity-0 animate-fade-in-up animation-delay-200'
             >
               <div className='grid md:grid-cols-2 gap-8 mb-8'>
                 <div>
@@ -515,7 +509,7 @@ ${formData.name}`;
       {/* FAQ */}
       <section className='py-32 bg-gradient-to-br from-slate-50 to-blue-50/30'>
         <div className='layout'>
-          <div className='text-center mb-20'>
+          <div className='text-center mb-20 opacity-0 animate-fade-in-up'>
             <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
               Frequently Asked
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
@@ -533,7 +527,8 @@ ${formData.name}`;
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className='bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300'
+                className='bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 opacity-0 animate-fade-in-up'
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className='hover:bg-slate-50/50 transition-colors duration-200'>
                   <Button

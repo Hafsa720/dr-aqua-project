@@ -10,43 +10,52 @@ import {
   Trash2,
 } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import { type CartItem, useCart } from '@/components/cart-provider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getCartLabels } from '@/data/cart/labels';
 
 export default function CartPage() {
+  const { language } = useLanguage();
+  const [labels, setLabels] = useState(getCartLabels('en'));
   const { items, getTotalPrice, updateQuantity, removeItem, clearCart } =
     useCart();
   const total = getTotalPrice();
+
+  useEffect(() => {
+    setLabels(getCartLabels(language));
+  }, [language]);
 
   const generateWhatsAppMessage = () => {
     const companyName = 'Dr. Aqua';
     const companyPhone = '+923497415390';
 
-    let message = `السلام علیکم! 🌊\n\n`;
-    message += `I hope you're doing well. I'm interested in purchasing water filtration systems from *${companyName}* and would like to place an order.\n\n`;
-    message += `💧 *My Selected Items:*\n`;
+    let message = labels.whatsappGreeting;
+    message += labels.whatsappIntro.replace('{companyName}', companyName);
+    message += labels.whatsappItemsHeader;
     message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
 
     items.forEach((item: CartItem, index: number) => {
       const quantity = item.quantity || 1;
       message += `${index + 1}. 🔹 *${item.name}*\n`;
-      message += `   💰 Price: $${item.price}\n`;
-      message += `   📦 Quantity: ${quantity}\n`;
-      message += `   💵 Subtotal: $${(item.price * quantity).toFixed(2)}\n\n`;
+      message += `   ${labels.whatsappPrice}: $${item.price}\n`;
+      message += `   ${labels.whatsappQuantity}: ${quantity}\n`;
+      message += `   ${labels.whatsappSubtotal}: $${(item.price * quantity).toFixed(2)}\n\n`;
     });
 
     message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-    message += `💎 *Total Amount: $${total.toFixed(2)}*\n\n`;
-    message += `📞 Could you please provide me with:\n`;
-    message += `• Payment options available\n`;
-    message += `• Delivery timeframe\n`;
-    message += `• Installation services (if available)\n`;
-    message += `• Any current promotions or discounts\n\n`;
-    message += `I'm ready to proceed with this order. Please let me know the next steps.\n\n`;
-    message += `Thank you for your time! 🙏\n`;
-    message += `Looking forward to your response.`;
+    message += labels.whatsappTotal.replace('${total}', total.toFixed(2));
+    message += labels.whatsappQuestions;
+    message += labels.whatsappPayment;
+    message += labels.whatsappDelivery;
+    message += labels.whatsappInstallation;
+    message += labels.whatsappPromotions;
+    message += labels.whatsappReady;
+    message += labels.whatsappThanks;
+    message += labels.whatsappLookingForward;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodedMessage}`;
@@ -56,31 +65,31 @@ export default function CartPage() {
 
   const generateEmailMessage = () => {
     const companyEmail = 'info@draqua.com';
-    const subject = encodeURIComponent('Water Filter Order Inquiry');
+    const subject = encodeURIComponent(labels.emailSubject);
 
-    let body = `Hello Dr. Aqua Team,\n\n`;
-    body += `I hope this email finds you well. I'm interested in purchasing water filtration systems and would like to place an order.\n\n`;
-    body += `MY SELECTED ITEMS:\n`;
+    let body = labels.emailGreeting;
+    body += labels.emailIntro;
+    body += labels.emailItemsHeader;
     body += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
 
     items.forEach((item: CartItem, index: number) => {
       const quantity = item.quantity || 1;
       body += `${index + 1}. ${item.name}\n`;
-      body += `   Price: $${item.price}\n`;
-      body += `   Quantity: ${quantity}\n`;
-      body += `   Subtotal: $${(item.price * quantity).toFixed(2)}\n\n`;
+      body += `   ${labels.emailPrice}: $${item.price}\n`;
+      body += `   ${labels.emailQuantity}: ${quantity}\n`;
+      body += `   ${labels.emailSubtotal}: $${(item.price * quantity).toFixed(2)}\n\n`;
     });
 
     body += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-    body += `TOTAL AMOUNT: $${total.toFixed(2)}\n\n`;
-    body += `Could you please provide me with:\n`;
-    body += `• Payment options available\n`;
-    body += `• Delivery timeframe\n`;
-    body += `• Installation services (if available)\n`;
-    body += `• Any current promotions or discounts\n\n`;
-    body += `I'm ready to proceed with this order. Please let me know the next steps.\n\n`;
-    body += `Thank you for your time!\n`;
-    body += `Looking forward to your response.`;
+    body += labels.emailTotal.replace('${total}', total.toFixed(2));
+    body += labels.emailQuestions;
+    body += labels.emailPayment;
+    body += labels.emailDelivery;
+    body += labels.emailInstallation;
+    body += labels.emailPromotions;
+    body += labels.emailReady;
+    body += labels.emailThanks;
+    body += labels.emailLookingForward;
 
     const encodedBody = encodeURIComponent(body);
     const mailtoUrl = `mailto:${companyEmail}?subject=${subject}&body=${encodedBody}`;
@@ -95,11 +104,10 @@ export default function CartPage() {
           <CardContent className='pt-12 pb-12'>
             <ShoppingBag className='h-16 w-16 text-primary-400 mx-auto mb-4' />
             <h2 className='text-2xl font-bold mb-2 text-primary-900'>
-              Your Cart is Empty
+              {labels.emptyCartTitle}
             </h2>
             <p className='text-primary-700 mb-6'>
-              Looks like you haven't added any water filtration systems to your
-              cart yet.
+              {labels.emptyCartDescription}
             </p>
             <Button
               asChild
@@ -107,7 +115,7 @@ export default function CartPage() {
               className='bg-secondary-600 hover:bg-secondary-700 text-white'
             >
               <Link href='/shop'>
-                Start Shopping <ArrowRight className='ml-2 h-4 w-4' />
+                {labels.startShopping} <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>
           </CardContent>
@@ -121,14 +129,14 @@ export default function CartPage() {
       <div className='space-y-8'>
         {/* Header */}
         <div className='flex items-center justify-between'>
-          <h1 className='text-3xl font-bold text-primary-900'>Shopping Cart</h1>
+          <h1 className='text-3xl font-bold text-primary-900'>{labels.pageTitle}</h1>
           <Button
             variant='outline'
             onClick={clearCart}
             className='bg-transparent border-primary-300 text-primary-700 hover:bg-primary-50'
           >
             <Trash2 className='h-4 w-4 mr-2' />
-            Clear Cart
+            {labels.clearCart}
           </Button>
         </div>
 
@@ -209,7 +217,7 @@ export default function CartPage() {
                               ${item.price * quantity}
                             </div>
                             <div className='text-sm text-primary-500'>
-                              ${item.price} each
+                              ${item.price} {labels.each}
                             </div>
                           </div>
                         </div>
@@ -226,33 +234,33 @@ export default function CartPage() {
             <Card className='sticky top-24 border-primary-200'>
               <CardHeader>
                 <CardTitle className='text-primary-900'>
-                  Order Summary
+                  {labels.orderSummary}
                 </CardTitle>
               </CardHeader>
               <CardContent className='space-y-4'>
                 <div className='space-y-2'>
                   <div className='flex justify-between text-sm'>
-                    <span className='text-primary-600'>Subtotal</span>
+                    <span className='text-primary-600'>{labels.subtotal}</span>
                     <span className='font-medium text-primary-800'>
                       ${total.toFixed(2)}
                     </span>
                   </div>
                   <div className='flex justify-between text-sm'>
-                    <span className='text-primary-600'>Shipping</span>
-                    <span className='font-medium text-secondary-600'>Free</span>
+                    <span className='text-primary-600'>{labels.shipping}</span>
+                    <span className='font-medium text-secondary-600'>{labels.free}</span>
                   </div>
                 </div>
 
                 <div className='h-px bg-primary-200'></div>
 
                 <div className='flex justify-between text-lg font-bold'>
-                  <span className='text-primary-900'>Total</span>
+                  <span className='text-primary-900'>{labels.total}</span>
                   <span className='text-primary-600'>${total.toFixed(2)}</span>
                 </div>
 
                 <div className='space-y-3 pt-4'>
                   <p className='text-sm text-primary-600 text-center'>
-                    Contact us to complete your order
+                    {labels.contactToComplete}
                   </p>
                   <Button
                     onClick={generateWhatsAppMessage}
@@ -260,7 +268,7 @@ export default function CartPage() {
                     size='lg'
                   >
                     <MessageCircle className='mr-2 h-5 w-5' />
-                    Order via WhatsApp
+                    {labels.orderViaWhatsApp}
                   </Button>
                   <Button
                     onClick={generateEmailMessage}
@@ -269,14 +277,14 @@ export default function CartPage() {
                     size='lg'
                   >
                     <Mail className='mr-2 h-5 w-5' />
-                    Order via Email
+                    {labels.orderViaEmail}
                   </Button>
                   <Button
                     asChild
                     variant='outline'
                     className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
                   >
-                    <Link href='/shop'>Continue Shopping</Link>
+                    <Link href='/shop'>{labels.continueShopping}</Link>
                   </Button>
                 </div>
 
@@ -294,7 +302,7 @@ export default function CartPage() {
                         clipRule='evenodd'
                       />
                     </svg>
-                    <span>Free shipping on all orders</span>
+                    <span>{labels.freeShipping}</span>
                   </div>
                   <div className='flex items-center gap-2'>
                     <svg
@@ -308,7 +316,7 @@ export default function CartPage() {
                         clipRule='evenodd'
                       />
                     </svg>
-                    <span>30-day money-back guarantee</span>
+                    <span>{labels.moneyBackGuarantee}</span>
                   </div>
                   <div className='flex items-center gap-2'>
                     <svg
@@ -322,7 +330,7 @@ export default function CartPage() {
                         clipRule='evenodd'
                       />
                     </svg>
-                    <span>Secure checkout</span>
+                    <span>{labels.secureCheckout}</span>
                   </div>
                 </div>
               </CardContent>

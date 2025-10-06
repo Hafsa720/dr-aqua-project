@@ -22,80 +22,28 @@ import {
 } from '@/components/ui/card';
 import { Container } from '@/components/ui/Container';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { getProducts } from '@/data/products';
 
 import homeContentEn from '@/content/home/en/content.json';
 import homeContentUr from '@/content/home/ur/content.json';
 
-const featuredProducts = [
-  {
-    id: '1',
-    name: 'AquaPure Pro 5-Stage Filter',
-    price: 299,
-    originalPrice: 399,
-    image:
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop',
-    rating: 4.8,
-    category: 'Residential',
-    features: ['5-Stage Filtration', 'UV Sterilization', 'Smart Monitoring'],
-  },
-  {
-    id: '2',
-    name: 'CrystalFlow Commercial Unit',
-    price: 899,
-    originalPrice: 1199,
-    image:
-      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop',
-    rating: 4.9,
-    category: 'Commercial',
-    features: ['High Capacity', 'Auto-Cleaning', 'Remote Control'],
-  },
-  {
-    id: '3',
-    name: 'EcoFilter Compact Home',
-    price: 149,
-    originalPrice: 199,
-    image:
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop',
-    rating: 4.7,
-    category: 'Residential',
-    features: ['Space Saving', 'Easy Install', 'Long Lasting'],
-  },
-];
-
-const services = [
-  {
-    icon: Wrench,
-    title: 'Professional Installation',
-    description:
-      'Expert installation by certified technicians with 2-year warranty',
-    price: 'Starting at $99',
-  },
-  {
-    icon: Shield,
-    title: 'Maintenance & Repair',
-    description:
-      'Regular maintenance and quick repairs to keep your system running',
-    price: 'Starting at $49',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Water Quality Testing',
-    description: 'Comprehensive water analysis and quality testing services',
-    price: 'Starting at $29',
-  },
-];
-
 export default function HomePage() {
   const { language } = useLanguage();
   const [content, setContent] = useState(homeContentEn);
+  const [products, setProducts] = useState(getProducts('en'));
 
   useEffect(() => {
     if (language === 'ur') {
       setContent(homeContentUr);
+      setProducts(getProducts('ur'));
     } else {
       setContent(homeContentEn);
+      setProducts(getProducts('en'));
     }
   }, [language]);
+
+  // Get first 3 featured products
+  const featuredProducts = products.filter((p) => p.featured).slice(0, 3);
 
   return (
     <div className='flex flex-col'>
@@ -260,7 +208,7 @@ export default function HomePage() {
                         variant='outline'
                         className='w-full border-primary-500 text-primary-500 hover:bg-primary-50'
                       >
-                        <Link href='/services'>Learn More</Link>
+                        <Link href='/services'>{content.services.learnMore}</Link>
                       </Button>
                     </div>
                   </CardContent>
