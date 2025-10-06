@@ -3,13 +3,15 @@
 import { CheckCircle, ShoppingCart, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 import { useCart } from '@/components/cart-provider';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getProductCardLabels } from '@/data/productCard/labels';
 
 export interface Product {
   id: string;
@@ -34,8 +36,14 @@ export function ProductCard({
   variant = 'default',
   showAddToCart = true,
 }: ProductCardProps) {
+  const { language } = useLanguage();
+  const [labels, setLabels] = useState(getProductCardLabels('en'));
   const { addItem } = useCart();
   const [isAdding, setIsAdding] = useState(false);
+
+  useEffect(() => {
+    setLabels(getProductCardLabels(language));
+  }, [language]);
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -51,8 +59,8 @@ export function ProductCard({
     });
 
     // Show toast notification
-    toast.success('Added to cart', {
-      description: `${product.name} has been added to your cart.`,
+    toast.success(labels.toastTitle, {
+      description: labels.toastDescription.replace('{productName}', product.name),
     });
 
     setTimeout(() => setIsAdding(false), 500);
@@ -78,7 +86,7 @@ export function ProductCard({
               {product.originalPrice &&
                 product.originalPrice > product.price && (
                   <Badge className='absolute top-3 right-3 bg-secondary-600 hover:bg-secondary-700 text-white border-0 shadow-lg'>
-                    Save ${product.originalPrice - product.price}
+                    {labels.save} ${product.originalPrice - product.price}
                   </Badge>
                 )}
             </div>
@@ -127,7 +135,7 @@ export function ProductCard({
                 size='sm'
                 className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
               >
-                <Link href={`/shop/${product.id}`}>Details</Link>
+                <Link href={`/shop/${product.id}`}>{labels.details}</Link>
               </Button>
               {showAddToCart && (
                 <Button
@@ -137,7 +145,7 @@ export function ProductCard({
                   disabled={isAdding}
                 >
                   <ShoppingCart className='h-4 w-4 mr-1.5' />
-                  {isAdding ? 'Adding...' : 'Add'}
+                  {isAdding ? labels.adding : labels.add}
                 </Button>
               )}
             </div>
@@ -169,7 +177,7 @@ export function ProductCard({
           </Badge>
           {product.originalPrice && product.originalPrice > product.price && (
             <Badge className='absolute top-4 right-4 bg-secondary-500 text-white'>
-              Save ${product.originalPrice - product.price}
+              {labels.save} ${product.originalPrice - product.price}
             </Badge>
           )}
         </div>
@@ -221,7 +229,7 @@ export function ProductCard({
               variant='outline'
               className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
             >
-              <Link href={`/shop/${product.id}`}>View Details</Link>
+              <Link href={`/shop/${product.id}`}>{labels.viewDetails}</Link>
             </Button>
             {showAddToCart && (
               <Button
@@ -230,7 +238,7 @@ export function ProductCard({
                 disabled={isAdding}
               >
                 <ShoppingCart className='h-4 w-4 mr-2' />
-                {isAdding ? 'Adding...' : 'Add to Cart'}
+                {isAdding ? labels.adding : labels.addToCart}
               </Button>
             )}
           </div>

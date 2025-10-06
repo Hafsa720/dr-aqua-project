@@ -1,0 +1,248 @@
+import type { Product } from '@/types/product';
+
+export const productsEn: Product[] = [
+  {
+    id: '1',
+    name: 'AquaPure Pro 5-Stage Filter',
+    slug: 'aquapure-pro-5-stage-filter',
+    price: 299,
+    originalPrice: 399,
+    image:
+      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
+    rating: 4.8,
+    reviews: 124,
+    category: 'Residential',
+    brand: 'AquaPure',
+    description:
+      'Advanced 5-stage filtration system with UV sterilization and smart monitoring capabilities.',
+    shortDescription:
+      'Advanced 5-stage filtration system with UV sterilization.',
+    features: [
+      '5-Stage Filtration',
+      'UV Sterilization',
+      'Smart Monitoring',
+      '2-Year Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '2.5 GPM',
+      'Filter Life': '12 months',
+      Dimensions: '15" x 8" x 20"',
+      Weight: '25 lbs',
+      Installation: 'Under-sink',
+      Certifications: 'NSF/ANSI 42, 53, 58',
+    },
+    inStock: true,
+    featured: true,
+    tags: ['Residential', 'UV Filter', 'Smart', '5-Stage'],
+  },
+  {
+    id: '2',
+    name: 'CrystalFlow Commercial Unit',
+    slug: 'crystalflow-commercial-unit',
+    price: 899,
+    originalPrice: 1199,
+    image:
+      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
+    rating: 4.9,
+    reviews: 87,
+    category: 'Commercial',
+    brand: 'CrystalFlow',
+    description:
+      'High-capacity commercial water filtration system with auto-cleaning and remote control.',
+    shortDescription:
+      'High-capacity commercial system with auto-cleaning feature.',
+    features: [
+      'High Capacity',
+      'Auto-Cleaning',
+      'Remote Control',
+      '5-Year Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '10 GPM',
+      'Filter Life': '24 months',
+      Dimensions: '24" x 12" x 36"',
+      Weight: '85 lbs',
+      Installation: 'Floor-standing',
+      Certifications: 'NSF/ANSI 42, 53, 61',
+    },
+    inStock: true,
+    featured: true,
+    tags: ['Commercial', 'Auto-Cleaning', 'Remote Control', 'High Capacity'],
+  },
+  {
+    id: '3',
+    name: 'EcoFilter Compact Home',
+    slug: 'ecofilter-compact-home',
+    price: 149,
+    originalPrice: 199,
+    image:
+      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
+    rating: 4.7,
+    reviews: 203,
+    category: 'Residential',
+    brand: 'EcoFilter',
+    description:
+      'Space-saving home water filter with easy installation and long-lasting performance.',
+    shortDescription: 'Space-saving home filter with easy installation.',
+    features: [
+      'Space Saving',
+      'Easy Install',
+      'Long Lasting',
+      '1-Year Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '1.5 GPM',
+      'Filter Life': '6 months',
+      Dimensions: '10" x 6" x 12"',
+      Weight: '8 lbs',
+      Installation: 'Countertop',
+      Certifications: 'NSF/ANSI 42, 53',
+    },
+    inStock: true,
+    featured: false,
+    tags: ['Residential', 'Compact', 'Countertop', 'Budget-Friendly'],
+  },
+  {
+    id: '4',
+    name: 'PureTech Industrial System',
+    slug: 'puretech-industrial-system',
+    price: 1599,
+    originalPrice: 1999,
+    image:
+      'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
+    rating: 4.9,
+    reviews: 45,
+    category: 'Industrial',
+    brand: 'PureTech',
+    description:
+      'Heavy-duty industrial water treatment system for large-scale operations.',
+    shortDescription: 'Heavy-duty industrial system for large-scale operations.',
+    features: [
+      'Industrial Grade',
+      'High Volume',
+      'Automated Controls',
+      '10-Year Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '50 GPM',
+      'Filter Life': '36 months',
+      Dimensions: '36" x 24" x 48"',
+      Weight: '250 lbs',
+      Installation: 'Floor-standing',
+      Certifications: 'NSF/ANSI 42, 53, 61, 372',
+    },
+    inStock: true,
+    featured: true,
+    tags: ['Industrial', 'Heavy-Duty', 'High Volume', 'Automated'],
+  },
+  {
+    id: '5',
+    name: 'AquaHome Basic Filter',
+    slug: 'aquahome-basic-filter',
+    price: 89,
+    originalPrice: 119,
+    image:
+      'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
+    rating: 4.5,
+    reviews: 312,
+    category: 'Residential',
+    brand: 'AquaHome',
+    description:
+      'Affordable and reliable basic water filtration for everyday use.',
+    shortDescription: 'Affordable basic filtration for everyday use.',
+    features: [
+      'Basic Filtration',
+      'Budget Friendly',
+      'Easy Maintenance',
+      '6-Month Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '1 GPM',
+      'Filter Life': '3 months',
+      Dimensions: '8" x 4" x 10"',
+      Weight: '4 lbs',
+      Installation: 'Countertop',
+      Certifications: 'NSF/ANSI 42',
+    },
+    inStock: true,
+    featured: false,
+    tags: ['Residential', 'Budget', 'Basic', 'Countertop'],
+  },
+  {
+    id: '6',
+    name: 'FlowMax Office System',
+    slug: 'flowmax-office-system',
+    price: 449,
+    originalPrice: 599,
+    image:
+      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
+    rating: 4.6,
+    reviews: 156,
+    category: 'Commercial',
+    brand: 'FlowMax',
+    description:
+      'Perfect water filtration solution for offices and small businesses.',
+    shortDescription: 'Perfect solution for offices and small businesses.',
+    features: [
+      'Office Optimized',
+      'Quiet Operation',
+      'Compact Design',
+      '3-Year Warranty',
+    ],
+    specifications: {
+      'Flow Rate': '5 GPM',
+      'Filter Life': '18 months',
+      Dimensions: '18" x 10" x 24"',
+      Weight: '45 lbs',
+      Installation: 'Wall-mounted or floor-standing',
+      Certifications: 'NSF/ANSI 42, 53',
+    },
+    inStock: true,
+    featured: false,
+    tags: ['Commercial', 'Office', 'Quiet', 'Compact'],
+  },
+];
+
+// Filter options
+export const categoriesEn = ['All', 'Residential', 'Commercial', 'Industrial'];
+export const brandsEn = [
+  'All',
+  'AquaPure',
+  'CrystalFlow',
+  'EcoFilter',
+  'PureTech',
+  'AquaHome',
+  'FlowMax',
+];
+export const sortOptionsEn = [
+  { value: 'featured', label: 'Featured' },
+  { value: 'price-low', label: 'Price: Low to High' },
+  { value: 'price-high', label: 'Price: High to Low' },
+  { value: 'rating', label: 'Highest Rated' },
+];
+
+// UI Labels
+export const shopLabelsEn = {
+  pageTitle: 'Water Filter Shop',
+  pageDescription:
+    'Discover our complete range of water filtration systems for home, office, and industrial use.',
+  searchPlaceholder: 'Search products...',
+  categoryLabel: 'Category',
+  brandLabel: 'Brand',
+  priceRangeLabel: 'Price Range',
+  sortByLabel: 'Sort By',
+  activeFilters: 'Active Filters:',
+  clearAll: 'Clear All',
+  showingResults: 'Showing',
+  of: 'of',
+  products: 'products',
+  noProductsFound: 'No products found',
+  tryAdjusting: 'Try adjusting your search or filter criteria.',
+  previous: 'Previous',
+  next: 'Next',
+  inStock: 'In Stock',
+  outOfStock: 'Out of Stock',
+  addToCart: 'Add to Cart',
+  viewDetails: 'View Details',
+  save: 'Save',
+};
