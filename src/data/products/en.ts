@@ -223,7 +223,7 @@ export const sortOptionsEn = [
 
 // UI Labels
 export const shopLabelsEn = {
-  pageTitle: 'Water Filter Shop',
+  pageTitle: 'Water Filters',
   pageDescription:
     'Discover our complete range of water filtration systems for home, office, and industrial use.',
   searchPlaceholder: 'Search products...',

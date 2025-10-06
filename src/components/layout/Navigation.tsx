@@ -13,14 +13,12 @@ import { cn } from '@/lib/utils';
 const navigationConfig = {
   en: [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
     { name: 'Products', href: '/products' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ],
   ur: [
     { name: 'ہوم', href: '/' },
-    { name: 'دکان', href: '/shop' },
     { name: 'مصنوعات', href: '/products' },
     { name: 'ہمارے بارے میں', href: '/about' },
     { name: 'رابطہ', href: '/contact' },

@@ -6,7 +6,6 @@ import {
   Phone,
   Shield,
   ShoppingCart,
-  Star,
   Truck,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -228,7 +227,7 @@ export default function ProductDetailPage() {
         <div className='text-center'>
           <h1 className='text-2xl font-bold mb-4'>{labels.productNotFound}</h1>
           <Button asChild>
-            <Link href='/shop'>{labels.backToShop}</Link>
+            <Link href='/products'>{labels.backToShop}</Link>
           </Button>
         </div>
       </div>
@@ -253,7 +252,7 @@ export default function ProductDetailPage() {
         {/* Breadcrumb */}
         <div className='flex items-center gap-2 text-sm text-muted-foreground'>
           <Link
-            href='/shop'
+            href='/products'
             className='hover:text-primary flex items-center gap-1'
           >
             <ArrowLeft className='h-4 w-4' />
@@ -288,15 +287,7 @@ export default function ProductDetailPage() {
               <Badge variant='secondary' className='mb-2'>
                 {product.category}
               </Badge>
-              <h1 className='text-3xl font-bold mb-2'>{product.name}</h1>
-              <div className='flex items-center gap-2 mb-4'>
-                <div className='flex items-center gap-1 bg-yellow-50 px-3 py-1.5 rounded-md'>
-                  <Star className='h-5 w-5 fill-yellow-400 text-yellow-400' />
-                  <span className='ml-1 font-semibold text-yellow-900'>
-                    {product.rating}
-                  </span>
-                </div>
-              </div>
+              <h1 className='text-3xl font-bold mb-4'>{product.name}</h1>
               <p className='text-lg text-muted-foreground'>
                 {product.description}
               </p>

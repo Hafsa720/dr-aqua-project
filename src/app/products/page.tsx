@@ -18,11 +18,11 @@ import {
 import { Slider } from '@/components/ui/slider';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
-  getProducts,
-  getCategories,
   getBrands,
-  getSortOptions,
+  getCategories,
+  getProducts,
   getShopLabels,
+  getSortOptions,
 } from '@/data/products';
 
 const OLD_HARDCODED_products = [
@@ -181,7 +181,8 @@ export default function ShopPage() {
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory =
-        selectedCategory === categories[0] || product.category === selectedCategory;
+        selectedCategory === categories[0] ||
+        product.category === selectedCategory;
       const matchesBrand =
         selectedBrand === brands[0] || product.brand === selectedBrand;
       const matchesPrice =
@@ -207,7 +208,16 @@ export default function ShopPage() {
     }
 
     return filtered;
-  }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy, products, categories, brands]);
+  }, [
+    searchQuery,
+    selectedCategory,
+    selectedBrand,
+    priceRange,
+    sortBy,
+    products,
+    categories,
+    brands,
+  ]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -400,8 +410,9 @@ export default function ShopPage() {
 
         {/* Results Count */}
         <div className='text-center text-primary-600'>
-          {labels.showingResults} {startIndex + 1}-{Math.min(endIndex, filteredProducts.length)}{' '}
-          {labels.of} {filteredProducts.length} {labels.products}
+          {labels.showingResults} {startIndex + 1}-
+          {Math.min(endIndex, filteredProducts.length)} {labels.of}{' '}
+          {filteredProducts.length} {labels.products}
         </div>
 
         {/* Product Grid */}
@@ -464,9 +475,7 @@ export default function ShopPage() {
             <h3 className='text-lg font-semibold mb-2 text-primary-900'>
               {labels.noProductsFound}
             </h3>
-            <p className='text-primary-700'>
-              {labels.tryAdjusting}
-            </p>
+            <p className='text-primary-700'>{labels.tryAdjusting}</p>
           </div>
         )}
       </div>

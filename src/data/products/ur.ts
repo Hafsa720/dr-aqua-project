@@ -218,7 +218,7 @@ export const sortOptionsUr = [
 
 // UI Labels
 export const shopLabelsUr = {
-  pageTitle: 'واٹر فلٹر شاپ',
+  pageTitle: 'پانی کے فلٹر',
   pageDescription:
     'گھر، دفتر، اور صنعتی استعمال کے لیے ہماری واٹر فلٹریشن سسٹمز کی مکمل رینج دریافت کریں۔',
   searchPlaceholder: 'مصنوعات تلاش کریں...',
