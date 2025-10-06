@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle, ShoppingCart, Star } from 'lucide-react';
+import { CheckCircle, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -70,7 +70,7 @@ export function ProductCard({
     return (
       <Card className='group overflow-hidden hover:shadow-2xl transition-all duration-300 border-primary-200 hover:border-primary-400 hover:-translate-y-1'>
         <CardHeader className='p-0'>
-          <Link href={`/shop/${product.id}`}>
+          <Link href={`/products/${product.id}`}>
             <div className='relative overflow-hidden aspect-[4/3] bg-primary-50'>
               <Image
                 src={product.image}
@@ -94,7 +94,7 @@ export function ProductCard({
         </CardHeader>
         <CardContent className='p-5'>
           <div className='space-y-4'>
-            <Link href={`/shop/${product.id}`}>
+            <Link href={`/products/${product.id}`}>
               <div className='space-y-2'>
                 <CardTitle className='text-lg font-bold text-primary-900 group-hover:text-primary-600 transition-colors line-clamp-2'>
                   {product.name}
@@ -107,16 +107,7 @@ export function ProductCard({
               </div>
             </Link>
 
-            <div className='flex items-center gap-2'>
-              <div className='flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-md'>
-                <Star className='h-3.5 w-3.5 fill-yellow-400 text-yellow-400' />
-                <span className='text-sm font-semibold text-yellow-900'>
-                  {product.rating}
-                </span>
-              </div>
-            </div>
-
-            <div className='flex items-baseline gap-2 pt-1'>
+            <div className='flex items-baseline gap-2'>
               <span className='text-2xl font-bold text-primary-700'>
                 ${product.price}
               </span>
@@ -135,7 +126,7 @@ export function ProductCard({
                 size='sm'
                 className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
               >
-                <Link href={`/shop/${product.id}`}>{labels.details}</Link>
+                <Link href={`/products/${product.id}`}>{labels.details}</Link>
               </Button>
               {showAddToCart && (
                 <Button
@@ -160,7 +151,7 @@ export function ProductCard({
     <Card className='group border-primary-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300'>
       <CardHeader className='p-0'>
         <div className='relative overflow-hidden rounded-t-lg'>
-          <Link href={`/shop/${product.id}`}>
+          <Link href={`/products/${product.id}`}>
             <Image
               src={product.image}
               alt={product.name}
@@ -185,20 +176,12 @@ export function ProductCard({
       <CardContent className='p-6'>
         <div className='space-y-4'>
           <div>
-            <Link href={`/shop/${product.id}`}>
+            <Link href={`/products/${product.id}`}>
               <CardTitle className='text-xl mb-2 text-primary-900 hover:text-primary-600 transition-colors'>
                 {product.name}
               </CardTitle>
             </Link>
-            <div className='flex items-center gap-2 mb-3'>
-              <div className='flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-md'>
-                <Star className='h-4 w-4 fill-yellow-400 text-yellow-400' />
-                <span className='ml-1 text-sm font-semibold text-yellow-900'>
-                  {product.rating}
-                </span>
-              </div>
-            </div>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 mt-3'>
               <span className='text-2xl font-bold text-primary-600'>
                 ${product.price}
               </span>
@@ -229,7 +212,7 @@ export function ProductCard({
               variant='outline'
               className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
             >
-              <Link href={`/shop/${product.id}`}>{labels.viewDetails}</Link>
+              <Link href={`/products/${product.id}`}>{labels.viewDetails}</Link>
             </Button>
             {showAddToCart && (
               <Button
