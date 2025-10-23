@@ -3,14 +3,14 @@
     {
       "icon": "FaEnvelope",
       "title": "Email Us",
-      "description": "Send us an email for general inquiries",
-      "contact": "info@rapidbizz.com",
-      "link": "mailto:info@rapidbizz.com"
+      "description": "Send us an email",
+      "contact": "info@draqua.com",
+      "link": "mailto:info@draqua.com"
     },
     {
       "icon": "FaPhone",
       "title": "Call Us",
-      "description": "Speak with our team directly",
+      "description": "Speak with our team",
       "contact": "+971 50 123 4567",
       "link": "tel:+971501234567"
     },
@@ -25,7 +25,7 @@
       "icon": "FaMapMarkerAlt",
       "title": "Visit Us",
       "description": "Our office in Dubai",
-      "contact": "Business Bay, Dubai, UAE",
+      "contact": "Dubai, UAE",
       "link": "https://maps.google.com"
     }
   ],
@@ -103,28 +103,28 @@
   ],
   "faqs": [
     {
-      "question": "What types of projects do you work on?",
-      "answer": "We work on a wide range of digital projects including web applications, mobile apps, e-commerce platforms, enterprise software, and custom integrations. Our expertise spans across various industries including healthcare, finance, retail, and education."
+      "question": "What types of water solutions do you provide?",
+      "answer": "We provide premium water purification systems, filtration solutions, water coolers, dispensers, and comprehensive water quality testing services for homes, offices, and commercial establishments."
     },
     {
-      "question": "How long does a typical project take?",
-      "answer": "Project timelines vary depending on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 3-6 months. We provide detailed project timelines during our initial consultation based on your specific requirements."
+      "question": "Do you offer installation and maintenance services?",
+      "answer": "Yes, we provide complete installation services by our trained professionals. We also offer regular maintenance packages including filter replacements, system cleaning, and water quality checks to ensure optimal performance."
     },
     {
-      "question": "Do you provide ongoing support and maintenance?",
-      "answer": "Yes, we offer comprehensive support and maintenance packages. This includes security updates, bug fixes, performance optimization, and feature enhancements. We believe in long-term partnerships with our clients."
+      "question": "How often should water filters be replaced?",
+      "answer": "Filter replacement frequency depends on usage and water quality. Typically, filters should be replaced every 3-6 months. Our maintenance team will assess your specific needs and recommend an appropriate replacement schedule."
     },
     {
-      "question": "What is your development process?",
-      "answer": "We follow an agile development methodology with regular client communication. Our process includes discovery, planning, design, development, testing, deployment, and ongoing support. We provide regular updates and demos throughout the project."
+      "question": "Do you provide water testing services?",
+      "answer": "Yes, we offer comprehensive water quality testing to check for contaminants, minerals, pH levels, and overall water safety. We provide detailed reports and recommend appropriate filtration solutions based on test results."
     },
     {
-      "question": "Do you work with international clients?",
-      "answer": "Absolutely! We work with clients worldwide. Our team is experienced in working across different time zones and we use modern collaboration tools to ensure smooth communication regardless of location."
+      "question": "What areas do you serve?",
+      "answer": "We serve customers across Dubai and the UAE. Our team provides prompt delivery, installation, and maintenance services to residential and commercial clients throughout the region."
     },
     {
-      "question": "What technologies do you specialize in?",
-      "answer": "We specialize in modern web technologies including React, Next.js, Node.js, Python, and various databases. For mobile development, we use React Native and Flutter. We also have expertise in cloud platforms like AWS, Azure, and Google Cloud."
+      "question": "Are your water purification systems certified?",
+      "answer": "Yes, all our water purification systems meet international quality standards and are certified by relevant health and safety authorities. We only offer products that ensure the highest water quality and safety."
     }
   ]
 }

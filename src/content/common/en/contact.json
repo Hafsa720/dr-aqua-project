@@ -4,6 +4,44 @@
     "description": "Ready to transform your business with innovative digital solutions? Get in touch with us today and let's discuss how we can help you achieve your goals.",
     "subtitle": "Your success story starts with a conversation"
   },
+  "form": {
+    "title": "Send Us a Message",
+    "description": "Fill out the form below and we'll get back to you within 24 hours with a personalized response to your inquiry.",
+    "fields": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "company": "Company (Optional)",
+      "companyPlaceholder": "Your company name",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project, goals, timeline, and any specific requirements...",
+      "consent": "I agree to receive communications from Dr. Aqua and understand that I can unsubscribe at any time."
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "consentRequired": "You must agree to the privacy policy"
+    },
+    "sendMethod": "Send us your message instantly:",
+    "whatsapp": {
+      "button": "Send via WhatsApp",
+      "subtitle": "⚡ Get reply within 1 hour",
+      "badge": "Recommended"
+    },
+    "gmail": {
+      "button": "Send via Gmail",
+      "subtitle": "Opens Gmail compose"
+    },
+    "defaultEmail": "Default Email App",
+    "methodInfo": {
+      "whatsapp": "💬 WhatsApp: Instant messaging with quick replies",
+      "gmail": "📧 Gmail: Opens Gmail compose with pre-filled message",
+      "default": "📩 Default Email: Uses your system's default email app"
+    }
+  },
   "contactInfo": {
     "title": "Get in Touch",
     "description": "Choose the best way to reach us - we're here to help!",
@@ -11,7 +49,7 @@
       {
         "type": "email",
         "title": "Email Us",
-        "value": "info@rapidbizz.com",
+        "value": "info@draqua.com",
         "description": "Drop us an email anytime",
         "icon": "mail"
       },
@@ -32,7 +70,7 @@
       {
         "type": "office",
         "title": "Visit Our Office",
-        "value": "Business Bay, Dubai, UAE",
+        "value": "Dubai, UAE",
         "description": "Schedule a meeting",
         "icon": "location-marker"
       }
@@ -109,7 +147,7 @@
         "minLength": 50
       },
       "consent": {
-        "label": "I agree to the processing of my personal data and to being contacted by RapidBizz regarding my inquiry.",
+        "label": "I agree to the processing of my personal data and to being contacted by Dr. Aqua regarding my inquiry.",
         "required": true
       }
     },
@@ -126,39 +164,39 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "description": "Quick answers to common questions about our services and process.",
+    "description": "Quick answers to common questions about our water solutions and services.",
     "items": [
       {
-        "question": "How long does a typical project take?",
-        "answer": "Project timelines vary depending on complexity and scope. Simple websites typically take 2-4 weeks, while complex web applications can take 8-16 weeks. We'll provide a detailed timeline during our initial consultation."
+        "question": "What types of water solutions do you provide?",
+        "answer": "We provide premium water purification systems, filtration solutions, water coolers, dispensers, and comprehensive water quality testing services for homes, offices, and commercial establishments."
       },
       {
-        "question": "What is your development process?",
-        "answer": "We follow an agile development process with regular updates and feedback loops. This includes discovery, planning, design, development, testing, and launch phases with continuous client involvement."
+        "question": "Do you offer installation and maintenance services?",
+        "answer": "Yes, we provide complete installation services by our trained professionals. We also offer regular maintenance packages including filter replacements, system cleaning, and water quality checks."
       },
       {
-        "question": "Do you provide ongoing maintenance and support?",
-        "answer": "Yes, we offer comprehensive maintenance and support packages to keep your website or application running smoothly, secure, and up-to-date with the latest technologies."
+        "question": "How often should water filters be replaced?",
+        "answer": "Filter replacement frequency depends on usage and water quality. Typically, filters should be replaced every 3-6 months. Our maintenance team will recommend an appropriate schedule based on your needs."
       },
       {
-        "question": "What technologies do you specialize in?",
-        "answer": "We specialize in modern web technologies including React, Next.js, Node.js, TypeScript, and cloud platforms like AWS. For mobile development, we use React Native and Flutter."
+        "question": "Do you provide water testing services?",
+        "answer": "Yes, we offer comprehensive water quality testing to check for contaminants, minerals, pH levels, and overall water safety. We provide detailed reports and recommend appropriate solutions."
       },
       {
-        "question": "Can you work with my existing team or systems?",
-        "answer": "Absolutely! We're experienced in collaborating with existing teams and integrating with current systems. We can work as an extension of your team or provide guidance to your internal developers."
+        "question": "What areas do you serve?",
+        "answer": "We serve customers across Dubai and the UAE. Our team provides prompt delivery, installation, and maintenance services to residential and commercial clients throughout the region."
       },
       {
-        "question": "How do you handle project communication?",
-        "answer": "We maintain transparent communication through regular video calls, project management tools, and detailed progress reports. You'll always know the status of your project and have direct access to the development team."
+        "question": "Are your water purification systems certified?",
+        "answer": "Yes, all our water purification systems meet international quality standards and are certified by relevant health and safety authorities ensuring the highest water quality."
       },
       {
-        "question": "What makes RapidBizz different from other agencies?",
-        "answer": "Our combination of technical expertise, business understanding, and client-focused approach sets us apart. We don't just build products; we create solutions that drive real business results."
+        "question": "What makes Dr. Aqua different from other providers?",
+        "answer": "Our combination of premium products, expert installation, responsive customer service, and commitment to water quality sets us apart. We provide complete water solutions, not just products."
       },
       {
-        "question": "Do you work with startups or only established companies?",
-        "answer": "We work with businesses of all sizes, from early-stage startups to large enterprises. We tailor our approach and pricing to match your current stage and growth objectives."
+        "question": "Do you work with both residential and commercial clients?",
+        "answer": "Yes, we serve both residential homes and commercial establishments of all sizes. We tailor our water solutions to match your specific requirements and usage patterns."
       }
     ]
   },
@@ -182,22 +220,22 @@
     "platforms": [
       {
         "name": "LinkedIn",
-        "url": "https://linkedin.com/company/rapidbizz",
+        "url": "https://linkedin.com/company/draqua",
         "icon": "linkedin"
       },
       {
         "name": "Twitter",
-        "url": "https://twitter.com/rapidbizz",
+        "url": "https://twitter.com/draqua",
         "icon": "twitter"
       },
       {
         "name": "Instagram",
-        "url": "https://instagram.com/rapidbizz",
+        "url": "https://instagram.com/draqua",
         "icon": "instagram"
       },
       {
         "name": "GitHub",
-        "url": "https://github.com/rapidbizz",
+        "url": "https://github.com/draqua",
         "icon": "github"
       }
     ]

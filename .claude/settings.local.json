@@ -59,7 +59,8 @@
       "Bash(timeout 180 npm run build)",
       "Bash(npm uninstall:*)",
       "Bash(npm ci:*)",
-      "Bash(npm update)"
+      "Bash(npm update)",
+      "Bash(timeout 30 npm run typecheck:*)"
     ],
     "defaultMode": "acceptEdits"
   }

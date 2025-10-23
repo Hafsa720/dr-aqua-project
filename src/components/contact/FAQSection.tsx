@@ -4,10 +4,17 @@ import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
 import Button from '@/components/buttons/Button';
-import contactData from '@/content/common/en/data.json';
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { FAQ } from '@/types';
 
+// Import both language versions
+import contactDataEn from '@/content/common/en/data.json';
+import contactDataUr from '@/content/common/ur/data.json';
+
 export function FAQSection() {
+  const { language } = useLanguage();
+  const contactData = language === 'ur' ? contactDataUr : contactDataEn;
+
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const faqs = contactData.faqs as FAQ[];
 

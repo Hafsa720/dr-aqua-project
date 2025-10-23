@@ -66,13 +66,13 @@ export const ProjectCategories = [
 
 // Company information
 export const CompanyInfo = {
-  name: 'RapidBizz',
-  tagline: 'Transforming businesses through innovative digital solutions',
-  email: 'info@rapidbizz.com',
+  name: 'Dr. Aqua',
+  tagline: 'Premium Water Solutions',
+  email: 'info@draqua.com',
   phone: '+971 50 123 4567',
   whatsapp: '+971501234567',
-  location: 'Business Bay, Dubai, UAE',
-  founded: 2018,
+  location: 'Dubai, UAE',
+  founded: 2020,
 } as const;
 
 // Social media platforms
