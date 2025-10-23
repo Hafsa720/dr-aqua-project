@@ -1,6 +1,7 @@
 'use client';
 
 import { CreditCard, Lock } from 'lucide-react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import type React from 'react';
 import { useState } from 'react';
@@ -158,9 +159,11 @@ export default function CheckoutPage() {
                   <div className='space-y-3'>
                     {items.map((item) => (
                       <div key={item.id} className='flex gap-3'>
-                        <img
+                        <Image
                           src={item.image || '/placeholder.svg'}
                           alt={item.name}
+                          width={64}
+                          height={64}
                           className='w-16 h-16 object-cover rounded'
                         />
                         <div className='flex-1 min-w-0'>

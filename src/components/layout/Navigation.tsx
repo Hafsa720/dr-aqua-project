@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, ShoppingCart, X, Languages } from 'lucide-react';
+import { Languages,Menu, ShoppingCart, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
@@ -32,7 +32,8 @@ export default function Navigation() {
   const { language, setLanguage } = useLanguage();
   const cartItemCount = getTotalItems();
 
-  const navigation = navigationConfig[language as keyof typeof navigationConfig];
+  const navigation =
+    navigationConfig[language as keyof typeof navigationConfig];
   const cartText = language === 'en' ? 'Cart' : 'کارٹ';
 
   const toggleLanguage = () => {

@@ -315,8 +315,8 @@ ${formData.name}`;
                   replies
                 </p>
                 <p>
-                  📧 <strong>Gmail:</strong> Opens Gmail compose with
-                  pre-filled message
+                  📧 <strong>Gmail:</strong> Opens Gmail compose with pre-filled
+                  message
                 </p>
                 <p>
                   📩 <strong>Default Email:</strong> Uses your system's default

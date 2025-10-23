@@ -1,7 +1,4 @@
-import {
-  FaGithub,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiGlobeAlt } from 'react-icons/hi';
 import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 

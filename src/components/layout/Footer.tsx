@@ -14,10 +14,9 @@ import {
 import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
-import { useLanguage } from '@/contexts/LanguageContext';
-
 import footerContentEn from '@/content/common/en/footer.json';
 import footerContentUr from '@/content/common/ur/footer.json';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const iconMap = {
   FaFacebook,

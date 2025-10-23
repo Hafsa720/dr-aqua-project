@@ -29,8 +29,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getProductById } from '@/data/products';
 import { getProductDetailLabels } from '@/data/products/labels';
+import type { ProductLanguage } from '@/types/product';
 
-const OLD_HARDCODED_products = [
+const _OLD_HARDCODED_products = [
   {
     id: '1',
     name: 'AquaPure Pro 5-Stage Filter',
@@ -210,16 +211,19 @@ const OLD_HARDCODED_products = [
 export default function ProductDetailPage() {
   const params = useParams();
   const productId = params.id as string;
-  const { language } = useLanguage();
+  const { language: contextLang } = useLanguage();
+  // Product only supports 'en' and 'ur', fallback to 'en' for other languages
+  const language: ProductLanguage = (
+    contextLang === 'ur' ? 'ur' : 'en'
+  ) as ProductLanguage;
   const [labels, setLabels] = useState(getProductDetailLabels('en'));
-  const [product, setProduct] = useState(getProductById(productId, 'en'));
+  const product = getProductById(productId);
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
 
   useEffect(() => {
     setLabels(getProductDetailLabels(language));
-    setProduct(getProductById(productId, language));
-  }, [language, productId]);
+  }, [language]);
 
   if (!product) {
     return (
@@ -238,10 +242,10 @@ export default function ProductDetailPage() {
     for (let i = 0; i < quantity; i++) {
       addItem({
         id: product.id,
-        name: product.name,
+        name: product.name[language],
         price: product.price,
         image: product.image,
-        category: product.category,
+        category: product.category[language],
       });
     }
   };
@@ -267,7 +271,7 @@ export default function ProductDetailPage() {
             <div className='relative overflow-hidden rounded-lg aspect-square bg-primary-50'>
               <Image
                 src={product.image}
-                alt={product.name}
+                alt={product.name[language]}
                 fill
                 sizes='(max-width: 1024px) 100vw, 50vw'
                 className='object-cover hover:scale-105 transition-transform duration-500'
@@ -285,11 +289,13 @@ export default function ProductDetailPage() {
           <div className='space-y-6'>
             <div>
               <Badge variant='secondary' className='mb-2'>
-                {product.category}
+                {product.category[language]}
               </Badge>
-              <h1 className='text-3xl font-bold mb-4'>{product.name}</h1>
+              <h1 className='text-3xl font-bold mb-4'>
+                {product.name[language]}
+              </h1>
               <p className='text-lg text-muted-foreground'>
-                {product.description}
+                {product.description[language]}
               </p>
             </div>
 
@@ -320,7 +326,7 @@ export default function ProductDetailPage() {
                 {product.features.map((feature, index) => (
                   <div key={index} className='flex items-center gap-2 text-sm'>
                     <CheckCircle className='h-4 w-4 text-secondary' />
-                    <span>{feature}</span>
+                    <span>{feature[language]}</span>
                   </div>
                 ))}
               </div>
@@ -394,8 +400,12 @@ export default function ProductDetailPage() {
         {/* Product Details Tabs */}
         <Tabs defaultValue='specifications' className='w-full'>
           <TabsList className='grid w-full grid-cols-2'>
-            <TabsTrigger value='specifications'>{labels.specifications}</TabsTrigger>
-            <TabsTrigger value='installation'>{labels.installation}</TabsTrigger>
+            <TabsTrigger value='specifications'>
+              {labels.specifications}
+            </TabsTrigger>
+            <TabsTrigger value='installation'>
+              {labels.installation}
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value='specifications' className='space-y-4'>
@@ -416,7 +426,9 @@ export default function ProductDetailPage() {
                         <span className='font-semibold text-primary-900'>
                           {key}:
                         </span>
-                        <span className='text-primary-700'>{value}</span>
+                        <span className='text-primary-700'>
+                          {value[language]}
+                        </span>
                       </div>
                     ),
                   )}

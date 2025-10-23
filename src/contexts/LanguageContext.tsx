@@ -31,7 +31,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       contentConfig.supportedLanguages.includes(savedLanguage)
     ) {
       setLanguageState(savedLanguage);
-      setDirection(savedLanguage === 'ar' || savedLanguage === 'ur' ? 'rtl' : 'ltr');
+      setDirection(
+        savedLanguage === 'ar' || savedLanguage === 'ur' ? 'rtl' : 'ltr',
+      );
     }
   }, []);
 
@@ -42,7 +44,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('language', lang);
 
     // Update document direction
-    document.documentElement.dir = lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr';
+    document.documentElement.dir =
+      lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
   };
 

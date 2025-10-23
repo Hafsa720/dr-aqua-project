@@ -8,16 +8,16 @@ import {
   Target,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useLanguage } from '@/contexts/LanguageContext';
-
 import aboutContentEn from '@/content/common/en/about.json';
 import aboutContentUr from '@/content/common/ur/about.json';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const valueIcons = [Target, Heart, Award, Users];
 
@@ -46,7 +46,9 @@ export default function AboutPage() {
           </Badge>
           <h1 className='text-3xl lg:text-5xl font-bold text-balance text-primary-900'>
             {content.hero.title}{' '}
-            <span className='text-primary-500'>{content.hero.titleHighlight}</span>
+            <span className='text-primary-500'>
+              {content.hero.titleHighlight}
+            </span>
           </h1>
           <p className='text-lg text-primary-700 text-pretty max-w-3xl mx-auto'>
             {content.hero.description}
@@ -74,7 +76,9 @@ export default function AboutPage() {
         <div className='grid lg:grid-cols-2 gap-12 items-center'>
           <div className='space-y-6'>
             <div className='space-y-4'>
-              <h2 className='text-3xl font-bold text-primary-900'>{content.story.title}</h2>
+              <h2 className='text-3xl font-bold text-primary-900'>
+                {content.story.title}
+              </h2>
               {content.story.paragraphs.map((paragraph, index) => (
                 <p key={index} className='text-primary-700'>
                   {paragraph}
@@ -91,9 +95,11 @@ export default function AboutPage() {
             </div>
           </div>
           <div className='relative'>
-            <img
+            <Image
               src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop'
               alt='Dr. Aqua facility'
+              width={800}
+              height={600}
               className='rounded-2xl shadow-xl'
             />
             <div className='absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-primary-200'>
@@ -148,7 +154,9 @@ export default function AboutPage() {
         {/* Timeline */}
         <div className='space-y-8'>
           <div className='text-center space-y-4'>
-            <h2 className='text-3xl font-bold text-primary-900'>{content.timeline.title}</h2>
+            <h2 className='text-3xl font-bold text-primary-900'>
+              {content.timeline.title}
+            </h2>
             <p className='text-primary-700 max-w-2xl mx-auto'>
               {content.timeline.description}
             </p>
@@ -192,9 +200,11 @@ export default function AboutPage() {
                 className='text-center hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300'
               >
                 <CardContent className='pt-6'>
-                  <img
+                  <Image
                     src={member.image || '/placeholder.svg'}
                     alt={member.name}
+                    width={128}
+                    height={128}
                     className='w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary-100'
                   />
                   <h3 className='font-semibold text-lg text-primary-900'>

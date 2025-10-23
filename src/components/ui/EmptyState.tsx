@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -46,9 +47,11 @@ const EmptyState: React.FC<EmptyStateProps> = ({
   const renderIcon = () => {
     if (image) {
       return (
-        <img
+        <Image
           src={image}
           alt={imageAlt || title}
+          width={200}
+          height={200}
           className={cn(sizeClasses.icon, 'object-contain')}
         />
       );

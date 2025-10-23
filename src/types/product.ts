@@ -1,21 +1,28 @@
+// Product language keys (only en and ur for products)
+export type ProductLanguage = 'en' | 'ur';
+
+// Type for fields that need translation
+export type TranslatableString = Record<ProductLanguage, string>;
+
+// Product structure with nested translations (stored in DB and used in components)
 export interface Product {
   id: string;
-  name: string;
   slug: string;
   price: number;
   originalPrice: number;
   image: string;
   rating: number;
   reviews: number;
-  category: string;
-  brand: string;
-  description: string;
-  shortDescription: string;
-  features: string[];
-  specifications: Record<string, string>;
   inStock: boolean;
   featured: boolean;
-  tags: string[];
+  name: TranslatableString;
+  category: TranslatableString;
+  brand: TranslatableString;
+  description: TranslatableString;
+  shortDescription: TranslatableString;
+  features: TranslatableString[];
+  specifications: Record<string, TranslatableString>;
+  tags: TranslatableString[];
 }
 
 export interface FilterOption {

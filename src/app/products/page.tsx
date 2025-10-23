@@ -24,129 +24,17 @@ import {
   getShopLabels,
   getSortOptions,
 } from '@/data/products';
-
-const OLD_HARDCODED_products = [
-  {
-    id: '1',
-    name: 'AquaPure Pro 5-Stage Filter',
-    price: 299,
-    originalPrice: 399,
-    image:
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
-    rating: 4.8,
-    category: 'Residential',
-    brand: 'AquaPure',
-    description:
-      'Advanced 5-stage filtration system with UV sterilization and smart monitoring capabilities.',
-    features: [
-      '5-Stage Filtration',
-      'UV Sterilization',
-      'Smart Monitoring',
-      '2-Year Warranty',
-    ],
-  },
-  {
-    id: '2',
-    name: 'CrystalFlow Commercial Unit',
-    price: 899,
-    originalPrice: 1199,
-    image:
-      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
-    rating: 4.9,
-    category: 'Commercial',
-    brand: 'CrystalFlow',
-    description:
-      'High-capacity commercial water filtration system with auto-cleaning and remote control.',
-    features: [
-      'High Capacity',
-      'Auto-Cleaning',
-      'Remote Control',
-      '5-Year Warranty',
-    ],
-  },
-  {
-    id: '3',
-    name: 'EcoFilter Compact Home',
-    price: 149,
-    originalPrice: 199,
-    image:
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
-    rating: 4.7,
-    category: 'Residential',
-    brand: 'EcoFilter',
-    description:
-      'Space-saving home water filter with easy installation and long-lasting performance.',
-    features: [
-      'Space Saving',
-      'Easy Install',
-      'Long Lasting',
-      '1-Year Warranty',
-    ],
-  },
-  {
-    id: '4',
-    name: 'PureTech Industrial System',
-    price: 1599,
-    originalPrice: 1999,
-    image:
-      'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
-    rating: 4.9,
-    category: 'Industrial',
-    brand: 'PureTech',
-    description:
-      'Heavy-duty industrial water treatment system for large-scale operations.',
-    features: [
-      'Industrial Grade',
-      'High Volume',
-      'Automated Controls',
-      '10-Year Warranty',
-    ],
-  },
-  {
-    id: '5',
-    name: 'AquaHome Basic Filter',
-    price: 89,
-    originalPrice: 119,
-    image:
-      'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
-    rating: 4.5,
-    category: 'Residential',
-    brand: 'AquaHome',
-    description:
-      'Affordable and reliable basic water filtration for everyday use.',
-    features: [
-      'Basic Filtration',
-      'Budget Friendly',
-      'Easy Maintenance',
-      '6-Month Warranty',
-    ],
-  },
-  {
-    id: '6',
-    name: 'FlowMax Office System',
-    price: 449,
-    originalPrice: 599,
-    image:
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
-    rating: 4.6,
-    category: 'Commercial',
-    brand: 'FlowMax',
-    description:
-      'Perfect water filtration solution for offices and small businesses.',
-    features: [
-      'Office Optimized',
-      'Quiet Operation',
-      'Compact Design',
-      '3-Year Warranty',
-    ],
-  },
-];
+import type { ProductLanguage } from '@/types/product';
 
 const ITEMS_PER_PAGE = 6;
 
 export default function ShopPage() {
-  const { language } = useLanguage();
-  const [products, setProducts] = useState(getProducts('en'));
+  const { language: contextLang } = useLanguage();
+  // Product only supports 'en' and 'ur', fallback to 'en' for other languages
+  const language: ProductLanguage = (
+    contextLang === 'ur' ? 'ur' : 'en'
+  ) as ProductLanguage;
+  const products = getProducts();
   const [categories, setCategories] = useState(getCategories('en'));
   const [brands, setBrands] = useState(getBrands('en'));
   const [sortOptions, setSortOptions] = useState(getSortOptions('en'));
@@ -160,13 +48,11 @@ export default function ShopPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    const newProducts = getProducts(language);
     const newCategories = getCategories(language);
     const newBrands = getBrands(language);
     const newSortOptions = getSortOptions(language);
     const newLabels = getShopLabels(language);
 
-    setProducts(newProducts);
     setCategories(newCategories);
     setBrands(newBrands);
     setSortOptions(newSortOptions);
@@ -178,13 +64,18 @@ export default function ShopPage() {
   const filteredProducts = useMemo(() => {
     const filtered = products.filter((product) => {
       const matchesSearch =
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        product.name[language]
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase()) ||
+        product.description[language]
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
       const matchesCategory =
         selectedCategory === categories[0] ||
-        product.category === selectedCategory;
+        product.category[language] === selectedCategory;
       const matchesBrand =
-        selectedBrand === brands[0] || product.brand === selectedBrand;
+        selectedBrand === brands[0] ||
+        product.brand[language] === selectedBrand;
       const matchesPrice =
         product.price >= priceRange[0] && product.price <= priceRange[1];
 
@@ -217,6 +108,7 @@ export default function ShopPage() {
     products,
     categories,
     brands,
+    language,
   ]);
 
   // Pagination logic

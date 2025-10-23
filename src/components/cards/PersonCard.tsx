@@ -1,10 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  FaExternalLinkAlt,
-  FaRocket,
-} from 'react-icons/fa';
+import { FaExternalLinkAlt, FaRocket } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 
 import { getSocialConfig } from '@/components/cards/person/socialConfig';

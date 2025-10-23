@@ -7,6 +7,7 @@ import {
   Shield,
   Wrench,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -21,24 +22,21 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Container } from '@/components/ui/Container';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { getProducts } from '@/data/products';
-
 import homeContentEn from '@/content/home/en/content.json';
 import homeContentUr from '@/content/home/ur/content.json';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getProducts } from '@/data/products';
 
 export default function HomePage() {
   const { language } = useLanguage();
   const [content, setContent] = useState(homeContentEn);
-  const [products, setProducts] = useState(getProducts('en'));
+  const products = getProducts();
 
   useEffect(() => {
     if (language === 'ur') {
       setContent(homeContentUr);
-      setProducts(getProducts('ur'));
     } else {
       setContent(homeContentEn);
-      setProducts(getProducts('en'));
     }
   }, [language]);
 
@@ -61,7 +59,9 @@ export default function HomePage() {
                 </Badge>
                 <h1 className='text-4xl lg:text-6xl font-bold text-balance leading-tight text-primary-900'>
                   {content.hero.title}{' '}
-                  <span className='text-primary-500'>{content.hero.titleHighlight}</span>
+                  <span className='text-primary-500'>
+                    {content.hero.titleHighlight}
+                  </span>
                 </h1>
                 <p className='text-xl text-primary-700 text-pretty max-w-lg'>
                   {content.hero.description}
@@ -74,7 +74,8 @@ export default function HomePage() {
                   className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
                 >
                   <Link href='/shop'>
-                    {content.hero.primaryButton} <ArrowRight className='ml-2 h-5 w-5' />
+                    {content.hero.primaryButton}{' '}
+                    <ArrowRight className='ml-2 h-5 w-5' />
                   </Link>
                 </Button>
                 <Button
@@ -92,17 +93,17 @@ export default function HomePage() {
                     <div className='text-2xl font-bold text-primary-600'>
                       {stat.value}
                     </div>
-                    <div className='text-sm text-primary-600'>
-                      {stat.label}
-                    </div>
+                    <div className='text-sm text-primary-600'>{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
             <div className='relative'>
-              <img
+              <Image
                 src='https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop'
                 alt='Premium water filtration system'
+                width={800}
+                height={600}
                 className='rounded-2xl shadow-2xl'
               />
               <div className='absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-primary-200'>
@@ -153,7 +154,8 @@ export default function HomePage() {
               className='border-primary-600 text-primary-600 hover:bg-primary-50'
             >
               <Link href='/shop'>
-                {content.featuredProducts.viewAllButton} <ArrowRight className='ml-2 h-4 w-4' />
+                {content.featuredProducts.viewAllButton}{' '}
+                <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>
           </div>
@@ -208,7 +210,9 @@ export default function HomePage() {
                         variant='outline'
                         className='w-full border-primary-500 text-primary-500 hover:bg-primary-50'
                       >
-                        <Link href='/services'>{content.services.learnMore}</Link>
+                        <Link href='/services'>
+                          {content.services.learnMore}
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>

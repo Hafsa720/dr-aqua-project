@@ -1,4 +1,9 @@
-import type { Service, Testimonial, WhyChooseUs, ServicePageLabels } from '@/types/service';
+import type {
+  Service,
+  ServicePageLabels,
+  Testimonial,
+  WhyChooseUs,
+} from '@/types/service';
 
 export const servicesEn: Service[] = [
   {

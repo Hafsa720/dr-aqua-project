@@ -24,10 +24,10 @@ import {
 } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
+  getServiceLabels,
   getServices,
   getTestimonials,
   getWhyChooseUs,
-  getServiceLabels,
 } from '@/data/services';
 
 // Icon mapping

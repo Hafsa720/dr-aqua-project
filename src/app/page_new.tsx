@@ -6,6 +6,7 @@ import {
   Star,
   Wrench,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
@@ -136,9 +137,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className='relative'>
-              <img
+              <Image
                 src='https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop'
                 alt='Premium water filtration system'
+                width={800}
+                height={600}
                 className='rounded-2xl shadow-2xl'
               />
               <div className='absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-lg border'>
@@ -180,9 +183,11 @@ export default function HomePage() {
               >
                 <CardHeader className='p-0'>
                   <div className='relative overflow-hidden rounded-t-lg'>
-                    <img
+                    <Image
                       src={product.image || '/placeholder.svg'}
                       alt={product.name}
+                      width={400}
+                      height={256}
                       className='w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300'
                     />
                     <Badge

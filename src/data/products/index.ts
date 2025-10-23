@@ -1,38 +1,58 @@
-import { productsEn, categoriesEn, brandsEn, sortOptionsEn, shopLabelsEn } from './en';
-import { productsUr, categoriesUr, brandsUr, sortOptionsUr, shopLabelsUr } from './ur';
-import type { Product, FilterOption, ShopLabels } from '@/types/product';
+import type {
+  FilterOption,
+  Product,
+  ShopLabels,
+  TranslatableString,
+} from '@/types/product';
 
-export const getProducts = (language: string): Product[] => {
-  return language === 'ur' ? productsUr : productsEn;
+import { shopLabelsEn } from './en';
+import {
+  brandsWithTranslations,
+  categoriesWithTranslations,
+  products,
+  sortOptionsWithTranslations,
+} from './products';
+import { shopLabelsUr } from './ur';
+
+// Helper to extract language-specific string
+const extractLang = (
+  translatable: TranslatableString,
+  language: string,
+): string => {
+  return language === 'ur' ? translatable.ur : translatable.en;
+};
+
+export const getProducts = (): Product[] => {
+  return products;
 };
 
 export const getCategories = (language: string): string[] => {
-  return language === 'ur' ? categoriesUr : categoriesEn;
+  return categoriesWithTranslations.map((c) => extractLang(c, language));
 };
 
 export const getBrands = (language: string): string[] => {
-  return language === 'ur' ? brandsUr : brandsEn;
+  return brandsWithTranslations.map((b) => extractLang(b, language));
 };
 
 export const getSortOptions = (language: string): FilterOption[] => {
-  return language === 'ur' ? sortOptionsUr : sortOptionsEn;
+  return sortOptionsWithTranslations.map((option) => ({
+    value: option.value,
+    label: extractLang(option.label, language),
+  }));
 };
 
 export const getShopLabels = (language: string): ShopLabels => {
   return language === 'ur' ? shopLabelsUr : shopLabelsEn;
 };
 
-export const getProductById = (id: string, language: string): Product | undefined => {
-  const products = getProducts(language);
+export const getProductById = (id: string): Product | undefined => {
   return products.find((p) => p.id === id);
 };
 
-export const getProductBySlug = (slug: string, language: string): Product | undefined => {
-  const products = getProducts(language);
+export const getProductBySlug = (slug: string): Product | undefined => {
   return products.find((p) => p.slug === slug);
 };
 
-export const getFeaturedProducts = (language: string): Product[] => {
-  const products = getProducts(language);
+export const getFeaturedProducts = (): Product[] => {
   return products.filter((p) => p.featured);
 };

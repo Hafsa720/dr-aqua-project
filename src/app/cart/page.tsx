@@ -9,6 +9,7 @@ import {
   ShoppingBag,
   Trash2,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -129,7 +130,9 @@ export default function CartPage() {
       <div className='space-y-8'>
         {/* Header */}
         <div className='flex items-center justify-between'>
-          <h1 className='text-3xl font-bold text-primary-900'>{labels.pageTitle}</h1>
+          <h1 className='text-3xl font-bold text-primary-900'>
+            {labels.pageTitle}
+          </h1>
           <Button
             variant='outline'
             onClick={clearCart}
@@ -154,9 +157,11 @@ export default function CartPage() {
                     <div className='flex gap-6'>
                       {/* Product Image */}
                       <div className='flex-shrink-0'>
-                        <img
+                        <Image
                           src={item.image || '/placeholder.svg'}
                           alt={item.name}
+                          width={96}
+                          height={96}
                           className='w-24 h-24 object-cover rounded-lg border border-primary-200'
                         />
                       </div>
@@ -247,7 +252,9 @@ export default function CartPage() {
                   </div>
                   <div className='flex justify-between text-sm'>
                     <span className='text-primary-600'>{labels.shipping}</span>
-                    <span className='font-medium text-secondary-600'>{labels.free}</span>
+                    <span className='font-medium text-secondary-600'>
+                      {labels.free}
+                    </span>
                   </div>
                 </div>
 
