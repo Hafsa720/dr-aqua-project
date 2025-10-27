@@ -73,7 +73,7 @@ export default function HomePage() {
                   size='lg'
                   className='text-lg px-8 bg-secondary-600 hover:bg-secondary-700 text-white'
                 >
-                  <Link href='/shop'>
+                  <Link href='/products'>
                     {content.hero.primaryButton}{' '}
                     <ArrowRight className='ml-2 h-5 w-5' />
                   </Link>
@@ -153,7 +153,7 @@ export default function HomePage() {
               size='lg'
               className='border-primary-600 text-primary-600 hover:bg-primary-50'
             >
-              <Link href='/shop'>
+              <Link href='/products'>
                 {content.featuredProducts.viewAllButton}{' '}
                 <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
@@ -245,9 +245,9 @@ export default function HomePage() {
                 asChild
                 size='lg'
                 variant='outline'
-                className='text-lg px-8 border-white text-white hover:bg-white hover:text-primary-500'
+                className='text-lg px-8 border-white text-primary-500 bg-white hover:bg-primary-50'
               >
-                <Link href='/shop'>{content.cta.secondaryButton}</Link>
+                <Link href='/products'>{content.cta.secondaryButton}</Link>
               </Button>
             </div>
           </div>

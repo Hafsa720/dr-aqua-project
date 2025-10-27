@@ -232,7 +232,7 @@ export default function AboutPage() {
                 size='lg'
                 className='bg-secondary-500 hover:bg-secondary-600 text-white'
               >
-                <Link href='/shop'>{content.cta.buttons.primary}</Link>
+                <Link href='/products'>{content.cta.buttons.primary}</Link>
               </Button>
               <Button
                 asChild

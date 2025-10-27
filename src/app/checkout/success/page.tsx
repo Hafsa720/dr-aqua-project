@@ -22,7 +22,7 @@ export default function CheckoutSuccessPage() {
           </p>
           <div className='space-y-3'>
             <Button asChild size='lg' className='w-full'>
-              <Link href='/shop'>Continue Shopping</Link>
+              <Link href='/products'>Continue Shopping</Link>
             </Button>
             <Button
               asChild

@@ -104,7 +104,7 @@ export default function HomePage() {
               </div>
               <div className='flex flex-col sm:flex-row gap-4'>
                 <Button asChild size='lg' className='text-lg px-8'>
-                  <Link href='/shop'>
+                  <Link href='/products'>
                     Shop Now <ArrowRight className='ml-2 h-5 w-5' />
                   </Link>
                 </Button>
@@ -246,7 +246,7 @@ export default function HomePage() {
                       ))}
                     </div>
                     <Button asChild className='w-full'>
-                      <Link href={`/shop/${product.id}`}>View Details</Link>
+                      <Link href={`/products/${product.id}`}>View Details</Link>
                     </Button>
                   </div>
                 </CardContent>
@@ -255,7 +255,7 @@ export default function HomePage() {
           </div>
           <div className='text-center mt-12'>
             <Button asChild variant='outline' size='lg'>
-              <Link href='/shop'>
+              <Link href='/products'>
                 View All Products <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>
@@ -340,7 +340,7 @@ export default function HomePage() {
                 variant='outline'
                 className='text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent'
               >
-                <Link href='/shop'>Browse Products</Link>
+                <Link href='/products'>Browse Products</Link>
               </Button>
             </div>
           </div>

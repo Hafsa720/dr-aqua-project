@@ -104,7 +104,7 @@ export class WhatsAppService {
       TIMEFRAMES.find((t) => t.value === data.timeline)?.label ||
       'Not specified';
 
-    return `Hi RapidBizz! I'm interested in ${data.service.title}.
+    return `Hi Dr. Aqua! I'm interested in ${data.service.title}.
 
 PROJECT DETAILS:
 • Budget: ${budget}
@@ -129,7 +129,7 @@ Let's discuss the project details!`;
    * Format contact form data into WhatsApp message
    */
   private static formatContactMessage(data: ContactMessageData): string {
-    return `Hi RapidBizz! I'd like to get in touch with you.
+    return `Hi Dr. Aqua! I'd like to get in touch with you.
 
 CONTACT INFORMATION:
 • Name: ${data.name}

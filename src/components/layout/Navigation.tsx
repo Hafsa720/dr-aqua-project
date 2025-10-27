@@ -14,12 +14,14 @@ const navigationConfig = {
   en: [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
+    { name: 'Services', href: '/services' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ],
   ur: [
     { name: 'ہوم', href: '/' },
     { name: 'مصنوعات', href: '/products' },
+    { name: 'خدمات', href: '/services' },
     { name: 'ہمارے بارے میں', href: '/about' },
     { name: 'رابطہ', href: '/contact' },
   ],

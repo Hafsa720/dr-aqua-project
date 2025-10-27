@@ -1,32 +1,32 @@
 # Claude Code Configuration
 
-This file configures Claude Code with project-specific information for RapidBizz - a modern digital agency platform with a production-ready Next.js starter template.
+This file configures Claude Code with project-specific information for Dr. Aqua - a premium water filtration and purification company with a modern Next.js e-commerce platform.
 
 ## Project Overview & Business Context
 
 ### Company Profile
 
-**RapidBizz** is a cutting-edge digital agency specializing in transformative web development, mobile applications, and digital solutions. We serve clients across healthcare, fintech, e-commerce, and enterprise solutions.
+**Dr. Aqua** is a premium water filtration and purification company based in Bahawalpur, Pakistan, specializing in high-quality water purification systems, RO plants, and water treatment solutions for homes and businesses.
 
 ### Mission & Values
 
-**Mission**: Empower businesses through innovative digital solutions that drive measurable results.
+**Mission**: Provide pure, safe drinking water to every household and business through premium water purification solutions.
 
-**Core Values**: Innovation First • Client Success • Quality Excellence • Agile Mindset • Open Communication • Continuous Learning
+**Core Values**: Health First • Quality Excellence • Customer Trust • Innovation • Sustainability • Community Well-being
 
 ### Target Market
 
-- **Primary**: SMEs seeking digital transformation
-- **Secondary**: Startups requiring MVP development
-- **Tertiary**: Large enterprises needing specialized teams
+- **Primary**: Residential customers seeking home water purification systems
+- **Secondary**: Small and medium businesses requiring commercial RO systems
+- **Tertiary**: Industrial clients needing large-scale water treatment solutions
 
 ### Competitive Advantage
 
-- Rapid 2-4 week MVP delivery cycles
-- Full-stack expertise across modern tech stacks
-- Design-first approach with UX/UI excellence
-- Transparent AED-based pricing
-- Remote-first culture with global talent
+- Premium quality RO systems and water purifiers
+- Expert installation and maintenance services
+- Located in Bahawalpur with local service excellence
+- Competitive pricing with PKR-based transparent costs
+- Open 6 days a week (Monday-Thursday, Saturday-Sunday: 10 AM - 11 PM)
 
 ## Technology Stack
 
@@ -359,7 +359,7 @@ Types: feat, fix, refactor, docs, style, test, chore
 
 ```bash
 # Required
-NEXT_PUBLIC_SITE_URL=https://rapidbizz.com
+NEXT_PUBLIC_SITE_URL=https://draqua.com
 
 # Optional
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
@@ -469,7 +469,7 @@ DATABASE_URL=connection_string
 
 ---
 
-This documentation serves as the single source of truth for RapidBizz development standards, architectural decisions, and implementation guidelines. All team members should reference this document for consistent development practices.
+This documentation serves as the single source of truth for Dr. Aqua development standards, architectural decisions, and implementation guidelines. All team members should reference this document for consistent development practices.
 
 **For component documentation**: Visit `/components-demo` page
 **For detailed API reference**: Check individual component files with TypeScript interfaces

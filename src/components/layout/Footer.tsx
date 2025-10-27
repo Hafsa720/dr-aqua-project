@@ -55,13 +55,13 @@ const Footer = () => {
 
       <div className='layout py-16 relative z-10'>
         {/* Main Footer Content */}
-        <div className='grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 gap-8 lg:gap-12'>
+        <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-12'>
           {/* Brand Section */}
-          <div className='lg:col-span-2 sm:col-span-2'>
+          <div className='lg:col-span-1 md:col-span-2'>
             <div className='flex justify-start mb-6'>
               <NextImage
                 src='/logo.svg'
-                alt='Starter Template Logo'
+                alt='Dr. Aqua Logo'
                 width={120}
                 height={48}
                 className='object-contain'
@@ -99,23 +99,6 @@ const Footer = () => {
                     className='text-primary-200 hover:text-secondary-400 transition-all duration-200 text-sm focus-ring'
                   >
                     {link.name}
-                  </ArrowLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className='font-semibold mb-6 text-white'>Resources</h3>
-            <ul className='space-y-3'>
-              {footerContent.resources.map((resource) => (
-                <li key={resource.name}>
-                  <ArrowLink
-                    href={resource.href}
-                    className='text-gray-300 hover:text-white transition-smooth text-sm focus-ring'
-                  >
-                    {resource.name}
                   </ArrowLink>
                 </li>
               ))}
@@ -220,8 +203,7 @@ const Footer = () => {
         <div className='border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4'>
           <div className='flex items-center gap-4'>
             <p className='text-gray-400 text-sm'>
-              © {new Date().getFullYear()} Starter Template. All rights
-              reserved.
+              © {new Date().getFullYear()} Dr. Aqua. All rights reserved.
             </p>
             <div className='hidden md:flex items-center gap-1 text-xs text-gray-500'>
               <span>Built with</span>

@@ -1,4 +1,4 @@
-# RapidBizz Content Replacement Guide 📝
+# Dr. Aqua Content Replacement Guide 📝
 
 This guide explains how to easily update the website content with your own company information.
 
@@ -113,7 +113,7 @@ https://images.unsplash.com/photo-[PHOTO-ID]?w=[WIDTH]&h=[HEIGHT]&fit=crop&q=80
 
 ### Company Information:
 
-- **Company name**: Search for "RapidBizz" in files and replace
+- **Company name**: Search for "Dr. Aqua" in files and replace
 - **Contact info**: Update in `src/constant/config.ts`
 - **Social links**: Update in team member profiles and config
 

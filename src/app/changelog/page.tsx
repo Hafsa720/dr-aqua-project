@@ -8,8 +8,7 @@ import { generateMetadata as genMeta } from '@/lib/og';
 
 export const metadata: Metadata = genMeta({
   title: 'Changelog',
-  description:
-    'Track all updates, improvements, and changes to RapidBizz platform',
+  description: 'Track all updates, improvements, and changes to Dr. Aqua platform',
   path: '/changelog',
 });
 

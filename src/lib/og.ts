@@ -31,8 +31,8 @@ export type OpenGraphType = {
  * @example
  * ```ts
  * const ogUrl = openGraph({
- *   siteName: 'RapidBizz',
- *   description: 'Professional web development services',
+ *   siteName: 'Dr. Aqua',
+ *   description: 'Premium water filtration and purification systems',
  *   templateTitle: 'About Us',
  *   theme: 'dark'
  * });
@@ -47,7 +47,7 @@ export function openGraph({
   fontFamily: _fontFamily = 'Inter',
 }: OpenGraphType): string {
   // Use local API route for dynamic OG generation
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://draqua.com';
 
   const params = new URLSearchParams({
     title: siteName.trim(),
@@ -88,8 +88,8 @@ export function generateMetadata({
   path?: string;
   image?: string;
 }) {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'RapidBizz';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com';
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Dr. Aqua';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://draqua.com';
   const fullUrl = `${siteUrl}${path}`;
 
   const ogImage =

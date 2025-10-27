@@ -115,7 +115,7 @@ export default function CartPage() {
               size='lg'
               className='bg-secondary-600 hover:bg-secondary-700 text-white'
             >
-              <Link href='/shop'>
+              <Link href='/products'>
                 {labels.startShopping} <ArrowRight className='ml-2 h-4 w-4' />
               </Link>
             </Button>
@@ -291,7 +291,7 @@ export default function CartPage() {
                     variant='outline'
                     className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
                   >
-                    <Link href='/shop'>{labels.continueShopping}</Link>
+                    <Link href='/products'>{labels.continueShopping}</Link>
                   </Button>
                 </div>
 
