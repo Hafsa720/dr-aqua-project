@@ -65,6 +65,15 @@ export function ProductCard({
     setLabels(getProductCardLabels(language));
   }, [language]);
 
+  // Extract minimum price from range for cart (e.g., "15,000 - 25,000" → 15000)
+  const getMinimumPrice = (priceRange: string): number => {
+    const match = priceRange.match(/[\d,]+/);
+    if (match) {
+      return parseInt(match[0].replace(/,/g, ''), 10);
+    }
+    return 0;
+  };
+
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -73,7 +82,7 @@ export function ProductCard({
     addItem({
       id: product.id,
       name: product.name[language],
-      price: product.price,
+      price: getMinimumPrice(product.priceRange),
       image: product.image,
       category: product.category[language],
     });
@@ -106,12 +115,11 @@ export function ProductCard({
               <Badge className='absolute top-3 left-3 bg-primary-600/90 hover:bg-primary-700 backdrop-blur-sm border-0 shadow-lg'>
                 {product.category[language]}
               </Badge>
-              {product.originalPrice &&
-                product.originalPrice > product.price && (
-                  <Badge className='absolute top-3 right-3 bg-secondary-600 hover:bg-secondary-700 text-white border-0 shadow-lg'>
-                    {labels.save} ${product.originalPrice - product.price}
-                  </Badge>
-                )}
+              {product.featured && (
+                <Badge className='absolute top-3 right-3 bg-secondary-600 hover:bg-secondary-700 text-white border-0 shadow-lg'>
+                  Featured
+                </Badge>
+              )}
             </div>
           </Link>
         </CardHeader>
@@ -128,16 +136,16 @@ export function ProductCard({
               </div>
             </Link>
 
-            <div className='flex items-baseline gap-2'>
-              <span className='text-2xl font-bold text-primary-700'>
-                ${product.price}
-              </span>
-              {product.originalPrice &&
-                product.originalPrice > product.price && (
-                  <span className='text-base text-primary-400 line-through'>
-                    ${product.originalPrice}
-                  </span>
-                )}
+            <div className='space-y-1'>
+              <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                Price Range
+              </div>
+              <div className='text-2xl font-bold text-primary-700'>
+                PKR {product.priceRange}
+              </div>
+              <p className='text-xs text-primary-500 italic'>
+                *Contact for exact pricing
+              </p>
             </div>
 
             <div className='flex gap-2 pt-2'>
@@ -187,9 +195,9 @@ export function ProductCard({
           >
             {product.category[language]}
           </Badge>
-          {product.originalPrice && product.originalPrice > product.price && (
+          {product.featured && (
             <Badge className='absolute top-4 right-4 bg-secondary-500 text-white'>
-              {labels.save} ${product.originalPrice - product.price}
+              Featured
             </Badge>
           )}
         </div>
@@ -202,16 +210,16 @@ export function ProductCard({
                 {product.name[language]}
               </CardTitle>
             </Link>
-            <div className='flex items-center gap-2 mt-3'>
-              <span className='text-2xl font-bold text-primary-600'>
-                ${product.price}
-              </span>
-              {product.originalPrice &&
-                product.originalPrice > product.price && (
-                  <span className='text-lg text-primary-400 line-through'>
-                    ${product.originalPrice}
-                  </span>
-                )}
+            <div className='mt-3 space-y-1'>
+              <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                Price Range
+              </div>
+              <div className='text-2xl font-bold text-primary-600'>
+                PKR {product.priceRange}
+              </div>
+              <p className='text-xs text-primary-500 italic'>
+                *Final price varies by model & requirements
+              </p>
             </div>
           </div>
           <div className='flex gap-2 pt-2'>

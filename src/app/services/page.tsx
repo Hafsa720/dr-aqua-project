@@ -10,8 +10,8 @@ import {
   Star,
   Wrench,
 } from 'lucide-react';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -29,6 +29,7 @@ import {
   getTestimonials,
   getWhyChooseUs,
 } from '@/data/services';
+import { CompanyInfo } from '@/types/constants';
 
 // Icon mapping
 const iconMap: Record<string, any> = {
@@ -53,6 +54,17 @@ export default function ServicesPage() {
     setWhyChooseUs(getWhyChooseUs(language));
     setLabels(getServiceLabels(language));
   }, [language]);
+
+  const handleWhatsAppService = (service: (typeof services)[0]) => {
+    const message =
+      language === 'ur'
+        ? `سلام ڈاکٹر ایکوا! میں ${service.title} میں دلچسپی رکھتا ہوں۔\n\nقیمت کی حد: PKR ${service.priceRange}\nمدت: ${service.duration}\n\nبراہ کرم مزید تفصیلات اور درست قیمت فراہم کریں۔`
+        : `Hi Dr. Aqua! I'm interested in ${service.title}.\n\nPrice Range: PKR ${service.priceRange}\nDuration: ${service.duration}\n\nPlease provide more details and exact pricing.`;
+
+    const phone = CompanyInfo.whatsapp.replace(/\D/g, '');
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <div className='container mx-auto px-4 py-8'>
@@ -103,16 +115,21 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent className='space-y-6'>
                   <div className='text-center'>
-                    <div className='text-3xl font-bold text-primary-600 mb-1'>
-                      ${service.price}
-                      <span className='text-base font-normal text-primary-500'>
-                        {labels.perService}
-                      </span>
+                    <div className='mb-2'>
+                      <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide mb-1'>
+                        Price Range
+                      </div>
+                      <div className='text-3xl font-bold text-primary-600'>
+                        PKR {service.priceRange}
+                      </div>
                     </div>
-                    <div className='flex items-center justify-center gap-2 text-sm text-primary-600'>
+                    <div className='flex items-center justify-center gap-2 text-sm text-primary-600 bg-primary-50 py-2 px-4 rounded-lg'>
                       <Clock className='h-4 w-4' />
                       <span>{service.duration}</span>
                     </div>
+                    <p className='text-xs text-primary-500 mt-2 italic'>
+                      *Final price depends on system type & requirements
+                    </p>
                   </div>
 
                   <div className='space-y-2'>
@@ -128,11 +145,12 @@ export default function ServicesPage() {
                   </div>
 
                   <Button
-                    asChild
-                    className='w-full bg-primary-500 hover:bg-primary-600'
+                    onClick={() => handleWhatsAppService(service)}
+                    className='w-full bg-green-600 hover:bg-green-700 text-white'
                     size='lg'
                   >
-                    <Link href='/contact'>{labels.bookNow}</Link>
+                    <FaWhatsapp className='mr-2 h-5 w-5' />
+                    {labels.bookNow}
                   </Button>
                 </CardContent>
               </Card>
@@ -237,19 +255,40 @@ export default function ServicesPage() {
               </div>
               <div className='space-y-3'>
                 <Button
-                  asChild
+                  onClick={() => {
+                    const message =
+                      language === 'ur'
+                        ? `سلام ڈاکٹر ایکوا! میں ${labels.serviceAreasSubtext} میں سروس کی دستیابی چیک کرنا چاہتا ہوں۔`
+                        : `Hi Dr. Aqua! I'd like to check service availability in my area: ${labels.serviceAreasSubtext}`;
+                    const phone = CompanyInfo.whatsapp.replace(/\D/g, '');
+                    window.open(
+                      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+                      '_blank',
+                    );
+                  }}
                   size='lg'
                   className='w-full bg-secondary-500 hover:bg-secondary-600 text-white'
                 >
-                  <Link href='/contact'>{labels.checkAvailability}</Link>
+                  {labels.checkAvailability}
                 </Button>
                 <Button
-                  asChild
+                  onClick={() => {
+                    const message =
+                      language === 'ur'
+                        ? `سلام ڈاکٹر ایکوا! میں آپ کی خدمات کے بارے میں بات کرنا چاہتا ہوں۔`
+                        : `Hi Dr. Aqua! I'd like to discuss your services.`;
+                    const phone = CompanyInfo.whatsapp.replace(/\D/g, '');
+                    window.open(
+                      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+                      '_blank',
+                    );
+                  }}
                   variant='outline'
                   size='lg'
                   className='w-full border-white text-white hover:bg-white hover:text-primary-500 bg-transparent'
                 >
-                  <Link href='/contact'>{labels.contactUs}</Link>
+                  <FaWhatsapp className='mr-2 h-4 w-4' />
+                  {labels.contactUs}
                 </Button>
               </div>
             </div>

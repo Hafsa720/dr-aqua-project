@@ -4,8 +4,7 @@ export const products: Product[] = [
   {
     id: '1',
     slug: 'aquapure-pro-5-stage-filter',
-    price: 299,
-    originalPrice: 399,
+    priceRange: '18,000 - 25,000',
     image:
       'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
     inStock: true,
@@ -40,8 +39,7 @@ Perfect for families seeking pure, safe drinking water with modern smart home in
   {
     id: '2',
     slug: 'crystalflow-commercial-unit',
-    price: 899,
-    originalPrice: 1199,
+    priceRange: '75,000 - 95,000',
     image:
       'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
     inStock: true,
@@ -73,8 +71,7 @@ Ideal for restaurants, offices, and small commercial facilities requiring reliab
   {
     id: '3',
     slug: 'ecofilter-compact-home',
-    price: 149,
-    originalPrice: 199,
+    priceRange: '12,000 - 16,000',
     image:
       'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
     inStock: true,
@@ -106,8 +103,7 @@ Perfect for renters and those seeking an affordable, portable water filtration s
   {
     id: '4',
     slug: 'puretech-industrial-system',
-    price: 1599,
-    originalPrice: 1999,
+    priceRange: '120,000 - 160,000',
     image:
       'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
     inStock: true,
@@ -142,8 +138,7 @@ Engineered for manufacturing plants, food processing facilities, and large-scale
   {
     id: '5',
     slug: 'aquahome-basic-filter',
-    price: 89,
-    originalPrice: 119,
+    priceRange: '7,000 - 10,000',
     image:
       'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
     inStock: true,
@@ -175,8 +170,7 @@ Great starter solution for improving tap water taste and odor at minimal cost.`,
   {
     id: '6',
     slug: 'flowmax-office-system',
-    price: 449,
-    originalPrice: 599,
+    priceRange: '35,000 - 45,000',
     image:
       'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
     inStock: true,

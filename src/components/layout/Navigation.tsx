@@ -1,6 +1,6 @@
 'use client';
 
-import { Languages,Menu, ShoppingCart, X } from 'lucide-react';
+import { Languages, Menu, ShoppingCart, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';

@@ -4,12 +4,11 @@ import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
 import Button from '@/components/buttons/Button';
-import { useLanguage } from '@/contexts/LanguageContext';
-import type { FAQ } from '@/types';
-
 // Import both language versions
 import contactDataEn from '@/content/common/en/data.json';
 import contactDataUr from '@/content/common/ur/data.json';
+import { useLanguage } from '@/contexts/LanguageContext';
+import type { FAQ } from '@/types';
 
 export function FAQSection() {
   const { language } = useLanguage();

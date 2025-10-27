@@ -69,9 +69,9 @@ export const CompanyInfo = {
   name: 'Dr. Aqua',
   tagline: 'Premium Water Solutions',
   email: 'info@draqua.com',
-  phone: '+971 50 123 4567',
-  whatsapp: '+971501234567',
-  location: 'Dubai, UAE',
+  phone: '0334 7071759',
+  whatsapp: '+923347071759',
+  location: 'Bahawalpur, Pakistan',
   founded: 2020,
 } as const;
 

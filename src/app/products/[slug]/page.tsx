@@ -62,12 +62,21 @@ export default function ProductDetailPage() {
     );
   }
 
+  // Extract minimum price from range for cart (e.g., "15,000 - 25,000" → 15000)
+  const getMinimumPrice = (priceRange: string): number => {
+    const match = priceRange.match(/[\d,]+/);
+    if (match) {
+      return parseInt(match[0].replace(/,/g, ''), 10);
+    }
+    return 0;
+  };
+
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
       addItem({
         id: product.id,
         name: product.name[language],
-        price: product.price,
+        price: getMinimumPrice(product.priceRange),
         image: product.image,
         category: product.category[language],
       });
@@ -101,9 +110,9 @@ export default function ProductDetailPage() {
                 className='object-cover hover:scale-105 transition-transform duration-500'
                 priority
               />
-              {product.originalPrice > product.price && (
+              {product.featured && (
                 <Badge className='absolute top-4 right-4 bg-secondary-600 hover:bg-secondary-700 text-white shadow-lg'>
-                  {labels.save} ${product.originalPrice - product.price}
+                  Featured
                 </Badge>
               )}
             </div>
@@ -152,15 +161,16 @@ export default function ProductDetailPage() {
             </div>
 
             <div className='space-y-4'>
-              <div className='flex items-center gap-4'>
-                <span className='text-3xl font-bold text-primary'>
-                  ${product.price}
-                </span>
-                {product.originalPrice > product.price && (
-                  <span className='text-xl text-muted-foreground line-through'>
-                    ${product.originalPrice}
-                  </span>
-                )}
+              <div className='space-y-2'>
+                <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                  Price Range
+                </div>
+                <div className='text-3xl font-bold text-primary-600'>
+                  PKR {product.priceRange}
+                </div>
+                <p className='text-xs text-primary-500 italic'>
+                  *Final price varies by model & requirements
+                </p>
               </div>
 
               <div className='flex items-center gap-2'>

@@ -4,14 +4,13 @@ import { useState } from 'react';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 import Button from '@/components/buttons/Button';
+// Import both language versions
+import contactContentEn from '@/content/common/en/contact.json';
+import contactContentUr from '@/content/common/ur/contact.json';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { WhatsAppService } from '@/lib/whatsapp';
 import type { ContactFormData } from '@/types';
 import { CompanyInfo } from '@/types/constants';
-
-// Import both language versions
-import contactContentEn from '@/content/common/en/contact.json';
-import contactContentUr from '@/content/common/ur/contact.json';
 
 export function ContactForm() {
   const { language } = useLanguage();

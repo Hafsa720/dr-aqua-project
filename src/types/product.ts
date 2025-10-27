@@ -8,8 +8,7 @@ export type TranslatableString = Record<ProductLanguage, string>;
 export interface Product {
   id: string;
   slug: string;
-  price: number;
-  originalPrice: number;
+  priceRange: string; // e.g., "15,000 - 25,000" for flexible pricing
   image: string;
   inStock: boolean;
   featured: boolean;

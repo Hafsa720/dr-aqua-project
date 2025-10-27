@@ -15,7 +15,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Slider } from '@/components/ui/slider';
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   getBrands,
@@ -43,7 +42,6 @@ export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedBrand, setSelectedBrand] = useState(brands[0]);
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
   const [sortBy, setSortBy] = useState('featured');
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -76,32 +74,17 @@ export default function ShopPage() {
       const matchesBrand =
         selectedBrand === brands[0] ||
         product.brand[language] === selectedBrand;
-      const matchesPrice =
-        product.price >= priceRange[0] && product.price <= priceRange[1];
 
-      return matchesSearch && matchesCategory && matchesBrand && matchesPrice;
+      return matchesSearch && matchesCategory && matchesBrand;
     });
 
-    // Sort products
-    switch (sortBy) {
-      case 'price-low':
-        filtered.sort((a, b) => a.price - b.price);
-        break;
-      case 'price-high':
-        filtered.sort((a, b) => b.price - a.price);
-        break;
-      default:
-        // Keep original order for featured
-        break;
-    }
-
+    // Note: Price-based sorting removed since products now use price ranges
+    // Featured products are already sorted in the data
     return filtered;
   }, [
     searchQuery,
     selectedCategory,
     selectedBrand,
-    priceRange,
-    sortBy,
     products,
     categories,
     brands,
@@ -117,7 +100,7 @@ export default function ShopPage() {
   // Reset to page 1 when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, selectedCategory, selectedBrand, priceRange, sortBy]);
+  }, [searchQuery, selectedCategory, selectedBrand, sortBy]);
 
   return (
     <div className='container mx-auto px-4 py-8'>
@@ -156,7 +139,7 @@ export default function ShopPage() {
               </div>
 
               {/* Filters */}
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
                     {labels.categoryLabel}
@@ -201,28 +184,6 @@ export default function ShopPage() {
 
                 <div className='space-y-2'>
                   <label className='text-sm font-medium text-primary-900'>
-                    {labels.priceRangeLabel}
-                  </label>
-                  <div className='pt-2'>
-                    <Slider
-                      value={priceRange}
-                      onValueChange={(value: number[]) =>
-                        setPriceRange(value as [number, number])
-                      }
-                      max={2000}
-                      min={0}
-                      step={50}
-                      className='w-full'
-                    />
-                    <div className='flex justify-between text-sm text-primary-700 font-medium mt-2'>
-                      <span>${priceRange[0]}</span>
-                      <span>${priceRange[1]}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='space-y-2'>
-                  <label className='text-sm font-medium text-primary-900'>
                     {labels.sortByLabel}
                   </label>
                   <Select value={sortBy} onValueChange={setSortBy}>
@@ -243,9 +204,7 @@ export default function ShopPage() {
               {/* Active Filters Summary */}
               {(selectedCategory !== categories[0] ||
                 selectedBrand !== brands[0] ||
-                searchQuery ||
-                priceRange[0] !== 0 ||
-                priceRange[1] !== 2000) && (
+                searchQuery) && (
                 <div className='flex flex-wrap items-center gap-2 pt-2 border-t border-primary-200'>
                   <span className='text-sm font-medium text-primary-700'>
                     {labels.activeFilters}
@@ -285,7 +244,6 @@ export default function ShopPage() {
                       setSelectedCategory(categories[0]);
                       setSelectedBrand(brands[0]);
                       setSearchQuery('');
-                      setPriceRange([0, 2000]);
                     }}
                     className='text-primary-600 hover:text-primary-800 h-7'
                   >

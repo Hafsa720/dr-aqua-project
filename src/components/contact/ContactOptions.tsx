@@ -15,9 +15,6 @@ import {
 import { SiBehance, SiFreelancer, SiUpwork } from 'react-icons/si';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
-import { useLanguage } from '@/contexts/LanguageContext';
-import type { ContactOption } from '@/types';
-
 // Import both language versions
 import contactContentEn from '@/content/common/en/contact.json';
 import contactDataEn from '@/content/common/en/data.json';
@@ -25,12 +22,15 @@ import footerContentEn from '@/content/common/en/footer.json';
 import contactContentUr from '@/content/common/ur/contact.json';
 import contactDataUr from '@/content/common/ur/data.json';
 import footerContentUr from '@/content/common/ur/footer.json';
+import { useLanguage } from '@/contexts/LanguageContext';
+import type { ContactOption } from '@/types';
 
 export function ContactOptions() {
   const { language } = useLanguage();
 
   // Select content based on current language
-  const contactContent = language === 'ur' ? contactContentUr : contactContentEn;
+  const contactContent =
+    language === 'ur' ? contactContentUr : contactContentEn;
   const contactData = language === 'ur' ? contactDataUr : contactDataEn;
   const footerContent = language === 'ur' ? footerContentUr : footerContentEn;
 

@@ -1,32 +1,47 @@
 # Claude Code Configuration
 
-This file configures Claude Code with project-specific information for Dr. Aqua - a premium water filtration and purification company with a modern Next.js e-commerce platform.
+This file configures Claude Code with project-specific information for Dr. Aqua - a premium water filtration and purification company in Bahawalpur, Pakistan.
 
 ## Project Overview & Business Context
 
 ### Company Profile
 
-**Dr. Aqua** is a premium water filtration and purification company based in Bahawalpur, Pakistan, specializing in high-quality water purification systems, RO plants, and water treatment solutions for homes and businesses.
+**Dr. Aqua** is a trusted water purification company based in Bahawalpur, Pakistan, providing premium RO systems, water filters, and purification solutions for homes, businesses, and industrial clients across Punjab.
+
+**Location**: CM28+93V, Captain Salman Farooq Lodhi Shaheed Rd, Model Town B, Bahawalpur, 63100
+**Phone**: 0334 7071759
+**Hours**: Monday-Thursday, Saturday-Sunday: 10 AM - 11 PM (Closed Friday)
+**Website**: https://draqua.com
 
 ### Mission & Values
 
-**Mission**: Provide pure, safe drinking water to every household and business through premium water purification solutions.
+**Mission**: Provide pure, safe drinking water to every household and business in Bahawalpur and surrounding areas through premium water purification solutions.
 
-**Core Values**: Health First • Quality Excellence • Customer Trust • Innovation • Sustainability • Community Well-being
+**Core Values**: Health First • Quality Excellence • Customer Trust • Local Service • Sustainability • Affordability
 
 ### Target Market
 
-- **Primary**: Residential customers seeking home water purification systems
-- **Secondary**: Small and medium businesses requiring commercial RO systems
-- **Tertiary**: Industrial clients needing large-scale water treatment solutions
+- **Primary**: Residential customers in Bahawalpur seeking home RO systems and water purifiers (PKR 15,000 - 45,000)
+- **Secondary**: Small businesses, restaurants, schools requiring commercial water solutions (PKR 50,000+)
+- **Tertiary**: Industrial clients needing large-scale water treatment plants
+- **Geography**: Bahawalpur city and surrounding areas (Model Town, Satellite Town, DHA, etc.)
+
+### Product Categories
+
+1. **Home RO Systems** - 5-stage, 7-stage, and UV+RO purifiers for residential use
+2. **Commercial RO Plants** - High-capacity systems for businesses and institutions
+3. **Water Filters** - Pre-filters, sediment filters, carbon filters, mineral cartridges
+4. **Accessories** - Storage tanks, taps, pipes, and replacement parts
+5. **Maintenance Services** - Installation, repair, filter replacement, annual maintenance
 
 ### Competitive Advantage
 
-- Premium quality RO systems and water purifiers
-- Expert installation and maintenance services
-- Located in Bahawalpur with local service excellence
-- Competitive pricing with PKR-based transparent costs
-- Open 6 days a week (Monday-Thursday, Saturday-Sunday: 10 AM - 11 PM)
+- **Local Presence**: Based in Bahawalpur with quick service response
+- **Quality Products**: Premium RO systems with 1-2 year warranties
+- **Expert Installation**: Professional installation team
+- **Affordable Pricing**: PKR-based transparent pricing
+- **After-Sales Support**: Maintenance and repair services
+- **WhatsApp Support**: Instant quotations via WhatsApp (0334 7071759)
 
 ## Technology Stack
 
@@ -154,29 +169,59 @@ npm run typecheck && npm run lint:strict && npm run format:check
 
 ### Home Page (`/`)
 
-Landing page with hero, features, and call-to-action sections.
+**E-commerce landing page** with:
 
-### Components Demo (`/components-demo`)
+- Hero section with water purification focus
+- Featured products (3 top-selling RO systems)
+- Services overview (Installation, Maintenance, Repair)
+- Benefits/Features of water purification
+- Call-to-action (WhatsApp consultation)
+- Bilingual support (English/Urdu)
 
-**Primary showcase for custom components**:
+### Products Page (`/products`)
 
-- Displays all 21 custom UI components with live examples
-- Minimal shadcn presence (9 installed, links to 15+ more available)
-- Interactive component tester (dev only)
-- Organized by category: Layout, Display, Feedback, Forms, etc.
+**Product catalog** with:
 
-### Team Page (`/team`)
+- Product grid with filtering by category (Home RO, Commercial, Filters, Accessories)
+- Product cards showing image, name, price (PKR), features
+- Quick view and "Add to Cart" functionality
+- Search and sort options
+- WhatsApp "Get Quote" button on each product
+- Bilingual product descriptions
 
-Streamlined team member cards with:
+### Services Page (`/services`)
 
-- Circular profile images (80x80px)
-- Essential info (name, role, experience)
-- Social media integration
-- Responsive 2-4 column grid
+**Service offerings** with:
 
-### Changelog Page (`/changelog`)
+- Installation Services with pricing and process
+- Maintenance & Repair services
+- Filter Replacement schedules
+- Annual Maintenance Contracts (AMC)
+- WhatsApp booking integration for each service
+- Bilingual service descriptions
 
-Version history with release notes and feature updates.
+### About Page (`/about`)
+
+**Company information** with:
+
+- Dr. Aqua story and mission
+- Why choose us (quality, local service, expertise)
+- Service areas in Bahawalpur
+- Team information
+- Certifications and partnerships
+- Bilingual content
+
+### Contact Page (`/contact`)
+
+**Contact and inquiry** with:
+
+- Contact form with WhatsApp integration
+- Google Maps location embed
+- Business hours display
+- Phone, email, address details
+- WhatsApp direct chat button
+- FAQ section
+- Bilingual support
 
 ## Component Guidelines
 
@@ -272,13 +317,27 @@ export default ComponentName;
 - `src/components/InstallPrompt.tsx` - Install UI
 - `src/components/PWAWrapper.tsx` - PWA integration
 
-### SEO Optimization
+### SEO Optimization (Bahawalpur Focus)
+
+**Local SEO Strategy**:
+
+- **Location Keywords**: "Bahawalpur", "RO system Bahawalpur", "water filter Bahawalpur"
+- **Service Keywords**: "RO plant installation", "water purifier", "filter replacement"
+- **Urdu Keywords**: "واٹر فلٹر بہاولپور", "RO سسٹم"
+- **Google My Business**: Integrated location (CM28+93V, Model Town B)
+- **Local Structured Data**: LocalBusiness schema with Bahawalpur address
+- **Service Area**: Bahawalpur, Model Town, Satellite Town, DHA
+- **Phone**: 0334 7071759 in all metadata
+
+**Technical SEO**:
 
 - Dynamic meta tags with Next.js metadata API
 - Sitemap generation with `next-sitemap`
 - robots.txt configuration
-- Open Graph and Twitter Card support
-- Structured data ready
+- Open Graph with location info
+- LocalBusiness JSON-LD schema
+- Mobile-optimized for local searches
+- WhatsApp click-to-chat integration
 
 ### Performance Optimizations
 

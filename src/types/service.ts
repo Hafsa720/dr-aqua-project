@@ -1,11 +1,10 @@
-
 export interface Service {
   id: string;
   slug: string;
   icon: string; // Will be mapped to actual icon component
   title: string;
   description: string;
-  price: number;
+  priceRange: string; // e.g., "2,000 - 3,500" or "Starting from 1,500"
   duration: string;
   features: string[];
   popular: boolean;
