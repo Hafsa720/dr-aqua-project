@@ -11,18 +11,13 @@ export interface Product {
   price: number;
   originalPrice: number;
   image: string;
-  rating: number;
-  reviews: number;
   inStock: boolean;
   featured: boolean;
   name: TranslatableString;
   category: TranslatableString;
   brand: TranslatableString;
-  description: TranslatableString;
-  shortDescription: TranslatableString;
-  features: TranslatableString[];
+  description: TranslatableString; // Supports markdown formatting
   specifications: Record<string, TranslatableString>;
-  tags: TranslatableString[];
 }
 
 export interface FilterOption {

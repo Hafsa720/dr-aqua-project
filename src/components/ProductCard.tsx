@@ -1,10 +1,12 @@
 'use client';
 
-import { CheckCircle, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { remark } from 'remark';
 import { toast } from 'sonner';
+import stripMarkdown from 'strip-markdown';
 
 import { useCart } from '@/components/cart-provider';
 import { Badge } from '@/components/ui/badge';
@@ -13,6 +15,31 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getProductCardLabels } from '@/data/productCard/labels';
 import type { Product, ProductLanguage } from '@/types/product';
+
+/**
+ * Extracts the first paragraph from markdown and strips formatting
+ * Uses remark + strip-markdown for proper parsing
+ */
+function extractFirstParagraph(markdown: string): string {
+  // Split by double newlines to get paragraphs
+  const paragraphs = markdown.trim().split('\n\n');
+
+  // Get first non-heading paragraph
+  let firstParagraph = paragraphs[0] || '';
+  if (firstParagraph.startsWith('#')) {
+    firstParagraph = paragraphs[1] || '';
+  }
+
+  // Strip markdown formatting using remark
+  try {
+    const processed = remark().use(stripMarkdown).processSync(firstParagraph);
+
+    return processed.toString().trim();
+  } catch {
+    // Fallback to original if processing fails
+    return firstParagraph;
+  }
+}
 
 interface ProductCardProps {
   product: Product;
@@ -66,7 +93,7 @@ export function ProductCard({
     return (
       <Card className='group overflow-hidden hover:shadow-2xl transition-all duration-300 border-primary-200 hover:border-primary-400 hover:-translate-y-1'>
         <CardHeader className='p-0'>
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${product.slug}`}>
             <div className='relative overflow-hidden aspect-[4/3] bg-primary-50'>
               <Image
                 src={product.image}
@@ -90,13 +117,13 @@ export function ProductCard({
         </CardHeader>
         <CardContent className='p-5'>
           <div className='space-y-4'>
-            <Link href={`/products/${product.id}`}>
+            <Link href={`/products/${product.slug}`}>
               <div className='space-y-2'>
                 <CardTitle className='text-lg font-bold text-primary-900 group-hover:text-primary-600 transition-colors line-clamp-2'>
                   {product.name[language]}
                 </CardTitle>
                 <p className='text-sm text-primary-700 line-clamp-2 leading-relaxed'>
-                  {product.shortDescription[language]}
+                  {extractFirstParagraph(product.description[language])}
                 </p>
               </div>
             </Link>
@@ -120,7 +147,7 @@ export function ProductCard({
                 size='sm'
                 className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
               >
-                <Link href={`/products/${product.id}`}>{labels.details}</Link>
+                <Link href={`/products/${product.slug}`}>{labels.details}</Link>
               </Button>
               {showAddToCart && (
                 <Button
@@ -145,7 +172,7 @@ export function ProductCard({
     <Card className='group border-primary-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300'>
       <CardHeader className='p-0'>
         <div className='relative overflow-hidden rounded-t-lg'>
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/products/${product.slug}`}>
             <Image
               src={product.image}
               alt={product.name[language]}
@@ -170,7 +197,7 @@ export function ProductCard({
       <CardContent className='p-6'>
         <div className='space-y-4'>
           <div>
-            <Link href={`/products/${product.id}`}>
+            <Link href={`/products/${product.slug}`}>
               <CardTitle className='text-xl mb-2 text-primary-900 hover:text-primary-600 transition-colors'>
                 {product.name[language]}
               </CardTitle>
@@ -187,26 +214,15 @@ export function ProductCard({
                 )}
             </div>
           </div>
-          {product.features && product.features.length > 0 && (
-            <div className='space-y-2'>
-              {product.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className='flex items-center gap-2 text-sm text-primary-700'
-                >
-                  <CheckCircle className='h-4 w-4 text-secondary-500' />
-                  <span>{feature[language]}</span>
-                </div>
-              ))}
-            </div>
-          )}
           <div className='flex gap-2 pt-2'>
             <Button
               asChild
               variant='outline'
               className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
             >
-              <Link href={`/products/${product.id}`}>{labels.viewDetails}</Link>
+              <Link href={`/products/${product.slug}`}>
+                {labels.viewDetails}
+              </Link>
             </Button>
             {showAddToCart && (
               <Button

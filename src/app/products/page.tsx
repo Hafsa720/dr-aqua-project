@@ -90,9 +90,6 @@ export default function ShopPage() {
       case 'price-high':
         filtered.sort((a, b) => b.price - a.price);
         break;
-      case 'rating':
-        filtered.sort((a, b) => b.rating - a.rating);
-        break;
       default:
         // Keep original order for featured
         break;

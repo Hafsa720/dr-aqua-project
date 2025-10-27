@@ -12,6 +12,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import { useCart } from '@/components/cart-provider';
 import { Badge } from '@/components/ui/badge';
@@ -27,197 +28,20 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { getProductById } from '@/data/products';
+import { getProductBySlug } from '@/data/products';
 import { getProductDetailLabels } from '@/data/products/labels';
 import type { ProductLanguage } from '@/types/product';
 
-const _OLD_HARDCODED_products = [
-  {
-    id: '1',
-    name: 'AquaPure Pro 5-Stage Filter',
-    price: 299,
-    originalPrice: 399,
-    image:
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&auto=format&fit=crop&v=2',
-    rating: 4.8,
-    _reviews: 124,
-    category: 'Residential',
-    brand: 'AquaPure',
-    description:
-      'Advanced 5-stage filtration system with UV sterilization and smart monitoring capabilities.',
-    features: [
-      '5-Stage Filtration',
-      'UV Sterilization',
-      'Smart Monitoring',
-      '2-Year Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '2.5 GPM',
-      'Filter Life': '12 months',
-      Dimensions: '15" x 8" x 20"',
-      Weight: '25 lbs',
-      Installation: 'Under-sink',
-      Certifications: 'NSF/ANSI 42, 53, 58',
-    },
-    inStock: true,
-  },
-  {
-    id: '2',
-    name: 'CrystalFlow Commercial Unit',
-    price: 899,
-    originalPrice: 1199,
-    image:
-      'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=800&auto=format&fit=crop&v=2',
-    rating: 4.9,
-    _reviews: 87,
-    category: 'Commercial',
-    brand: 'CrystalFlow',
-    description:
-      'High-capacity commercial water filtration system with auto-cleaning and remote control.',
-    features: [
-      'High Capacity',
-      'Auto-Cleaning',
-      'Remote Control',
-      '5-Year Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '10 GPM',
-      'Filter Life': '24 months',
-      Dimensions: '24" x 12" x 36"',
-      Weight: '85 lbs',
-      Installation: 'Floor-standing',
-      Certifications: 'NSF/ANSI 42, 53, 61',
-    },
-    inStock: true,
-  },
-  {
-    id: '3',
-    name: 'EcoFilter Compact Home',
-    price: 149,
-    originalPrice: 199,
-    image:
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop&v=2',
-    rating: 4.7,
-    _reviews: 203,
-    category: 'Residential',
-    brand: 'EcoFilter',
-    description:
-      'Space-saving home water filter with easy installation and long-lasting performance.',
-    features: [
-      'Space Saving',
-      'Easy Install',
-      'Long Lasting',
-      '1-Year Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '1.5 GPM',
-      'Filter Life': '6 months',
-      Dimensions: '10" x 6" x 12"',
-      Weight: '8 lbs',
-      Installation: 'Countertop',
-      Certifications: 'NSF/ANSI 42, 53',
-    },
-    inStock: true,
-  },
-  {
-    id: '4',
-    name: 'PureTech Industrial System',
-    price: 1599,
-    originalPrice: 1999,
-    image:
-      'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop&v=2',
-    rating: 4.9,
-    _reviews: 45,
-    category: 'Industrial',
-    brand: 'PureTech',
-    description:
-      'Heavy-duty industrial water treatment system for large-scale operations.',
-    features: [
-      'Industrial Grade',
-      'High Volume',
-      'Automated Controls',
-      '10-Year Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '50 GPM',
-      'Filter Life': '36 months',
-      Dimensions: '36" x 24" x 48"',
-      Weight: '250 lbs',
-      Installation: 'Floor-standing',
-      Certifications: 'NSF/ANSI 42, 53, 61, 372',
-    },
-    inStock: true,
-  },
-  {
-    id: '5',
-    name: 'AquaHome Basic Filter',
-    price: 89,
-    originalPrice: 119,
-    image:
-      'https://images.unsplash.com/photo-1629794226404-d0fc0d9a1a1f?w=800&auto=format&fit=crop&v=2',
-    rating: 4.5,
-    _reviews: 312,
-    category: 'Residential',
-    brand: 'AquaHome',
-    description:
-      'Affordable and reliable basic water filtration for everyday use.',
-    features: [
-      'Basic Filtration',
-      'Budget Friendly',
-      'Easy Maintenance',
-      '6-Month Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '1 GPM',
-      'Filter Life': '3 months',
-      Dimensions: '8" x 4" x 10"',
-      Weight: '4 lbs',
-      Installation: 'Countertop',
-      Certifications: 'NSF/ANSI 42',
-    },
-    inStock: true,
-  },
-  {
-    id: '6',
-    name: 'FlowMax Office System',
-    price: 449,
-    originalPrice: 599,
-    image:
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&auto=format&fit=crop&v=2',
-    rating: 4.6,
-    _reviews: 156,
-    category: 'Commercial',
-    brand: 'FlowMax',
-    description:
-      'Perfect water filtration solution for offices and small businesses.',
-    features: [
-      'Office Optimized',
-      'Quiet Operation',
-      'Compact Design',
-      '3-Year Warranty',
-    ],
-    specifications: {
-      'Flow Rate': '5 GPM',
-      'Filter Life': '18 months',
-      Dimensions: '18" x 10" x 24"',
-      Weight: '45 lbs',
-      Installation: 'Wall-mounted or floor-standing',
-      Certifications: 'NSF/ANSI 42, 53',
-    },
-    inStock: true,
-  },
-];
-
 export default function ProductDetailPage() {
   const params = useParams();
-  const productId = params.id as string;
+  const productSlug = params.slug as string;
   const { language: contextLang } = useLanguage();
   // Product only supports 'en' and 'ur', fallback to 'en' for other languages
   const language: ProductLanguage = (
     contextLang === 'ur' ? 'ur' : 'en'
   ) as ProductLanguage;
   const [labels, setLabels] = useState(getProductDetailLabels('en'));
-  const product = getProductById(productId);
+  const product = getProductBySlug(productSlug);
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
 
@@ -294,9 +118,37 @@ export default function ProductDetailPage() {
               <h1 className='text-3xl font-bold mb-4'>
                 {product.name[language]}
               </h1>
-              <p className='text-lg text-muted-foreground'>
-                {product.description[language]}
-              </p>
+              <div className='text-lg text-muted-foreground prose prose-lg max-w-none'>
+                <ReactMarkdown
+                  components={{
+                    h2: ({ children }) => (
+                      <h2 className='text-xl font-semibold mt-4 mb-2 text-primary-900'>
+                        {children}
+                      </h2>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className='list-disc list-inside space-y-1 ml-4 mt-2'>
+                        {children}
+                      </ul>
+                    ),
+                    li: ({ children }) => (
+                      <li className='text-primary-700'>{children}</li>
+                    ),
+                    strong: ({ children }) => (
+                      <strong className='text-primary-900 font-semibold'>
+                        {children}
+                      </strong>
+                    ),
+                    p: ({ children }) => (
+                      <p className='text-muted-foreground leading-relaxed'>
+                        {children}
+                      </p>
+                    ),
+                  }}
+                >
+                  {product.description[language]}
+                </ReactMarkdown>
+              </div>
             </div>
 
             <div className='space-y-4'>
@@ -316,19 +168,6 @@ export default function ProductDetailPage() {
                 <span className='text-sm font-medium'>
                   {product.inStock ? labels.inStock : labels.outOfStock}
                 </span>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className='space-y-3'>
-              <h3 className='font-semibold'>{labels.keyFeatures}</h3>
-              <div className='grid grid-cols-2 gap-2'>
-                {product.features.map((feature, index) => (
-                  <div key={index} className='flex items-center gap-2 text-sm'>
-                    <CheckCircle className='h-4 w-4 text-secondary' />
-                    <span>{feature[language]}</span>
-                  </div>
-                ))}
               </div>
             </div>
 
