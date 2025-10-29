@@ -20,9 +20,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     contentConfig.defaultLanguage,
   );
   const [direction, setDirection] = useState<'ltr' | 'rtl'>('ltr');
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load language from localStorage on mount
+  // Load language from localStorage on mount (only once)
   useEffect(() => {
+    if (isInitialized) return;
+
     const savedLanguage = localStorage.getItem(
       'language',
     ) as SupportedLanguage | null;
@@ -31,32 +34,37 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       contentConfig.supportedLanguages.includes(savedLanguage)
     ) {
       setLanguageState(savedLanguage);
-      setDirection(
-        savedLanguage === 'ar' || savedLanguage === 'ur' ? 'rtl' : 'ltr',
-      );
+      const newDirection =
+        savedLanguage === 'ar' || savedLanguage === 'ur' ? 'rtl' : 'ltr';
+      setDirection(newDirection);
+      document.documentElement.dir = newDirection;
+      document.documentElement.lang = savedLanguage;
+    } else {
+      document.documentElement.dir = direction;
+      document.documentElement.lang = language;
     }
-  }, []);
+    setIsInitialized(true);
+  }, [isInitialized, direction, language]);
 
   // Update direction and save to localStorage when language changes
-  const setLanguage = (lang: SupportedLanguage) => {
+  const setLanguage = React.useCallback((lang: SupportedLanguage) => {
     setLanguageState(lang);
-    setDirection(lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr');
+    const newDirection = lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr';
+    setDirection(newDirection);
     localStorage.setItem('language', lang);
 
     // Update document direction
-    document.documentElement.dir =
-      lang === 'ar' || lang === 'ur' ? 'rtl' : 'ltr';
+    document.documentElement.dir = newDirection;
     document.documentElement.lang = lang;
-  };
+  }, []);
 
-  // Set initial direction
-  useEffect(() => {
-    document.documentElement.dir = direction;
-    document.documentElement.lang = language;
-  }, [direction, language]);
+  const contextValue = React.useMemo(
+    () => ({ language, setLanguage, direction }),
+    [language, setLanguage, direction],
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, direction }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );

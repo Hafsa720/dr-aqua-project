@@ -23,15 +23,13 @@ const config: Config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          // 4 colors before #452E72
+          // Purple/Violet from logo "Dr." text
           50: '#F5F3FA', // Very light purple
           100: '#E8E1F3', // Light purple
           200: '#D4C5E8', // Lighter purple
           300: '#B8A1D8', // Light-medium purple
           400: '#9679C5', // Medium-light purple
-          // Base color #452E72
-          500: '#452E72', // Base primary color
-          // 6 colors after #452E72
+          500: '#452E72', // Base primary - Logo purple
           600: '#3D2865', // Darker purple
           700: '#352258', // Darker purple
           800: '#2D1C4B', // Much darker purple
@@ -42,21 +40,33 @@ const config: Config = {
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
-          // 4 colors before #DE261E
+          // Red/Orange from logo circle
           50: '#FEF2F2', // Very light red
           100: '#FEE2E2', // Light red
           200: '#FECACA', // Lighter red
           300: '#FCA5A5', // Light-medium red
           400: '#F87171', // Medium-light red
-          // Base color #DE261E
-          500: '#DE261E', // Base secondary color
-          // 6 colors after #DE261E
+          500: '#E03E2A', // Base secondary - Logo red/orange
           600: '#C8211B', // Darker red
           700: '#B21D18', // Darker red
           800: '#9C1815', // Much darker red
           900: '#861312', // Very dark red
           950: '#700F0F', // Extremely dark red
           1000: '#5A0C0C', // Almost black red
+        },
+        // Cyan/Blue from logo water droplet
+        aqua: {
+          50: '#E6F7FF', // Very light cyan
+          100: '#CCEFFF', // Light cyan
+          200: '#99DFFF', // Lighter cyan
+          300: '#66CFFF', // Light-medium cyan
+          400: '#33BFFF', // Medium-light cyan
+          500: '#00B0F0', // Base aqua - Logo water drop
+          600: '#0099D6', // Darker cyan
+          700: '#0082BD', // Darker cyan
+          800: '#006BA3', // Much darker cyan
+          900: '#00548A', // Very dark cyan
+          950: '#003D70', // Extremely dark cyan
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
