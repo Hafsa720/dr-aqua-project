@@ -80,15 +80,10 @@ export function ContactOptions() {
         </div>
         <div className='text-center mb-20 animate-fade-in-up'>
           <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
-            Contact
-            <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
-              {' '}
-              Options
-            </span>
+            {contactContent.contactInfo.title}
           </h2>
           <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
-            Choose the best way to reach us. We're here to help and respond
-            quickly to all inquiries with personalized solutions.
+            {contactContent.contactInfo.description}
           </p>
         </div>{' '}
         <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-8'>
@@ -122,7 +117,7 @@ export function ContactOptions() {
         {/* Social Links */}
         <div className='text-center mt-20 opacity-0 animate-fade-in-up animation-delay-400'>
           <h3 className='text-3xl font-bold text-slate-900 mb-8'>
-            Connect With Us
+            {contactContent.socialLinks.title}
           </h3>
           <div className='flex justify-center flex-wrap gap-3'>
             {socialLinks.map((social, index) => (

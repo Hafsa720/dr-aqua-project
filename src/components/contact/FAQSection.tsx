@@ -22,15 +22,11 @@ export function FAQSection() {
       <div className='layout'>
         <div className='text-center mb-20 opacity-0 animate-fade-in-up'>
           <h2 className='text-5xl md:text-6xl font-bold text-slate-900 mb-6'>
-            Frequently Asked
-            <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
-              {' '}
-              Questions
-            </span>
+            {contactData.faqSection?.title || 'Frequently Asked Questions'}
           </h2>
           <p className='text-xl text-slate-600 max-w-3xl mx-auto'>
-            Find answers to common questions about our services, process, and
-            how we can help your business grow.
+            {contactData.faqSection?.description ||
+              'Find answers to common questions about our services, process, and how we can help your business grow.'}
           </p>
         </div>
 
