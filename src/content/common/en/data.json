@@ -101,6 +101,10 @@
       "bgColor": "bg-green-500"
     }
   ],
+  "faqSection": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our services, process, and how we can help your business grow."
+  },
   "faqs": [
     {
       "question": "What types of water solutions do you provide?",
