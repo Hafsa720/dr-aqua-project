@@ -1,16 +1,10 @@
 import React from 'react';
 
-import LegalPage from '@/components/pages/LegalPage';
+import TermsClientWrapper from '@/components/pages/TermsClientWrapper';
 
 const TermsOfService = () => {
-  return (
-    <LegalPage
-      documentType='terms-of-service'
-      title='Terms of Service'
-      description='These terms govern your use of our services. Please read them carefully before engaging with RapidBizz.'
-      subtitle='By using our services, you agree to be bound by these terms and conditions.'
-    />
-  );
+  // Render a small client wrapper that chooses localized header strings.
+  return <TermsClientWrapper />;
 };
 
 export default TermsOfService;

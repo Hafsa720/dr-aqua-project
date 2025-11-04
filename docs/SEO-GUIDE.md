@@ -1,6 +1,6 @@
-# RapidBizz SEO Features Guide
+# Dr.Aqua SEO Features Guide
 
-This guide covers the comprehensive SEO features implemented in RapidBizz, including sitemap generation, Open Graph images, and robots.txt optimization.
+This guide covers the comprehensive SEO features implemented in Dr.Aqua, including sitemap generation, Open Graph images, and robots.txt optimization.
 
 ## 📋 Table of Contents
 
@@ -15,14 +15,14 @@ This guide covers the comprehensive SEO features implemented in RapidBizz, inclu
 
 ## Overview
 
-RapidBizz includes enterprise-level SEO features that automatically optimize your website for search engines and social media sharing. All features are implemented using Next.js 15+ App Router patterns and are production-ready.
+Dr.Aqua includes enterprise-level SEO features that automatically optimize your website for search engines and social media sharing. All features are implemented using Next.js 15+ App Router patterns and are production-ready.
 
 ## 🗺️ Sitemap Generation
 
 ### ✅ Implemented Features
 
 **File:** `/src/app/sitemap.ts`
-**Access:** `https://rapidbizz.com/sitemap.xml`
+**Access:** `https://Dr.Aqua.com/sitemap.xml`
 
 #### Current Implementation:
 
@@ -46,7 +46,7 @@ RapidBizz includes enterprise-level SEO features that automatically optimize you
 ```typescript
 // /src/app/sitemap.ts
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://Dr.Aqua.com';
 
   return [
     {
@@ -104,12 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 ### ✅ Implemented Features
 
 **Files:** `/src/app/api/og/route.tsx`, `/src/lib/og.ts`
-**Access:** Automatic for all pages + `https://rapidbizz.com/api/og`
+**Access:** Automatic for all pages + `https://Dr.Aqua.com/api/og`
 
 #### Current Implementation:
 
 - **Dynamic image generation** using Next.js ImageResponse API
-- **Brand-consistent design** with RapidBizz logo and colors
+- **Brand-consistent design** with Dr.Aqua logo and colors
 - **Theme support** (light/dark modes)
 - **Custom templates** for different page types
 - **Optimized dimensions** (1200x630 for social media)
@@ -127,7 +127,7 @@ export const metadata = generateMetadata({
 
 // Custom OG image
 const ogUrl = openGraph({
-  siteName: 'RapidBizz',
+  siteName: 'Dr.Aqua',
   description: 'Custom description',
   templateTitle: 'Special Page',
   theme: 'dark',
@@ -197,7 +197,7 @@ const ogUrl = openGraph({
 ### ✅ Implemented Features
 
 **File:** `/src/app/robots.ts`
-**Access:** `https://rapidbizz.com/robots.txt`
+**Access:** `https://Dr.Aqua.com/robots.txt`
 
 #### Current Implementation:
 
@@ -226,7 +226,7 @@ Allow: /
 Allow: /services/
 # ... same allowances for AI bots
 
-Sitemap: https://rapidbizz.com/sitemap.xml
+Sitemap: https://Dr.Aqua.com/sitemap.xml
 ```
 
 ### 🔄 Remaining Tasks
@@ -385,7 +385,7 @@ const frequencies = {
   changeFrequency: 'weekly',
   priority: 0.9,
   // Add custom properties if needed
-  images: ['https://rapidbizz.com/special-image.jpg']
+  images: ['https://Dr.Aqua.com/special-image.jpg']
 }
 ```
 
@@ -398,8 +398,8 @@ const frequencies = {
 const colors = {
   light: {
     bg: '#ffffff',
-    primary: '#082856', // RapidBizz Blue
-    secondary: '#FF8621', // RapidBizz Orange
+    primary: '#082856', // Dr.Aqua Blue
+    secondary: '#FF8621', // Dr.Aqua Orange
     text: '#111827',
     accent: '#64748B',
   },
@@ -478,14 +478,14 @@ rm -rf .next
 npm run build
 
 # Check sitemap generation
-curl https://rapidbizz.com/sitemap.xml
+curl https://Dr.Aqua.com/sitemap.xml
 ```
 
 #### 2. OG Images Not Loading
 
 ```bash
 # Test API endpoint directly
-curl -I https://rapidbizz.com/api/og?title=Test
+curl -I https://Dr.Aqua.com/api/og?title=Test
 
 # Check for font loading errors in production
 # Consider removing custom fonts if issues persist
@@ -498,7 +498,7 @@ curl -I https://rapidbizz.com/api/og?title=Test
 rm public/robots.txt
 
 # Verify dynamic generation
-curl https://rapidbizz.com/robots.txt
+curl https://Dr.Aqua.com/robots.txt
 ```
 
 #### 4. Search Console Errors
@@ -531,4 +531,4 @@ curl https://rapidbizz.com/robots.txt
 
 ---
 
-_This guide is maintained as part of the RapidBizz documentation. For updates and contributions, please refer to the main project repository._
+_This guide is maintained as part of the Dr.Aqua documentation. For updates and contributions, please refer to the main project repository._

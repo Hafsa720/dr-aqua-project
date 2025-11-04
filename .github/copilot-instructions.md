@@ -1,8 +1,8 @@
-# GitHub Copilot Instructions for RapidBizz
+# GitHub Copilot Instructions for Dr.Aqua
 
 ## Project Overview
 
-RapidBizz is a modern digital agency website built with **Next.js 15 App Router**, featuring a production-ready starter template with 21 custom UI components, PWA support, and comprehensive development tools.
+Dr.Aqua is a modern digital agency website built with **Next.js 15 App Router**, featuring a production-ready starter template with 21 custom UI components, PWA support, and comprehensive development tools.
 
 ## Tech Stack
 

@@ -47,17 +47,20 @@ export default function Navigation() {
       <div className='container mx-auto px-4'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
-          <Link href='/' className='flex items-center space-x-3 group'>
-            <div className='relative'>
-              <div className='absolute inset-0 bg-gradient-to-r from-primary-500 via-secondary-500 to-aqua-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity' />
-              <span className='relative text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent'>
-                Dr.
+          {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
+          <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
+            <Link href='/' className='flex items-center space-x-3 group'>
+              <div className='relative'>
+                <div className='absolute inset-0 bg-gradient-to-r from-primary-500 via-secondary-500 to-aqua-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity' />
+                <span className='relative text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent'>
+                  Dr.
+                </span>
+              </div>
+              <span className='text-2xl font-bold bg-gradient-to-r from-aqua-500 to-aqua-600 bg-clip-text text-transparent'>
+                AQUA
               </span>
-            </div>
-            <span className='text-2xl font-bold bg-gradient-to-r from-aqua-500 to-aqua-600 bg-clip-text text-transparent'>
-              AQUA
-            </span>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className='hidden md:flex md:items-center md:space-x-6'>

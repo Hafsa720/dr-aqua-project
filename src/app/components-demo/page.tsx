@@ -264,7 +264,7 @@ export default function ComponentPage() {
               </p>
               <div className='space-x-2'>
                 <UnstyledLink href='/'>Internal Links</UnstyledLink>
-                <UnstyledLink href='https://rapidbizz.com'>
+                <UnstyledLink href='https://Dr.Aqua.com'>
                   Outside Links
                 </UnstyledLink>
               </div>
@@ -277,7 +277,7 @@ export default function ComponentPage() {
               </p>
               <div className='space-x-2'>
                 <PrimaryLink href='/'>Internal Links</PrimaryLink>
-                <PrimaryLink href='https://rapidbizz.com'>
+                <PrimaryLink href='https://Dr.Aqua.com'>
                   Outside Links
                 </PrimaryLink>
               </div>
@@ -292,7 +292,7 @@ export default function ComponentPage() {
               </p>
               <div className='space-x-2'>
                 <UnderlineLink href='/'>Internal Links</UnderlineLink>
-                <UnderlineLink href='https://rapidbizz.com'>
+                <UnderlineLink href='https://Dr.Aqua.com'>
                   Outside Links
                 </UnderlineLink>
               </div>

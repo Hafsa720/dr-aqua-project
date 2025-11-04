@@ -32,7 +32,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocumentType, LegalDocumentInfo> = {
     type: 'terms-of-service',
     title: 'Terms of Service',
     description:
-      'These terms govern your use of our services. Please read them carefully before engaging with RapidBizz.',
+      'These terms govern your use of our services. Please read them carefully before engaging with Dr.Aqua.',
     fileName: 'terms-of-service.md',
     slug: 'terms',
   },
@@ -48,7 +48,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocumentType, LegalDocumentInfo> = {
     type: 'cookie-policy',
     title: 'Cookie Policy',
     description:
-      'Learn about how RapidBizz uses cookies and similar technologies to enhance your browsing experience.',
+      'Learn about how Dr.Aqua uses cookies and similar technologies to enhance your browsing experience.',
     fileName: 'cookie-policy.md',
     slug: 'cookies',
   },
@@ -150,16 +150,16 @@ export function getLegalDocumentTypeFromSlug(
 export function formatLegalDocumentSEO(type: LegalDocumentType) {
   const doc = getLegalDocumentInfo(type);
   return {
-    title: `${doc.title} | RapidBizz`,
+    title: `${doc.title} | Dr.Aqua`,
     description: doc.description,
-    url: `https://rapidbizz.com/${doc.slug}`,
+    url: `https://Dr.Aqua.com/${doc.slug}`,
     type: 'website',
     keywords: [
       'legal',
       'terms',
       'privacy',
       'policy',
-      'rapidbizz',
+      'Dr.Aqua',
       'digital agency',
       'uae',
       'dubai',

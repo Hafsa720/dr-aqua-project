@@ -1,91 +1,42 @@
 # 🍪 Cookie Policy
 
-**Effective Date:** September 1, 2025  
-**Last Updated:** September 1, 2025
+**Effective Date:** November 4, 2025  
+**Last Updated:** November 4, 2025
 
-## 📖 Introduction
+Our website uses cookies to improve your experience, run services more effectively, and analyze web traffic.
 
-This Cookie Policy explains how RapidBizz uses cookies on our website. We use only essential cookies required for basic website functionality.
+## 1. 🤔 What Are Cookies?
 
-## 🤔 What Are Cookies?
+Cookies are small files stored in your browser so that the website can remember your preferences (such as language, login status, or items in your cart).
 
-Cookies are small text files stored on your device when you visit our website. They help websites remember your preferences and function properly.
+## 2. 🎯 Why We Use Cookies
 
-## 🔧 Essential Cookies We Use
+We use cookies for the following purposes:
 
-We only use cookies that are absolutely necessary for our website to function:
+- To ensure proper website functionality
+- To personalize your experience
+- To store order and session data
+- To analyze website traffic and user behavior
 
-### 🛡️ Security & Session Management
+## 3. � Third-Party Cookies
 
-| Cookie Name     | Purpose                           | Duration | Type      |
-| --------------- | --------------------------------- | -------- | --------- |
-| `session_id`    | Maintains your browsing session   | Session  | Essential |
-| `csrf_token`    | Protects against security threats | Session  | Essential |
-| `security_hash` | Ensures secure connections        | Session  | Essential |
+We may use Google Analytics or other trusted services to understand website usage. These cookies are for analytical purposes only and do not reveal your personal identity.
 
-### ⚙️ Basic Functionality
+## 4. ⚙️ Your Cookie Preferences
 
-| Cookie Name           | Purpose                           | Duration | Type          |
-| --------------------- | --------------------------------- | -------- | ------------- |
-| `theme_preference`    | Remembers dark/light mode setting | 1 Year   | Functionality |
-| `language_preference` | Remembers language choice         | 1 Year   | Functionality |
-| `cookie_consent`      | Remembers your cookie preferences | 1 Year   | Essential     |
+You can block or delete cookies at any time by going to your browser settings. However, disabling cookies may prevent some website features from working properly.
 
-## 🚫 What We Don't Use
+## 5. 📝 Policy Updates
 
-We do **NOT** use cookies for:
-
-- 📊 Analytics or tracking
-- 📢 Advertising or marketing
-- 👤 User authentication or login
-- 🔗 Social media integration
-- 📈 Performance monitoring
-- 🎯 Targeting or profiling
-
-## ⚙️ Cookie Management
-
-### 🎛️ Your Choices
-
-All our cookies are essential for website functionality. Disabling them may cause the website to not work properly.
-
-### 🌐 Browser Controls
-
-You can control cookies through your browser settings:
-
-**Chrome:** Settings → Privacy → Cookies  
-**Firefox:** Options → Privacy → Cookies  
-**Safari:** Preferences → Privacy → Cookies  
-**Edge:** Settings → Site permissions → Cookies
-
-## ⚠️ Impact of Disabling Cookies
-
-If you disable our essential cookies:
-
-- The website may not function correctly
-- Security features may be compromised
-- Your preferences won't be remembered
-- Some pages may not display properly
-
-## 🔐 Security & Privacy
-
-- All cookies are transmitted over HTTPS
-- No personal information is stored in cookies
-- Cookies contain only functional data
-- Regular security reviews ensure protection
-
-## 📝 Policy Updates
-
-We may update this policy if we change our cookie usage. We'll notify you of any significant changes through our website.
+We may update this Cookie Policy from time to time. The latest version will be published on this page.
 
 ## 📞 Contact Us
 
-For questions about our cookie usage:
-
-**RapidBizz**  
-📧 privacy@rapidbizz.com  
+**Dr. Aqua Water Filter**  
+📧 info@draqua.com  
 📱 +971 50 123 4567  
-📍 Business Bay, Dubai, UAE
+📍 Bahawalpur, Pakistan
 
 ---
 
-_Last updated September 1, 2025. This Cookie Policy reflects our minimal use of essential cookies only._
+_Last updated November 4, 2025. We use cookies to enhance your browsing experience._

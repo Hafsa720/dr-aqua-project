@@ -13,7 +13,6 @@ import {
 
 import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import NextImage from '@/components/NextImage';
 import footerContentEn from '@/content/common/en/footer.json';
 import footerContentUr from '@/content/common/ur/footer.json';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -60,17 +59,20 @@ const Footer = () => {
           {/* Brand Section */}
           <div className='lg:col-span-1 md:col-span-2'>
             <div className='flex justify-start mb-6'>
-              <Link href='/' className='flex items-center space-x-3 group'>
-                <div className='relative'>
-                  <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity' />
-                  <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent'>
-                    Dr.
+              {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
+              <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
+                <Link href='/' className='flex items-center space-x-3 group'>
+                  <div className='relative'>
+                    <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity' />
+                    <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent'>
+                      Dr.
+                    </span>
+                  </div>
+                  <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent'>
+                    AQUA
                   </span>
-                </div>
-                <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent'>
-                  AQUA
-                </span>
-              </Link>
+                </Link>
+              </div>
             </div>
 
             {/* Social Links */}
