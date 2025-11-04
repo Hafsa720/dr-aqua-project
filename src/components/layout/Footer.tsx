@@ -155,7 +155,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className='flex items-start gap-3'>
+              <div className='flex items-start gap-2'>
                 <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-secondary-500/20 to-secondary-600/20 rounded-lg mt-0.5 flex-shrink-0 border border-secondary-500/30'>
                   <svg
                     className='w-4 h-4 text-secondary-400'
@@ -165,14 +165,16 @@ const Footer = () => {
                     <path d='M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' />
                   </svg>
                 </div>
-                <div className='min-w-0 flex-1'>
+                <div>
                   <p className='text-gray-400 text-sm'>Phone</p>
-                  <UnstyledLink
-                    href={footerContent.contact.phone.href}
-                    className='text-white font-medium hover:text-aqua-400 transition-smooth focus-ring touch-feedback text-sm whitespace-nowrap'
-                  >
-                    {footerContent.contact.phone.label}
-                  </UnstyledLink>
+                  <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
+                    <UnstyledLink
+                      href={footerContent.contact.phone.href}
+                      className='text-white font-medium hover:text-aqua-400 transition-smooth focus-ring touch-feedback text-sm whitespace-nowrap'
+                    >
+                      {footerContent.contact.phone.label}
+                    </UnstyledLink>
+                  </div>
                 </div>
               </div>
 
