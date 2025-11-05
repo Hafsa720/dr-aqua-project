@@ -61,14 +61,24 @@ const Footer = () => {
             <div className='flex justify-start mb-6'>
               {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
               <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
-                <Link href='/' className='flex items-center space-x-3 group'>
+                <Link
+                  href='/'
+                  className='flex items-center space-x-3 group transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => {
+                      window.location.href = '/';
+                    }, 500);
+                  }}
+                >
                   <div className='relative'>
-                    <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity' />
-                    <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent'>
+                    <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300' />
+                    <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent transition-all duration-300'>
                       Dr.
                     </span>
                   </div>
-                  <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent'>
+                  <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent transition-all duration-300'>
                     AQUA
                   </span>
                 </Link>

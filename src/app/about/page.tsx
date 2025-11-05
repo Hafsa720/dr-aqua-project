@@ -238,7 +238,7 @@ export default function AboutPage() {
                 asChild
                 size='lg'
                 variant='outline'
-                className='border-white text-white hover:bg-white hover:text-primary-500'
+                className='border text-blue-700 hover:bg-white hover:text-primary-500 cursor-pointer'
               >
                 <Link href='/contact'>{content.cta.buttons.secondary}</Link>
               </Button>
