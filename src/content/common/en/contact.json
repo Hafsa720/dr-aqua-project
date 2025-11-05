@@ -56,14 +56,14 @@
       {
         "type": "phone",
         "title": "Call Us",
-        "value": "+971 50 123 4567",
+        "value": "+92 334 7071759",
         "description": "Mon-Fri 9AM-6PM GST",
         "icon": "phone"
       },
       {
         "type": "whatsapp",
         "title": "WhatsApp",
-        "value": "+971 50 123 4567",
+        "value": "+92 334 7071759",
         "description": "Quick questions & updates",
         "icon": "chat"
       },

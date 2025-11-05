@@ -189,7 +189,9 @@ const LegalPage: React.FC<LegalPageProps> = ({
     return (
       <ErrorDisplay
         error={error || 'Document not found'}
-        onRetry={() => window.location.reload()}
+        onRetry={() =>
+          typeof window !== 'undefined' && window.location.reload()
+        }
       />
     );
   }

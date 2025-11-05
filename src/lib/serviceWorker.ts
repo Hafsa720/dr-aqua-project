@@ -105,7 +105,9 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
       ) {
         navigator.serviceWorker.ready.then((registration) => {
           registration.unregister().then(() => {
-            window.location.reload();
+            if (typeof window !== 'undefined') {
+              window.location.reload();
+            }
           });
         });
       } else {
