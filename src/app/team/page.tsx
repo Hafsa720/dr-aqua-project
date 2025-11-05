@@ -244,7 +244,7 @@ const TeamPage = () => {
               Why Join
               <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 {' '}
-                RapidBizz
+                Dr.Aqua
               </span>
             </h2>
             <p className='text-xl text-slate-600 max-w-3xl mx-auto'>

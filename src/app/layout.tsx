@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='font-inter'>
+      <body className='font-inter' suppressHydrationWarning>
         <LanguageProvider>
           <CartProvider>
             <Navigation />

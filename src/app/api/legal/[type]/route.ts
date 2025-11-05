@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+import { contentConfig } from '@/content/config';
 import { loadLegalDocument } from '@/lib/markdown';
 
 export async function GET(
@@ -18,10 +19,20 @@ export async function GET(
       );
     }
 
-    // Load the legal document
+    // Determine requested language via query param (e.g. ?lang=ur) and
+    // validate against supported languages. Fall back to configured fallback.
+    const requestedLang = request.nextUrl.searchParams.get('lang');
+    const supported = contentConfig.supportedLanguages;
+    const lang =
+      requestedLang && supported.includes(requestedLang as any)
+        ? (requestedLang as any)
+        : contentConfig.fallbackLanguage;
+
+    // Load the legal document in the requested language (will throw if missing,
+    // and loader itself will fall back if necessary).
     const content = await loadLegalDocument(
       type as 'privacy-policy' | 'terms-of-service' | 'cookie-policy',
-      'en', // Default to English for now
+      lang,
     );
 
     // Return the content

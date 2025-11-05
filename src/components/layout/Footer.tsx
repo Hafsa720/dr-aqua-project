@@ -13,7 +13,6 @@ import {
 
 import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import NextImage from '@/components/NextImage';
 import footerContentEn from '@/content/common/en/footer.json';
 import footerContentUr from '@/content/common/ur/footer.json';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -60,17 +59,20 @@ const Footer = () => {
           {/* Brand Section */}
           <div className='lg:col-span-1 md:col-span-2'>
             <div className='flex justify-start mb-6'>
-              <Link href='/' className='flex items-center space-x-3 group'>
-                <div className='relative'>
-                  <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity' />
-                  <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent'>
-                    Dr.
+              {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
+              <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
+                <Link href='/' className='flex items-center space-x-3 group'>
+                  <div className='relative'>
+                    <div className='absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-aqua-400 rounded-lg blur-lg opacity-0 group-hover:opacity-50 transition-opacity' />
+                    <span className='relative text-3xl font-bold bg-gradient-to-r from-primary-300 to-primary-400 bg-clip-text text-transparent'>
+                      Dr.
+                    </span>
+                  </div>
+                  <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent'>
+                    AQUA
                   </span>
-                </div>
-                <span className='text-3xl font-bold bg-gradient-to-r from-aqua-400 to-aqua-500 bg-clip-text text-transparent'>
-                  AQUA
-                </span>
-              </Link>
+                </Link>
+              </div>
             </div>
 
             {/* Social Links */}
@@ -153,7 +155,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className='flex items-start gap-3'>
+              <div className='flex items-start gap-2'>
                 <div className='flex items-center justify-center w-8 h-8 bg-gradient-to-br from-secondary-500/20 to-secondary-600/20 rounded-lg mt-0.5 flex-shrink-0 border border-secondary-500/30'>
                   <svg
                     className='w-4 h-4 text-secondary-400'
@@ -163,14 +165,16 @@ const Footer = () => {
                     <path d='M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' />
                   </svg>
                 </div>
-                <div className='min-w-0 flex-1'>
+                <div>
                   <p className='text-gray-400 text-sm'>Phone</p>
-                  <UnstyledLink
-                    href={footerContent.contact.phone.href}
-                    className='text-white font-medium hover:text-aqua-400 transition-smooth focus-ring touch-feedback text-sm whitespace-nowrap'
-                  >
-                    {footerContent.contact.phone.label}
-                  </UnstyledLink>
+                  <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
+                    <UnstyledLink
+                      href={footerContent.contact.phone.href}
+                      className='text-white font-medium hover:text-aqua-400 transition-smooth focus-ring touch-feedback text-sm whitespace-nowrap'
+                    >
+                      {footerContent.contact.phone.label}
+                    </UnstyledLink>
+                  </div>
                 </div>
               </div>
 

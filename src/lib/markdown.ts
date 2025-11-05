@@ -134,7 +134,7 @@ export async function loadMarkdownFile(
     markdownCache.set(cacheKey, result);
 
     return result;
-  } catch (error) {
+  } catch {
     throw new Error(`Failed to load markdown file: ${filePath}`);
   }
 }
@@ -205,7 +205,7 @@ export function getLegalDocuments(
             draft: metadata.draft || false,
             path: filePath,
           };
-        } catch (error) {
+        } catch {
           return {
             slug,
             title: slug
@@ -217,7 +217,7 @@ export function getLegalDocuments(
       });
 
     return files.filter((file) => !file.draft);
-  } catch (error) {
+  } catch {
     return [];
   }
 }
@@ -248,7 +248,7 @@ export async function loadContentBySlug(
       includeToc: contentType === 'docs',
       calculateReadingTime: true,
     });
-  } catch (error) {
+  } catch {
     // Fallback to default language
     if (language !== contentConfig.fallbackLanguage) {
       return loadContentBySlug(
@@ -300,7 +300,7 @@ export function getContentList(
             draft: metadata.draft || false,
             path: filePath,
           } as MarkdownFile;
-        } catch (error) {
+        } catch {
           return null;
         }
       })
@@ -314,7 +314,7 @@ export function getContentList(
       });
 
     return files;
-  } catch (error) {
+  } catch {
     return [];
   }
 }

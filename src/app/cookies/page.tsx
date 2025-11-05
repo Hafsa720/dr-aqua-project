@@ -1,16 +1,9 @@
 import React from 'react';
 
-import LegalPage from '@/components/pages/LegalPage';
+import CookieClientWrapper from '@/components/pages/CookieClientWrapper';
 
 const CookiePolicy = () => {
-  return (
-    <LegalPage
-      documentType='cookie-policy'
-      title='Cookie Policy'
-      description='Learn about how RapidBizz uses cookies and similar technologies to enhance your browsing experience.'
-      subtitle='We use cookies to improve your experience and provide personalized services.'
-    />
-  );
+  return <CookieClientWrapper />;
 };
 
 export default CookiePolicy;

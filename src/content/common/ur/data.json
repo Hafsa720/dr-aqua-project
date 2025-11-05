@@ -21,11 +21,12 @@
       "contact": "+971 50 123 4567",
       "link": "https://wa.me/971501234567"
     },
+
     {
       "icon": "FaMapMarkerAlt",
       "title": "ہمارے پاس آئیں",
-      "description": "دبئی میں ہمارا دفتر",
-      "contact": "دبئی، متحدہ عرب امارات",
+      "description": "پاکستان میں ہمارا دفتر",
+      "contact": "بہاولپور، پاکستان",
       "link": "https://maps.google.com"
     }
   ],

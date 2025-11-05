@@ -53,7 +53,8 @@ const ComponentTester: React.FC<ComponentTesterProps> = ({
 }) => {
   const [currentProps, setCurrentProps] = useState(defaultProps);
   const [showControls, { toggle: toggleControls }] = useToggle(true);
-  const [showCode, { toggle: _toggleCode }] = useToggle(false);
+  // intentionally unused state (kept for future UI) - prefix with _ to satisfy lint
+  const [_showCode, { toggle: _toggleCode }] = useToggle(false);
   const [viewMode, setViewMode] = useState<'preview' | 'code' | 'both'>(
     'preview',
   );
