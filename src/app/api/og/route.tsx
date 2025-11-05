@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     const title = searchParams.get('title') ?? 'Dr.Aqua';
     const description =
       searchParams.get('description') ??
-      'Professional Web Development Services';
+      'Premium water purification systems — RO, carbon, and sediment filters.';
     const theme = searchParams.get('theme') ?? 'dark';
     const templateTitle = searchParams.get('templateTitle');
 
