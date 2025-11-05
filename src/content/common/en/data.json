@@ -11,15 +11,15 @@
       "icon": "FaPhone",
       "title": "Call Us",
       "description": "Speak with our team",
-      "contact": "+971 50 123 4567",
-      "link": "tel:+971501234567"
+      "contact": "+92 334 7071759",
+      "link": "tel:+923347071759"
     },
     {
       "icon": "FaWhatsapp",
       "title": "WhatsApp",
       "description": "Quick chat on WhatsApp",
-      "contact": "+971 50 123 4567",
-      "link": "https://wa.me/971501234567"
+      "contact": "++92 334 7071759",
+      "link": "https://wa.me/923347071759"
     },
     {
       "icon": "FaMapMarkerAlt",

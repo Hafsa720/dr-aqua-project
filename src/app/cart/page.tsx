@@ -117,7 +117,7 @@ export default function CartPage() {
             <Button
               asChild
               size='lg'
-              className='bg-secondary-600 hover:bg-secondary-700 text-white'
+              className='bg-secondary-600 hover:bg-secondary-700 text-white cursor-pointer'
             >
               <Link href='/products'>
                 {labels.startShopping} <ArrowRight className='ml-2 h-4 w-4' />
@@ -140,7 +140,7 @@ export default function CartPage() {
           <Button
             variant='outline'
             onClick={clearCart}
-            className='bg-transparent border-primary-300 text-primary-700 hover:bg-primary-50'
+            className='bg-transparent border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer'
           >
             <Trash2 className='h-4 w-4 mr-2' />
             {labels.clearCart}
@@ -185,7 +185,7 @@ export default function CartPage() {
                             variant='ghost'
                             size='sm'
                             onClick={() => removeItem(item.id)}
-                            className='text-secondary-500 hover:text-secondary-600 hover:bg-secondary-50'
+                            className='text-secondary-500 hover:text-secondary-600 hover:bg-secondary-50 cursor-pointer'
                           >
                             <Trash2 className='h-4 w-4' />
                           </Button>
@@ -201,7 +201,7 @@ export default function CartPage() {
                                 updateQuantity(item.id, quantity - 1)
                               }
                               disabled={quantity <= 1}
-                              className='border-primary-300 text-primary-700 hover:bg-primary-50'
+                              className='border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer'
                             >
                               <Minus className='h-3 w-3' />
                             </Button>
@@ -214,7 +214,7 @@ export default function CartPage() {
                               onClick={() =>
                                 updateQuantity(item.id, quantity + 1)
                               }
-                              className='border-primary-300 text-primary-700 hover:bg-primary-50'
+                              className='border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer'
                             >
                               <Plus className='h-3 w-3' />
                             </Button>
@@ -222,12 +222,26 @@ export default function CartPage() {
 
                           {/* Price */}
                           <div className='text-right'>
-                            <div className='font-bold text-lg text-primary-600'>
-                              ${item.price * quantity}
-                            </div>
-                            <div className='text-sm text-primary-500'>
-                              ${item.price} {labels.each}
-                            </div>
+                            {item.price === 0 ? (
+                              <a
+                                href='https://wa.me/923347071759'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                className='font-bold text-lg text-secondary-600 underline hover:text-secondary-700 focus:outline-none cursor-pointer'
+                                aria-label='Consult us on WhatsApp'
+                              >
+                                Consult us
+                              </a>
+                            ) : (
+                              <>
+                                <div className='font-bold text-lg text-primary-600'>
+                                  PKR {item.price * quantity}
+                                </div>
+                                <div className='text-sm text-primary-500'>
+                                  PKR {item.price} {labels.each}
+                                </div>
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -251,7 +265,7 @@ export default function CartPage() {
                   <div className='flex justify-between text-sm'>
                     <span className='text-primary-600'>{labels.subtotal}</span>
                     <span className='font-medium text-primary-800'>
-                      ${total.toFixed(2)}
+                      PKR {total.toFixed(2)}
                     </span>
                   </div>
                   <div className='flex justify-between text-sm'>
@@ -266,7 +280,9 @@ export default function CartPage() {
 
                 <div className='flex justify-between text-lg font-bold'>
                   <span className='text-primary-900'>{labels.total}</span>
-                  <span className='text-primary-600'>${total.toFixed(2)}</span>
+                  <span className='text-primary-600'>
+                    PKR {total.toFixed(2)}
+                  </span>
                 </div>
 
                 <div className='space-y-3 pt-4'>
@@ -275,7 +291,7 @@ export default function CartPage() {
                   </p>
                   <Button
                     onClick={generateWhatsAppMessage}
-                    className='w-full bg-green-600 hover:bg-green-700 text-white'
+                    className='w-full bg-green-600 hover:bg-green-700 text-white cursor-pointer'
                     size='lg'
                   >
                     <MessageCircle className='mr-2 h-5 w-5' />
@@ -284,7 +300,7 @@ export default function CartPage() {
                   <Button
                     onClick={generateEmailMessage}
                     variant='outline'
-                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
+                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer'
                     size='lg'
                   >
                     <Mail className='mr-2 h-5 w-5' />
@@ -293,7 +309,7 @@ export default function CartPage() {
                   <Button
                     asChild
                     variant='outline'
-                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50'
+                    className='w-full border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer'
                   >
                     <Link href='/products'>{labels.continueShopping}</Link>
                   </Button>
