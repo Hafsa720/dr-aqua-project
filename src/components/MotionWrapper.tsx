@@ -37,7 +37,7 @@ const MotionDivComponent: React.FC<MotionDivProps> = ({
   onHoverEnd,
   style,
   ref,
-  ...props
+  ...rest
 }) => {
   return (
     <div
@@ -47,6 +47,7 @@ const MotionDivComponent: React.FC<MotionDivProps> = ({
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
       style={style}
+      {...(rest as any)}
     >
       {children}
     </div>

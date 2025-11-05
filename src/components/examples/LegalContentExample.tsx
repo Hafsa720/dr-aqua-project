@@ -112,7 +112,7 @@ async function DirectUsageExample() {
         {/* Similar blocks for privacy and cookies */}
       </div>
     );
-  } catch (error) {
+  } catch {
     return <div>Failed to load documents</div>;
   }
 }
