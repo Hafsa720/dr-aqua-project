@@ -28,9 +28,7 @@ const PWAWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         // Optionally show update notification
         if (confirm('A new version is available. Reload to update?')) {
           serviceWorker.skipWaiting();
-          if (typeof window !== 'undefined') {
-            window.location.reload();
-          }
+          window.location.reload();
         }
       },
       onOffline: () => {

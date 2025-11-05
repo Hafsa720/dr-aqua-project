@@ -1,6 +1,6 @@
 'use client';
 
-import { Minus, Plus, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -58,12 +58,8 @@ export function ProductCard({
     contextLang === 'ur' ? 'ur' : 'en'
   ) as ProductLanguage;
   const [labels, setLabels] = useState(getProductCardLabels('en'));
-  const { addItem, updateQuantity, removeItem, items } = useCart();
+  const { addItem } = useCart();
   const [isAdding, setIsAdding] = useState(false);
-
-  // Check if product is in cart and get quantity
-  const cartItem = items.find((item) => item.id === product.id);
-  const quantity = cartItem?.quantity || 0;
 
   useEffect(() => {
     setLabels(getProductCardLabels(language));
@@ -100,30 +96,6 @@ export function ProductCard({
     });
 
     setTimeout(() => setIsAdding(false), 500);
-  };
-
-  const handleIncrement = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    updateQuantity(product.id, quantity + 1);
-  };
-
-  const handleDecrement = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (quantity === 1) {
-      // Remove from cart with toast
-      removeItem(product.id);
-      toast.info(labels.toastRemoved, {
-        description: labels.toastRemovedDescription.replace(
-          '{productName}',
-          product.name[language],
-        ),
-      });
-    } else {
-      updateQuantity(product.id, quantity - 1);
-    }
   };
 
   if (variant === 'compact') {
@@ -181,52 +153,24 @@ export function ProductCard({
             </div>
 
             <div className='flex gap-2 pt-2'>
-              {showAddToCart && quantity > 0 ? (
-                <div className='flex items-center justify-center gap-1 bg-white rounded-md border border-primary-300 px-1 w-full shadow-sm'>
-                  <Button
-                    onClick={handleDecrement}
-                    size='sm'
-                    variant='ghost'
-                    className='h-8 w-8 p-0 hover:bg-primary-50 text-primary-700 cursor-pointer'
-                  >
-                    <Minus className='h-3.5 w-3.5' />
-                  </Button>
-                  <span className='min-w-8 text-center text-sm font-semibold text-primary-900'>
-                    {quantity}
-                  </span>
-                  <Button
-                    onClick={handleIncrement}
-                    size='sm'
-                    variant='ghost'
-                    className='h-8 w-8 p-0 hover:bg-primary-50 text-primary-700 cursor-pointer'
-                  >
-                    <Plus className='h-3.5 w-3.5' />
-                  </Button>
-                </div>
-              ) : (
-                <>
-                  <Button
-                    asChild
-                    variant='outline'
-                    size='sm'
-                    className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
-                  >
-                    <Link href={`/products/${product.slug}`}>
-                      {labels.details}
-                    </Link>
-                  </Button>
-                  {showAddToCart && (
-                    <Button
-                      onClick={handleAddToCart}
-                      size='sm'
-                      className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white cursor-pointer'
-                      disabled={isAdding}
-                    >
-                      <ShoppingCart className='h-4 w-4 mr-1.5' />
-                      {isAdding ? labels.adding : labels.add}
-                    </Button>
-                  )}
-                </>
+              <Button
+                asChild
+                variant='outline'
+                size='sm'
+                className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
+              >
+                <Link href={`/products/${product.slug}`}>{labels.details}</Link>
+              </Button>
+              {showAddToCart && (
+                <Button
+                  onClick={handleAddToCart}
+                  size='sm'
+                  className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white'
+                  disabled={isAdding}
+                >
+                  <ShoppingCart className='h-4 w-4 mr-1.5' />
+                  {isAdding ? labels.adding : labels.add}
+                </Button>
               )}
             </div>
           </div>
@@ -287,50 +231,24 @@ export function ProductCard({
             </div>
           </div>
           <div className='flex gap-2 pt-2'>
-            {showAddToCart && quantity > 0 ? (
-              <div className='flex items-center justify-center gap-2 bg-white rounded-md border border-primary-300 px-2 py-1 w-full shadow-sm'>
-                <Button
-                  onClick={handleDecrement}
-                  size='sm'
-                  variant='ghost'
-                  className='h-9 w-9 p-0 hover:bg-primary-50 text-primary-700 cursor-pointer'
-                >
-                  <Minus className='h-4 w-4' />
-                </Button>
-                <span className='min-w-10 text-center text-base font-semibold text-primary-900'>
-                  {quantity}
-                </span>
-                <Button
-                  onClick={handleIncrement}
-                  size='sm'
-                  variant='ghost'
-                  className='h-9 w-9 p-0 hover:bg-primary-50 text-primary-700 cursor-pointer'
-                >
-                  <Plus className='h-4 w-4' />
-                </Button>
-              </div>
-            ) : (
-              <>
-                <Button
-                  asChild
-                  variant='outline'
-                  className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
-                >
-                  <Link href={`/products/${product.slug}`}>
-                    {labels.viewDetails}
-                  </Link>
-                </Button>
-                {showAddToCart && (
-                  <Button
-                    onClick={handleAddToCart}
-                    className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white cursor-pointer'
-                    disabled={isAdding}
-                  >
-                    <ShoppingCart className='h-4 w-4 mr-2' />
-                    {isAdding ? labels.adding : labels.addToCart}
-                  </Button>
-                )}
-              </>
+            <Button
+              asChild
+              variant='outline'
+              className='flex-1 border-primary-300 text-primary-700 hover:bg-primary-50 hover:border-primary-400'
+            >
+              <Link href={`/products/${product.slug}`}>
+                {labels.viewDetails}
+              </Link>
+            </Button>
+            {showAddToCart && (
+              <Button
+                onClick={handleAddToCart}
+                className='flex-1 bg-secondary-600 hover:bg-secondary-700 shadow-sm text-white'
+                disabled={isAdding}
+              >
+                <ShoppingCart className='h-4 w-4 mr-2' />
+                {isAdding ? labels.adding : labels.addToCart}
+              </Button>
             )}
           </div>
         </div>

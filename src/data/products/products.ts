@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: '1',
     slug: 'ro-100-gallon-per-day',
-    priceRange: '17,000',
+    priceRange: '0',
     image: '/products/ro-hundred-gallon-per-day.jpg',
     inStock: true,
     featured: true,

@@ -13,7 +13,6 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { toast } from 'sonner';
 
 import { useCart } from '@/components/cart-provider';
 import { Badge } from '@/components/ui/badge';
@@ -82,12 +81,6 @@ export default function ProductDetailPage() {
         category: product.category[language],
       });
     }
-
-    // Show success toast notification
-    toast.success('Added to cart!', {
-      description: `${quantity} x ${product.name[language]} has been added to your cart.`,
-      duration: 3000,
-    });
   };
 
   return (
@@ -97,7 +90,7 @@ export default function ProductDetailPage() {
         <div className='flex items-center gap-2 text-sm text-muted-foreground'>
           <Link
             href='/products'
-            className='hover:text-primary flex items-center gap-1 cursor-pointer transition-colors duration-200'
+            className='hover:text-primary flex items-center gap-1'
           >
             <ArrowLeft className='h-4 w-4' />
             {labels.backToShop}
@@ -108,7 +101,7 @@ export default function ProductDetailPage() {
         <div className='grid lg:grid-cols-2 gap-12'>
           {/* Product Image */}
           <div className='space-y-4'>
-            <div className='relative overflow-hidden rounded-lg aspect-square bg-primary-50 shadow-md hover:shadow-xl transition-shadow duration-300'>
+            <div className='relative overflow-hidden rounded-lg aspect-square bg-primary-50'>
               <Image
                 src={product.image}
                 alt={product.name[language]}
@@ -168,19 +161,17 @@ export default function ProductDetailPage() {
             </div>
 
             <div className='space-y-4'>
-              {product.priceRange !== '0' && (
-                <div className='space-y-2'>
-                  <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
-                    Price Range
-                  </div>
-                  <div className='text-3xl font-bold text-primary-600'>
-                    PKR {product.priceRange}
-                  </div>
-                  <p className='text-xs text-primary-500 italic'>
-                    *Final price varies by model & requirements
-                  </p>
+              <div className='space-y-2'>
+                <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                  Price Range
                 </div>
-              )}
+                <div className='text-3xl font-bold text-primary-600'>
+                  PKR {product.priceRange}
+                </div>
+                <p className='text-xs text-primary-500 italic'>
+                  *Final price varies by model & requirements
+                </p>
+              </div>
 
               <div className='flex items-center gap-2'>
                 <CheckCircle className='h-5 w-5 text-secondary' />
@@ -203,7 +194,7 @@ export default function ProductDetailPage() {
                   value={quantity.toString()}
                   onValueChange={(value) => setQuantity(Number(value))}
                 >
-                  <SelectTrigger className='w-24 border-primary-300 hover:border-primary-400 cursor-pointer transition-all duration-200'>
+                  <SelectTrigger className='w-24 border-primary-300 hover:border-primary-400'>
                     <SelectValue placeholder='1' />
                   </SelectTrigger>
                   <SelectContent>
@@ -220,7 +211,7 @@ export default function ProductDetailPage() {
                 <Button
                   onClick={handleAddToCart}
                   size='lg'
-                  className='flex-1 bg-secondary-600 hover:bg-secondary-700 text-white cursor-pointer transition-all duration-200'
+                  className='flex-1 bg-secondary-600 hover:bg-secondary-700 text-white'
                   disabled={!product.inStock}
                 >
                   <ShoppingCart className='h-5 w-5 mr-2' />
@@ -230,7 +221,7 @@ export default function ProductDetailPage() {
                   asChild
                   variant='outline'
                   size='lg'
-                  className='border-primary-300 text-primary-700 hover:bg-primary-50 cursor-pointer transition-all duration-200'
+                  className='border-primary-300 text-primary-700 hover:bg-primary-50'
                 >
                   <Link href='/contact'>{labels.getQuote}</Link>
                 </Button>
@@ -257,23 +248,17 @@ export default function ProductDetailPage() {
 
         {/* Product Details Tabs */}
         <Tabs defaultValue='specifications' className='w-full'>
-          <TabsList className='grid w-full grid-cols-2 bg-primary-50'>
-            <TabsTrigger
-              value='specifications'
-              className='cursor-pointer transition-all duration-200'
-            >
+          <TabsList className='grid w-full grid-cols-2'>
+            <TabsTrigger value='specifications'>
               {labels.specifications}
             </TabsTrigger>
-            <TabsTrigger
-              value='installation'
-              className='cursor-pointer transition-all duration-200'
-            >
+            <TabsTrigger value='installation'>
               {labels.installation}
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value='specifications' className='space-y-4'>
-            <Card className='border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-200'>
+            <Card className='border-primary-200'>
               <CardHeader>
                 <CardTitle className='text-primary-900'>
                   {labels.technicalSpecs}
@@ -302,7 +287,7 @@ export default function ProductDetailPage() {
           </TabsContent>
 
           <TabsContent value='installation' className='space-y-4'>
-            <Card className='border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-200'>
+            <Card className='border-primary-200'>
               <CardHeader>
                 <CardTitle className='text-primary-900'>
                   {labels.installationInfo}
@@ -329,7 +314,7 @@ export default function ProductDetailPage() {
                 <div className='pt-4'>
                   <Button
                     asChild
-                    className='bg-secondary-600 hover:bg-secondary-700 text-white cursor-pointer transition-all duration-200'
+                    className='bg-secondary-600 hover:bg-secondary-700 text-white'
                   >
                     <Link href='/services'>{labels.bookInstallation}</Link>
                   </Button>
