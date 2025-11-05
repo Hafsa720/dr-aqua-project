@@ -47,7 +47,7 @@ export async function loadContent<T = Record<string, unknown>>(
     contentCache.set(cacheKey, data);
 
     return data;
-  } catch (error) {
+  } catch {
     // Fallback to default language if requested and not already using it
     if (fallback && language !== contentConfig.fallbackLanguage) {
       return loadContent({

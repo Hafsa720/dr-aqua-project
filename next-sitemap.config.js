@@ -8,7 +8,7 @@
  */
 module.exports = {
   // Base URL of your website (without trailing slash)
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://rapidbizz.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://Dr.Aqua.com',
 
   // Generate robots.txt file
   generateRobotsTxt: true,
@@ -52,7 +52,7 @@ module.exports = {
     ],
     additionalSitemaps: [
       // Add additional sitemaps if needed
-      // 'https://rapidbizz.com/blog-sitemap.xml',
+      // 'https://Dr.Aqua.com/blog-sitemap.xml',
     ],
   },
 

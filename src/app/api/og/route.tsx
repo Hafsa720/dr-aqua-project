@@ -8,10 +8,10 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
 
     // Get parameters from URL
-    const title = searchParams.get('title') ?? 'RapidBizz';
+    const title = searchParams.get('title') ?? 'Dr.Aqua';
     const description =
       searchParams.get('description') ??
-      'Professional Web Development Services';
+      'Premium water purification systems — RO, carbon, and sediment filters.';
     const theme = searchParams.get('theme') ?? 'dark';
     const templateTitle = searchParams.get('templateTitle');
 
@@ -68,6 +68,10 @@ export async function GET(request: NextRequest) {
               alignItems: 'center',
               marginBottom: '40px',
               zIndex: 1,
+              /* Ensure the brand/logo block remains LTR so it doesn't get visually reversed
+               when the generated OG title/description are in RTL languages like Urdu. */
+              direction: 'ltr',
+              unicodeBidi: 'isolate',
             }}
           >
             <div
@@ -84,7 +88,13 @@ export async function GET(request: NextRequest) {
               }}
             >
               <span
-                style={{ color: 'white', fontSize: '28px', fontWeight: 'bold' }}
+                style={{
+                  color: 'white',
+                  fontSize: '28px',
+                  fontWeight: 'bold',
+                  /* ensure the single-letter logo glyph renders normally */
+                  direction: 'ltr',
+                }}
               >
                 R
               </span>
@@ -95,9 +105,10 @@ export async function GET(request: NextRequest) {
                 fontWeight: 'bold',
                 color: currentTheme.text,
                 letterSpacing: '-0.02em',
+                direction: 'ltr',
               }}
             >
-              RapidBizz
+              Dr.Aqua
             </span>
           </div>
 

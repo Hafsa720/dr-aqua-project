@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - OKLCH color system implementation
 
 ### Changed
-- Rebranded from RapidBizz to Dr. Aqua
+- Rebranded from Dr.Aqua to Dr. Aqua
 - Updated footer logo to Dr. Aqua branding
 - Updated contact information with Bahawalpur location
 - Updated copyright notice to Dr. Aqua
@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - Original starter template branding
-- RapidBizz branding
+- Dr.Aqua branding
 - Outdated dependencies and configurations
 
 ## [1.0.0] - 2024-01-01

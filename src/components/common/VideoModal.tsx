@@ -28,7 +28,7 @@ const VideoModal: React.FC<VideoModalProps> = ({
   isOpen,
   onClose,
   title = 'Our Story',
-  description = 'Discover how RapidBizz is transforming the digital landscape, one project at a time.',
+  description = 'Discover how Dr.Aqua is transforming the digital landscape, one project at a time.',
   videoUrl,
   youtubeId,
 }) => {

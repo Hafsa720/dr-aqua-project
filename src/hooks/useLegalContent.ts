@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { MarkdownContent } from '@/lib/markdown';
 
 /**
@@ -13,13 +14,19 @@ export function useLegalContent(documentType: string) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const { language } = useLanguage();
+
   useEffect(() => {
     const loadContent = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(`/api/legal/${documentType}`);
+        // Request the API with the currently selected language so the server
+        // can return the localized markdown (falls back to default when missing).
+        const response = await fetch(
+          `/api/legal/${documentType}?lang=${encodeURIComponent(language)}`,
+        );
 
         if (!response.ok) {
           throw new Error(
@@ -40,7 +47,7 @@ export function useLegalContent(documentType: string) {
     if (documentType) {
       loadContent();
     }
-  }, [documentType]);
+  }, [documentType, language]);
 
   // Extract effective date and last updated from content
   const extractDates = (markdownContent: string) => {

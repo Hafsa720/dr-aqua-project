@@ -1,66 +1,46 @@
 # 🔒 Privacy Policy
 
-**Effective Date:** September 1, 2025  
-**Last Updated:** September 1, 2025
+**Effective Date:** November 4, 2025  
+**Last Updated:** November 4, 2025
 
-## 📋 Overview
+At Dr. Aqua Water Filter, we respect and protect your privacy. This policy explains how we collect, use, and safeguard your personal information.
 
-RapidBizz protects your privacy when using our digital agency services in Dubai, UAE. This policy explains how we handle your personal information.
+## 1. 📊 Information We Collect
 
-## 📊 Information We Collect
+We may collect your name, phone number, email, and address when you place an order, fill out a contact form, or subscribe to updates.
 
-**Personal Information:**
+## 2. 🎯 How We Use Your Information
 
-- Contact details (name, email, phone)
-- Business information and project requirements
-- Messages and communications
+Your information is used to:
 
-**Technical Information:**
+- Process and deliver your orders
+- Respond to your inquiries
+- Improve our products and customer experience
+- Send updates or promotional offers (only with your consent)
 
-- Basic website usage data
-- IP address and browser type
-- Essential cookies for website functionality
+## 3. 🔐 Data Protection
 
-## 🎯 How We Use Information
+We use secure methods to protect your personal data. Your information is never sold, rented, or shared with third parties, except with trusted service providers necessary for order fulfillment or payment processing.
 
-- Deliver web development and digital services
-- Process payments and manage projects
-- Provide customer support
-- Send project updates (with consent for marketing)
-- Comply with UAE legal requirements
+## 4. 🍪 Cookies
 
-## 🤝 Information Sharing
+Our website may use cookies to enhance your browsing experience and analyze traffic. You can manage cookie preferences through your browser settings.
 
-We **never sell** your data. Limited sharing only with:
+## 5. 🛡️ Your Rights
 
-- Essential service providers (hosting, payments)
-- UAE authorities when legally required
+You can request to update or delete your personal information anytime by contacting us at info@draqua.com.
 
-## 🔐 Data Security
+## 6. 🔄 Policy Updates
 
-Your information is protected with SSL encryption, secure servers, and regular security updates.
-
-## ⏰ Data Retention
-
-- Active clients: Relationship duration + 7 years
-- Marketing data: Until you opt out
-- As required by UAE law
-
-## 🛡️ Your Rights
-
-Under UAE Data Protection Law, you can access, correct, delete, or transfer your data. Contact us to exercise these rights.
-
-## 🇦🇪 UAE Compliance
-
-This policy complies with UAE Data Protection Law (Federal Decree-Law No. 45 of 2021) and GDPR for EU clients.
+We may update this Privacy Policy occasionally. Any changes will be posted on this page with a new effective date.
 
 ## 📞 Contact Us
 
-**RapidBizz**  
-📧 privacy@rapidbizz.com  
+**Dr. Aqua Water Filter**  
+📧 info@draqua.com  
 📱 +971 50 123 4567  
-📍 Business Bay, Dubai, UAE
+📍 Bahawalpur, Pakistan
 
 ---
 
-_Last updated September 1, 2025. This policy reflects our commitment to protecting your privacy while providing excellent digital services in the UAE._
+_Last updated November 4, 2025. We are committed to protecting your privacy._

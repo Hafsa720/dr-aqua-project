@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
 /**
  * Configuration for type-safe environment variables.
  * Imported through src/app/page.tsx
@@ -15,7 +14,7 @@ envVariables.parse(process.env);
 declare global {
   namespace NodeJS {
     // Using type instead of interface to satisfy @typescript-eslint/no-empty-object-type
-    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+
     interface ProcessEnv extends z.infer<typeof envVariables> {}
   }
 }

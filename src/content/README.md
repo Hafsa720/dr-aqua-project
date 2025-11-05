@@ -1,6 +1,6 @@
 # 🌐 Content Management System
 
-**Complete multilingual content management for RapidBizz** - Update website content without touching code!
+**Complete multilingual content management for Dr.Aqua** - Update website content without touching code!
 
 ## 📂 Project Structure
 

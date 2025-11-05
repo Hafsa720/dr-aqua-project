@@ -17,7 +17,7 @@ jobs:
         with:
           # Change this to your repository name
           release-type: node
-          package-name: rapidbizz-agency
+          package-name: Dr.Aqua-agency
           # Use conventional commits for changelog generation
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false},{"type":"docs","section":"Documentation","hidden":false},{"type":"style","section":"Styling","hidden":false},{"type":"refactor","section":"Code Refactoring","hidden":false},{"type":"perf","section":"Performance Improvements","hidden":false},{"type":"test","section":"Tests","hidden":false}]'
 

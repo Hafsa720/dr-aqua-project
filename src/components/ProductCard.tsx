@@ -137,15 +137,19 @@ export function ProductCard({
             </Link>
 
             <div className='space-y-1'>
-              <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
-                Price Range
-              </div>
-              <div className='text-2xl font-bold text-primary-700'>
-                PKR {product.priceRange}
-              </div>
-              <p className='text-xs text-primary-500 italic'>
-                *Contact for exact pricing
-              </p>
+              {product.priceRange !== '0' && (
+                <>
+                  <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                    Price Range
+                  </div>
+                  <div className='text-2xl font-bold text-primary-700'>
+                    PKR {product.priceRange}
+                  </div>
+                  <p className='text-xs text-primary-500 italic'>
+                    *Contact for exact pricing
+                  </p>
+                </>
+              )}
             </div>
 
             <div className='flex gap-2 pt-2'>
@@ -211,15 +215,19 @@ export function ProductCard({
               </CardTitle>
             </Link>
             <div className='mt-3 space-y-1'>
-              <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
-                Price Range
-              </div>
-              <div className='text-2xl font-bold text-primary-600'>
-                PKR {product.priceRange}
-              </div>
-              <p className='text-xs text-primary-500 italic'>
-                *Final price varies by model & requirements
-              </p>
+              {product.priceRange !== '0' && (
+                <>
+                  <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                    Price Range
+                  </div>
+                  <div className='text-2xl font-bold text-primary-600'>
+                    PKR {product.priceRange}
+                  </div>
+                  <p className='text-xs text-primary-500 italic'>
+                    *Final price varies by model & requirements
+                  </p>
+                </>
+              )}
             </div>
           </div>
           <div className='flex gap-2 pt-2'>
