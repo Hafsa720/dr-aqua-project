@@ -427,6 +427,138 @@ Perfect for replacing existing carbon filters or upgrading your water filtration
     },
   },
   {
+    id: '13',
+    slug: 'simple-filter-2-stage-20-inch',
+    priceRange: '0',
+    image: '/products/2-stage-filter.jpg',
+    inStock: true,
+    featured: false,
+    name: { en: 'Simple Filter 2 Stage 20"', ur: 'سادہ فلٹر 2 مرحلہ 20"' },
+    category: { en: 'Residential', ur: 'رہائشی' },
+    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    description: {
+      en: `Simple yet effective 2-stage water filtration system with 20-inch size for high-volume water purification.
+
+## What Makes It Special
+- **2-Stage Filtration** with essential filters removes common contaminants and improves water taste
+- **20-Inch Size** larger capacity for higher volume water filtration and extended filter life
+- **Simple Design** easy to use and maintain for households and small businesses
+- **Vietnam-Made Quality** reliable and durable construction
+- **Affordable Solution** budget-friendly water filtration for daily use
+- **High Flow Rate** handles larger volumes while maintaining filtration quality
+- **Easy Installation** straightforward setup with minimal requirements
+- **Energy Efficient** low power consumption for everyday use
+
+Perfect for families and small businesses seeking reliable, affordable water filtration with larger capacity.`,
+      ur: `اعلیٰ حجم میں پانی کی صفائی کے لیے 20 انچ سائز کے ساتھ سادہ لیکن موثر 2 مرحلہ واٹر فلٹریشن سسٹم۔
+خاندانوں اور چھوٹے کاروبار کے لیے بہترین جو زیادہ صلاحیت کے ساتھ قابل اعتماد، سستا واٹر فلٹریشن حل تلاش کر رہے ہیں۔`,
+    },
+    specifications: {
+      'Filtration Type': {
+        en: '2-Stage Simple Filtration',
+        ur: '2 مرحلہ سادہ فلٹریشن',
+      },
+      'Filtration Stages': {
+        en: '2 Stages',
+        ur: '2 مراحل',
+      },
+      'Filter Size': {
+        en: '20 Inches',
+        ur: '20 انچ',
+      },
+      'Filter Type': {
+        en: 'Sediment and Carbon Filters',
+        ur: 'سیڈمنٹ اور کاربن فلٹرز',
+      },
+      'Flow Rate': { en: '3 GPM', ur: '3 گیلن فی منٹ' },
+      'Filter Life': {
+        en: '4–8 months (depends on water quality)',
+        ur: '4 سے 8 ماہ (پانی کے معیار پر منحصر)',
+      },
+      Dimensions: { en: '20" x 10" x 8"', ur: '20" x 10" x 8"' },
+      Weight: { en: '3.5 kg (approx.)', ur: 'تقریباً 3.5 کلوگرام' },
+      Installation: {
+        en: 'Countertop or wall-mounted (easy installation)',
+        ur: 'کاؤنٹر ٹاپ یا دیوار پر نصب (آسان تنصیب)',
+      },
+      'Power Requirement': {
+        en: 'No power required',
+        ur: 'بجلی کی ضرورت نہیں',
+      },
+      Certifications: {
+        en: 'ISO 9001, NSF/ANSI Standards',
+        ur: 'ISO 9001، NSF/ANSI معیار',
+      },
+      'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
+    },
+  },
+  {
+    id: '14',
+    slug: '3-stage-filter-10-inch',
+    priceRange: '0',
+    image: '/products/3-stage-filter.jpg',
+    inStock: true,
+    featured: false,
+    name: { en: '3 Stage Filter 10"', ur: '3 مرحلہ فلٹر 10"' },
+    category: { en: 'Residential', ur: 'رہائشی' },
+    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    description: {
+      en: `Effective 3-stage water filtration system with 10-inch size for household water purification.
+
+## What Makes It Special
+- **3-Stage Filtration** with advanced filters removes common contaminants and improves water taste and clarity
+- **10-Inch Size** standard size compatible with most filter housings
+- **Sediment, Carbon, and Post-Carbon Filters** comprehensive multi-stage filtration
+- **Vietnam-Made Quality** reliable and durable construction
+- **Affordable Solution** budget-friendly water filtration for daily use
+- **Balanced Flow Rate** maintains good water flow while removing contaminants
+- **Easy Installation** straightforward setup and maintenance
+- **Extended Filter Life** longer lasting compared to 2-stage systems
+
+Perfect for households seeking reliable, effective water filtration with 3-stage technology.`,
+      ur: `گھریلو پانی کی صفائی کے لیے 10 انچ سائز کے ساتھ موثر 3 مرحلہ واٹر فلٹریشن سسٹم۔
+ان خاندانوں کے لیے بہترین جو 3 مرحلہ ٹیکنالوجی کے ساتھ قابل اعتماد، موثر واٹر فلٹریشن تلاش کر رہے ہیں۔`,
+    },
+    specifications: {
+      'Filtration Type': {
+        en: '3-Stage Filtration',
+        ur: '3 مرحلہ فلٹریشن',
+      },
+      'Filtration Stages': {
+        en: '3 Stages',
+        ur: '3 مراحل',
+      },
+      'Filter Size': {
+        en: '10 Inches',
+        ur: '10 انچ',
+      },
+      'Filter Type': {
+        en: 'Sediment, Carbon, and Post-Carbon Filters',
+        ur: 'سیڈمنٹ، کاربن، اور پوسٹ کاربن فلٹرز',
+      },
+      'Flow Rate': { en: '2 GPM', ur: '2 گیلن فی منٹ' },
+      'Filter Life': {
+        en: '4–8 months (depends on water quality)',
+        ur: '4 سے 8 ماہ (پانی کے معیار پر منحصر)',
+      },
+      Dimensions: { en: '10" x 8" x 6"', ur: '10" x 8" x 6"' },
+      Weight: { en: '2.5 kg (approx.)', ur: 'تقریباً 2.5 کلوگرام' },
+      Installation: {
+        en: 'Countertop or wall-mounted (easy installation)',
+        ur: 'کاؤنٹر ٹاپ یا دیوار پر نصب (آسان تنصیب)',
+      },
+      'Power Requirement': {
+        en: 'No power required',
+        ur: 'بجلی کی ضرورت نہیں',
+      },
+      Certifications: {
+        en: 'ISO 9001, NSF/ANSI Standards',
+        ur: 'ISO 9001، NSF/ANSI معیار',
+      },
+      'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
+    },
+  },
+  {
     id: '8',
     slug: 'pp-sediment-filter',
     priceRange: '0',
@@ -555,71 +687,6 @@ Perfect for improving water taste, odor, and quality with advanced carbon block 
     },
   },
   {
-    id: '10',
-    slug: 'ro-100-gallon-per-day-with-stand',
-    priceRange: '0',
-    image: '/products/ro-100-gallon-with-stand.jpg',
-    inStock: true,
-    featured: true,
-    name: {
-      en: 'R.O 100 Gallon Per Day with Stand',
-      ur: 'آر او 100 گیلن فی دن اسٹینڈ کے ساتھ',
-    },
-    category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Taiwan', ur: 'تائیوان' },
-    description: {
-      en: `High-performance Reverse Osmosis system producing 100 gallons per day with included floor stand.
-
-## What Makes It Special
-- **100 Gallon Daily Capacity** produces approximately 380 liters of purified water per day, perfect for medium to large families
-- **6-Stage Filtration** with Sediment, Carbon, RO Membrane, Post Carbon, Mineral, and Alkaline filters removes 99.9% of contaminants
-- **Taiwan-Made RO Membrane** ensures superior quality and long-lasting performance
-- **Included Floor Stand** sturdy metal stand for convenient installation and accessibility
-- **Mineral & Alkaline Enhancement** adds essential minerals back into water for healthy, great-tasting water
-- **Complete Installation Kit** includes all necessary accessories for immediate setup
-- **Energy Efficient** operates on standard 220V power with low electricity consumption
-
-Perfect for families who want reliable, high-capacity water purification with convenient floor-mounted installation.`,
-      ur: `شامل فرش اسٹینڈ کے ساتھ روزانہ 100 گیلن خالص پانی تیار کرنے والا اعلیٰ کارکردگی والا ریورس اوسموسس سسٹم۔
-ان خاندانوں کے لیے بہترین جو موثر، اعلیٰ صلاحیت والا واٹر پیوریفیکیشن اور آسان تنصیب چاہتے ہیں۔`,
-    },
-    specifications: {
-      'Purification Capacity': {
-        en: '100 Gallons Per Day (Approx. 380 Liters/Day)',
-        ur: '100 گیلن فی دن (تقریباً 380 لیٹر فی دن)',
-      },
-      'Filtration Stages': {
-        en: '6 Stages (Sediment, Carbon, RO Membrane, Post Carbon, Mineral, Alkaline)',
-        ur: '6 مراحل (سیڈمنٹ، کاربن، آر او جھلی، پوسٹ کاربن، منرل، الکلائن)',
-      },
-      'Membrane Type': {
-        en: 'High-Efficiency Reverse Osmosis (Made in Taiwan)',
-        ur: 'اعلیٰ معیار کا ریورس اوسموسس (تائیوان میں تیار شدہ)',
-      },
-      'Flow Rate': { en: '2.5 GPM', ur: '2.5 گیلن فی منٹ' },
-      'Filter Life': {
-        en: '6–12 months (depends on water quality)',
-        ur: '6 سے 12 ماہ (پانی کے معیار پر منحصر)',
-      },
-      Dimensions: { en: '24" x 15" x 10"', ur: '24" x 15" x 10"' },
-      Weight: { en: '11–13 kg (approx.)', ur: 'تقریباً 11–13 کلوگرام' },
-      Installation: {
-        en: 'Floor-standing with included metal stand',
-        ur: 'شامل دھات کے اسٹینڈ کے ساتھ فرش پر کھڑا',
-      },
-      'Stand Type': {
-        en: 'Sturdy Metal Floor Stand - Easy Access and Maintenance',
-        ur: 'مضبوط دھات کا فرش اسٹینڈ - آسان رسائی اور دیکھ بھال',
-      },
-      'Power Requirement': { en: '220V / 50Hz', ur: '220 وولٹ / 50 ہرٹز' },
-      Certifications: {
-        en: 'ISO 9001, CE, NSF/ANSI Standards',
-        ur: 'ISO 9001، CE، NSF/ANSI معیار',
-      },
-      'Country of Origin': { en: 'Made in Taiwan', ur: 'تائیوان میں تیار شدہ' },
-    },
-  },
-  {
     id: '11',
     slug: 'aspire-8-stage-stang-gauge-model',
     priceRange: '0',
@@ -685,208 +752,6 @@ Perfect for families who want premium water purification with advanced monitorin
       Certifications: {
         en: 'ISO 9001, CE, NSF/ANSI Standards',
         ur: 'ISO 9001، CE، NSF/ANSI معیار',
-      },
-      'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
-    },
-  },
-  {
-    id: '12',
-    slug: 'ro-water-master-stand-gauge-8-stage',
-    priceRange: '0',
-    image: '/products/ro-water-master-stand-gauge.jpg',
-    inStock: true,
-    featured: true,
-    name: {
-      en: 'R.O Water Master Stand Gauge 8 Stage',
-      ur: 'آر او واٹر ماسٹر اسٹینڈ گیج 8 مرحلہ',
-    },
-    category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
-    description: {
-      en: `Premium 8-stage Reverse Osmosis system with stand gauge monitoring producing 100 gallons per day.
-
-## What Makes It Special
-- **100 Gallon Daily Capacity** produces approximately 380 liters of purified water per day, perfect for medium to large families
-- **8-Stage Advanced Filtration** with premium multi-stage filters removes 99.99% of contaminants
-- **Stand Gauge Monitoring** includes pressure gauge for real-time system monitoring and performance tracking
-- **Advanced Filtration Technology** provides superior water purity with mineral enhancement
-- **Vietnam-Made Quality** ensures reliability and consistent performance
-- **Mineral & Alkaline Enhancement** adds essential minerals back into water for healthy, great-tasting water
-- **Complete Installation Kit** includes all necessary accessories for immediate setup
-- **Energy Efficient** operates on standard 220V power with low electricity consumption
-
-Perfect for families who want premium water purification with advanced monitoring and 8-stage filtration.`,
-      ur: `100 گیلن فی دن تیار کرنے والا اسٹینڈ گیج نگرانی کے ساتھ 8 مرحلہ پریمیم ریورس اوسموسس سسٹم۔
-ان خاندانوں کے لیے بہترین جو ایڈوانسڈ نگرانی اور 8 مرحلہ فلٹریشن کے ساتھ پریمیم پانی کی صفائی چاہتے ہیں۔`,
-    },
-    specifications: {
-      'Purification Capacity': {
-        en: '100 Gallons Per Day (Approx. 380 Liters/Day)',
-        ur: '100 گیلن فی دن (تقریباً 380 لیٹر فی دن)',
-      },
-      'Filtration Stages': {
-        en: '8 Stages (Advanced Multi-Stage)',
-        ur: '8 مراحل (ایڈوانسڈ ملٹی سٹیج)',
-      },
-      'Model Type': {
-        en: 'Stand Gauge Model with Pressure Monitoring',
-        ur: 'دباؤ کی نگرانی کے ساتھ اسٹینڈ گیج ماڈل',
-      },
-      'Membrane Type': {
-        en: 'High-Efficiency Reverse Osmosis (Made in Vietnam)',
-        ur: 'اعلیٰ معیار کا ریورس اوسموسس (ویتنام میں تیار شدہ)',
-      },
-      'Flow Rate': { en: '2.5 GPM', ur: '2.5 گیلن فی منٹ' },
-      'Filter Life': {
-        en: '6–12 months (depends on water quality)',
-        ur: '6 سے 12 ماہ (پانی کے معیار پر منحصر)',
-      },
-      Dimensions: { en: '24" x 15" x 10"', ur: '24" x 15" x 10"' },
-      Weight: { en: '11–13 kg (approx.)', ur: 'تقریباً 11–13 کلوگرام' },
-      Installation: {
-        en: 'Floor stand or wall-mounted (complete kit included)',
-        ur: 'فرش پر اسٹینڈ یا دیوار پر نصب (مکمل کٹ شامل ہے)',
-      },
-      'Monitoring System': {
-        en: 'Stand Gauge - Real-Time Pressure Monitoring',
-        ur: 'اسٹینڈ گیج - حقیقی وقت کی دباؤ کی نگرانی',
-      },
-      'Power Requirement': { en: '220V / 50Hz', ur: '220 وولٹ / 50 ہرٹز' },
-      Certifications: {
-        en: 'ISO 9001, CE, NSF/ANSI Standards',
-        ur: 'ISO 9001، CE، NSF/ANSI معیار',
-      },
-      'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
-    },
-  },
-  {
-    id: '13',
-    slug: 'simple-filter-2-stage-20-inch',
-    priceRange: '0',
-    image: '/products/2-stage-filter.jpg',
-    inStock: true,
-    featured: false,
-    name: { en: 'Simple Filter 2 Stage 20"', ur: 'سادہ فلٹر 2 مرحلہ 20"' },
-    category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
-    description: {
-      en: `Simple yet effective 2-stage water filtration system with 20-inch size for high-volume water purification.
-
-## What Makes It Special
-- **2-Stage Filtration** with essential filters removes common contaminants and improves water taste
-- **20-Inch Size** larger capacity for higher volume water filtration and extended filter life
-- **Simple Design** easy to use and maintain for households and small businesses
-- **Vietnam-Made Quality** reliable and durable construction
-- **Affordable Solution** budget-friendly water filtration for daily use
-- **High Flow Rate** handles larger volumes while maintaining filtration quality
-- **Easy Installation** straightforward setup with minimal requirements
-- **Energy Efficient** low power consumption for everyday use
-
-Perfect for families and small businesses seeking reliable, affordable water filtration with larger capacity.`,
-      ur: `اعلیٰ حجم میں پانی کی صفائی کے لیے 20 انچ سائز کے ساتھ سادہ لیکن موثر 2 مرحلہ واٹر فلٹریشن سسٹم۔
-خاندانوں اور چھوٹے کاروبار کے لیے بہترین جو زیادہ صلاحیت کے ساتھ قابل اعتماد، سستا واٹر فلٹریشن حل تلاش کر رہے ہیں۔`,
-    },
-    specifications: {
-      'Filtration Type': {
-        en: '2-Stage Simple Filtration',
-        ur: '2 مرحلہ سادہ فلٹریشن',
-      },
-      'Filtration Stages': {
-        en: '2 Stages',
-        ur: '2 مراحل',
-      },
-      'Filter Size': {
-        en: '20 Inches',
-        ur: '20 انچ',
-      },
-      'Filter Type': {
-        en: 'Sediment and Carbon Filters',
-        ur: 'سیڈمنٹ اور کاربن فلٹرز',
-      },
-      'Flow Rate': { en: '3 GPM', ur: '3 گیلن فی منٹ' },
-      'Filter Life': {
-        en: '4–8 months (depends on water quality)',
-        ur: '4 سے 8 ماہ (پانی کے معیار پر منحصر)',
-      },
-      Dimensions: { en: '20" x 10" x 8"', ur: '20" x 10" x 8"' },
-      Weight: { en: '3.5 kg (approx.)', ur: 'تقریباً 3.5 کلوگرام' },
-      Installation: {
-        en: 'Countertop or wall-mounted (easy installation)',
-        ur: 'کاؤنٹر ٹاپ یا دیوار پر نصب (آسان تنصیب)',
-      },
-      'Power Requirement': {
-        en: 'No power required',
-        ur: 'بجلی کی ضرورت نہیں',
-      },
-      Certifications: {
-        en: 'ISO 9001, NSF/ANSI Standards',
-        ur: 'ISO 9001، NSF/ANSI معیار',
-      },
-      'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
-    },
-  },
-  {
-    id: '14',
-    slug: '3-stage-filter-10-inch',
-    priceRange: '0',
-    image: '/products/3-stage-filter.jpg',
-    inStock: true,
-    featured: false,
-    name: { en: '3 Stage Filter 10"', ur: '3 مرحلہ فلٹر 10"' },
-    category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
-    description: {
-      en: `Effective 3-stage water filtration system with 10-inch size for household water purification.
-
-## What Makes It Special
-- **3-Stage Filtration** with advanced filters removes common contaminants and improves water taste and clarity
-- **10-Inch Size** standard size compatible with most filter housings
-- **Sediment, Carbon, and Post-Carbon Filters** comprehensive multi-stage filtration
-- **Vietnam-Made Quality** reliable and durable construction
-- **Affordable Solution** budget-friendly water filtration for daily use
-- **Balanced Flow Rate** maintains good water flow while removing contaminants
-- **Easy Installation** straightforward setup and maintenance
-- **Extended Filter Life** longer lasting compared to 2-stage systems
-
-Perfect for households seeking reliable, effective water filtration with 3-stage technology.`,
-      ur: `گھریلو پانی کی صفائی کے لیے 10 انچ سائز کے ساتھ موثر 3 مرحلہ واٹر فلٹریشن سسٹم۔
-ان خاندانوں کے لیے بہترین جو 3 مرحلہ ٹیکنالوجی کے ساتھ قابل اعتماد، موثر واٹر فلٹریشن تلاش کر رہے ہیں۔`,
-    },
-    specifications: {
-      'Filtration Type': {
-        en: '3-Stage Filtration',
-        ur: '3 مرحلہ فلٹریشن',
-      },
-      'Filtration Stages': {
-        en: '3 Stages',
-        ur: '3 مراحل',
-      },
-      'Filter Size': {
-        en: '10 Inches',
-        ur: '10 انچ',
-      },
-      'Filter Type': {
-        en: 'Sediment, Carbon, and Post-Carbon Filters',
-        ur: 'سیڈمنٹ، کاربن، اور پوسٹ کاربن فلٹرز',
-      },
-      'Flow Rate': { en: '2 GPM', ur: '2 گیلن فی منٹ' },
-      'Filter Life': {
-        en: '4–8 months (depends on water quality)',
-        ur: '4 سے 8 ماہ (پانی کے معیار پر منحصر)',
-      },
-      Dimensions: { en: '10" x 8" x 6"', ur: '10" x 8" x 6"' },
-      Weight: { en: '2.5 kg (approx.)', ur: 'تقریباً 2.5 کلوگرام' },
-      Installation: {
-        en: 'Countertop or wall-mounted (easy installation)',
-        ur: 'کاؤنٹر ٹاپ یا دیوار پر نصب (آسان تنصیب)',
-      },
-      'Power Requirement': {
-        en: 'No power required',
-        ur: 'بجلی کی ضرورت نہیں',
-      },
-      Certifications: {
-        en: 'ISO 9001, NSF/ANSI Standards',
-        ur: 'ISO 9001، NSF/ANSI معیار',
       },
       'Country of Origin': { en: 'Made in Vietnam', ur: 'ویتنام میں تیار شدہ' },
     },

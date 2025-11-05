@@ -25,8 +25,6 @@ import {
 } from '@/data/products';
 import type { ProductLanguage } from '@/types/product';
 
-const ITEMS_PER_PAGE = 6;
-
 export default function ShopPage() {
   const { language: contextLang } = useLanguage();
   // Product only supports 'en' and 'ur', fallback to 'en' for other languages
@@ -91,10 +89,11 @@ export default function ShopPage() {
     language,
   ]);
 
-  // Pagination logic
-  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
+  // Force total pages to 2 and distribute products/images accordingly
+  const totalPages = 2;
+  const itemsPerPage = Math.ceil(filteredProducts.length / totalPages);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
   const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
   // Reset to page 1 when filters change
