@@ -227,7 +227,7 @@ export default function CartPage() {
                                 href='https://wa.me/923347071759'
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='font-bold text-lg text-secondary-600 underline hover:text-secondary-700 focus:outline-none cursor-pointer'
+                                className='font-bold text-lg text-primary-600 underline hover:text-primary-700 focus:outline-none cursor-pointer'
                                 aria-label='Consult us on WhatsApp'
                               >
                                 Consult us
@@ -261,29 +261,37 @@ export default function CartPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className='space-y-4'>
-                <div className='space-y-2'>
-                  <div className='flex justify-between text-sm'>
-                    <span className='text-primary-600'>{labels.subtotal}</span>
-                    <span className='font-medium text-primary-800'>
-                      PKR {total.toFixed(2)}
-                    </span>
-                  </div>
-                  <div className='flex justify-between text-sm'>
-                    <span className='text-primary-600'>{labels.shipping}</span>
-                    <span className='font-medium text-secondary-600'>
-                      {labels.free}
-                    </span>
-                  </div>
-                </div>
+                {total > 0 && (
+                  <>
+                    <div className='space-y-2'>
+                      <div className='flex justify-between text-sm'>
+                        <span className='text-primary-600'>
+                          {labels.subtotal}
+                        </span>
+                        <span className='font-medium text-primary-800'>
+                          PKR {total.toFixed(2)}
+                        </span>
+                      </div>
+                      <div className='flex justify-between text-sm'>
+                        <span className='text-primary-600'>
+                          {labels.shipping}
+                        </span>
+                        <span className='font-medium text-secondary-600'>
+                          {labels.free}
+                        </span>
+                      </div>
+                    </div>
 
-                <div className='h-px bg-primary-200'></div>
+                    <div className='h-px bg-primary-200'></div>
 
-                <div className='flex justify-between text-lg font-bold'>
-                  <span className='text-primary-900'>{labels.total}</span>
-                  <span className='text-primary-600'>
-                    PKR {total.toFixed(2)}
-                  </span>
-                </div>
+                    <div className='flex justify-between text-lg font-bold'>
+                      <span className='text-primary-900'>{labels.total}</span>
+                      <span className='text-primary-600'>
+                        PKR {total.toFixed(2)}
+                      </span>
+                    </div>
+                  </>
+                )}
 
                 <div className='space-y-3 pt-4'>
                   <p className='text-sm text-primary-600 text-center'>

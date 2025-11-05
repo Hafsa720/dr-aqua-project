@@ -164,8 +164,25 @@ export function ProductCard({
               </div>
             </Link>
 
-            <div className='space-y-1'>
-              {product.priceRange !== '0' && (
+            <div className='space-y-1 min-h-20 flex flex-col justify-center'>
+              {product.priceRange === '0' ? (
+                <div className='space-y-1'>
+                  <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                    Pricing
+                  </div>
+                  <a
+                    href='https://wa.me/923347071759'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-block text-2xl font-bold text-primary-600 underline hover:text-primary-700 cursor-pointer'
+                  >
+                    Consult us
+                  </a>
+                  <p className='text-xs text-primary-500 italic'>
+                    *Contact for pricing details
+                  </p>
+                </div>
+              ) : (
                 <>
                   <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
                     Price Range
@@ -270,8 +287,25 @@ export function ProductCard({
                 {product.name[language]}
               </CardTitle>
             </Link>
-            <div className='mt-3 space-y-1'>
-              {product.priceRange !== '0' && (
+            <div className='mt-3 space-y-1 min-h-20 flex flex-col justify-center'>
+              {product.priceRange === '0' ? (
+                <div className='space-y-1'>
+                  <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
+                    Pricing
+                  </div>
+                  <a
+                    href='https://wa.me/923347071759'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-block text-2xl font-bold text-primary-600 underline hover:text-primary-700 cursor-pointer'
+                  >
+                    Consult us
+                  </a>
+                  <p className='text-xs text-primary-500 italic'>
+                    *Contact for pricing details
+                  </p>
+                </div>
+              ) : (
                 <>
                   <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide'>
                     Price Range
