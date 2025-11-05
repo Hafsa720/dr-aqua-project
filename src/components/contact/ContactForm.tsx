@@ -104,10 +104,14 @@ ${formData.name}`;
 
     if (platform === 'gmail') {
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${CompanyInfo.email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(gmailUrl, '_blank');
+      if (typeof window !== 'undefined') {
+        window.open(gmailUrl, '_blank');
+      }
     } else {
       const mailtoUrl = `mailto:${CompanyInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoUrl;
+      if (typeof window !== 'undefined') {
+        window.location.href = mailtoUrl;
+      }
     }
   };
 

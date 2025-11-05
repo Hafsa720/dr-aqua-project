@@ -61,7 +61,9 @@ export default function CartPage() {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodedMessage}`;
 
-    window.open(whatsappUrl, '_blank');
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
   };
 
   const generateEmailMessage = () => {
@@ -95,7 +97,9 @@ export default function CartPage() {
     const encodedBody = encodeURIComponent(body);
     const mailtoUrl = `mailto:${companyEmail}?subject=${subject}&body=${encodedBody}`;
 
-    window.location.href = mailtoUrl;
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoUrl;
+    }
   };
 
   if (items.length === 0) {
