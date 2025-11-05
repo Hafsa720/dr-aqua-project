@@ -146,7 +146,7 @@ export default function ServicesPage() {
 
                   <Button
                     onClick={() => handleWhatsAppService(service)}
-                    className='w-full bg-green-600 hover:bg-green-700 text-white'
+                    className='w-full bg-green-600 hover:bg-green-700 text-white cursor-pointer'
                     size='lg'
                   >
                     <FaWhatsapp className='mr-2 h-5 w-5' />
@@ -267,7 +267,7 @@ export default function ServicesPage() {
                     );
                   }}
                   size='lg'
-                  className='w-full bg-secondary-500 hover:bg-secondary-600 text-white'
+                  className='w-full bg-secondary-500 hover:bg-secondary-600 text-white cursor-pointer'
                 >
                   {labels.checkAvailability}
                 </Button>
@@ -285,7 +285,7 @@ export default function ServicesPage() {
                   }}
                   variant='outline'
                   size='lg'
-                  className='w-full border-white text-white hover:bg-white hover:text-primary-500 bg-transparent'
+                  className='w-full border-white text-white hover:bg-white hover:text-primary-500 bg-transparent cursor-pointer'
                 >
                   <FaWhatsapp className='mr-2 h-4 w-4' />
                   {labels.contactUs}
