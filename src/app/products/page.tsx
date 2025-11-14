@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Filter, Search, X } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 
 import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
@@ -27,7 +27,7 @@ import {
 import { getSubcategoryOptions, getSubSubOptions } from '@/data/products';
 import type { ProductLanguage } from '@/types/product';
 
-export default function ShopPage() {
+function ShopPageContent() {
   const { language: contextLang } = useLanguage();
   // Product only supports 'en' and 'ur', fallback to 'en' for other languages
   const language: ProductLanguage = (
@@ -534,5 +534,15 @@ export default function ShopPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense
+      fallback={<div className='container mx-auto px-4 py-8'>Loading...</div>}
+    >
+      <ShopPageContent />
+    </Suspense>
   );
 }
