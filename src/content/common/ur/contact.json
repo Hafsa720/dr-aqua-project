@@ -73,6 +73,13 @@
         "value": "دبئی، متحدہ عرب امارات",
         "description": "ملاقات کا وقت طے کریں",
         "icon": "location-marker"
+      },
+      {
+        "type": "office",
+        "title": "ہمارے دفتر کا دورہ کریں (لاہور)",
+        "value": "سید علی عمران اسٹریٹ، علی پارک، لاہور",
+        "description": "ملاقات کا وقت طے کریں",
+        "icon": "location-marker"
       }
     ]
   },

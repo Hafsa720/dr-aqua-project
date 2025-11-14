@@ -12,12 +12,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { getProductById } from '@/data/products';
 
 export default function CheckoutPage() {
   const { items, clearCart, getTotalPrice } = useCart();
   const total = getTotalPrice();
   const router = useRouter();
   const [isProcessing, setIsProcessing] = useState(false);
+  const { language } = useLanguage();
+  const langKey: 'en' | 'ur' = language === 'ur' ? 'ur' : 'en';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -157,28 +161,37 @@ export default function CheckoutPage() {
                 <CardContent className='space-y-4'>
                   {/* Items */}
                   <div className='space-y-3'>
-                    {items.map((item) => (
-                      <div key={item.id} className='flex gap-3'>
-                        <Image
-                          src={item.image || '/placeholder.svg'}
-                          alt={item.name}
-                          width={64}
-                          height={64}
-                          className='w-16 h-16 object-cover rounded'
-                        />
-                        <div className='flex-1 min-w-0'>
-                          <p className='text-sm font-medium truncate'>
-                            {item.name}
-                          </p>
-                          <p className='text-xs text-muted-foreground'>
-                            Qty: {item.quantity || 1}
-                          </p>
-                          <p className='text-sm font-semibold text-primary'>
-                            ${item.price * (item.quantity || 1)}
-                          </p>
+                    {items.map((item) => {
+                      const product = getProductById(item.id);
+                      const displayName = product
+                        ? product.name[langKey]
+                        : item.name;
+                      const displayImage = product
+                        ? product.image
+                        : item.image || '/placeholder.svg';
+                      return (
+                        <div key={item.id} className='flex gap-3'>
+                          <Image
+                            src={displayImage}
+                            alt={displayName}
+                            width={64}
+                            height={64}
+                            className='w-16 h-16 object-cover rounded'
+                          />
+                          <div className='flex-1 min-w-0'>
+                            <p className='text-sm font-medium truncate'>
+                              {displayName}
+                            </p>
+                            <p className='text-xs text-muted-foreground'>
+                              Qty: {item.quantity || 1}
+                            </p>
+                            <p className='text-sm font-semibold text-primary'>
+                              ${item.price * (item.quantity || 1)}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
 
                   <Separator />

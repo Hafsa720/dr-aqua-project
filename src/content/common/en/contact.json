@@ -73,6 +73,13 @@
         "value": "Dubai, UAE",
         "description": "Schedule a meeting",
         "icon": "location-marker"
+      },
+      {
+        "type": "office",
+        "title": "Visit Our Office (Lahore)",
+        "value": "Syed Ali Imran Street, Ali Park, Lahore",
+        "description": "Schedule a meeting",
+        "icon": "location-marker"
       }
     ]
   },

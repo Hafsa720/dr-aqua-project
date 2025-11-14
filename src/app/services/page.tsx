@@ -92,7 +92,7 @@ export default function ServicesPage() {
             return (
               <Card
                 key={service.id}
-                className='relative hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300'
+                className='relative hover:shadow-xl transition-all duration-300 border-primary-200 hover:border-primary-300 flex flex-col h-full'
               >
                 {service.popular && (
                   <Badge
@@ -113,7 +113,7 @@ export default function ServicesPage() {
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className='space-y-6'>
+                <CardContent className='space-y-6 grow flex flex-col'>
                   <div className='text-center'>
                     <div className='mb-2'>
                       <div className='text-xs font-semibold text-primary-500 uppercase tracking-wide mb-1'>
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  <div className='space-y-2'>
+                  <div className='space-y-2 grow'>
                     {service.features.map((feature, index) => (
                       <div
                         key={index}
@@ -146,7 +146,7 @@ export default function ServicesPage() {
 
                   <Button
                     onClick={() => handleWhatsAppService(service)}
-                    className='w-full bg-green-600 hover:bg-green-700 text-white cursor-pointer'
+                    className='w-full bg-green-600 hover:bg-green-700 text-white cursor-pointer mt-auto'
                     size='lg'
                   >
                     <FaWhatsapp className='mr-2 h-5 w-5' />

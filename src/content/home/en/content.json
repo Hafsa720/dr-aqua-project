@@ -38,19 +38,34 @@
     "learnMore": "Learn More",
     "items": [
       {
-        "title": "Professional Installation",
-        "description": "Expert installation by certified technicians with 2-year warranty",
-        "price": "Starting at PKR 29,700"
+        "title": "Water Filter Installation",
+        "description": "Expert water filter installation by certified technicians with warranty",
+        "price": "Starting at PKR 5,000"
+      },
+      {
+        "title": "Solar System Installation",
+        "description": "Complete solar panel and inverter installation for homes and businesses",
+        "price": "Starting at PKR 150,000"
       },
       {
         "title": "Maintenance & Repair",
         "description": "Regular maintenance and quick repairs to keep your system running",
-        "price": "Starting at PKR 14,700"
+        "price": "Starting at PKR 3,000"
       },
       {
         "title": "Water Quality Testing",
         "description": "Comprehensive water analysis and quality testing services",
-        "price": "Starting at PKR 8,700"
+        "price": "Starting at PKR 2,000"
+      },
+      {
+        "title": "Filter Replacement",
+        "description": "Professional filter cartridge replacement and system check-up",
+        "price": "Starting at PKR 2,500"
+      },
+      {
+        "title": "System Upgrade",
+        "description": "Upgrade your existing filtration system with latest technology",
+        "price": "Starting at PKR 8,000"
       }
     ]
   },

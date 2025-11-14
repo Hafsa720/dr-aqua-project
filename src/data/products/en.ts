@@ -2,7 +2,7 @@
 export const shopLabelsEn = {
   pageTitle: 'Water Filters',
   pageDescription:
-    'Discover our complete range of water filtration systems for home, office, and industrial use.',
+    'Discover our complete range of water filtration systems for home, office, and industrial use — suitable for schools & colleges, control sheds, swimming pools, whole-house filtration, and mineral water plants.',
   searchPlaceholder: 'Search products...',
   categoryLabel: 'Category',
   brandLabel: 'Brand',

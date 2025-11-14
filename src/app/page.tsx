@@ -2,9 +2,11 @@
 
 import {
   ArrowRight,
-  CheckCircle,
   Droplets,
+  Filter,
   Shield,
+  Sun,
+  TrendingUp,
   Wrench,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -40,8 +42,8 @@ export default function HomePage() {
     }
   }, [language]);
 
-  // Get first 3 featured products
-  const featuredProducts = products.filter((p) => p.featured).slice(0, 3);
+  // Get first 6 featured products
+  const featuredProducts = products.filter((p) => p.featured).slice(0, 6);
 
   return (
     <div className='flex flex-col'>
@@ -179,9 +181,9 @@ export default function HomePage() {
               {content.services.description}
             </p>
           </div>
-          <div className='grid md:grid-cols-3 gap-8'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {content.services.items.map((service, index) => {
-              const icons = [Wrench, Shield, CheckCircle];
+              const icons = [Droplets, Sun, Wrench, Shield, Filter, TrendingUp];
               const ServiceIcon = icons[index] || Wrench;
               return (
                 <Card

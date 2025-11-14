@@ -27,6 +27,13 @@
       "description": "Our office in Pakistan",
       "contact": "Bahawalpur, Pakistan",
       "link": "https://maps.google.com"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "Visit Our Office (Lahore)",
+      "description": "Our office in Lahore",
+      "contact": "Syed Ali Imran Street, Ali Park, Lahore",
+      "link": "https://maps.google.com"
     }
   ],
   "socialLinks": [

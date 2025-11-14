@@ -63,6 +63,63 @@ export const servicesEn: Service[] = [
     ],
     popular: false,
   },
+  {
+    id: 'water-supply',
+    slug: '19-litre-water-supply',
+    icon: 'Droplets',
+    title: '19 Litre Water Supply to Home',
+    description:
+      'Fresh, purified 19-litre water bottle delivery service to your home in Bahawalpur. Regular supply with quality assurance.',
+    priceRange: '120 - 180',
+    duration: 'Per bottle',
+    features: [
+      'Fresh purified drinking water',
+      'Regular home delivery service',
+      'Quality tested water bottles',
+      'Affordable per-bottle pricing',
+      'Weekly/monthly supply packages',
+      'Free bottle replacement on damage',
+    ],
+    popular: true,
+  },
+  {
+    id: 'solar-installation',
+    slug: 'solar-system-installation',
+    icon: 'Wrench',
+    title: 'Solar System Installation',
+    description:
+      'Professional solar panel and inverter installation for homes and businesses. Complete setup with panels, battery, and inverter.',
+    priceRange: '150,000 - 500,000',
+    duration: '1-3 days',
+    features: [
+      'Complete solar system setup',
+      'High-quality solar panels',
+      'Battery and inverter installation',
+      'Wiring and mounting included',
+      'System testing and commissioning',
+      '2-year installation warranty',
+    ],
+    popular: false,
+  },
+  {
+    id: 'solar-maintenance',
+    slug: 'solar-repairing-washing',
+    icon: 'Shield',
+    title: 'Solar System Repairing & Washing',
+    description:
+      'Expert solar panel cleaning, maintenance, and repair services. Keep your solar system running at peak efficiency.',
+    priceRange: '2,500 - 8,000',
+    duration: '2-4 hours',
+    features: [
+      'Professional panel washing/cleaning',
+      'Inverter repair and maintenance',
+      'Battery health check and replacement',
+      'Connection and wiring inspection',
+      'Performance optimization',
+      'Emergency repair service available',
+    ],
+    popular: false,
+  },
 ];
 
 export const testimonialsEn: Testimonial[] = [

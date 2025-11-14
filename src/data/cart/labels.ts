@@ -29,7 +29,7 @@ export const cartLabelsEn = {
   secureCheckout: 'Secure checkout',
 
   // WhatsApp message
-  whatsappGreeting: 'السلام علیکم! 🌊\n\n',
+  whatsappGreeting: 'Assalamu Alaikum! 🌊\n\n',
   whatsappIntro:
     "I hope you're doing well. I'm interested in purchasing water filtration systems from *{companyName}* and would like to place an order.\n\n",
   whatsappItemsHeader: '💧 *My Selected Items:*\n',
@@ -37,13 +37,13 @@ export const cartLabelsEn = {
   whatsappQuantity: '📦 Quantity',
   whatsappSubtotal: '💵 Subtotal',
   whatsappTotal: '💎 *Total Amount: ${total}*\n\n',
-  whatsappQuestions: '📞 Could you please provide me with:\n',
-  whatsappPayment: '• Payment options available\n',
-  whatsappDelivery: '• Delivery timeframe\n',
-  whatsappInstallation: '• Installation services (if available)\n',
-  whatsappPromotions: '• Any current promotions or discounts\n\n',
+  whatsappQuestions: '',
+  whatsappPayment: '',
+  whatsappDelivery: '',
+  whatsappInstallation: '',
+  whatsappPromotions: '',
   whatsappReady:
-    "I'm ready to proceed with this order. Please let me know the next steps.\n\n",
+    "I'm ready to proceed with this order. Please tell me the next steps.\n\nThank you for your time! I look forward to your response.\n",
   whatsappThanks: 'Thank you for your time! 🙏\n',
   whatsappLookingForward: 'Looking forward to your response.',
 
@@ -57,13 +57,13 @@ export const cartLabelsEn = {
   emailQuantity: 'Quantity',
   emailSubtotal: 'Subtotal',
   emailTotal: 'TOTAL AMOUNT: ${total}\n\n',
-  emailQuestions: 'Could you please provide me with:\n',
-  emailPayment: '• Payment options available\n',
-  emailDelivery: '• Delivery timeframe\n',
-  emailInstallation: '• Installation services (if available)\n',
-  emailPromotions: '• Any current promotions or discounts\n\n',
+  emailQuestions: '',
+  emailPayment: '',
+  emailDelivery: '',
+  emailInstallation: '',
+  emailPromotions: '',
   emailReady:
-    "I'm ready to proceed with this order. Please let me know the next steps.\n\n",
+    "I'm ready to proceed with this order. Please tell me the next steps.\n\nThank you for your time! I look forward to your response.\n",
   emailThanks: 'Thank you for your time!\n',
   emailLookingForward: 'Looking forward to your response.',
 };
@@ -99,7 +99,7 @@ export const cartLabelsUr = {
   secureCheckout: 'محفوظ چیک آؤٹ',
 
   // WhatsApp message
-  whatsappGreeting: 'السلام علیکم! 🌊\n\n',
+  whatsappGreeting: 'Assalamu Alaikum! 🌊\n\n',
   whatsappIntro:
     'امید ہے آپ خیریت سے ہوں گے۔ میں *{companyName}* سے واٹر فلٹریشن سسٹم خریدنے میں دلچسپی رکھتا/رکھتی ہوں اور آرڈر دینا چاہتا/چاہتی ہوں۔\n\n',
   whatsappItemsHeader: '💧 *میری منتخب کردہ اشیاء:*\n',
@@ -107,13 +107,13 @@ export const cartLabelsUr = {
   whatsappQuantity: '📦 مقدار',
   whatsappSubtotal: '💵 ذیلی کل',
   whatsappTotal: '💎 *کل رقم: ${total}*\n\n',
-  whatsappQuestions: '📞 براہ کرم مجھے یہ معلومات فراہم کریں:\n',
-  whatsappPayment: '• دستیاب ادائیگی کے اختیارات\n',
-  whatsappDelivery: '• ترسیل کی مدت\n',
-  whatsappInstallation: '• تنصیب کی خدمات (اگر دستیاب ہو)\n',
-  whatsappPromotions: '• کوئی موجودہ پروموشن یا رعایت\n\n',
+  whatsappQuestions: '',
+  whatsappPayment: '',
+  whatsappDelivery: '',
+  whatsappInstallation: '',
+  whatsappPromotions: '',
   whatsappReady:
-    'میں اس آرڈر کے ساتھ آگے بڑھنے کے لیے تیار ہوں۔ براہ کرم مجھے اگلے اقدامات بتائیں۔\n\n',
+    'میں اس آرڈر کے ساتھ آگے بڑھنے کے لیے تیار ہوں۔ براہ کرم مجھے اگلے اقدامات بتائیں۔\n\nآپ کے وقت کا شکریہ! آپ کے جواب کا منتظر ہوں\n',
   whatsappThanks: 'آپ کے وقت کا شکریہ! 🙏\n',
   whatsappLookingForward: 'آپ کے جواب کا منتظر ہوں۔',
 
@@ -127,13 +127,13 @@ export const cartLabelsUr = {
   emailQuantity: 'مقدار',
   emailSubtotal: 'ذیلی کل',
   emailTotal: 'کل رقم: ${total}\n\n',
-  emailQuestions: 'براہ کرم مجھے یہ معلومات فراہم کریں:\n',
-  emailPayment: '• دستیاب ادائیگی کے اختیارات\n',
-  emailDelivery: '• ترسیل کی مدت\n',
-  emailInstallation: '• تنصیب کی خدمات (اگر دستیاب ہو)\n',
-  emailPromotions: '• کوئی موجودہ پروموشن یا رعایت\n\n',
+  emailQuestions: '',
+  emailPayment: '',
+  emailDelivery: '',
+  emailInstallation: '',
+  emailPromotions: '',
   emailReady:
-    'میں اس آرڈر کے ساتھ آگے بڑھنے کے لیے تیار ہوں۔ براہ کرم مجھے اگلے اقدامات بتائیں۔\n\n',
+    'میں اس آرڈر کے ساتھ آگے بڑھنے کے لیے تیار ہوں۔ براہ کرم مجھے اگلے اقدامات بتائیں۔\n\nآپ کے وقت کا شکریہ! آپ کے جواب کا منتظر ہوں\n',
   emailThanks: 'آپ کے وقت کا شکریہ!\n',
   emailLookingForward: 'آپ کے جواب کا منتظر ہوں۔',
 };

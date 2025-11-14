@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getCartLabels } from '@/data/cart/labels';
+import { getProductById } from '@/data/products';
 
 export default function CartPage() {
   const { language } = useLanguage();
@@ -26,6 +27,19 @@ export default function CartPage() {
     useCart();
   const total = getTotalPrice();
 
+  // Normalize language to product language keys ('en' | 'ur')
+  const langKey: 'en' | 'ur' = language === 'ur' ? 'ur' : 'en';
+
+  const formatPKR = (value: number | string) => {
+    if (typeof value === 'number') {
+      return new Intl.NumberFormat('en-PK', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format(value);
+    }
+    return value;
+  };
+
   useEffect(() => {
     setLabels(getCartLabels(language));
   }, [language]);
@@ -33,7 +47,6 @@ export default function CartPage() {
   const generateWhatsAppMessage = () => {
     const companyName = 'Dr. Aqua';
     const companyPhone = '+923497415390';
-
     let message = labels.whatsappGreeting;
     message += labels.whatsappIntro.replace('{companyName}', companyName);
     message += labels.whatsappItemsHeader;
@@ -41,22 +54,30 @@ export default function CartPage() {
 
     items.forEach((item: CartItem, index: number) => {
       const quantity = item.quantity || 1;
-      message += `${index + 1}. 🔹 *${item.name}*\n`;
-      message += `   ${labels.whatsappPrice}: $${item.price}\n`;
+      const product = getProductById(item.id);
+      const productName = product ? product.name[langKey] : item.name;
+      const unitPriceLabel = product
+        ? product.priceRange === '0'
+          ? 'Consult'
+          : `PKR ${product.priceRange}`
+        : `PKR ${formatPKR(item.price)}`;
+      const subtotal = item.price * quantity;
+
+      message += `${index + 1}. 🔹 *${productName}*\n`;
+      message += `   ${labels.whatsappPrice}: ${unitPriceLabel}\n`;
       message += `   ${labels.whatsappQuantity}: ${quantity}\n`;
-      message += `   ${labels.whatsappSubtotal}: $${(item.price * quantity).toFixed(2)}\n\n`;
+      message += `   ${labels.whatsappSubtotal}: PKR ${formatPKR(subtotal)}\n\n`;
     });
 
     message += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-    message += labels.whatsappTotal.replace('${total}', total.toFixed(2));
+    message += labels.whatsappTotal.replace(
+      '${total}',
+      `PKR ${formatPKR(total)}`,
+    );
     message += labels.whatsappQuestions;
-    message += labels.whatsappPayment;
-    message += labels.whatsappDelivery;
-    message += labels.whatsappInstallation;
-    message += labels.whatsappPromotions;
     message += labels.whatsappReady;
-    message += labels.whatsappThanks;
-    message += labels.whatsappLookingForward;
+    //message += labels.whatsappThanks;
+    //message += labels.whatsappLookingForward;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${companyPhone}?text=${encodedMessage}`;
@@ -69,7 +90,6 @@ export default function CartPage() {
   const generateEmailMessage = () => {
     const companyEmail = 'info@draqua.com';
     const subject = encodeURIComponent(labels.emailSubject);
-
     let body = labels.emailGreeting;
     body += labels.emailIntro;
     body += labels.emailItemsHeader;
@@ -77,19 +97,24 @@ export default function CartPage() {
 
     items.forEach((item: CartItem, index: number) => {
       const quantity = item.quantity || 1;
-      body += `${index + 1}. ${item.name}\n`;
-      body += `   ${labels.emailPrice}: $${item.price}\n`;
+      const product = getProductById(item.id);
+      const productName = product ? product.name[langKey] : item.name;
+      const unitPriceLabel = product
+        ? product.priceRange === '0'
+          ? 'Consult'
+          : `PKR ${product.priceRange}`
+        : `PKR ${formatPKR(item.price)}`;
+      const subtotal = item.price * quantity;
+
+      body += `${index + 1}. ${productName}\n`;
+      body += `   ${labels.emailPrice}: ${unitPriceLabel}\n`;
       body += `   ${labels.emailQuantity}: ${quantity}\n`;
-      body += `   ${labels.emailSubtotal}: $${(item.price * quantity).toFixed(2)}\n\n`;
+      body += `   ${labels.emailSubtotal}: PKR ${formatPKR(subtotal)}\n\n`;
     });
 
     body += `━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-    body += labels.emailTotal.replace('${total}', total.toFixed(2));
+    body += labels.emailTotal.replace('${total}', `PKR ${formatPKR(total)}`);
     body += labels.emailQuestions;
-    body += labels.emailPayment;
-    body += labels.emailDelivery;
-    body += labels.emailInstallation;
-    body += labels.emailPromotions;
     body += labels.emailReady;
     body += labels.emailThanks;
     body += labels.emailLookingForward;
@@ -152,6 +177,15 @@ export default function CartPage() {
           <div className='lg:col-span-2 space-y-4'>
             {items.map((item: CartItem) => {
               const quantity = item.quantity || 1;
+              const product = getProductById(item.id);
+              const displayName = product ? product.name[langKey] : item.name;
+              const displayCategory = product
+                ? product.category[langKey]
+                : item.category;
+              const displayImage = product
+                ? product.image
+                : item.image || '/placeholder.svg';
+
               return (
                 <Card
                   key={item.id}
@@ -160,10 +194,10 @@ export default function CartPage() {
                   <CardContent className='p-6'>
                     <div className='flex gap-6'>
                       {/* Product Image */}
-                      <div className='flex-shrink-0'>
+                      <div className='shrink-0'>
                         <Image
-                          src={item.image || '/placeholder.svg'}
-                          alt={item.name}
+                          src={displayImage}
+                          alt={displayName}
                           width={96}
                           height={96}
                           className='w-24 h-24 object-cover rounded-lg border border-primary-200'
@@ -175,10 +209,10 @@ export default function CartPage() {
                         <div className='flex justify-between items-start'>
                           <div>
                             <h3 className='font-semibold text-lg text-primary-900'>
-                              {item.name}
+                              {displayName}
                             </h3>
                             <p className='text-sm text-primary-600'>
-                              {item.category}
+                              {displayCategory}
                             </p>
                           </div>
                           <Button

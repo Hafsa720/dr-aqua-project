@@ -2,8 +2,65 @@ import type { Product } from '@/types/product';
 
 export const products: Product[] = [
   {
+    id: '1001',
+    slug: 'ro-2-stage',
+    priceRange: '10,000 - 15,000',
+    image: '/products/2-stage-filter.jpg',
+    inStock: true,
+    featured: false,
+    name: { en: 'RO 2 Stage', ur: 'آر او 2 مرحلے' },
+    category: { en: 'Residential', ur: 'رہائشی' },
+    brand: { en: 'Aqua', ur: 'آکوا' },
+    description: {
+      en: 'Basic 2-stage RO water purification system for small households.',
+      ur: 'چھوٹے گھروں کے لیے بنیادی 2 مرحلہ آر او واٹر پیوریفیکیشن سسٹم۔',
+    },
+    specifications: {
+      'Filtration Stages': { en: '2 Stages', ur: '2 مراحل' },
+      'Flow Rate': { en: '1 GPM', ur: '1 گیلن فی منٹ' },
+    },
+  },
+  {
+    id: '1002',
+    slug: 'ro-3-stage',
+    priceRange: '12,000 - 18,000',
+    image: '/products/3-stage-filter.jpg',
+    inStock: true,
+    featured: false,
+    name: { en: 'RO 3 Stage', ur: 'آر او 3 مرحلے' },
+    category: { en: 'Residential', ur: 'رہائشی' },
+    brand: { en: 'Aqua', ur: 'آکوا' },
+    description: {
+      en: 'Efficient 3-stage RO water purification system for improved water quality.',
+      ur: 'بہتر پانی کے معیار کے لیے موثر 3 مرحلہ آر او واٹر پیوریفیکیشن سسٹم۔',
+    },
+    specifications: {
+      'Filtration Stages': { en: '3 Stages', ur: '3 مراحل' },
+      'Flow Rate': { en: '1.2 GPM', ur: '1.2 گیلن فی منٹ' },
+    },
+  },
+  {
+    id: '1003',
+    slug: 'ro-8-stage',
+    priceRange: '30,000 - 40,000',
+    image: '/products/8-stage-ro-master.png',
+    inStock: true,
+    featured: false,
+    name: { en: 'RO 8 Stage', ur: 'آر او 8 مرحلے' },
+    category: { en: 'Residential', ur: 'رہائشی' },
+    brand: { en: 'Aqua', ur: 'آکوا' },
+    description: {
+      en: 'Advanced 8-stage RO water purification system for maximum contaminant removal.',
+      ur: 'زیادہ سے زیادہ آلودگی دور کرنے کے لیے جدید 8 مرحلہ آر او واٹر پیوریفیکیشن سسٹم۔',
+    },
+    specifications: {
+      'Filtration Stages': { en: '8 Stages', ur: '8 مراحل' },
+      'Flow Rate': { en: '2 GPM', ur: '2 گیلن فی منٹ' },
+    },
+  },
+  {
     id: '1',
-    slug: 'ro-100-gallon-per-day',
+    slug: 'ro-water-master-with-stand',
     priceRange: '20,000 - 30,000',
     image: '/products/ro-hundred-gallon-per-day.jpg',
     inStock: true,
@@ -13,7 +70,7 @@ export const products: Product[] = [
       ur: 'آر او 100 گیلن فی دن',
     },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Taiwan', ur: 'تائیوان' },
+    brand: { en: 'Water Master', ur: 'واٹر ماسٹر' },
     description: {
       en: `High-performance Reverse Osmosis water purification system producing 100 gallons per day of pure, safe drinking water.
 
@@ -63,7 +120,7 @@ Perfect for families who want reliable, high-capacity water purification with ad
   },
   {
     id: '2',
-    slug: 'ro-water-master-100-gallon-per-day',
+    slug: 'ro-water-master-without-stand',
     priceRange: '0',
     image: '/products/ro-water-master.jpg',
     inStock: true,
@@ -73,7 +130,7 @@ Perfect for families who want reliable, high-capacity water purification with ad
       ur: 'آر او واٹر ماسٹر 100 گیلن فی دن',
     },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Water Master', ur: 'واٹر ماسٹر' },
     description: {
       en: `Premium Reverse Osmosis water purification system producing 100 gallons per day of pure, safe drinking water.
 
@@ -127,10 +184,10 @@ Perfect for families who want reliable, high-capacity water purification with ad
     priceRange: '0',
     image: '/products/two-filter.jpg',
     inStock: true,
-    featured: false,
+    featured: true,
     name: { en: 'Dr.Aqua Simple Filter', ur: 'ڈاکٹر ایکوا سادہ فلٹر' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure One', ur: 'پیور ون' },
     description: {
       en: `Simple yet effective 2-stage water filtration system for everyday water purification.
 
@@ -183,7 +240,7 @@ Perfect for families seeking a simple, affordable water filtration solution with
   },
   {
     id: '4',
-    slug: 'aspire-100-gallon-per-day',
+    slug: 'aspire-without-stand-filter',
     priceRange: '0',
     image: '/products/aspire.jpg',
     inStock: true,
@@ -193,7 +250,7 @@ Perfect for families seeking a simple, affordable water filtration solution with
       ur: 'ایسپائر 100 گیلن فی دن',
     },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Aspire', ur: 'ایسپائر' },
     description: {
       en: `Premium 8-stage Reverse Osmosis water purification system producing 100 gallons per day of pure, safe drinking water.
 
@@ -243,14 +300,14 @@ Perfect for families who want premium, high-capacity water purification with adv
   },
   {
     id: '5',
-    slug: 'jamboo-filter-2-stage',
+    slug: 'jumbo-filter-2-stage',
     priceRange: '0',
     image: '/products/jamboo-filter.jpg',
     inStock: true,
-    featured: false,
-    name: { en: 'Jamboo Filter', ur: 'جمبو فلٹر' },
+    featured: true,
+    name: { en: 'Jumbo Filter', ur: 'جمبو فلٹر' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure One', ur: 'پیور ون' },
     description: {
       en: `Reliable 2-stage water filtration system for everyday water purification.
 
@@ -310,7 +367,7 @@ Perfect for families seeking reliable, affordable water filtration with simple 2
     featured: false,
     name: { en: 'Domestic Filter', ur: 'ڈومیسٹک فلٹر' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure One', ur: 'پیور ون' },
     description: {
       en: `Effective 3-stage water filtration system for household water purification.
 
@@ -373,7 +430,7 @@ Perfect for families seeking reliable, affordable water filtration with 3-stage 
       ur: 'گرینولر ایکٹیویٹیڈ کاربن 10"',
     },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure Mac', ur: 'پیور میک' },
     description: {
       en: `Premium granular activated carbon filter cartridge for advanced water purification.
 
@@ -435,7 +492,7 @@ Perfect for replacing existing carbon filters or upgrading your water filtration
     featured: false,
     name: { en: 'Simple Filter 2 Stage 20"', ur: 'سادہ فلٹر 2 مرحلہ 20"' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure One', ur: 'پیور ون' },
     description: {
       en: `Simple yet effective 2-stage water filtration system with 20-inch size for high-volume water purification.
 
@@ -498,10 +555,10 @@ Perfect for families and small businesses seeking reliable, affordable water fil
     priceRange: '0',
     image: '/products/3-stage-filter.jpg',
     inStock: true,
-    featured: false,
+    featured: true,
     name: { en: '3 Stage Filter 10"', ur: '3 مرحلہ فلٹر 10"' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Pure One', ur: 'پیور ون' },
     description: {
       en: `Effective 3-stage water filtration system with 10-inch size for household water purification.
 
@@ -567,7 +624,7 @@ Perfect for households seeking reliable, effective water filtration with 3-stage
     featured: false,
     name: { en: 'PP Sediment Filter', ur: 'پی پی سیڈمنٹ فلٹر' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Aspire', ur: 'ایسپائر' },
     description: {
       en: `High-quality polypropylene sediment filter for water pre-filtration.
 
@@ -629,7 +686,7 @@ Perfect for well water, municipal water, or any source requiring sediment pre-fi
     featured: false,
     name: { en: 'Carbon Block Filter', ur: 'کاربن بلاک فلٹر' },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Aspire', ur: 'ایسپائر' },
     description: {
       en: `Premium activated carbon block filter for comprehensive water filtration.
 
@@ -692,13 +749,13 @@ Perfect for improving water taste, odor, and quality with advanced carbon block 
     priceRange: '0',
     image: '/products/aspire-eight-stage.jpg',
     inStock: true,
-    featured: true,
+    featured: false,
     name: {
       en: 'Aspire 8 Stage Stang Gauge Model',
       ur: 'ایسپائر 8 مرحلہ اسٹینگ گیج ماڈل',
     },
     category: { en: 'Residential', ur: 'رہائشی' },
-    brand: { en: 'Vietnam', ur: 'ویتنام' },
+    brand: { en: 'Aspire', ur: 'ایسپائر' },
     description: {
       en: `Premium 8-stage Reverse Osmosis system with stang gauge monitoring producing 100 gallons per day.
 
@@ -764,16 +821,17 @@ export const categoriesWithTranslations = [
   { en: 'Residential', ur: 'رہائشی' },
   { en: 'Commercial', ur: 'تجارتی' },
   { en: 'Industrial', ur: 'صنعتی' },
+  { en: 'Accessories', ur: 'لوازمات' },
 ];
 
 export const brandsWithTranslations = [
   { en: 'All', ur: 'تمام' },
-  { en: 'AquaPure', ur: 'ایکواپیور' },
-  { en: 'CrystalFlow', ur: 'کرسٹل فلو' },
-  { en: 'EcoFilter', ur: 'ایکو فلٹر' },
-  { en: 'PureTech', ur: 'پیور ٹیک' },
-  { en: 'AquaHome', ur: 'ایکوا ہوم' },
-  { en: 'FlowMax', ur: 'فلو میکس' },
+  { en: 'Aspire', ur: 'ایسپائر' },
+  { en: 'Water Master', ur: 'واٹر ماسٹر' },
+  { en: 'Axtron', ur: 'ایکسٹرون' },
+  { en: 'Pure One', ur: 'پیور ون' },
+  { en: 'Pure Mac', ur: 'پیور میک' },
+  { en: 'Perfect', ur: 'پرفیکٹ' },
 ];
 
 export const sortOptionsWithTranslations = [
@@ -786,4 +844,68 @@ export const sortOptionsWithTranslations = [
     value: 'price-high',
     label: { en: 'Price: High to Low', ur: 'قیمت: زیادہ سے کم' },
   },
+  {
+    value: 'new-to-old',
+    label: { en: 'New to Old', ur: 'نئے سے پرانے' },
+  },
+  {
+    value: 'old-to-new',
+    label: { en: 'Old to New', ur: 'پرانے سے نئے' },
+  },
 ];
+
+// Subcategory options per category (keys used for filtering/search matching)
+export const subcategoryOptionsByCategory = {
+  residential: [
+    { key: 'all', en: 'All', ur: 'تمام' },
+    { key: 'simple-filter', en: 'Simple Filter', ur: 'سمپل فلٹر' },
+    { key: 'ro-filter', en: 'RO Filter', ur: 'آر او فلٹر' },
+  ],
+  commercial: [
+    { key: 'all', en: 'All', ur: 'تمام' },
+    {
+      key: 'ice-factories',
+      en: 'Ice Factories',
+      ur: 'آئس فیکٹریز',
+    },
+    {
+      key: 'resturants',
+      en: 'resturants',
+      ur: 'ریسٹورانٹس',
+    },
+  ],
+  accessories: [
+    { key: 'all', en: 'All', ur: 'تمام' },
+    { key: 'cartridges', en: 'Cartridges', ur: 'کارٹریجز' },
+    { key: 'adopters', en: 'Adopters', ur: 'اڈاپٹرز' },
+    { key: 'membrane', en: 'Membrane', ur: 'ممبرین' },
+    { key: 'tabs', en: 'Tabs', ur: 'نلکے' },
+    { key: 'pipes', en: 'Pipes', ur: 'پائپ' },
+    {
+      key: 'minerals-cartridges',
+      en: 'Minerals Cartridges',
+      ur: 'منرل کارٹریجز',
+    },
+    {
+      key: 'post-carbon-cartridges',
+      en: 'Post Carbon Cartridges',
+      ur: 'پوسٹ کاربن کارٹریجز',
+    },
+  ],
+};
+
+// Sub-subcategory options for each subcategory key
+export const subSubOptionsBySubcategory = {
+  'simple-filter': [
+    { key: 'all', en: 'All', ur: 'تمام' },
+    { key: 'simple', en: 'Simple Filter', ur: 'سمپل فلٹر' },
+    { key: 'jumbo filter', en: 'Jumbo Filter', ur: 'جمبو فلٹر' },
+    { key: 'slim filter', en: 'Slim Filter', ur: 'سلم فلٹر' },
+  ],
+  'ro-filter': [
+    { key: 'all', en: 'All', ur: 'تمام' },
+    { key: 'ro 2', en: 'RO 2 Stage', ur: 'آر او 2 مرحلے' },
+    { key: 'ro 3', en: 'RO 3 Stage', ur: 'آر او 3 مرحلے' },
+    { key: 'ro 8', en: 'RO 8 Stage', ur: 'آر او 8 مرحلے' },
+  ],
+};

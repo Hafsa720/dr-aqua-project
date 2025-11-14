@@ -28,6 +28,13 @@
       "description": "پاکستان میں ہمارا دفتر",
       "contact": "بہاولپور، پاکستان",
       "link": "https://maps.google.com"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "ہمارے دفتر کا دورہ کریں (لاہور)",
+      "description": "ہمارا لاہور آفس",
+      "contact": "سید علی عمران اسٹریٹ، علی پارک، لاہور",
+      "link": "https://maps.google.com"
     }
   ],
   "socialLinks": [

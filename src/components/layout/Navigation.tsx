@@ -43,7 +43,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className='sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm'>
+    <nav className='sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm'>
       <div className='container mx-auto px-4'>
         <div className='flex h-16 items-center justify-between'>
           {/* Logo */}
@@ -51,12 +51,12 @@ export default function Navigation() {
           <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
             <Link href='/' className='flex items-center space-x-3 group'>
               <div className='relative'>
-                <div className='absolute inset-0 bg-gradient-to-r from-primary-500 via-secondary-500 to-aqua-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity' />
-                <span className='relative text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent'>
+                <div className='absolute inset-0 bg-linear-to-r from-primary-500 via-secondary-500 to-aqua-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity' />
+                <span className='relative text-2xl font-bold bg-linear-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent'>
                   Dr.
                 </span>
               </div>
-              <span className='text-2xl font-bold bg-gradient-to-r from-aqua-500 to-aqua-600 bg-clip-text text-transparent'>
+              <span className='text-2xl font-bold bg-linear-to-r from-aqua-500 to-aqua-600 bg-clip-text text-transparent'>
                 AQUA
               </span>
             </Link>
@@ -64,28 +64,87 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className='hidden md:flex md:items-center md:space-x-6'>
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  'text-sm font-semibold transition-all duration-200 relative group',
-                  pathname === item.href
-                    ? 'text-primary-600'
-                    : 'text-gray-700 hover:text-primary-600',
-                )}
-              >
-                {item.name}
-                <span
+            {navigation.map((item) => {
+              // Render a dropdown for Products
+              if (item.name === 'Products' || item.name === 'مصنوعات') {
+                return (
+                  <div key={item.name} className='relative'>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        'text-sm font-semibold transition-all duration-200 relative group inline-flex items-center gap-1',
+                        pathname === item.href
+                          ? 'text-primary-600'
+                          : 'text-gray-700 hover:text-primary-600',
+                      )}
+                    >
+                      {item.name}
+                      <span
+                        className={cn(
+                          'absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-primary-500 to-aqua-500 transition-all duration-200',
+                          pathname === item.href
+                            ? 'w-full'
+                            : 'w-0 group-hover:w-full',
+                        )}
+                      />
+                    </Link>
+
+                    {/* Dropdown */}
+                    <div className='absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-md rounded-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50'>
+                      <div className='flex flex-col py-2'>
+                        <Link
+                          href={'/products?filter=simple-filter'}
+                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
+                        >
+                          Simple Filter
+                        </Link>
+                        <Link
+                          href={'/products?filter=ro-filter'}
+                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
+                        >
+                          RO Filter
+                        </Link>
+                        <Link
+                          href={'/products?filter=solar-system'}
+                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
+                        >
+                          Solar System
+                        </Link>
+                        <Link
+                          href={'/products?filter=water-supply'}
+                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
+                        >
+                          Water Supply
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
                   className={cn(
-                    'absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary-500 to-aqua-500 transition-all duration-200',
+                    'text-sm font-semibold transition-all duration-200 relative group',
                     pathname === item.href
-                      ? 'w-full'
-                      : 'w-0 group-hover:w-full',
+                      ? 'text-primary-600'
+                      : 'text-gray-700 hover:text-primary-600',
                   )}
-                />
-              </Link>
-            ))}
+                >
+                  {item.name}
+                  <span
+                    className={cn(
+                      'absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-primary-500 to-aqua-500 transition-all duration-200',
+                      pathname === item.href
+                        ? 'w-full'
+                        : 'w-0 group-hover:w-full',
+                    )}
+                  />
+                </Link>
+              );
+            })}
 
             {/* Language Toggle */}
             <Button
@@ -111,7 +170,7 @@ export default function Navigation() {
                 <ShoppingCart className='h-4 w-4' />
                 <span className='ml-2'>{cartText}</span>
                 {cartItemCount > 0 && (
-                  <span className='absolute -top-2 -right-2 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md animate-pulse'>
+                  <span className='absolute -top-2 -right-2 bg-linear-to-r from-secondary-500 to-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
                     {cartItemCount}
                   </span>
                 )}
@@ -141,7 +200,7 @@ export default function Navigation() {
               >
                 <ShoppingCart className='h-4 w-4' />
                 {cartItemCount > 0 && (
-                  <span className='absolute -top-2 -right-2 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
+                  <span className='absolute -top-2 -right-2 bg-linear-to-r from-secondary-500 to-secondary-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center shadow-md'>
                     {cartItemCount}
                   </span>
                 )}
@@ -165,23 +224,75 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className='border-t border-gray-200 py-4 md:hidden bg-gradient-to-br from-white to-gray-50'>
+          <div className='border-t border-gray-200 py-4 md:hidden bg-linear-to-br from-white to-gray-50'>
             <div className='flex flex-col space-y-2'>
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    'rounded-lg px-4 py-3 text-base font-semibold transition-all',
-                    pathname === item.href
-                      ? 'bg-gradient-to-r from-primary-50 to-aqua-50 text-primary-700 border-l-4 border-primary-500'
-                      : 'text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-primary-600',
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                if (item.name === 'Products' || item.name === 'مصنوعات') {
+                  return (
+                    <div key={item.name} className='px-4'>
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          'rounded-lg block px-4 py-3 text-base font-semibold transition-all',
+                          pathname === item.href
+                            ? 'bg-linear-to-r from-primary-50 to-aqua-50 text-primary-700 border-l-4 border-primary-500'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600',
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+
+                      <div className='mt-2 ml-2 flex flex-col space-y-1'>
+                        <Link
+                          href={'/products?filter=simple-filter'}
+                          className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Simple Filter
+                        </Link>
+                        <Link
+                          href={'/products?filter=ro-filter'}
+                          className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
+                          onClick={() => setIsOpen(false)}
+                        >
+                          RO Filter
+                        </Link>
+                        <Link
+                          href={'/products?filter=solar-system'}
+                          className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Solar System
+                        </Link>
+                        <Link
+                          href={'/products?filter=water-supply'}
+                          className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Water Supply
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      'rounded-lg px-4 py-3 text-base font-semibold transition-all',
+                      pathname === item.href
+                        ? 'bg-linear-to-r from-primary-50 to-aqua-50 text-primary-700 border-l-4 border-primary-500'
+                        : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600',
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
