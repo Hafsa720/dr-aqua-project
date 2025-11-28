@@ -36,6 +36,7 @@ function ShopPageContent() {
   const products = getProducts();
   const searchParams = useSearchParams();
   const filterParam = searchParams?.get('filter') ?? null;
+  const categoryParam = searchParams?.get('category') ?? null;
   const [categories, setCategories] = useState(getCategories('en'));
   const [brands, setBrands] = useState(getBrands('en'));
   const [sortOptions, setSortOptions] = useState(getSortOptions('en'));
@@ -76,6 +77,21 @@ function ShopPageContent() {
     setSubSubOptions(getSubSubOptions('all', language));
     setSelectedSubSub('all');
   }, [language]);
+
+  // Handle category parameter from URL
+  useEffect(() => {
+    if (categoryParam) {
+      // Capitalize first letter to match category names
+      const formattedCategory =
+        categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1);
+      const matchingCategory = categories.find(
+        (cat) => cat.toLowerCase() === categoryParam.toLowerCase(),
+      );
+      if (matchingCategory) {
+        setSelectedCategory(matchingCategory);
+      }
+    }
+  }, [categoryParam, categories]);
 
   // Update subcategory options when user changes category
   useEffect(() => {

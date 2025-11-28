@@ -1,6 +1,7 @@
 'use client';
 
 import { Languages, Menu, ShoppingCart, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
@@ -49,16 +50,15 @@ export default function Navigation() {
           {/* Logo */}
           {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
           <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
-            <Link href='/' className='flex items-center space-x-3 group'>
-              <div className='relative'>
-                <div className='absolute inset-0 bg-linear-to-r from-primary-500 via-secondary-500 to-aqua-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity' />
-                <span className='relative text-2xl font-bold bg-linear-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent'>
-                  Dr.
-                </span>
-              </div>
-              <span className='text-2xl font-bold bg-linear-to-r from-aqua-500 to-aqua-600 bg-clip-text text-transparent'>
-                AQUA
-              </span>
+            <Link href='/' className='flex items-center group'>
+              <Image
+                src='/images/logo.png'
+                alt='Dr. Aqua Logo'
+                width={80}
+                height={32}
+                className='h-10 w-auto transition-transform group-hover:scale-105'
+                priority
+              />
             </Link>
           </div>
 
@@ -68,11 +68,11 @@ export default function Navigation() {
               // Render a dropdown for Products
               if (item.name === 'Products' || item.name === 'مصنوعات') {
                 return (
-                  <div key={item.name} className='relative'>
+                  <div key={item.name} className='relative group'>
                     <Link
                       href={item.href}
                       className={cn(
-                        'text-sm font-semibold transition-all duration-200 relative group inline-flex items-center gap-1',
+                        'text-sm font-semibold transition-all duration-200 relative inline-flex items-center gap-1 py-2',
                         pathname === item.href
                           ? 'text-primary-600'
                           : 'text-gray-700 hover:text-primary-600',
@@ -89,33 +89,29 @@ export default function Navigation() {
                       />
                     </Link>
 
-                    {/* Dropdown */}
-                    <div className='absolute left-0 mt-2 w-48 bg-white border border-gray-100 shadow-md rounded-md opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50'>
-                      <div className='flex flex-col py-2'>
-                        <Link
-                          href={'/products?filter=simple-filter'}
-                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
-                        >
-                          Simple Filter
-                        </Link>
-                        <Link
-                          href={'/products?filter=ro-filter'}
-                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
-                        >
-                          RO Filter
-                        </Link>
-                        <Link
-                          href={'/products?filter=solar-system'}
-                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
-                        >
-                          Solar System
-                        </Link>
-                        <Link
-                          href={'/products?filter=water-supply'}
-                          className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-50'
-                        >
-                          Water Supply
-                        </Link>
+                    {/* Dropdown with bridge area to prevent gaps */}
+                    <div className='absolute left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50'>
+                      <div className='bg-white border border-gray-100 shadow-lg rounded-lg overflow-hidden'>
+                        <div className='flex flex-col py-2'>
+                          <Link
+                            href={'/products?category=residential'}
+                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                          >
+                            Residential
+                          </Link>
+                          <Link
+                            href={'/products?category=commercial'}
+                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                          >
+                            Commercial
+                          </Link>
+                          <Link
+                            href={'/products?category=industrial'}
+                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                          >
+                            Industrial
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -245,32 +241,25 @@ export default function Navigation() {
 
                       <div className='mt-2 ml-2 flex flex-col space-y-1'>
                         <Link
-                          href={'/products?filter=simple-filter'}
+                          href={'/products?category=residential'}
                           className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
                           onClick={() => setIsOpen(false)}
                         >
-                          Simple Filter
+                          Residential
                         </Link>
                         <Link
-                          href={'/products?filter=ro-filter'}
+                          href={'/products?category=commercial'}
                           className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
                           onClick={() => setIsOpen(false)}
                         >
-                          RO Filter
+                          Commercial
                         </Link>
                         <Link
-                          href={'/products?filter=solar-system'}
+                          href={'/products?category=industrial'}
                           className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
                           onClick={() => setIsOpen(false)}
                         >
-                          Solar System
-                        </Link>
-                        <Link
-                          href={'/products?filter=water-supply'}
-                          className='px-3 py-2 text-sm text-gray-700 rounded hover:bg-gray-50'
-                          onClick={() => setIsOpen(false)}
-                        >
-                          Water Supply
+                          `` Industrial
                         </Link>
                       </div>
                     </div>
