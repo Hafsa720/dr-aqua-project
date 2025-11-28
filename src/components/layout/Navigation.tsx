@@ -47,7 +47,6 @@ export default function Navigation() {
     <nav className='sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm'>
       <div className='container mx-auto px-4'>
         <div className='flex h-16 items-center justify-between'>
-          {/* Logo */}
           {/* Keep logo block LTR/isolated so its ordering doesn't flip when document.dir === 'rtl' */}
           <div dir='ltr' style={{ unicodeBidi: 'isolate' }}>
             <Link href='/' className='flex items-center group'>
