@@ -46,7 +46,7 @@ export default function CartPage() {
 
   const generateWhatsAppMessage = () => {
     const companyName = 'Dr. Aqua';
-    const companyPhone = '+923497415390';
+    const companyPhone = ' +92 334 7071759';
     let message = labels.whatsappGreeting;
     message += labels.whatsappIntro.replace('{companyName}', companyName);
     message += labels.whatsappItemsHeader;

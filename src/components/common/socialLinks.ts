@@ -84,7 +84,7 @@ export const socialLinks = [
 
 export const contactInfo = {
   email: 'info@Dr.Aqua.com',
-  phone: '+971 50 123 4567',
+  phone: '03016315524',
   location: 'Dubai, UAE',
   emailHref: 'mailto:info@Dr.Aqua.com',
   phoneHref: 'tel:+971501234567',

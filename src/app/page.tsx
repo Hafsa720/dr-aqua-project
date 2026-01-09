@@ -102,7 +102,7 @@ export default function HomePage() {
             </div>
             <div className='relative'>
               <Image
-                src='https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop'
+                src='/images/homi.png'
                 alt='Premium water filtration system'
                 width={800}
                 height={600}
