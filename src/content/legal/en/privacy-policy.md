@@ -28,7 +28,7 @@ Our website may use cookies to enhance your browsing experience and analyze traf
 
 ## 5. 🛡️ Your Rights
 
-You can request to update or delete your personal information anytime by contacting us at info@draqua.com.
+You can request to update or delete your personal information anytime by contacting us at info.draquawatertechnology@gmail.com.
 
 ## 6. 🔄 Policy Updates
 
@@ -37,8 +37,8 @@ We may update this Privacy Policy occasionally. Any changes will be posted on th
 ## 📞 Contact Us
 
 **Dr. Aqua Water Filter**  
-📧 info@draqua.com  
-📱 +971 50 123 4567  
+📧 info.draquawatertechnology@gmail.com  
+📱 03016315524  
 📍 Bahawalpur, Pakistan
 
 ---

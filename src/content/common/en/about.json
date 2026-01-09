@@ -77,19 +77,19 @@
     "description": "Dedicated professionals committed to delivering the best water solutions.",
     "members": [
       {
-        "name": "Madni",
-        "role": "Founder & CEO",
-        "image": "https://i.pravatar.cc/300?img=60"
+        "name": "M Ramzan",
+        "role": "Head of Operation",
+        "image": "/pictures/Ramdan.jpeg"
       },
       {
-        "name": "Madni",
-        "role": "Head of Operations",
-        "image": "https://i.pravatar.cc/300?img=48"
+        "name": "Majid Sadiq",
+        "role": "Technically Officer",
+        "image": "/pictures/majjid.jpeg"
       },
       {
-        "name": "Madni",
-        "role": "Chief Technical Officer",
-        "image": "https://i.pravatar.cc/300?img=52"
+        "name": "Moen U Deen",
+        "role": "Head Electrical",
+        "image": "/pictures/moenu.jpeg"
       }
     ]
   },

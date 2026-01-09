@@ -49,21 +49,21 @@
       {
         "type": "email",
         "title": "ای میل کریں",
-        "value": "info@draqua.com",
+        "value": "info.draquawatertechnology@gmail.com",
         "description": "کسی بھی وقت ای میل کریں",
         "icon": "mail"
       },
       {
         "type": "phone",
         "title": "کال کریں",
-        "value": "+971 50 123 4567",
+        "value": "03016315524",
         "description": "پیر-جمعہ صبح 9 بجے سے شام 6 بجے تک",
         "icon": "phone"
       },
       {
         "type": "whatsapp",
         "title": "واٹس ایپ",
-        "value": "+971 50 123 4567",
+        "value": "03016315524",
         "description": "فوری سوالات اور اپ ڈیٹس",
         "icon": "chat"
       },

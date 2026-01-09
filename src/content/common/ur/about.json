@@ -77,19 +77,19 @@
     "description": "بہترین پانی کے حل فراہم کرنے کے لیے پرعزم پیشہ ور افراد۔",
     "members": [
       {
-        "name": "جان اینڈرسن",
+        "name": "حمزہ",
         "role": "بانی اور سی ای او",
-        "image": "https://i.pravatar.cc/300?img=60"
+        "image": "/pictures/Ramdan.jpeg"
       },
       {
-        "name": "سارہ مچل",
+        "name": "ماجد",
         "role": "آپریشنز کی سربراہ",
-        "image": "https://i.pravatar.cc/300?img=48"
+        "image": "/pictures/majid.jpeg"
       },
       {
-        "name": "ڈیوڈ چن",
+        "name": "معین",
         "role": "چیف ٹیکنیکل آفیسر",
-        "image": "https://i.pravatar.cc/300?img=52"
+        "image": "/pictures/moen.jpeg"
       }
     ]
   },

@@ -33,8 +33,8 @@ We may update this Cookie Policy from time to time. The latest version will be p
 ## 📞 Contact Us
 
 **Dr. Aqua Water Filter**  
-📧 info@draqua.com  
-📱 +971 50 123 4567  
+📧 info.draquawatertechnology@gmail.com  
+📱 03016315524  
 📍 Bahawalpur, Pakistan
 
 ---

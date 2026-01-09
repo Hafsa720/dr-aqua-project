@@ -41,8 +41,8 @@ By using our website or purchasing our products, you agree to the following term
 ## 📞 Contact Us
 
 **Dr. Aqua Water Filter**  
-📧 info@draqua.com  
-📱 +971 50 123 4567  
+📧 info.draquawatertechnology@gmail.com  
+📱 03016315524  
 📍 Pakistan,bahawalpur
 
 ---

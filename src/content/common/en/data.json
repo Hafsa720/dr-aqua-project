@@ -4,8 +4,8 @@
       "icon": "FaEnvelope",
       "title": "Email Us",
       "description": "Send us an email",
-      "contact": "info@draqua.com",
-      "link": "mailto:info@draqua.com"
+      "contact": "info.draquawatertechnology@gmail.com",
+      "link": "mailto:info.draquawatertechnology@gmail.com"
     },
     {
       "icon": "FaPhone",
@@ -18,7 +18,7 @@
       "icon": "FaWhatsapp",
       "title": "WhatsApp",
       "description": "Quick chat on WhatsApp",
-      "contact": "++92 334 7071759",
+      "contact": "+92 334 7071759",
       "link": "https://wa.me/923347071759"
     },
     {

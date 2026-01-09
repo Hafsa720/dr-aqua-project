@@ -4,22 +4,22 @@
       "icon": "FaEnvelope",
       "title": "ای میل کریں",
       "description": "ہمیں ای میل بھیجیں",
-      "contact": "info@draqua.com",
-      "link": "mailto:info@draqua.com"
+      "contact": "info.draquawatertechnology@gmail.com",
+      "link": "mailto:info.draquawatertechnology@gmail.com"
     },
     {
       "icon": "FaPhone",
       "title": "ہمیں کال کریں",
       "description": "ہماری ٹیم سے براہ راست بات کریں",
-      "contact": "+971 50 123 4567",
-      "link": "tel:+971501234567"
+      "contact": "03016315524",
+      "link": "tel:03016315524"
     },
     {
       "icon": "FaWhatsapp",
       "title": "واٹس ایپ",
       "description": "واٹس ایپ پر فوری چیٹ",
-      "contact": "+971 50 123 4567",
-      "link": "https://wa.me/971501234567"
+      "contact": "03016315524",
+      "link": "https://wa.me/03016315524"
     },
 
     {
