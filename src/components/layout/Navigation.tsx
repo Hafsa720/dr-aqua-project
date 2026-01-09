@@ -94,19 +94,19 @@ export default function Navigation() {
                         <div className='flex flex-col py-2'>
                           <Link
                             href={'/products?category=residential'}
-                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            className='menu__link menu__link-lv2 d-block menu__link--active px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
                           >
                             Residential
                           </Link>
                           <Link
                             href={'/products?category=commercial'}
-                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            className='menu__link menu__link-lv2 d-block menu__link--active px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
                           >
                             Commercial
                           </Link>
                           <Link
                             href={'/products?category=industrial'}
-                            className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            className='menu__link menu__link-lv2 d-block menu__link--active px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
                           >
                             Industrial
                           </Link>
