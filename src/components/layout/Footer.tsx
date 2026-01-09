@@ -158,9 +158,11 @@ const Footer = () => {
                   <p className='text-gray-400 text-sm'>Email</p>
                   <UnstyledLink
                     href={footerContent.contact.email.href}
-                    className='text-white font-medium break-words hover:text-aqua-400 transition-smooth focus-ring touch-feedback text-sm'
+                    className='focus-ring text-sm'
                   >
-                    {footerContent.contact.email.label}
+                    <span className='inline-block  px-3 py-2 rounded-md text-white font-medium break-words hover:text-aqua-400 transition-smooth touch-feedback'>
+                      {footerContent.contact.email.label}
+                    </span>
                   </UnstyledLink>
                 </div>
               </div>

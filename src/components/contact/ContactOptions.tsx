@@ -90,13 +90,13 @@ export function ContactOptions() {
           {contactOptions.map((option, index) => (
             <div
               key={option.title}
-              className='opacity-0 animate-fade-in-up hover:-translate-y-1 transition-all duration-300'
+              className='opacity-0 animate-fade-in-up hover:-translate-y-1 transition-all duration-300 h-full'
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <UnstyledLink
                 href={option.link}
                 openNewTab={option.link.startsWith('http')}
-                className='bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 text-center border border-slate-200 block group'
+                className='bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 text-center border border-slate-200 group h-full flex flex-col justify-between min-h-[300px]'
               >
                 <div className='w-16 h-16 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-6 shadow-lg'>
                   <option.icon className='text-white text-2xl' />
@@ -107,9 +107,17 @@ export function ContactOptions() {
                 <p className='text-slate-600 mb-4 leading-relaxed'>
                   {option.description}
                 </p>
-                <p className='text-blue-600 font-semibold text-lg'>
-                  {option.contact}
-                </p>
+                {option.link && option.link.startsWith('mailto:') ? (
+                  <p className='text-blue-600 font-semibold text-lg'>
+                    <span className='inline-block px-3 py-2 rounded-md  text-blue-600 font-semibold max-w-full wrap-break-word whitespace-normal'>
+                      {option.contact}
+                    </span>
+                  </p>
+                ) : (
+                  <p className='text-blue-600 font-semibold text-lg wrap-break-word'>
+                    {option.contact}
+                  </p>
+                )}
               </UnstyledLink>
             </div>
           ))}
