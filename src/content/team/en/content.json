@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "title": "Meet the Innovators",
+    "subtitle": "World-Class Development Team",
+    "description": "Our diverse team of experts combines technical excellence with creative problem-solving to deliver transformational digital solutions."
+  },
+  "teamStats": {
+    "members": "25+",
+    "membersLabel": "Team Members",
+    "experience": "8+",
+    "experienceLabel": "Years Average Experience",
+    "projects": "500+",
+    "projectsLabel": "Projects Completed",
+    "satisfaction": "98%",
+    "satisfactionLabel": "Client Satisfaction"
+  },
+  "departments": {
+    "all": "All Team",
+    "leadership": "Leadership",
+    "development": "Development",
+    "design": "Design",
+    "marketing": "Marketing",
+    "operations": "Operations"
+  },
+  "memberCard": {
+    "experience": "years experience",
+    "projects": "projects completed",
+    "expertise": "Expertise",
+    "contact": "Contact",
+    "viewProfile": "View Profile"
+  },
+  "values": {
+    "title": "Our Core Values",
+    "description": "The core principles that guide our work, shape our culture, and define how we build lasting relationships.",
+    "items": [
+      {
+        "title": "Innovation First",
+        "description": "We embrace cutting-edge technologies and creative solutions to solve complex problems and push boundaries.",
+        "icon": "HiLightningBolt",
+        "color": "text-yellow-500",
+        "bg": "bg-yellow-50"
+      },
+      {
+        "title": "Client Success",
+        "description": "Your success is our success. We go above and beyond to exceed expectations and deliver exceptional value.",
+        "icon": "FaRocket",
+        "color": "text-blue-500",
+        "bg": "bg-blue-50"
+      },
+      {
+        "title": "Continuous Learning",
+        "description": "We invest in our team's growth and stay ahead of industry trends through constant learning and development.",
+        "icon": "FaLightbulb",
+        "color": "text-purple-500",
+        "bg": "bg-purple-50"
+      },
+      {
+        "title": "Quality Excellence",
+        "description": "We write clean, maintainable code and create products that stand the test of time and scale.",
+        "icon": "HiShieldCheck",
+        "color": "text-green-500",
+        "bg": "bg-green-50"
+      },
+      {
+        "title": "Agile Mindset",
+        "description": "We adapt quickly to changes, embrace flexibility, and deliver value iteratively with rapid feedback loops.",
+        "icon": "HiTrendingUp",
+        "color": "text-orange-500",
+        "bg": "bg-orange-50"
+      },
+      {
+        "title": "Open Communication",
+        "description": "Transparency and honest communication are at the core of our relationships with clients and team members.",
+        "icon": "HiHeart",
+        "color": "text-red-500",
+        "bg": "bg-red-50"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Work With Us?",
+    "description": "We believe in creating an environment where talented individuals can thrive and grow.",
+    "items": [
+      {
+        "title": "Flexible Work Environment",
+        "description": "Remote-first culture with flexible hours and work-life balance.",
+        "icon": "home"
+      },
+      {
+        "title": "Learning & Development",
+        "description": "Continuous learning opportunities, courses, and conference attendance.",
+        "icon": "book-open"
+      },
+      {
+        "title": "Competitive Benefits",
+        "description": "Comprehensive health coverage, equity sharing, and performance bonuses.",
+        "icon": "currency-dollar"
+      },
+      {
+        "title": "Cutting-Edge Projects",
+        "description": "Work on innovative projects with the latest technologies and frameworks.",
+        "icon": "code"
+      },
+      {
+        "title": "Collaborative Culture",
+        "description": "Supportive team environment with mentorship and knowledge sharing.",
+        "icon": "users"
+      },
+      {
+        "title": "Career Growth",
+        "description": "Clear advancement paths and opportunities to lead projects and teams.",
+        "icon": "trending-up"
+      }
+    ]
+  },
+  "joinUs": {
+    "title": "Join Our Growing Team",
+    "description": "We're always looking for talented individuals who share our passion for creating exceptional digital experiences.",
+    "button": "View Open Positions",
+    "alternatively": "Don't see the right position? Send us your resume anyway - we're always interested in connecting with great talent!",
+    "sendResume": "Send Resume"
+  }
+}

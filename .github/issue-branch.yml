@@ -1,0 +1,17 @@
+# Configuration for automatic branch creation from issues
+# Documentation: https://github.com/robvanderleek/create-issue-branch#option-2-configure-github-action
+
+# Branch naming pattern: i{issue-number}-{issue-title-kebab-case}
+# Example: issue #42 "Fix login bug" becomes "i42-fix-login-bug"
+branchName: 'i${issue.number}-${issue.title,}'
+
+# Configure which issue labels should skip branch creation
+branches:
+  - label: epic
+    skip: true # Epic issues don't need individual branches
+  - label: debt
+    skip: true # Technical debt tracking issues
+  - label: duplicate
+    skip: true # Duplicate issues
+  - label: wontfix
+    skip: true # Issues marked as won't fix

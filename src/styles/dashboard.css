@@ -1,0 +1,49 @@
+/* Dashboard Management Styles */
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input,
+button {
+  margin: 5px;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.alert {
+  color: red;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  th,
+  td {
+    border-color: #444;
+  }
+}

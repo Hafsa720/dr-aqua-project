@@ -1,0 +1,141 @@
+{
+  "contactOptions": [
+    {
+      "icon": "FaEnvelope",
+      "title": "Email Us",
+      "description": "Send us an email",
+      "contact": "info.draquawatertechnology@gmail.com",
+      "link": "mailto:info.draquawatertechnology@gmail.com"
+    },
+    {
+      "icon": "FaPhone",
+      "title": "Call Us",
+      "description": "Speak with our team",
+      "contact": "+92 334 7071759",
+      "link": "tel:+923347071759"
+    },
+    {
+      "icon": "FaWhatsapp",
+      "title": "WhatsApp",
+      "description": "Quick chat on WhatsApp",
+      "contact": "+92 334 7071759",
+      "link": "https://wa.me/923347071759"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "Visit Us",
+      "description": "Our office in Pakistan",
+      "contact": "Bahawalpur, Pakistan",
+      "link": "https://maps.google.com"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "Visit Our Office (Lahore)",
+      "description": "Our office in Lahore",
+      "contact": "Syed Ali Imran Street, Ali Park, Lahore",
+      "link": "https://maps.google.com"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Upwork",
+      "href": "#",
+      "icon": "SiUpwork",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "Freelancer",
+      "href": "#",
+      "icon": "SiFreelancer",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "#",
+      "icon": "FaLinkedin",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "Facebook",
+      "href": "#",
+      "icon": "FaFacebook",
+      "hoverColor": "hover:text-blue-800",
+      "bgColor": "bg-blue-800"
+    },
+    {
+      "name": "Instagram",
+      "href": "#",
+      "icon": "FaInstagram",
+      "hoverColor": "hover:text-pink-500",
+      "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "Twitter",
+      "href": "#",
+      "icon": "FaTwitter",
+      "hoverColor": "hover:text-sky-400",
+      "bgColor": "bg-sky-400"
+    },
+    {
+      "name": "YouTube",
+      "href": "#",
+      "icon": "FaYoutube",
+      "hoverColor": "hover:text-red-600",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "Behance",
+      "href": "#",
+      "icon": "SiBehance",
+      "hoverColor": "hover:text-blue-500",
+      "bgColor": "bg-blue-500"
+    },
+    {
+      "name": "GitHub",
+      "href": "#",
+      "icon": "FaGithub",
+      "hoverColor": "hover:text-gray-800",
+      "bgColor": "bg-gray-800"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/971501234567",
+      "icon": "FaWhatsapp",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    }
+  ],
+  "faqSection": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about our services, process, and how we can help your business grow."
+  },
+  "faqs": [
+    {
+      "question": "What types of water solutions do you provide?",
+      "answer": "We provide premium water purification systems, filtration solutions, water coolers, dispensers, and comprehensive water quality testing services for homes, offices, and commercial establishments."
+    },
+    {
+      "question": "Do you offer installation and maintenance services?",
+      "answer": "Yes, we provide complete installation services by our trained professionals. We also offer regular maintenance packages including filter replacements, system cleaning, and water quality checks to ensure optimal performance."
+    },
+    {
+      "question": "How often should water filters be replaced?",
+      "answer": "Filter replacement frequency depends on usage and water quality. Typically, filters should be replaced every 3-6 months. Our maintenance team will assess your specific needs and recommend an appropriate replacement schedule."
+    },
+    {
+      "question": "Do you provide water testing services?",
+      "answer": "Yes, we offer comprehensive water quality testing to check for contaminants, minerals, pH levels, and overall water safety. We provide detailed reports and recommend appropriate filtration solutions based on test results."
+    },
+    {
+      "question": "What areas do you serve?",
+      "answer": "We serve customers across Dubai and the UAE. Our team provides prompt delivery, installation, and maintenance services to residential and commercial clients throughout the region."
+    },
+    {
+      "question": "Are your water purification systems certified?",
+      "answer": "Yes, all our water purification systems meet international quality standards and are certified by relevant health and safety authorities. We only offer products that ensure the highest water quality and safety."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "href": "https://facebook.com/draquashop",
+      "icon": "FaFacebook",
+      "hoverColor": "blue",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com/draquashop",
+      "icon": "FaInstagram",
+      "hoverColor": "pink",
+      "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "YouTube",
+      "href": "https://youtube.com/@draquashop",
+      "icon": "FaYoutube",
+      "hoverColor": "red",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/923347071759",
+      "icon": "FaWhatsapp",
+      "hoverColor": "green",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "TikTok",
+      "href": "https://tiktok.com/@draquashop",
+      "icon": "FaTiktok",
+      "hoverColor": "black",
+      "bgColor": "bg-black"
+    }
+  ],
+  "contact": {
+    "email": {
+      "label": "info.draquawatertechnology@gmail.com",
+      "href": "mailto:info.draquawatertechnology@gmail.com"
+    },
+    "phone": {
+      "label": "0334 7071759",
+      "href": "tel:+923347071759"
+    },
+    "location": {
+      "label": "CM28+93V, Captain Salman Farooq Lodhi Shaheed Rd, Model Town B, Bahawalpur, 63100",
+      "href": "https://share.google/bNiEdmExtEpq77J8v"
+    },
+    "workingHours": [
+      { "day": "Monday", "time": "10 am–11 pm" },
+      { "day": "Tuesday", "time": "10 am–11 pm" },
+      { "day": "Wednesday", "time": "10 am–11 pm" },
+      { "day": "Thursday", "time": "10 am–11 pm" },
+      { "day": "Friday", "time": "Closed" },
+      { "day": "Saturday", "time": "10 am–11 pm" },
+      { "day": "Sunday", "time": "10 am–11 pm" }
+    ]
+  },
+  "quickLinks": [
+    { "name": "Home", "href": "/" },
+    { "name": "Products", "href": "/products" },
+    { "name": "About", "href": "/about" },
+    { "name": "Contact", "href": "/contact" }
+  ],
+  "legal": [
+    { "name": "Privacy Policy", "href": "/privacy" },
+    { "name": "Terms of Service", "href": "/terms" },
+    { "name": "Cookie Policy", "href": "/cookies" }
+  ]
+}

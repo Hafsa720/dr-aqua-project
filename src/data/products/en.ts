@@ -1,0 +1,25 @@
+// UI Labels
+export const shopLabelsEn = {
+  pageTitle: 'Water Filters',
+  pageDescription:
+    'Discover our complete range of water filtration systems for home, office, and industrial use — suitable for schools & colleges, control sheds, swimming pools, whole-house filtration, and mineral water plants.',
+  searchPlaceholder: 'Search products...',
+  categoryLabel: 'Category',
+  brandLabel: 'Brand',
+  priceRangeLabel: 'Price Range',
+  sortByLabel: 'Sort By',
+  activeFilters: 'Active Filters:',
+  clearAll: 'Clear All',
+  showingResults: 'Showing',
+  of: 'of',
+  products: 'products',
+  noProductsFound: 'No products found',
+  tryAdjusting: 'Try adjusting your search or filter criteria.',
+  previous: 'Previous',
+  next: 'Next',
+  inStock: 'In Stock',
+  outOfStock: 'Out of Stock',
+  addToCart: 'Add to Cart',
+  viewDetails: 'View Details',
+  save: 'Save',
+};

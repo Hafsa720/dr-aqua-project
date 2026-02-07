@@ -1,0 +1,264 @@
+{
+  //#region  //*=========== React ===========
+  "import React": {
+    "prefix": "ir",
+    "body": ["import * as React from 'react';"],
+  },
+  "React.useState": {
+    "prefix": "us",
+    "body": [
+      "const [${1}, set${1/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}] = React.useState<$3>(${2:initial${1/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}})$0",
+    ],
+  },
+  "React.useEffect": {
+    "prefix": "uf",
+    "body": ["React.useEffect(() => {", "  $0", "}, []);"],
+  },
+  "React.useReducer": {
+    "prefix": "ur",
+    "body": [
+      "const [state, dispatch] = React.useReducer(${0:someReducer}, {",
+      "  ",
+      "})",
+    ],
+  },
+  "React.useRef": {
+    "prefix": "urf",
+    "body": ["const ${1:someRef} = React.useRef($0)"],
+  },
+  "React Functional Component": {
+    "prefix": "rc",
+    "body": [
+      "import * as React from 'react';\n",
+      "export default function ${1:${TM_FILENAME_BASE}}() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+    ],
+  },
+  "React Functional Component with Props": {
+    "prefix": "rcp",
+    "body": [
+      "import * as React from 'react';\n",
+      "import { cn } from '@/lib/utils';\n",
+      "type ${1:${TM_FILENAME_BASE}}Props= {\n",
+      "} & React.ComponentPropsWithoutRef<'div'>\n",
+      "export default function ${1:${TM_FILENAME_BASE}}({className, ...rest}: ${1:${TM_FILENAME_BASE}}Props) {",
+      "  return (",
+      "    <div className={cn('', className)} {...rest}>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}",
+    ],
+  },
+  //#endregion  //*======== React ===========
+
+  //#region  //*=========== Commons ===========
+  "Region": {
+    "prefix": "reg",
+    "scope": "javascript, typescript, javascriptreact, typescriptreact",
+    "body": [
+      "//#region  //*=========== ${1} ===========",
+      "${TM_SELECTED_TEXT}$0",
+      "//#endregion  //*======== ${1} ===========",
+    ],
+  },
+  "Region CSS": {
+    "prefix": "regc",
+    "scope": "css, scss",
+    "body": [
+      "/* #region  /**=========== ${1} =========== */",
+      "${TM_SELECTED_TEXT}$0",
+      "/* #endregion  /**======== ${1} =========== */",
+    ],
+  },
+  //#endregion  //*======== Commons ===========
+
+  //#region  //*=========== Next.js ===========
+  "Next Pages": {
+    "prefix": "np",
+    "body": [
+      "import * as React from 'react';\n",
+      "import Layout from '@/components/layout/Layout';",
+      "import Seo from '@/components/Seo';\n",
+      "export default function ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page() {",
+      "  return (",
+      "    <Layout>",
+      "      <Seo templateTitle='${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}' />\n",
+      "      <main>\n",
+      "        <section className=''>",
+      "          <div className='layout py-20 min-h-screen'>",
+      "            $0",
+      "          </div>",
+      "        </section>",
+      "      </main>",
+      "    </Layout>",
+      "  )",
+      "}",
+    ],
+  },
+  "Next API": {
+    "prefix": "napi",
+    "body": [
+      "import { NextApiRequest, NextApiResponse } from 'next';\n",
+      "export default async function handler(req: NextApiRequest, res: NextApiResponse) {",
+      "  if (req.method === 'GET') {",
+      "    res.status(200).json({ name: 'Bambang' });",
+      "  } else {",
+      "    res.status(405).json({ message: 'Method Not Allowed' });",
+      "  }",
+      "}",
+    ],
+  },
+  "Get Static Props": {
+    "prefix": "gsp",
+    "body": [
+      "export const getStaticProps = async (context: GetStaticPropsContext) => {",
+      "  return {",
+      "    props: {}",
+      "  };",
+      "}",
+    ],
+  },
+  "Get Static Paths": {
+    "prefix": "gspa",
+    "body": [
+      "export const getStaticPaths: GetStaticPaths = async () => {",
+      "  return {",
+      "    paths: [",
+      "      { params: { $1 }}",
+      "    ],",
+      "    fallback: ",
+      "  };",
+      "}",
+    ],
+  },
+  "Get Server Side Props": {
+    "prefix": "gssp",
+    "body": [
+      "export const getServerSideProps = async (context: GetServerSidePropsContext) => {",
+      "  return {",
+      "    props: {}",
+      "  };",
+      "}",
+    ],
+  },
+  "Infer Get Static Props": {
+    "prefix": "igsp",
+    "body": "InferGetStaticPropsType<typeof getStaticProps>",
+  },
+  "Infer Get Server Side Props": {
+    "prefix": "igssp",
+    "body": "InferGetServerSidePropsType<typeof getServerSideProps>",
+  },
+  "Import useRouter": {
+    "prefix": "imust",
+    "body": ["import { useRouter } from 'next/router';"],
+  },
+  "Import Next Image": {
+    "prefix": "imimg",
+    "body": ["import Image from 'next/image';"],
+  },
+  "Import Next Link": {
+    "prefix": "iml",
+    "body": ["import Link from 'next/link';"],
+  },
+  //#endregion  //*======== Next.js ===========
+
+  //#region  //*=========== Snippet Wrap ===========
+  "Wrap with Fragment": {
+    "prefix": "ff",
+    "body": ["<>", "\t${TM_SELECTED_TEXT}", "</>"],
+  },
+  "Wrap with clsx": {
+    "prefix": "cx",
+    "body": ["{clsx([${TM_SELECTED_TEXT}$0])}"],
+  },
+  "Wrap with cn": {
+    "prefix": "cn",
+    "body": ["{cn([${TM_SELECTED_TEXT}$0, className])}"],
+  },
+  //#endregion  //*======== Snippet Wrap ===========
+
+  "Logger": {
+    "prefix": "lg",
+    "body": [
+      "logger({ ${1:${CLIPBOARD}} }, '${TM_FILENAME} line ${TM_LINE_NUMBER}')",
+    ],
+  },
+
+  //#region  //*=========== Project Specific ===========
+  "Next.js App Router Page": {
+    "prefix": "napp",
+    "body": [
+      "'use client';\n",
+      "import { motion } from '@/components/MotionWrapper';\n",
+      "export default function ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page() {",
+      "  return (",
+      "    <div>",
+      "      {/* Hero Section */}",
+      "      <section className='bg-gradient-to-br from-primary-900 to-primary-700 text-white py-20'>",
+      "        <div className='layout'>",
+      "          <motion.div",
+      "            initial={{ opacity: 0, y: 20 }}",
+      "            animate={{ opacity: 1, y: 0 }}",
+      "          >",
+      "            <h1 className='text-5xl font-bold mb-4'>${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}</h1>",
+      "            <p className='text-xl max-w-3xl'>$0</p>",
+      "          </motion.div>",
+      "        </div>",
+      "      </section>",
+      "    </div>",
+      "  )",
+      "}",
+    ],
+  },
+  "Motion Card Component": {
+    "prefix": "mcard",
+    "body": [
+      "<motion.div",
+      "  initial={{ opacity: 0, y: 20 }}",
+      "  whileInView={{ opacity: 1, y: 0 }}",
+      "  transition={{ duration: 0.5${1:, delay: ${2:index} * 0.1} }}",
+      "  className='${3:bg-white p-6 rounded-lg shadow-lg}'",
+      ">",
+      "  $0",
+      "</motion.div>",
+    ],
+  },
+  "Service Item Type": {
+    "prefix": "servicetype",
+    "body": [
+      "type Service = {",
+      "  icon: React.ComponentType<{ className?: string }>;",
+      "  title: string;",
+      "  description: string;",
+      "  features: string[];",
+      "};",
+    ],
+  },
+  "Project Item Type": {
+    "prefix": "projecttype",
+    "body": [
+      "type Project = {",
+      "  id: string;",
+      "  title: string;",
+      "  description: string;",
+      "  image: string;",
+      "  tech: string[];",
+      "  category: string;",
+      "  liveUrl?: string;",
+      "  githubUrl?: string;",
+      "};",
+    ],
+  },
+  "Layout Container": {
+    "prefix": "layout",
+    "body": ["<div className='layout'>", "  $0", "</div>"],
+  },
+  //#endregion  //*======== Project Specific ===========
+}

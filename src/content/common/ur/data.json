@@ -1,0 +1,142 @@
+{
+  "contactOptions": [
+    {
+      "icon": "FaEnvelope",
+      "title": "ای میل کریں",
+      "description": "ہمیں ای میل بھیجیں",
+      "contact": "info.draquawatertechnology@gmail.com",
+      "link": "mailto:info.draquawatertechnology@gmail.com"
+    },
+    {
+      "icon": "FaPhone",
+      "title": "ہمیں کال کریں",
+      "description": "ہماری ٹیم سے براہ راست بات کریں",
+      "contact": "03016315524",
+      "link": "tel:03016315524"
+    },
+    {
+      "icon": "FaWhatsapp",
+      "title": "واٹس ایپ",
+      "description": "واٹس ایپ پر فوری چیٹ",
+      "contact": "03016315524",
+      "link": "https://wa.me/03016315524"
+    },
+
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "ہمارے پاس آئیں",
+      "description": "پاکستان میں ہمارا دفتر",
+      "contact": "بہاولپور، پاکستان",
+      "link": "https://maps.google.com"
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "title": "ہمارے دفتر کا دورہ کریں (لاہور)",
+      "description": "ہمارا لاہور آفس",
+      "contact": "سید علی عمران اسٹریٹ، علی پارک، لاہور",
+      "link": "https://maps.google.com"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Upwork",
+      "href": "#",
+      "icon": "SiUpwork",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    },
+    {
+      "name": "Freelancer",
+      "href": "#",
+      "icon": "SiFreelancer",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "#",
+      "icon": "FaLinkedin",
+      "hoverColor": "hover:text-blue-600",
+      "bgColor": "bg-blue-600"
+    },
+    {
+      "name": "Facebook",
+      "href": "#",
+      "icon": "FaFacebook",
+      "hoverColor": "hover:text-blue-800",
+      "bgColor": "bg-blue-800"
+    },
+    {
+      "name": "Instagram",
+      "href": "#",
+      "icon": "FaInstagram",
+      "hoverColor": "hover:text-pink-500",
+      "bgColor": "bg-pink-500"
+    },
+    {
+      "name": "Twitter",
+      "href": "#",
+      "icon": "FaTwitter",
+      "hoverColor": "hover:text-sky-400",
+      "bgColor": "bg-sky-400"
+    },
+    {
+      "name": "YouTube",
+      "href": "#",
+      "icon": "FaYoutube",
+      "hoverColor": "hover:text-red-600",
+      "bgColor": "bg-red-600"
+    },
+    {
+      "name": "Behance",
+      "href": "#",
+      "icon": "SiBehance",
+      "hoverColor": "hover:text-blue-500",
+      "bgColor": "bg-blue-500"
+    },
+    {
+      "name": "GitHub",
+      "href": "#",
+      "icon": "FaGithub",
+      "hoverColor": "hover:text-gray-800",
+      "bgColor": "bg-gray-800"
+    },
+    {
+      "name": "WhatsApp",
+      "href": "https://wa.me/971501234567",
+      "icon": "FaWhatsapp",
+      "hoverColor": "hover:text-green-500",
+      "bgColor": "bg-green-500"
+    }
+  ],
+  "faqSection": {
+    "title": "اکثر پوچھے گئے سوالات",
+    "description": "ہماری خدمات، عمل، اور ہم آپ کے کاروبار کو بڑھانے میں کیسے مدد کر سکتے ہیں کے بارے میں عام سوالات کے جوابات تلاش کریں۔"
+  },
+  "faqs": [
+    {
+      "question": "آپ کس قسم کے پانی کے حل فراہم کرتے ہیں؟",
+      "answer": "ہم گھروں، دفاتر، اور تجارتی اداروں کے لیے پریمیم واٹر پیوریفیکیشن سسٹمز، فلٹریشن حل، واٹر کولرز، ڈسپنسرز، اور جامع پانی کے معیار کی جانچ کی خدمات فراہم کرتے ہیں۔"
+    },
+    {
+      "question": "کیا آپ تنصیب اور دیکھ بھال کی خدمات پیش کرتے ہیں؟",
+      "answer": "جی ہاں، ہم اپنے تربیت یافتہ پیشہ ور افراد کے ذریعے مکمل تنصیب کی خدمات فراہم کرتے ہیں۔ ہم بہترین کارکردگی کو یقینی بنانے کے لیے فلٹر کی تبدیلی، سسٹم کی صفائی، اور پانی کے معیار کی جانچ سمیت باقاعدہ دیکھ بھال کے پیکجز بھی پیش کرتے ہیں۔"
+    },
+    {
+      "question": "پانی کے فلٹرز کو کتنی بار تبدیل کرنا چاہیے؟",
+      "answer": "فلٹر کی تبدیلی کی تعدد استعمال اور پانی کے معیار پر منحصر ہے۔ عام طور پر، فلٹرز کو ہر 3-6 ماہ میں تبدیل کرنا چاہیے۔ ہماری دیکھ بھال کی ٹیم آپ کی مخصوص ضروریات کا جائزہ لے گی اور مناسب تبدیلی کا شیڈول تجویز کرے گی۔"
+    },
+    {
+      "question": "کیا آپ پانی کی جانچ کی خدمات فراہم کرتے ہیں؟",
+      "answer": "جی ہاں، ہم آلودگیوں، معدنیات، پی ایچ لیول، اور مجموعی پانی کی حفاظت کی جانچ کے لیے جامع پانی کے معیار کی جانچ پیش کرتے ہیں۔ ہم تفصیلی رپورٹس فراہم کرتے ہیں اور ٹیسٹ کے نتائج کی بنیاد پر مناسب فلٹریشن حل تجویز کرتے ہیں۔"
+    },
+    {
+      "question": "آپ کن علاقوں میں خدمات فراہم کرتے ہیں؟",
+      "answer": "ہم دبئی اور متحدہ عرب امارات بھر میں صارفین کی خدمت کرتے ہیں۔ ہماری ٹیم پورے خطے میں رہائشی اور تجارتی کلائنٹس کو فوری ڈیلیوری، تنصیب، اور دیکھ بھال کی خدمات فراہم کرتی ہے۔"
+    },
+    {
+      "question": "کیا آپ کے واٹر پیوریفیکیشن سسٹمز سرٹیفائیڈ ہیں؟",
+      "answer": "جی ہاں، ہمارے تمام واٹر پیوریفیکیشن سسٹمز بین الاقوامی معیار کے معیارات پر پورا اترتے ہیں اور متعلقہ صحت اور حفاظت کے حکام کی طرف سے سرٹیفائیڈ ہیں۔ ہم صرف ایسی مصنوعات پیش کرتے ہیں جو اعلیٰ ترین پانی کے معیار اور حفاظت کو یقینی بناتی ہیں۔"
+    }
+  ]
+}

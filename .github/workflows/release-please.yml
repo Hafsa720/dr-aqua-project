@@ -1,0 +1,37 @@
+name: Release Please
+
+on:
+  # Manual trigger from GitHub Actions tab
+  workflow_dispatch:
+  # Automatic trigger on push to main (uncomment if desired)
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          # Change this to your repository name
+          release-type: node
+          package-name: Dr.Aqua-agency
+          # Use conventional commits for changelog generation
+          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false},{"type":"docs","section":"Documentation","hidden":false},{"type":"style","section":"Styling","hidden":false},{"type":"refactor","section":"Code Refactoring","hidden":false},{"type":"perf","section":"Performance Improvements","hidden":false},{"type":"test","section":"Tests","hidden":false}]'
+
+      # Optional: Publish to npm (uncomment if needed)
+      # - uses: actions/checkout@v4
+      #   if: ${{ steps.release.outputs.release_created }}
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 18
+      #     registry-url: 'https://registry.npmjs.org'
+      #   if: ${{ steps.release.outputs.release_created }}
+      # - run: npm ci
+      #   if: ${{ steps.release.outputs.release_created }}
+      # - run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      #   if: ${{ steps.release.outputs.release_created }}

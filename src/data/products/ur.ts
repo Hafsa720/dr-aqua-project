@@ -1,0 +1,25 @@
+// UI Labels
+export const shopLabelsUr = {
+  pageTitle: 'پانی کے فلٹر',
+  pageDescription:
+    'گھر، دفتر، اور صنعتی استعمال کے لیے ہماری واٹر فلٹریشن سسٹمز کی مکمل رینج دریافت کریں — سکولوں اور کالجوں، کنٹرول شیڈز، سوئمنگ پولز، ہول ہاؤس فلٹریشن، اور منرل واٹر پلانٹس کے لیے موزوں۔',
+  searchPlaceholder: 'مصنوعات تلاش کریں...',
+  categoryLabel: 'قسم',
+  brandLabel: 'برانڈ',
+  priceRangeLabel: 'قیمت کی حد',
+  sortByLabel: 'ترتیب دیں',
+  activeFilters: 'فعال فلٹرز:',
+  clearAll: 'تمام صاف کریں',
+  showingResults: 'دکھایا جا رہا ہے',
+  of: 'میں سے',
+  products: 'مصنوعات',
+  noProductsFound: 'کوئی مصنوعات نہیں ملی',
+  tryAdjusting: 'اپنی تلاش یا فلٹر معیار کو ایڈجسٹ کرنے کی کوشش کریں۔',
+  previous: 'پچھلا',
+  next: 'اگلا',
+  inStock: 'اسٹاک میں',
+  outOfStock: 'اسٹاک ختم',
+  addToCart: 'کارٹ میں شامل کریں',
+  viewDetails: 'تفصیلات دیکھیں',
+  save: 'بچت',
+};
