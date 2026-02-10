@@ -120,22 +120,28 @@ export default function Navigation() {
                     </Link>
                     <div className='absolute left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50'>
                       <div className='bg-white border border-gray-100 shadow-lg rounded-lg overflow-hidden'>
-                        <div className='flex flex-col py-2'>
+                        <div
+                          className='flex flex-col py-2'
+                          suppressHydrationWarning
+                        >
                           <Link
                             href='/products?category=residential'
                             className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            suppressHydrationWarning
                           >
                             Residential
                           </Link>
                           <Link
                             href='/products?category=commercial'
                             className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            suppressHydrationWarning
                           >
                             Commercial
                           </Link>
                           <Link
                             href='/products?category=industrial'
                             className='px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors'
+                            suppressHydrationWarning
                           >
                             Industrial
                           </Link>

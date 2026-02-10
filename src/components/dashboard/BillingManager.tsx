@@ -97,22 +97,100 @@ export default function BillingManager({
   };
 
   const downloadPDF = async () => {
-    if (!billRef.current) return;
+    if (bill.items.length === 0) {
+      alert('Please add items to the bill before downloading!');
+      return;
+    }
+
+    const customer = customers.find((c) => c.id === Number(bill.customerId));
 
     try {
-      const html2canvas = (await import('html2canvas')).default;
       const jsPDF = (await import('jspdf')).default;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
 
-      const canvas = await html2canvas(billRef.current);
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      const imgWidth = 190;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      pdf.addImage(imgData, 'PNG', 10, 10, imgWidth, imgHeight);
-      pdf.save(`receipt-${Date.now()}.pdf`);
+      // Header
+      pdf.setFontSize(24);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('Dr. Aqua', pageWidth / 2, 20, { align: 'center' });
+
+      pdf.setFontSize(12);
+      pdf.setFont('helvetica', 'normal');
+      pdf.text('Water Filtration Solutions', pageWidth / 2, 28, {
+        align: 'center',
+      });
+
+      // Line separator
+      pdf.setLineWidth(0.5);
+      pdf.line(20, 35, pageWidth - 20, 35);
+
+      // Receipt title
+      pdf.setFontSize(18);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('RECEIPT', pageWidth / 2, 45, { align: 'center' });
+
+      // Invoice details
+      pdf.setFontSize(10);
+      pdf.setFont('helvetica', 'normal');
+      const invoiceNo = `INV-${Date.now()}`;
+      pdf.text(`Invoice: ${invoiceNo}`, 20, 55);
+      pdf.text(`Date: ${new Date().toLocaleDateString()}`, pageWidth - 60, 55);
+
+      if (customer) {
+        pdf.text(`Customer: ${customer.name}`, 20, 62);
+        pdf.text(`Contact: ${customer.contact}`, 20, 69);
+      }
+
+      // Table header
+      let yPos = 85;
+      pdf.setFillColor(240, 240, 240);
+      pdf.rect(20, yPos - 6, pageWidth - 40, 10, 'F');
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('Item', 25, yPos);
+      pdf.text('Qty', 100, yPos);
+      pdf.text('Price', 125, yPos);
+      pdf.text('Total', 160, yPos);
+
+      // Table rows
+      pdf.setFont('helvetica', 'normal');
+      yPos += 12;
+
+      bill.items.forEach((item) => {
+        pdf.text(item.name.substring(0, 30), 25, yPos);
+        pdf.text(item.qty.toString(), 100, yPos);
+        pdf.text(`$${item.price.toFixed(2)}`, 125, yPos);
+        pdf.text(`$${(item.price * item.qty).toFixed(2)}`, 160, yPos);
+        yPos += 8;
+      });
+
+      // Line before total
+      yPos += 5;
+      pdf.line(20, yPos, pageWidth - 20, yPos);
+      yPos += 10;
+
+      // Total
+      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(14);
+      pdf.text(`Total: $${total.toFixed(2)}`, pageWidth - 60, yPos);
+
+      // Footer
+      yPos += 25;
+      pdf.setFontSize(10);
+      pdf.setFont('helvetica', 'normal');
+      pdf.text('Thank you for your business!', pageWidth / 2, yPos, {
+        align: 'center',
+      });
+      pdf.text('Dr. Aqua - Pure Water, Pure Life', pageWidth / 2, yPos + 7, {
+        align: 'center',
+      });
+
+      pdf.save(`receipt-${invoiceNo}.pdf`);
     } catch (error) {
       console.error('Error generating PDF:', error);
-      alert('Error generating PDF. Please try again.');
+      alert(
+        'Error generating PDF: ' +
+          (error instanceof Error ? error.message : 'Unknown error'),
+      );
     }
   };
 
