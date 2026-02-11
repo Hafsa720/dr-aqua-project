@@ -2,7 +2,6 @@
 
 import {
   Languages,
-  LayoutDashboard,
   Menu,
   ShoppingCart,
   X,
@@ -34,29 +33,6 @@ const navigationConfig = {
   ],
 };
 
-const dashboardConfig = {
-  en: {
-    label: 'Dashboard',
-    links: [
-      {
-        name: 'Business Management',
-        href: '/dashboard/management',
-        icon: LayoutDashboard,
-      },
-    ],
-  },
-  ur: {
-    label: 'ڈیش بورڈ',
-    links: [
-      {
-        name: 'کاروباری انتظام',
-        href: '/dashboard/management',
-        icon: LayoutDashboard,
-      },
-    ],
-  },
-};
-
 export default function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
@@ -66,7 +42,6 @@ export default function Navigation() {
 
   const navigation =
     navigationConfig[language as keyof typeof navigationConfig];
-  const dashboard = dashboardConfig[language as keyof typeof dashboardConfig];
   const cartText = language === 'en' ? 'Cart' : 'کارٹ';
 
   const toggleLanguage = () => {
@@ -175,52 +150,6 @@ export default function Navigation() {
                 </Link>
               );
             })}
-
-            {/* Dashboard Dropdown - Same hover style as Products */}
-            <div className='relative group'>
-              <span
-                className={cn(
-                  'text-sm font-semibold transition-all duration-200 relative inline-flex items-center gap-1 py-2 cursor-pointer',
-                  pathname.startsWith('/dashboard')
-                    ? 'text-primary-600'
-                    : 'text-gray-700 hover:text-primary-600',
-                )}
-              >
-                {dashboard.label}
-                <span
-                  className={cn(
-                    'absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-primary-500 to-aqua-500 transition-all duration-200',
-                    pathname.startsWith('/dashboard')
-                      ? 'w-full'
-                      : 'w-0 group-hover:w-full',
-                  )}
-                />
-              </span>
-              <div className='absolute left-1/2 -translate-x-1/2 pt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50'>
-                <div className='bg-white border border-gray-100 shadow-lg rounded-lg overflow-hidden'>
-                  <div className='flex flex-col py-2'>
-                    {dashboard.links.map((link) => {
-                      const Icon = link.icon;
-                      return (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className={cn(
-                            'flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
-                            pathname === link.href
-                              ? 'bg-primary-50 text-primary-600'
-                              : 'text-gray-700 hover:bg-primary-50 hover:text-primary-600',
-                          )}
-                        >
-                          <Icon className='h-4 w-4' />
-                          {link.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <Button
               variant='ghost'
@@ -357,31 +286,6 @@ export default function Navigation() {
                   </Link>
                 );
               })}
-
-              <div className='border-t border-gray-200 pt-2 mt-2'>
-                <p className='px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider'>
-                  {dashboard.label}
-                </p>
-                {dashboard.links.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={cn(
-                        'flex items-center gap-3 rounded-lg px-4 py-3 text-base font-semibold transition-all',
-                        pathname === link.href
-                          ? 'bg-linear-to-r from-primary-50 to-aqua-50 text-primary-700 border-l-4 border-primary-500'
-                          : 'text-gray-700 hover:bg-gray-50 hover:text-primary-600',
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Icon className='h-5 w-5' />
-                      {link.name}
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
           </div>
         )}
